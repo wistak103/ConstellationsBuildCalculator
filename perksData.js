@@ -2125,14 +2125,14 @@ smithing.perks = [
     //14
     {
         name: "Commander", skill: speech, skillReq: 0, levelReq: 15,
-        xPos: 160 / 4, yPos: 60 / 4, preReqs: [13], chain: 3, rank: 3,
+        xPos: 160 / 4, yPos: 60 / 4, preReqs: [13], chain: 3, rank: 2,
         description: "Your knowledge in combat tactics allow you to effectively lead your allies in combat. [nearby allies get +20 % fortify skill, +6 unarmed damage, +100 magicka & stamina, +50% magicka & stamina regeneration]",
         labels: [], lines: [], chainPerks: []
     },
     //15
     {
         name: "Commander", skill: speech, skillReq: 0, levelReq: 30,
-        xPos: 160 / 4, yPos: 60 / 4, preReqs: [14], chain: 3, rank: 2,
+        xPos: 160 / 4, yPos: 60 / 4, preReqs: [14], chain: 3, rank: 3,
         description: "Your knowledge in combat tactics allow you to effectively lead your allies in combat. [nearby allies get +30 % fortify skill, +10 unarmed damage, +150 magicka & stamina, +75% magicka & stamina regeneration]",
         labels: [], lines: [], chainPerks: []
     },
