@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: tan;
-    background-image: url(/Images/paper2.webp);
+    background-image: url(https://raw.githubusercontent.com/airgiraffe/SerenityBuildCalculator/main/Images/paper2.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
