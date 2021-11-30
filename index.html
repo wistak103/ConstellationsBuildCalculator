@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Serenity Character Builder</title>
+
+    </head>
+    <body>
+        <div class="header-bar"></div>
+        <div class="main">
+            <div class="main-left">
+                <div class="main-left-row">
+                    <div class="row-content" id="build-info">
+                        <input type="text" id="build-name" placeholder="Name" onchange="saveData()">                     
+                    </div>
+                    <div class="row-content" id="basic-choices">
+                        <div class="basic-choice-group">                   
+                            <h3>Race</h3>
+                            <select name="Races" id="races-selection" onchange="updateRace()">
+                                <option value="0">Altmer</option>
+                                <option value="1">Bosmer</option>
+                                <option value="2">Breton</option>
+                                <option value="3">Dunmer</option>
+                                <option value="4">Imperial</option>
+                                <option value="5">Khajiit</option>
+                                <option value="6">Nord</option>
+                                <option value="7">Orismer</option>
+                                <option value="8">Redguard</option>
+                                <option value="9">Saxheel</option>
+                            </select>
+                        </div>
+                        <div class="basic-choice-group">  
+                            <h3>Standing Stone</h3>
+                            <select name="Stones" id="stone-select" onchange="updateStone()">
+                                <option value="0">Apprentice</option>
+                                <option value="1">Atronach</option>
+                                <option value="2">Lady</option>
+                                <option value="3">Lord</option>
+                                <option value="4">Lover</option>
+                                <option value="5">Mage</option>
+                                <option value="6">Ritual</option>
+                                <option value="7">Serpent</option>
+                                <option value="8">Shadow</option>
+                                <option value="9">Steed</option>
+                                <option value="10">Thief</option>
+                                <option value="11">Tower</option>
+                                <option value="12">Warrior</option>
+                            </select> 
+                        </div>
+                        <div class="basic-choice-group">  
+                            <h3>Blessing</h3>
+                            <select name="Blessing" id="blessing-select" onchange="updateBlessing()">
+                                <option value="0">None</option>
+                                <option value="1">Akatosh</option>
+                                <option value="2">Arkay</option>
+                                <option value="3">Auri-El</option>
+                                <option value="4">Dibella</option>
+                                <option value="5">Hircine</option>
+                                <option value="6">Julianos</option>
+                                <option value="7">Kyraneth</option>
+                                <option value="8">Kyne</option>
+                                <option value="9">Mara</option>
+                                <option value="10">Molag Bal</option>
+                                <option value="11">Nocturnal</option>
+                                <option value="12">Stendarr</option>
+                                <option value="13">Talos</option>
+                                <option value="14">Zenithar</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-left-row" id="attributes-row">
+                    <div class="attributes-title-group">
+                        <div class="row-title">
+                            <h2>Attributes</h2>
+                            <p>Attribute Choices Remaining: <span id="attribute-points-unspent">0</span></p>
+                        </div>
+                        <div id="build-info-level">
+                            <div>LEVEL&#160</div>
+                            <div id="build-info-level-value"> 1</div>
+                        </div>
+                    </div>
+                    <div class="row-content" id="attributes">
+                        <div class="attribute-content">
+                            <div class="attribute-value-group" id = "attribute-magicka">
+                                <div class="attribute-value">
+                                    <div class="attribute-button" onclick="decreaseAttribute(0)">-</div>
+                                    <span id="magicka-total" class="attribute-total">100</span>
+                                    <div class="attribute-button" onclick="increaseAttribute(0)">+</div>
+                                </div>
+                                <h3>MAGICKA</h3>         
+                                <span class="attribute-base" id="magicka-base">BASE: 100</span>             
+                            </div>
+                            <div class="attribute-value-group" id = "attribute-health">
+                                <div class="attribute-value">
+                                    <div class="attribute-button" onclick="decreaseAttribute(1)">-</div>
+                                    <span id="health-total" class="attribute-total">100</span>
+                                    <div class="attribute-button" onclick="increaseAttribute(1)">+</div>
+                                </div>
+                                <h3>HEALTH</h3>
+                                <span class="attribute-base" id="health-base">BASE: 100</span>  
+                            </div>                    
+                            <div class="attribute-value-group" id = "attribute-stamina">
+                                <div class="attribute-value">
+                                    <div class="attribute-button" onclick="decreaseAttribute(2)">-</div>
+                                    <span id="stamina-total" class="attribute-total">100</span>
+                                    <div class="attribute-button" onclick="increaseAttribute(2)">+</div>
+                                </div>
+                                <h3>STAMINA</h3>
+                                <span class="attribute-base" id="stamina-base">BASE: 100</span>  
+                            </div>
+                        </div>
+                        <div class="derived-content">                            
+                            <div class="derived-group" id = "derived-attributes">
+                                <div class="derived-grid">
+        
+                                    <span class = "derived-value-label">Magicka Rate</span>
+                                    <span class="derived-value">+0%</span>
+
+                                    <span class = "derived-value-label">Stamina Rate</span>
+                                    <span class="derived-value">+0%</span>
+
+                                    <span class = "derived-value-label">Carry Weight</span>
+                                    <span class="derived-value">+0</span>
+        
+                                    <span class = "derived-value-label">Move Speed</span>
+                                    <span class="derived-value">+0%</span>
+        
+                                    <span class = "derived-value-label">Marksman Damage</span>
+                                    <span class="derived-value">+0%</span>
+        
+                                    <span class = "derived-value-label">One-Handed Damage</span>
+                                    <span class="derived-value">+0%</span>
+        
+                                    <span class = "derived-value-label">Two-Handed Damage</span>
+                                    <span class="derived-value">+0%</span>
+        
+                                    <span class = "derived-value-label">Unarmed Damage</span>
+                                    <span class="derived-value">+0%</span>
+
+                                    <span class = "derived-value-label">Magic Resist</span>
+                                    <span class="derived-value">+0%</span>
+
+                                    <span class = "derived-value-label">Disease Resist</span>
+                                    <span class="derived-value">+0%</span>
+        
+                                    <span class = "derived-value-label no-border">Poison Resist</span>
+                                    <span class="derived-value no-border">+0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-left-row" id ="build-code-container">
+                    <div id="build-code"></div>
+                    <button id="build-copy" onclick="copyBuildCode()">Copy Build Code</button>
+                </div>
+            </div>
+            <div class="main-middle">
+                <div class="skill-details">
+                    <h2 id="skill-title">Alteration</h2>
+                    <h2 id="skill-level-total">5</h2>
+                </div>
+                <div class="tree-viewer">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="tree-viewer-svg">
+                      </svg>                      
+                </div>
+                <div class="skill-buttons">
+                    <button onclick="clearSkill()">Reset Current Skill</button>
+                    <button onclick="clearAllSkills()">Reset All Skills</button>
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="skills-container">
+                    <div class="skill" onclick="skillsClick(0)">
+                        <svg class="skill-icon" id="icon-alchemy" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Alchemy</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(1)">
+                        <svg class="skill-icon" id="icon-alteration" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Alteration</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(2)">
+                        <svg class="skill-icon" id="icon-block" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Block</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(3)">
+                        <svg class="skill-icon" id="icon-conjuration" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Conjuration</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(4)">
+                        <svg class="skill-icon" id="icon-destruction" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Destruction</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(5)">
+                        <svg class="skill-icon" id="icon-enchanting" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Enchanting</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(6)">
+                        <svg class="skill-icon" id="icon-evasion" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Evasion</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(7)">
+                        <svg class="skill-icon" id="icon-heavyarmor" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Heavy Armor</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(8)">
+                        <svg class="skill-icon" id="icon-illusion" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Illusion</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(9)">
+                        <svg class="skill-icon" id="icon-lockpicking" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Lockpicking</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(10)">
+                        <svg class="skill-icon" id="icon-marksman" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Marksman</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(11)">
+                        <svg class="skill-icon" id="icon-onehanded" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">One Handed</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(12)">
+                        <svg class="skill-icon" id="icon-pickpocket" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Pickpocket</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(13)">
+                        <svg class="skill-icon" id="icon-restoration" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Restoration</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(14)">
+                        <svg class="skill-icon" id="icon-smithing" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Smithing</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(15)">
+                        <svg class="skill-icon" id="icon-sneak" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Sneak</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(16)">
+                        <svg class="skill-icon" id="icon-speech" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Speech</span>
+                    </div>
+                    <div class="skill" onclick="skillsClick(17)">
+                        <svg class="skill-icon" id="icon-twohanded" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <span class="skill-text">Two Handed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="perk-description-box">
+            <h3 id="perk-description-title">Mace Focus (1/3)</h3>
+            <p id="perk-description-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
+            <h3 id="perk-description-rank-title">Next Rank</h3>
+            <p id="perk-description-rank-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
+        </div>
+        <div id="alert">
+            <div id="alert-box">
+                <p id="alert-box-text"></p>
+                <button id="alert-box-close" onclick="closeAlert()">Okay</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="./perksData.js"></script>
+        <script type="text/javascript" src="./raceData.js"></script>
+        <script type="text/javascript" src="./derived.js"></script>
+        <script type="text/javascript" src="./index.js"></script>
+    </body>
+</html>
