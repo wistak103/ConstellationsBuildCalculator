@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-position: center;
     color: rgb(38, 33, 49);
+    height: 100vh;
 }
 
 h2, h3, p {
@@ -348,7 +349,6 @@ h2, h3, p {
     overflow: hidden;
     white-space: nowrap;
     margin-bottom: 10px;
-    padding: 0px 5px 0px 5px;
 }
 
 #build-copy {

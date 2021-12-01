@@ -570,7 +570,6 @@ function updateSkillLists() {
         } else {
             skill.levelTotal = skill.levelBase;
         }
-        //console.log(skill);
     }
     updateActiveSkillInfo();
     updateLevel();
@@ -643,21 +642,20 @@ function calculateSkillPointsNeeded() {
         if (skillLevel != skillLevelBase) {
             for (i = skillLevelBase; i < skillLevel; i++) {
                 if (i >= 75) { 
-                    skillPoints += costTo100; //console.log("i = " + i + "cost: " + costTo100);
+                    skillPoints += costTo100;
                 }
                 else if (i >= 50) { 
-                    skillPoints += costTo75; //console.log("i = " + i + "cost: " + costTo75);
+                    skillPoints += costTo75;
                 }
                 else if (i >= 25) { 
-                    skillPoints += costTo50; //console.log("i = " + i + "cost: " + costTo50);
+                    skillPoints += costTo50;
                 }
                 else { 
-                    skillPoints += costTo25; //console.log("i = " + i + "cost: " + costTo25);
+                    skillPoints += costTo25;
                 };
             }
         }    
     }
-    //console.log("skillpoints needed: " + skillPoints);
     return skillPoints;
 }
 
@@ -674,14 +672,12 @@ function calculateLevelFromSkillPoints() {
             skillPoints += 12 + (level*3);
 
             level++;
-            //console.log("skill points:" + skillPoints +" level: " + (level-1));
         }
 
         level--; //fix level being 1 more than needed
     }
     
     return level; 
-    //console.log("level: "+ level);
 }
 
 function levelToSkillPoints(level) {
@@ -728,6 +724,22 @@ function updateAttributes() {
     }
     updateDerivedValues();
     saveData();
+    attributesErrorCheck();
+
+}
+
+function attributesErrorCheck() {
+    let buildCodeButton = document.getElementById("build-copy");
+    let buildCodeText = document.getElementById("build-code");
+
+    if (spentAttributes > totalAttributePoints) {
+        buildCodeButton.textContent = "You have invalid attribute points, please correct this!";
+        buildCodeText.textContent = "ERROR";
+        buildCodeText.style.textAlign = "center";
+    } else 
+    {
+        buildCodeButton.textContent = "Copy Build Code";
+    }
 }
 
 function updateRace() {
@@ -913,17 +925,26 @@ function copyBuildCode() {
     let buildCodeDiv = document.getElementById("build-code");
     let buildCodeButton = document.getElementById("build-copy");
     let buildCode = buildCodeDiv.textContent;
-    navigator.clipboard.writeText(buildCode).then(function(){
-        buildCodeButton.style.backgroundColor = "rgba(59, 170, 87, 0.8)";
-        buildCodeButton.textContent = "Copied!";
+
+    if (spentAttributes > totalAttributePoints) {
+        buildCodeButton.style.backgroundColor = "rgba(255, 0, 0, 0.8)";
         setTimeout(function(){
             buildCodeButton.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
-            buildCodeButton.textContent = "Copy Build Code";
         }, 1000);
-
-    }, function() {
-        alert("Copy failed, try again or manually copy the build code");
-    });
+    } else {
+       
+        navigator.clipboard.writeText(buildCode).then(function(){
+            buildCodeButton.style.backgroundColor = "rgba(59, 170, 87, 0.8)";
+            buildCodeButton.textContent = "Copied!";
+            setTimeout(function(){
+                buildCodeButton.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+                buildCodeButton.textContent = "Copy Build Code";
+            }, 1000);
+    
+        }, function() {
+            alert("Copy failed, try again or manually copy the build code");
+        });
+    }    
 }
 
 function perkMouseEnter(perkNum) {
@@ -939,9 +960,7 @@ function perkMouseEnter(perkNum) {
                 rankIndex++;
             }
         }
-        console.log(perk);
         perk = perk.chainPerks[rankIndex];
-        console.log(perk);
     }
 
     let title = document.getElementById("perk-description-title");
@@ -1024,7 +1043,10 @@ function clearSkill() {
             (removePerkRank(perksToRemove[rp])); 
         };
     }
+
     drawSkillTree();
+    attributesErrorCheck();
+
 }
 
 function clearAllSkills(){
