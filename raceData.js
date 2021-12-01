@@ -241,7 +241,7 @@ redguard.baseSkills = [
     5,       //Sneak
     5,       //Speech
     5];       //Two-handed
-redguard.baseAttributes = [110, 70, 120];
+redguard.baseAttributes = [70, 110, 120];
 redguard.bonusAttributes = [0, 0, 0];
 redguard.baseRegens = [1, 0, 1.65];
 redguard.baseCarryWeight = 105;
