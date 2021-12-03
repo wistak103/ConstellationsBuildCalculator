@@ -1929,21 +1929,21 @@ smithing.perks = [
     //12
     {
         name: "Ebony & Stahlrim<br>Smithing", skill: smithing, skillReq: 75,
-        xPos: 390 / 5, yPos: 68 / 3.5, preReqs: [10], chain: 2, rank: 1, 
+        xPos: 390 / 5, yPos: 68 / 3.5, preReqs: [11], chain: 2, rank: 1, 
         description: "Ebony weapons and armor - some even fail at heating the metal. But not you. Now that you've studied the related schematics, you can craft and improve ebony equipment with ease.",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
         name: "Ebony & Stahlrim<br>Smithing", skill: smithing, skillReq: 85,
-        xPos: 390 / 5, yPos: 68 / 3.5, preReqs: [13], chain: 2, rank: 2, 
+        xPos: 390 / 5, yPos: 68 / 3.5, preReqs: [12], chain: 2, rank: 2, 
         description: "Around the world, only a few know the secret of properly processing enchanted ice, but you were lucky, for the help you provided to Skaals, they agreed to share their secrets. You can now work with Stalhrim in addition to working with Ebony.",
         labels: [], lines: [], chainPerks: []
     },
     //14
     {
         name: "Daedric Smithing", skill: smithing, skillReq: 100,
-        xPos: 440 / 5, yPos: 35 / 3.5, preReqs: [12], chain: 0,
+        xPos: 440 / 5, yPos: 35 / 3.5, preReqs: [13], chain: 0,
         description: "The creation of daedric weapons and armor is a secret few mortals know - still, somehow you managed to acquire this knowledge...",
         labels: [], lines: []
     },
