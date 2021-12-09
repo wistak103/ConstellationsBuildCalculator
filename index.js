@@ -555,22 +555,38 @@ function drawSkillTree() {
     updateLevel();
 }
 
+function customSkillLevel() {
+    let levelDisplay = document.getElementById("skill-level-total");
+    if (levelDisplay.value > 100) { levelDisplay.value = 100};
+    activeSkillTree.customLevel = levelDisplay.value;
+    updateSkillLists();
+}
+
 function updateSkillLists() {
     for (i = 0; i < skillsList.length; i++) {
         let skill = skillsList[i];
         let highestSkillReq = 0;
+
+        //Search through perks for the highest skill level required
         for (j = 0; j < skill.takenPerks.length; j++) {
             if (skill.takenPerks[j].skillReq > highestSkillReq) {
                 highestSkillReq = skill.takenPerks[j].skillReq;
             }
-        }   
+        };   
 
+        //Check if skill level required is higher than the base level
         if (highestSkillReq > skill.levelBase) {
             skill.levelTotal = highestSkillReq;
-        } else {
-            skill.levelTotal = skill.levelBase;
-        }
+        } 
+        else {
+            skill.levelTotal = skill.levelBase; //if not, use base skill level
+        };
+
+        if (skill.customLevel < skill.levelTotal) {
+            skill.customLevel = 0;
+        };
     }
+
     updateActiveSkillInfo();
     updateLevel();
     updateSkillLevels();
@@ -579,7 +595,11 @@ function updateSkillLists() {
 function updateActiveSkillInfo() {
     let levelDisplay = document.getElementById("skill-level-total");
     let skillTitle = document.getElementById("skill-title");
-    levelDisplay.textContent = activeSkillTree.levelTotal;
+    levelDisplay.value = activeSkillTree.levelTotal;
+    if (activeSkillTree.customLevel > activeSkillTree.levelTotal) {
+        levelDisplay.value = activeSkillTree.customLevel;
+    }
+
     skillTitle.textContent = activeSkillTree.name;
 }
 
@@ -638,6 +658,11 @@ function calculateSkillPointsNeeded() {
 
     for (j = 0; j < skillsList.length; j++) {
         let skillLevel = skillsList[j].levelTotal;
+        // if user has input a custom level, we need to check which is higher
+        if (skillLevel < skillsList[j].customLevel) {
+            skillLevel = skillsList[j].customLevel;
+        }
+
         let skillLevelBase = skillsList[j].levelBase;
     
         if (skillLevel != skillLevelBase) {
@@ -858,34 +883,50 @@ function updateSkillLevels() {
         let skillTree = skillsList[i];
         let skillLevel = skillsIconsLevel[i];
         skillLevel.textContent = skillTree.levelTotal;
+        if (skillTree.customLevel > skillTree.levelTotal) {
+            skillLevel.textContent = skillTree.customLevel;
+        }
     }
 }
 
 function saveData() {
   
     let takenPerks = [];
+    let customLevels =[];
 
-    for (i = 0; i < skillsList.length; i++) {
+    //Translate perks into a string, which we can convert back to perks
+    for (i = 0; i < skillsList.length; i++) { //for each skill tree
+        //check for perks
         if (skillsList[i].takenPerks[0] != null) {
-            let skillString = i;
+            let skillString = i; //start the string for each skillTree with the skilltree index number
             for (j = 0; j < skillsList[i].takenPerks.length; j++) {
                 let perk = skillsList[i].takenPerks[j];
                 let id = skillsList[i].perks.indexOf(perk);
-                skillString += "p" +id;
+                skillString += "p" +id; //seperate the perks with a 'p'
             }
             takenPerks.push(skillString);
+        }
+
+        //encode custom levels if needed
+        if (skillsList[i].customLevel > skillsList[i].levelTotal) {
+            let customeLevelString = i + "l" + skillsList[i].customLevel;
+            customLevels.push(customeLevelString);
         }
     }
 
     let name = document.getElementById("build-name").value;
     let raceIndex = document.getElementById("races-selection").value;
-    //let stoneIndex = document.getElementById("stone-select").value;
+    let stoneIndex = document.getElementById("stone-select").value;
     let blessingIndex = document.getElementById("blessing-select").value;
     let perksString = takenPerks.toString();
     perksString = perksString.replace(/,/g,'s'); //replace commas so we can split seperately
-    if(perksString.length == 0) { perksString = 'noPerks'};
-    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString];
-    let code = codeArray.toString();
+    if(perksString.length == 0) { perksString = 'no'};
+    let customLevelsString = customLevels.toString();
+    customLevelsString = customLevelsString.replace(/,/g,'s');
+    if (customLevelsString.length == 0) { customLevelsString = "no"}
+
+    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString];
+    let code = codeArray.toString(); console.log(code);
     let codeEncoded = btoa(code);
 
     //remove padding '=' chars
@@ -901,6 +942,9 @@ function saveData() {
     let buildCodeDiv = document.getElementById("build-code");
     buildCodeDiv.textContent = theURL;
 
+    let url = buildCodeDiv.textContent.split('?')[1];
+    url = "?"+url;
+    window.history.replaceState(null, null, url)
 }
 
 function loadData() {
@@ -933,7 +977,7 @@ function loadData() {
         spentAttributes = parseInt(attributeIncreases[0]) + parseInt(attributeIncreases[1]) + parseInt(attributeIncreases[2]);
     
         //perks
-        if(values[7] != 'noPerks') {
+        if(values[7] != 'no') {
             let buildPerks = values[7].split('s');
             for (i = 0; i < buildPerks.length; i++) {
                 let perkArray = buildPerks[i].split('p');
@@ -946,6 +990,16 @@ function loadData() {
                     takePerkCSS(takenPerk);
                 }
             }
+        }
+
+        if (values[8] != 'no') {
+            let skillsString = values[8].split('s'); //split the string into each skill tree
+            for (s = 0; s < skillsString.length; s++) {
+                let levelsArray = skillsString[s].split('l');
+                let skillID = levelsArray[0];
+                let skillLevel = levelsArray[1];
+                skillsList[skillID].customLevel = skillLevel;
+            };
         }
     }
     drawSkillTree();
@@ -1073,7 +1127,8 @@ function clearSkill() {
             (removePerkRank(perksToRemove[rp])); 
         };
     }
-
+    activeSkillTree.customLevel = 0;
+    updateLevel();
     drawSkillTree();
     attributesErrorCheck();
 
@@ -1085,6 +1140,7 @@ function clearAllSkills(){
    let perksToRemove = [];
 
     skillsList.forEach(skill => {
+        skill.customLevel = 0;
         skill.takenPerks.forEach(perk => {
         perksToRemove.push(perk); });
     });
@@ -1103,6 +1159,7 @@ function clearAllSkills(){
     attributeIncreases = [0,0,0];
     spentAttributes = 0;
     drawSkillTree();
+    updateSkillLists();
 }
 
 function closeAlert() {

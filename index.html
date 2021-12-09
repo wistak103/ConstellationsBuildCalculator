@@ -160,7 +160,11 @@
             <div class="main-middle">
                 <div class="skill-details">
                     <h2 id="skill-title">Alteration</h2>
-                    <h2 id="skill-level-total">5</h2>
+                    <div id="skill-level">                        
+                        <input type="text" id="skill-level-total" pattern="[0-9]+" onchange="customSkillLevel()">
+                        <label id ="skill-level-text">Level</label>
+                    </div>
+                    
                 </div>
                 <div class="tree-viewer">
                     <svg xmlns="http://www.w3.org/2000/svg" id="tree-viewer-svg">

@@ -4,6 +4,7 @@ class SkillTree {
         this.id = id;
         this.levelBase;
         this.levelTotal;
+        this.customLevel = 0;
         this.perks = [];
         this.takenPerks = [];
     }

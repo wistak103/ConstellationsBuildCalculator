@@ -15,6 +15,12 @@ h2, h3, p {
     border: 0;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .main {
     display: flex;
     align-items: stretch;
@@ -23,7 +29,7 @@ h2, h3, p {
 
 .main-left {
     padding-right: 10px;
-    width: 380px;
+    width: 390px;
     justify-self: stretch;
     display: flex;
     flex-direction: column;
@@ -293,12 +299,12 @@ h2, h3, p {
 
 .skill-details{
 
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: right;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding-bottom: 10px;
-
     box-shadow: rgba(93, 67, 50, 0.1) 0px 13px 27px -5px, rgba(0, 0, 0, 0.1) 0px 8px 16px -8px;
 }
 
@@ -306,9 +312,38 @@ h2, h3, p {
     text-transform: uppercase;
     margin: 0px; padding: 0px;
     margin-right: 1em;
+    margin-left: 10px;
     
 }
 
+#skill-level {
+    position:relative;
+    margin-right: 10px;
+}
+
+
+
+#skill-level-text {
+    position: absolute;
+    left: 10px; top:50%; transform: translateY(-50%);
+    width: 1.5em;
+    color: rgba(93, 67, 50, 1);
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+#skill-level-total {
+    border: none;
+    border-bottom: 1px rgba(93, 67, 50, 0.25) solid;
+    background-color: rgba(93, 67, 50, 0.1);
+    appearance: none;
+    min-width: 0px;
+    width: 4.3em;
+    font-size:  1.5em;
+    text-align: right;
+    font-weight: 800;
+    position: relative;
+    padding-right: 10px;
+}
 .skill-buttons {
     display: flex;
     justify-content: space-between;
