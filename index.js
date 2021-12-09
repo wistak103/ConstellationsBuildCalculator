@@ -926,7 +926,7 @@ function saveData() {
     if (customLevelsString.length == 0) { customLevelsString = "no"}
 
     let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString];
-    let code = codeArray.toString(); console.log(code);
+    let code = codeArray.toString();
     let codeEncoded = btoa(code);
 
     //remove padding '=' chars
