@@ -23,8 +23,7 @@ h2, h3, p {
 
 .main-left {
     padding-right: 10px;
-    max-width: 30%;
-    min-width: 380px;
+    width: 380px;
     justify-self: stretch;
     display: flex;
     flex-direction: column;
@@ -223,7 +222,7 @@ h2, h3, p {
 
 .main-right {
     display: flex;
-    min-width: 330px;
+    min-width: 390px;
     flex-grow: 1;
 }
 .skills-container {
@@ -239,16 +238,16 @@ h2, h3, p {
 }
 
 .skill {
-    width: 50px;
     height: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    min-width: 90px;
+    min-width: 110px;
     padding-top: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 .skill-icon {
@@ -264,6 +263,11 @@ h2, h3, p {
     font-size: 0.8em;
     padding: 0;
     margin: 0;
+}
+
+.skill-level {
+    font-weight: 800;
+    margin-left: 0.3em;
 }
 
 .main-middle {
@@ -350,7 +354,7 @@ h2, h3, p {
     padding: 10px;
 }
 #build-code {
-    overflow: hidden;
+    overflow: clip;
     white-space: nowrap;
     margin-bottom: 10px;
 }

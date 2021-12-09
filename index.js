@@ -1,12 +1,12 @@
 let activeSkillTree = alchemy;
 let svgBox = document.getElementById("tree-viewer-svg");
 let skillsIconsSVG = document.getElementsByClassName("skill-icon");
+let skillsIconsLevel = document.getElementsByClassName("skill-level");
 
 let buildLevel = 1;
 let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
-let mouseEnterLimiter = false;
-
+let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 
 let spentPerks = 0;
 let unspentPerks = 0;
@@ -15,7 +15,7 @@ let unspentAttributes = 0;
 let spentAttributes = 0;
 let usedSkills = [];
 let race = altmer;
-
+let stoneIndex = document.getElementById("stone-select").value;
 
 function addChainArrays() {
     //run through every skill tree
@@ -573,6 +573,7 @@ function updateSkillLists() {
     }
     updateActiveSkillInfo();
     updateLevel();
+    updateSkillLevels();
 }
 
 function updateActiveSkillInfo() {
@@ -717,7 +718,7 @@ function updateAttributes() {
     let attributeBase = [magickaBase, healthBase, staminaBase];
 
     for (i = 0; i < 3; i++) {
-        attributeTotals[i] = race.baseAttributes[i] + (5 * attributeIncreases[i]) + race.bonusAttributes[i];
+        attributeTotals[i] = race.baseAttributes[i] + (5 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i];
         attributeText[i].textContent = attributeTotals[i];
 
         attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(5 * attributeIncreases[i]));
@@ -754,6 +755,35 @@ function updateRace() {
 }
 
 function updateStone() {
+    //0 Apprentice
+    //1 Atronach
+    //2 Lady
+    //3 Lord
+    //4 Lover
+    //5 Mage
+    //6 Ritual
+    //7 Serpent
+    //8 Shadow
+    //9 Steed
+    //10 Thief
+    //11 Tower
+    //12 Warrior
+
+    stoneIndex = document.getElementById("stone-select").value;
+    attributeModifiers[0] = 0;
+    if(stoneIndex == 1) {
+        attributeModifiers[0] = 350;
+    }
+
+    if(stoneIndex == 5) {
+        attributeModifiers[0] = 100;
+    }
+
+    if(stoneIndex == 9) {
+        attributeModifiers[2] = 100;
+    }
+    updateDerivedValues();
+    updateAttributes();
     saveData();
 }
 
@@ -768,19 +798,11 @@ function createSkillIcons() {
     }
 }
 
-function updateSkillIcons() {
-    skillsList.forEach(skill => {
-        for (i=0; skill.takenPerks.length; i++) {
-            takePerkCSS(skill.takenPerks[i]);
-        }
-    });
-}
-
 function drawSkillIcons(skillsSvgBox, i) {
     //Get SVG area
     let svgBoxRect = skillsSvgBox.getBoundingClientRect();
     let skillTree = skillsList[i];
-    
+
     //Run through each perk in skillTree
     for (let i = 0; i < skillTree.perks.length; i++) {
 
@@ -831,6 +853,14 @@ function drawSkillIcons(skillsSvgBox, i) {
     }
 }
 
+function updateSkillLevels() {
+    for (let i = 0; i < skillsList.length; i++) {
+        let skillTree = skillsList[i];
+        let skillLevel = skillsIconsLevel[i];
+        skillLevel.textContent = skillTree.levelTotal;
+    }
+}
+
 function saveData() {
   
     let takenPerks = [];
@@ -849,7 +879,7 @@ function saveData() {
 
     let name = document.getElementById("build-name").value;
     let raceIndex = document.getElementById("races-selection").value;
-    let stoneIndex = document.getElementById("stone-select").value;
+    //let stoneIndex = document.getElementById("stone-select").value;
     let blessingIndex = document.getElementById("blessing-select").value;
     let perksString = takenPerks.toString();
     perksString = perksString.replace(/,/g,'s'); //replace commas so we can split seperately
@@ -1090,3 +1120,4 @@ drawSkillTree();
 createSkillIcons();
 updateRace();
 loadData();
+updateSkillLevels();

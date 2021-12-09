@@ -27,8 +27,15 @@ function updateMagickaRegen() {
     }
 
     totalRegen = baseMagicRegen * bonusRegen;
-    totalRegen = Math.round(totalRegen*100)/100;
 
+    if (stoneIndex == 0) {
+        totalRegen = totalRegen + (baseMagicRegen*2);
+    }
+    if(stoneIndex == 1) {
+        totalRegen = 0;
+    }
+
+    totalRegen = Math.round(totalRegen*100)/100;
     derivedAttributes[0].textContent = totalRegen + "%";
 };
 
@@ -39,15 +46,23 @@ function updateStaminaRegen() {
     let bonusRegen = 8 * (Math.sqrt(baseStamina-100));
 
     if(isNaN(bonusRegen)==true || bonusRegen < 0) {
-        bonusRegen = 0;
+        bonusRegen = 1;
     }   
     else {
         bonusRegen = Math.round(bonusRegen * 100)/100;
         bonusRegen = 1 + bonusRegen/100;
     }
 
+    
+
     totalRegen = baseStaminaRegen * bonusRegen;
+    if (stoneIndex == 2) {
+        totalRegen = totalRegen + (baseStaminaRegen*0.5);
+    }
+
     totalRegen = Math.round(totalRegen*100)/100;
+
+
 
     derivedAttributes[1].textContent = totalRegen + "%";
 }
@@ -61,12 +76,23 @@ function updateCarryWeight() {
 
     let z = ((4*baseHealth) + baseStamina)/5;
     let bonusCW = 4*(Math.sqrt(z-110));
+
+    if (stoneIndex == 11) {
+        if(isNaN(bonusCW)==true || bonusCW < 0) {
+            bonusCW = 20;
+        } else {
+            bonusCW += 20;   
+        }
+    };
+
     bonusCW = Math.round(bonusCW);
+
+    
 
     if (bonusCW > 0) {
         derivedAttributes[2].textContent = race.baseCarryWeight + bonusCW;
-    }
-
+    } 
+    
     else {derivedAttributes[2].textContent = race.baseCarryWeight};
 }
 
@@ -174,6 +200,13 @@ function updateMagicResist() {
     }
 
     let totalResist = baseResist + magicResist;
+
+    if(stoneIndex == 0) {
+        totalResist -= 25;
+    }
+    if(stoneIndex == 3) {
+        totalResist += 15;
+    }
     derivedAttributes[8].textContent = totalResist + "%";
 };
 
