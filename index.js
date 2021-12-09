@@ -941,10 +941,6 @@ function saveData() {
 
     let buildCodeDiv = document.getElementById("build-code");
     buildCodeDiv.textContent = theURL;
-
-    let url = buildCodeDiv.textContent.split('?')[1];
-    url = "?"+url;
-    window.history.replaceState(null, null, url)
 }
 
 function loadData() {
