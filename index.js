@@ -998,6 +998,7 @@ function loadData() {
             };
         }
     }
+    updateRace();
     drawSkillTree();
 }
 
