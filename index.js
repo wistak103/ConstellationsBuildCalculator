@@ -313,6 +313,7 @@ function takePerk(perk) {
         activeSkillTree.takenPerks.push(perk);
         takePerkCSS(perk);
     }
+    updatePerkRankLabels();
 }
 
 function takePerkCSS(perk) {
@@ -1017,6 +1018,7 @@ function loadData() {
             };
         }
     }
+    updateRace();
     drawSkillTree();
 }
 
