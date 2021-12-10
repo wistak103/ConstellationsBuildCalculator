@@ -594,13 +594,29 @@ function updateSkillLists() {
 
 function updateActiveSkillInfo() {
     let levelDisplay = document.getElementById("skill-level-total");
-    let skillTitle = document.getElementById("skill-title");
-    levelDisplay.value = activeSkillTree.levelTotal;
+      levelDisplay.value = activeSkillTree.levelTotal;
     if (activeSkillTree.customLevel > activeSkillTree.levelTotal) {
         levelDisplay.value = activeSkillTree.customLevel;
     }
 
-    skillTitle.textContent = activeSkillTree.name;
+
+    let skillTitle = document.getElementById("skill-title");
+    let skillName = activeSkillTree.name;
+    console.log(skillName);
+
+    if(skillName == "heavyarmor") {
+        skillName = "heavy&nbsp;armor";
+    }
+
+    if(skillName == "onehanded") {
+        skillName = "one&nbsp;handed";
+    }
+
+    if(skillName == "twohanded") {
+        skillName = "two handed";
+    }
+
+    skillTitle.innerHTML = skillName;
 }
 
 function updateLevel() {
@@ -641,6 +657,9 @@ function updateLevel() {
     levelText.textContent = " "+level;
     totalAttributePoints = level - 1;
     unspentPerks = (level + 2) - spentPerks;
+
+    let unspentText = document.getElementById("unspent-perks-number");
+    unspentText.textContent = unspentPerks;
     updateAttributes();
 }
 
