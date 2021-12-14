@@ -804,7 +804,7 @@ function attributesErrorCheck() {
         buildCodeText.style.textAlign = "center";
     } else 
     {
-        buildCodeButton.textContent = "Copy Build Code";
+        buildCodeButton.textContent = "Copy Build Link";
     }
 }
 
