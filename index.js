@@ -2,12 +2,14 @@ let activeSkillTree = alchemy;
 let svgBox = document.getElementById("tree-viewer-svg");
 let skillsIconsSVG = document.getElementsByClassName("skill-icon");
 let skillsIconsLevel = document.getElementsByClassName("skill-level");
-
+let skillsIconLabels = document.getElementsByClassName("skill-text");
 let buildLevel = 1;
 let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 
+let spentSP = 0;
+let unspentSP = 0;
 let spentPerks = 0;
 let unspentPerks = 0;
 let totalAttributePoints = 0;
@@ -678,9 +680,14 @@ function updateLevel() {
     levelText.textContent = " "+level;
     totalAttributePoints = level - 1;
     unspentPerks = (level + 2) - spentPerks;
+    unspentSP = levelToSkillPoints(level) - spentSP;
+    
+    let unspentPerksText = document.getElementById("unspent-perks-number");
+    let unspentSPtext = document.getElementById("unspent-skillpoints-number");
+    unspentPerksText.textContent = unspentPerks;
+    unspentSPtext.textContent = unspentSP;
 
-    let unspentText = document.getElementById("unspent-perks-number");
-    unspentText.textContent = unspentPerks;
+
     updateAttributes();
 }
 
@@ -722,12 +729,12 @@ function calculateSkillPointsNeeded() {
             }
         }    
     }
+    spentSP = skillPoints;
     return skillPoints;
 }
 
 function calculateLevelFromSkillPoints() {
     let skillPointsRequired = calculateSkillPointsNeeded(); 
-
     let level = 1;
 
     if (skillPointsRequired > 0) {
@@ -747,7 +754,10 @@ function calculateLevelFromSkillPoints() {
 }
 
 function levelToSkillPoints(level) {
-    let skillPoints = 12 + (level*3);
+    let skillPoints = 0
+    for (i = 2; i <= level; i++) {
+        skillPoints += 12 + (i*3);
+    };
     return skillPoints;
 }
 
@@ -868,6 +878,7 @@ function drawSkillIcons(skillsSvgBox, i) {
     let svgBoxRect = skillsSvgBox.getBoundingClientRect();
     let skillTree = skillsList[i];
 
+
     //Run through each perk in skillTree
     for (let i = 0; i < skillTree.perks.length; i++) {
 
@@ -916,15 +927,25 @@ function drawSkillIcons(skillsSvgBox, i) {
             }
         }
     }
+
+
 }
 
 function updateSkillLevels() {
     for (let i = 0; i < skillsList.length; i++) {
         let skillTree = skillsList[i];
         let skillLevel = skillsIconsLevel[i];
+        let skillLabel = skillsIconLabels[i];
         skillLevel.textContent = skillTree.levelTotal;
         if (skillTree.customLevel > skillTree.levelTotal) {
             skillLevel.textContent = skillTree.customLevel;
+        }
+        
+        console.log(skillLabel);
+        if (skillTree.takenPerks.length > 0 || skillTree.customLevel > skillTree.levelBase) {
+            skillLabel.classList.add("green-text");
+        } else {
+            skillLabel.classList.remove("green-text");
         }
     }
 }
