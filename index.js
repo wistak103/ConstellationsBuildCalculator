@@ -603,7 +603,6 @@ function updateActiveSkillInfo() {
 
     let skillTitle = document.getElementById("skill-title");
     let skillName = activeSkillTree.name;
-    console.log(skillName);
 
     if(skillName == "heavyarmor") {
         skillName = "heavy&nbsp;armor";
@@ -625,12 +624,30 @@ function updateLevel() {
 
     let levelForPerks = 1;
     let levelForFeats = 0;
+    let levelForSkillUps = 0; //skill increases are capped at 5 per level up
     let spentPerks = 0;
 
     for (i = 0; i < skillsList.length; i++) {
-        spentPerks = spentPerks + skillsList[i].takenPerks.length;
-        for (j = 0; j < skillsList[i].takenPerks.length; j++) {
-            let thisPerk = skillsList[i].takenPerks[j]; 
+        let skill = skillsList[i];
+
+        spentPerks = spentPerks + skill.takenPerks.length;
+
+        //check if levelups are enough for 5 skill-ups per level
+        let skillLevel = skill.levelTotal; 
+        if (skill.customLevel > skillLevel) {
+            skillLevel = skill.customLevel;
+        }
+
+        let skillUps = skillLevel - skill.levelBase; 
+        let levelForSkill = (skillUps / 5) + 1;
+        levelForSkill = Math.ceil(levelForSkill);
+
+        if (levelForSkill > levelForSkillUps) {
+            levelForSkillUps = levelForSkill;
+        }
+
+        for (j = 0; j < skill.takenPerks.length; j++) {
+            let thisPerk = skill.takenPerks[j]; 
             if (thisPerk.levelReq != null && thisPerk.levelReq > levelForFeats) {
                 levelForFeats = thisPerk.levelReq;
             }
@@ -652,6 +669,9 @@ function updateLevel() {
     }
     if (levelForFeats > level) {
         level = levelForFeats;
+    }
+    if (levelForSkillUps > level) {
+        level = levelForSkillUps;
     }
 
     buildLevel = level;
