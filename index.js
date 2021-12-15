@@ -316,6 +316,8 @@ function takePerk(perk) {
         takePerkCSS(perk);
     }
     updatePerkRankLabels();
+
+    console.log(activeSkillTree.takenPerks);
 }
 
 function takePerkCSS(perk) {
@@ -940,8 +942,7 @@ function updateSkillLevels() {
         if (skillTree.customLevel > skillTree.levelTotal) {
             skillLevel.textContent = skillTree.customLevel;
         }
-        
-        console.log(skillLabel);
+
         if (skillTree.takenPerks.length > 0 || skillTree.customLevel > skillTree.levelBase) {
             skillLabel.classList.add("green-text");
         } else {

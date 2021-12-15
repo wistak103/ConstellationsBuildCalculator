@@ -294,63 +294,63 @@ alteration.perks = [
     },
     //23
     {
-        name: "Unskilled<br>Spellcasting", skill: 1, skillReq: 0, levelReq: 0,
+        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 0,
         xPos: 90, yPos: 70, preReqs: [], chain: 3, rank: 1,
         description: "Having learned over the shoulders, you can cast some spells that you are not very skilled at. [spell cost x 0.5, spell magnitude and duration x (1 + 0.005 x skill level), for spells up to Novice tier]",
         labels: [], lines: [], chainPerks: []
     },
     //24
     {
-        name: "Unskilled<br>Spellcasting", skill: 1, skillReq: 0, levelReq: 15,
+        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 15,
         xPos: 90, yPos: 70, preReqs: [23], chain: 3, rank: 2, 
         description: "Having learned over the shoulders, you can cast some spells that you are not very skilled at. [spell cost x 0.5, spell magnitude and duration x (1 + 0.005 x skill level), for spells up to Apprentice tier]",
         labels: [], lines: [], chainPerks: []
     },
     //25
     {
-        name: "Unskilled<br>Spellcasting", skill: 1, skillReq: 0, levelReq: 30,
+        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 30,
         xPos: 90, yPos: 70, preReqs: [24], chain: 3, rank: 3,
         description: "Having learned over the shoulders, you can cast some spells that you are not very skilled at. [spell cost x 0.5, spell magnitude and duration x (1 + 0.005 x skill level), for spells up to Adept tier]",
         labels: [], lines: [], chainPerks: []
     },
     //26
     {
-        name: "Willpower", skill: 1, skillReq: 0, levelReq: 0,
+        name: "Willpower", skill: alteration, skillReq: 0, levelReq: 0,
         xPos: 80, yPos: 80, preReqs: [], chain: 3, rank: 1, thisOr: [11],
         description: "Your strong willpower provides resistance to harmful magic. [+5% magic resist, when Magic Resistance perk is not taken]",
         labels: [], lines: [], chainPerks: []
     },
     //27
     {
-        name: "Willpower", skill: 1, skillReq: 0, levelReq: 15,
+        name: "Willpower", skill: alteration, skillReq: 0, levelReq: 15,
         xPos: 80, yPos: 80, preReqs: [26], chain: 3, rank: 2,
         description: "Your strong willpower provides resistance to harmful magic. [+10% magic resist, when Magic Resistance perk is not taken]",
         labels: [], lines: [], chainPerks: []
     },
     //28
     {
-        name: "Willpower", skill: 1, skillReq: 0, levelReq: 30,
+        name: "Willpower", skill: alteration, skillReq: 0, levelReq: 30,
         xPos: 80, yPos: 80, preReqs: [27], chain: 3, rank: 3,
         description: "Your strong willpower provides resistance to harmful magic. [+15% magic resist, when Magic Resistance perk is not taken]",
         labels: [], lines: [], chainPerks: []
     },
     //29
     {
-        name: "Metamagic", skill: 1, skillReq: 0, levelReq: 0,
+        name: "Metamagic", skill: alteration, skillReq: 0, levelReq: 0,
         xPos: 70, yPos: 90, preReqs: [], chain: 3, rank: 1,
         description: "By focusing on your Magicka, you can alter the effects of your spells in cost of more Magicka used to cast them. [Overpowered (magnitude), Extended (duration), Distant (range), Silenced (noise)]",
         labels: [], lines: [], chainPerks: []
     },
     //30
     {
-        name: "Metamagic", skill: 1, skillReq: 0, levelReq: 15,
+        name: "Metamagic", skill: alteration, skillReq: 0, levelReq: 15,
         xPos: 70, yPos: 90, preReqs: [29], chain: 3, rank: 2,
         description: "By focusing on your Magicka, you can alter the effects of your spells in cost of more Magicka used to cast them. [Overpowered (magnitude), Extended (duration), Distant (range), Silenced (noise)]",
         labels: [], lines: [], chainPerks: []
     },
     //31
     {
-        name: "Metamagic", skill: 1, skillReq: 0, levelReq: 30,
+        name: "Metamagic", skill: alteration, skillReq: 0, levelReq: 30,
         xPos: 70, yPos: 90, preReqs: [30], chain: 3, rank: 3,
         description: "By focusing on your Magicka, you can alter the effects of your spells in cost of more Magicka used to cast them. [Overpowered (magnitude), Extended (duration), Distant (range), Silenced (noise)]",
         labels: [], lines: [], chainPerks: [],
