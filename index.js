@@ -18,6 +18,7 @@ let spentAttributes = 0;
 let usedSkills = [];
 let race = altmer;
 let stoneIndex = document.getElementById("stone-select").value;
+let ogmah = document.getElementById("ogmah-select").value;
 
 function addChainArrays() {
     //run through every skill tree
@@ -316,8 +317,6 @@ function takePerk(perk) {
         takePerkCSS(perk);
     }
     updatePerkRankLabels();
-
-    console.log(activeSkillTree.takenPerks);
 }
 
 function takePerkCSS(perk) {
@@ -631,6 +630,11 @@ function updateLevel() {
     let levelForSkillUps = 0; //skill increases are capped at 5 per level up
     let spentPerks = 0;
 
+    let bonusPerks = 0;
+    if (ogmah != 0) {
+        bonusPerks = 7;
+    }
+
     for (i = 0; i < skillsList.length; i++) {
         let skill = skillsList[i];
 
@@ -659,7 +663,7 @@ function updateLevel() {
     }
 
     if (spentPerks > 3) {
-        levelForPerks = spentPerks - 2;
+        levelForPerks = spentPerks - 2 - bonusPerks;
     }
 
     let levelForSP = calculateLevelFromSkillPoints();
@@ -681,7 +685,7 @@ function updateLevel() {
     buildLevel = level;
     levelText.textContent = " "+level;
     totalAttributePoints = level - 1;
-    unspentPerks = (level + 2) - spentPerks;
+    unspentPerks = (level + 2) + bonusPerks - spentPerks;
     unspentSP = levelToSkillPoints(level) - spentSP;
     
     let unspentPerksText = document.getElementById("unspent-perks-number");
@@ -796,6 +800,9 @@ function updateAttributes() {
 
     for (i = 0; i < 3; i++) {
         attributeTotals[i] = race.baseAttributes[i] + (5 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i];
+        if(ogmah-1 == i) {
+            attributeTotals[i] += 200;
+        }
         attributeText[i].textContent = attributeTotals[i];
 
         attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(5 * attributeIncreases[i]));
@@ -868,6 +875,10 @@ function updateBlessing() {
     saveData();
 }
 
+function updateOgmah() {
+    ogmah = document.getElementById("ogmah-select").value;
+    updateLevel();
+}
 
 function createSkillIcons() {
     for (i = 0; i < skillsIconsSVG.length; i++) {
@@ -980,6 +991,7 @@ function saveData() {
     let raceIndex = document.getElementById("races-selection").value;
     let stoneIndex = document.getElementById("stone-select").value;
     let blessingIndex = document.getElementById("blessing-select").value;
+    let ogmahIndex = document.getElementById("ogmah-select").value;
     let perksString = takenPerks.toString();
     perksString = perksString.replace(/,/g,'s'); //replace commas so we can split seperately
     if(perksString.length == 0) { perksString = 'no'};
@@ -987,7 +999,7 @@ function saveData() {
     customLevelsString = customLevelsString.replace(/,/g,'s');
     if (customLevelsString.length == 0) { customLevelsString = "no"}
 
-    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString];
+    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex];
     let code = codeArray.toString();
     let codeEncoded = btoa(code);
 
@@ -1021,18 +1033,21 @@ function loadData() {
         let magickaIncrease = values[4];
         let healthIncrease = values[5];
         let staminaIncrease = values[6];
-    
+        let ogmahIndex = values[9];   
     
         document.getElementById("build-name").value = buildName;
         document.getElementById("races-selection").value = buildRace;
         document.getElementById("stone-select").value = buildStone;
         document.getElementById("blessing-select").value = buildBlessing;
+        document.getElementById("ogmah-select").value = ogmahIndex;
     
         attributeIncreases[0] = magickaIncrease;
         attributeIncreases[1] = healthIncrease;
         attributeIncreases[2] = staminaIncrease;
-    
+        
         spentAttributes = parseInt(attributeIncreases[0]) + parseInt(attributeIncreases[1]) + parseInt(attributeIncreases[2]);
+        
+        ogmah = ogmahIndex;
     
         //perks
         if(values[7] != 'no') {

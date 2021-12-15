@@ -111,22 +111,27 @@ input[type=number]::-webkit-outer-spin-button {
 
 #basic-choices {
     justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .basic-choice-group {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10px;
+    margin-right: 5px;
+}
+.basic-choice-group:last-of-type {
+    margin-right: 0;
 }
 .basic-choice-group > h3 {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
 }
 .basic-choice-group > select {
-    padding: 5px 5px 5px 5px;
+    padding: 5px 2px 5px 2px;
     cursor: pointer;
     border: 1px rgba(93, 67, 50, 0.25) solid;
     background-color: rgba(255, 255, 255, 0.5);
