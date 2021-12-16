@@ -69,7 +69,7 @@ breton.baseSkills = [
     10,       //Alchemy
     10,       //Alteration
      5,       //Block
-    15,       //Conjuration
+    20,       //Conjuration
      5,       //Destruction
      5,       //Enchanting
      5,       //Evasion
