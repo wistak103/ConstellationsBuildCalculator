@@ -1241,10 +1241,7 @@ function closeAlert() {
     alertDiv.style.display = "none";
 }
 
-window.addEventListener('resize', function(event){
-    drawSkillTree();
-
-});
+window.addEventListener('resize', drawSkillTree);
 
 addChainArrays();
 drawSkillTree();

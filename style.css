@@ -25,6 +25,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     align-items: stretch;
     position: relative;
+    width: 100%;
 }
 
 .main-left {
@@ -234,7 +235,9 @@ input[type=number]::-webkit-outer-spin-button {
 .main-right {
     display: flex;
     min-width: 390px;
-    flex-grow: 1;
+    flex-grow: 0;
+    margin-right: 0;
+    padding: 0;
 }
 .skills-container {
     /*border: 5px double grey;*/
@@ -245,6 +248,7 @@ input[type=number]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
     row-gap: 0px;
+    width: 100%;
 
 }
 
@@ -300,6 +304,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .main-middle {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     position: relative;
     /*border: 5px double gray;*/
@@ -317,6 +322,10 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     margin: 10px;
     height: 100%;
+}
+
+.tree-viewer > svg {
+    width: 100%;
 }
 
 .skill-details{
