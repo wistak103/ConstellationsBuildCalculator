@@ -8,7 +8,8 @@ let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 
-let settings = [3,7,13,25,5,12,3] //skill costs 0, 25, 50, 75 | cap | skillpoints per level base, multiplier;
+let settings = [{costTo25: 3, costTo50: 7, costTo75: 13, costTo100: 25,
+    cap: 5, base: 12, mult: 3}];
 let spentSP = 0;
 let unspentSP = 0;
 let spentPerks = 0;
@@ -136,6 +137,171 @@ function newPerkLabelLine (x, name, parent) {
     newLabel.textContent = name;
     parent.appendChild(newLabel);
     return newLabel;
+}
+
+//CREATE SKILL TREES
+
+function clearSkillTree(svgToClear) {
+    while (svgToClear.lastChild) {
+        svgToClear.removeChild(svgToClear.lastChild);
+    }
+}
+
+function drawSkillTree() {
+    clearSkillTree(svgBox);
+    //Get SVG area
+    let svgBoxRect = svgBox.getBoundingClientRect();
+    
+    //Run through each perk in skillTree
+    for (let i = 0; i < activeSkillTree.perks.length; i++) {
+
+        let perk  = activeSkillTree.perks[i];
+        let curXPos = perk.xPos / 100 * svgBoxRect.width;
+        let curYPos = perk.yPos / 100 * svgBoxRect.height;
+
+        //Draw lines first, so circles draw on top
+        //Only draw lines for 1 perk from each rank, we'll use the last as it's easier to filter
+
+        if(perk.preReqs.length != 0) {
+            //loop through required perks
+            for (let j = 0; j < perk.preReqs.length; j++) {
+                let preReqsNum = perk.preReqs[j];
+                let preReqPerk = activeSkillTree.perks[preReqsNum]; //This is the required perk for current perk
+
+                let preXPos = preReqPerk.xPos / 100 * svgBoxRect.width;
+                let preYPos = preReqPerk.yPos / 100 * svgBoxRect.height;
+
+                let newLine = newPerkLine(svgBox, curXPos, curYPos, preXPos, preYPos, 4);
+                perk.lines.push(newLine);
+            }
+        }
+    }
+
+    for (let i = 0; i < activeSkillTree.perks.length; i++) {
+
+        let perk  = activeSkillTree.perks[i];
+        let curXPos = perk.xPos / 100 * svgBoxRect.width;
+        let curYPos = perk.yPos / 100 * svgBoxRect.height;
+        //Filter out previous ranks of perks, drawing circle for only final rank
+        //We'll later check if previous ranks have been added when clicking on perk
+        //and add the ranks one at a time.
+
+        if (perk.chain == 0 || perk.rank == 1) {      
+            let perkName = perk.name;
+            let id = perkName.replace(/\s+/g, '') + '-circle';
+            id = id.replace("<br>",'');
+            newCircle = drawStar(curXPos, curYPos, id);
+            newCircle.setAttribute("onclick", "perkClick(this,"+i+")");
+            newCircle.setAttribute("onmouseenter", "perkMouseEnter("+i+")");
+            newCircle.setAttribute("onmouseleave", "perkMouseExit()");
+            perk.circle = newCircle;
+
+            /*let newCircle = newPerkCircle(svgBox, 10, curXPos, curYPos, i, id);
+            newCircle.setAttribute("onclick", "perkClick(this,"+i+")");
+            newCircle.setAttribute("onmouseenter", "perkMouseEnter("+i+")");
+            newCircle.setAttribute("onmouseleave", "perkMouseExit()");
+            perk.circle = newCircle;*/
+        }
+
+        //Create perk labels
+        let perkName = perk.name;
+        let id = perkName.replace(/\s+/g, '') + '-label';
+        id = id.replace("<br>",'');
+        if (perk.chain == 0 || perk.rank == 1) {
+
+            if (perkName.indexOf('<br>') != -1) {
+                let perkNameLines = perkName.split('<br>');
+                let newLabel = newPerkLabel(curXPos, curYPos, perkNameLines[0], id);
+                perk.labels.push(newLabel);
+                let parent = document.getElementById(id);
+                let newLabelLine = newPerkLabelLine(curXPos, perkNameLines[1], parent);
+                perk.labels.push(newLabelLine);
+    
+            } else {
+                let newLabel = newPerkLabel(curXPos, curYPos, perkName, id); 
+                perk.labels.push(newLabel);
+            }
+    
+            //Add ranks to labels
+            if (perk.chain != 0) {
+                let maxRank = perk.chain;
+                let rankText = "0/"+maxRank;
+                let parent = document.getElementById(id);
+                let newLabelLine = newPerkLabelLine(curXPos, rankText, parent); 
+                perk.labels.push(newLabelLine);
+            }
+        }
+        if (activeSkillTree.takenPerks.includes(perk)) {
+            if (perk.chain == 0 || perk.rank == 1){ 
+                takePerkCSS(perk);
+            }
+        }
+    }
+    updatePerkRankLabels();
+    updateSkillLists();
+    updateLevel();
+}
+
+function createSkillIcons() {
+    for (i = 0; i < skillsIconsSVG.length; i++) {
+        drawSkillIcons(skillsIconsSVG[i], i);
+    }
+}
+
+function drawSkillIcons(skillsSvgBox, i) {
+    //Get SVG area
+    let svgBoxRect = skillsSvgBox.getBoundingClientRect();
+    let skillTree = skillsList[i];
+
+
+    //Run through each perk in skillTree
+    for (let i = 0; i < skillTree.perks.length; i++) {
+
+        let perk  = skillTree.perks[i];
+        let curXPos = perk.xPos / 100 * svgBoxRect.width;
+        let curYPos = perk.yPos / 100 * svgBoxRect.height;
+
+        //Draw lines first, so circles draw on top
+        //Only draw lines for 1 perk from each rank, we'll use the last as it's easier to filter
+
+        if(perk.preReqs.length != 0) {
+            //loop through required perks
+            for (let j = 0; j < perk.preReqs.length; j++) {
+                let preReqsNum = perk.preReqs[j];
+                let preReqPerk = skillTree.perks[preReqsNum]; //This is the required perk for current perk
+
+                let preXPos = preReqPerk.xPos / 100 * svgBoxRect.width;
+                let preYPos = preReqPerk.yPos / 100 * svgBoxRect.height;
+
+                let newLine = newPerkLine(skillsSvgBox, curXPos, curYPos, preXPos, preYPos, 2);
+                perk.lines.push(newLine);
+            }
+        }
+    }
+
+    for (let p = 0; p < skillTree.perks.length; p++) {
+
+        let perk  = skillTree.perks[p];
+        let curXPos = perk.xPos / 100 * svgBoxRect.width;
+        let curYPos = perk.yPos / 100 * svgBoxRect.height;
+        //Filter out previous ranks of perks, drawing circle for only final rank
+        //We'll later check if previous ranks have been added when clicking on perk
+        //and add the ranks one at a time.
+
+        if (perk.chain == 0 || perk.rank == 1) {      
+            let perkName = perk.name;
+            let id = perkName.replace(/\s+/g, '') + '-circle-skills';
+            id = id.replace("<br>",'');
+            let newCircle = newPerkCircle(skillsSvgBox, 3, curXPos, curYPos, p, id);
+            perk.iconCircle = newCircle;
+        }
+
+        if (skillTree.takenPerks.includes(perk)) {
+            if (perk.chain == 0 || perk.rank == 1){ 
+                takePerkCSS(perk);
+            }
+        }
+    }
 }
 
 function skillsClick(skillNum) {
@@ -459,113 +625,14 @@ function updatePerkRankLabels() {
     }
 }
 
-function clearSkillTree(svgToClear) {
-    while (svgToClear.lastChild) {
-        svgToClear.removeChild(svgToClear.lastChild);
-    }
-}
-
-function drawSkillTree() {
-    clearSkillTree(svgBox);
-    //Get SVG area
-    let svgBoxRect = svgBox.getBoundingClientRect();
-    
-    //Run through each perk in skillTree
-    for (let i = 0; i < activeSkillTree.perks.length; i++) {
-
-        let perk  = activeSkillTree.perks[i];
-        let curXPos = perk.xPos / 100 * svgBoxRect.width;
-        let curYPos = perk.yPos / 100 * svgBoxRect.height;
-
-        //Draw lines first, so circles draw on top
-        //Only draw lines for 1 perk from each rank, we'll use the last as it's easier to filter
-
-        if(perk.preReqs.length != 0) {
-            //loop through required perks
-            for (let j = 0; j < perk.preReqs.length; j++) {
-                let preReqsNum = perk.preReqs[j];
-                let preReqPerk = activeSkillTree.perks[preReqsNum]; //This is the required perk for current perk
-
-                let preXPos = preReqPerk.xPos / 100 * svgBoxRect.width;
-                let preYPos = preReqPerk.yPos / 100 * svgBoxRect.height;
-
-                let newLine = newPerkLine(svgBox, curXPos, curYPos, preXPos, preYPos, 4);
-                perk.lines.push(newLine);
-            }
-        }
-    }
-
-    for (let i = 0; i < activeSkillTree.perks.length; i++) {
-
-        let perk  = activeSkillTree.perks[i];
-        let curXPos = perk.xPos / 100 * svgBoxRect.width;
-        let curYPos = perk.yPos / 100 * svgBoxRect.height;
-        //Filter out previous ranks of perks, drawing circle for only final rank
-        //We'll later check if previous ranks have been added when clicking on perk
-        //and add the ranks one at a time.
-
-        if (perk.chain == 0 || perk.rank == 1) {      
-            let perkName = perk.name;
-            let id = perkName.replace(/\s+/g, '') + '-circle';
-            id = id.replace("<br>",'');
-            newCircle = drawStar(curXPos, curYPos, id);
-            newCircle.setAttribute("onclick", "perkClick(this,"+i+")");
-            newCircle.setAttribute("onmouseenter", "perkMouseEnter("+i+")");
-            newCircle.setAttribute("onmouseleave", "perkMouseExit()");
-            perk.circle = newCircle;
-
-            /*let newCircle = newPerkCircle(svgBox, 10, curXPos, curYPos, i, id);
-            newCircle.setAttribute("onclick", "perkClick(this,"+i+")");
-            newCircle.setAttribute("onmouseenter", "perkMouseEnter("+i+")");
-            newCircle.setAttribute("onmouseleave", "perkMouseExit()");
-            perk.circle = newCircle;*/
-        }
-
-        //Create perk labels
-        let perkName = perk.name;
-        let id = perkName.replace(/\s+/g, '') + '-label';
-        id = id.replace("<br>",'');
-        if (perk.chain == 0 || perk.rank == 1) {
-
-            if (perkName.indexOf('<br>') != -1) {
-                let perkNameLines = perkName.split('<br>');
-                let newLabel = newPerkLabel(curXPos, curYPos, perkNameLines[0], id);
-                perk.labels.push(newLabel);
-                let parent = document.getElementById(id);
-                let newLabelLine = newPerkLabelLine(curXPos, perkNameLines[1], parent);
-                perk.labels.push(newLabelLine);
-    
-            } else {
-                let newLabel = newPerkLabel(curXPos, curYPos, perkName, id); 
-                perk.labels.push(newLabel);
-            }
-    
-            //Add ranks to labels
-            if (perk.chain != 0) {
-                let maxRank = perk.chain;
-                let rankText = "0/"+maxRank;
-                let parent = document.getElementById(id);
-                let newLabelLine = newPerkLabelLine(curXPos, rankText, parent); 
-                perk.labels.push(newLabelLine);
-            }
-        }
-        if (activeSkillTree.takenPerks.includes(perk)) {
-            if (perk.chain == 0 || perk.rank == 1){ 
-                takePerkCSS(perk);
-            }
-        }
-    }
-    updatePerkRankLabels();
-    updateSkillLists();
-    updateLevel();
-}
-
 function customSkillLevel() {
     let levelDisplay = document.getElementById("skill-level-total");
     if (levelDisplay.value > 100) { levelDisplay.value = 100};
     activeSkillTree.customLevel = levelDisplay.value;
     updateSkillLists();
 }
+
+//UPDATE FUNCTIONS
 
 function updateSkillLists() {
     for (i = 0; i < skillsList.length; i++) {
@@ -628,7 +695,7 @@ function updateLevel() {
 
     let levelForPerks = 1;
     let levelForFeats = 0;
-    let levelForSkillUps = 0; //skill increases are capped at 5 per level up
+    let levelForSkillUps = 0; //skill increases are capped at 5 per level up by default
     let spentPerks = 0;
 
     let bonusPerks = 0;
@@ -647,12 +714,14 @@ function updateLevel() {
             skillLevel = skill.customLevel;
         }
 
-        let skillUps = skillLevel - skill.levelBase; 
-        let levelForSkill = (skillUps / 5) + 1;
-        levelForSkill = Math.ceil(levelForSkill);
-
-        if (levelForSkill > levelForSkillUps) {
-            levelForSkillUps = levelForSkill;
+        if (settings.cap > 0) {
+            let skillUps = skillLevel - skill.levelBase; 
+            let levelForSkill = (skillUps / settings.cap) + 1;
+            levelForSkill = Math.ceil(levelForSkill);
+    
+            if (levelForSkill > levelForSkillUps) {
+                levelForSkillUps = levelForSkill;
+            }
         }
 
         for (j = 0; j < skill.takenPerks.length; j++) {
@@ -699,15 +768,6 @@ function updateLevel() {
 }
 
 function calculateSkillPointsNeeded() {
-// skill 5 to 25 = 60 skill points
-// 5 to 50 = 235 points
-// 20*3 = 60, 25 * 7 = 175
-
-    let costTo25 = 3;
-    let costTo50 = 7;
-    let costTo75 = 13;
-    let costTo100 = 25;
-    
     let skillPoints = 0;
 
     for (j = 0; j < skillsList.length; j++) {
@@ -722,16 +782,16 @@ function calculateSkillPointsNeeded() {
         if (skillLevel != skillLevelBase) {
             for (i = skillLevelBase; i < skillLevel; i++) {
                 if (i >= 75) { 
-                    skillPoints += costTo100;
+                    skillPoints += settings.costTo100;
                 }
                 else if (i >= 50) { 
-                    skillPoints += costTo75;
+                    skillPoints += settings.costTo75;
                 }
                 else if (i >= 25) { 
-                    skillPoints += costTo50;
+                    skillPoints += settings.costTo50;
                 }
                 else { 
-                    skillPoints += costTo25;
+                    skillPoints += settings.costTo25;
                 };
             }
         }    
@@ -881,70 +941,6 @@ function updateOgmah() {
     updateLevel();
 }
 
-function createSkillIcons() {
-    for (i = 0; i < skillsIconsSVG.length; i++) {
-        drawSkillIcons(skillsIconsSVG[i], i);
-    }
-}
-
-function drawSkillIcons(skillsSvgBox, i) {
-    //Get SVG area
-    let svgBoxRect = skillsSvgBox.getBoundingClientRect();
-    let skillTree = skillsList[i];
-
-
-    //Run through each perk in skillTree
-    for (let i = 0; i < skillTree.perks.length; i++) {
-
-        let perk  = skillTree.perks[i];
-        let curXPos = perk.xPos / 100 * svgBoxRect.width;
-        let curYPos = perk.yPos / 100 * svgBoxRect.height;
-
-        //Draw lines first, so circles draw on top
-        //Only draw lines for 1 perk from each rank, we'll use the last as it's easier to filter
-
-        if(perk.preReqs.length != 0) {
-            //loop through required perks
-            for (let j = 0; j < perk.preReqs.length; j++) {
-                let preReqsNum = perk.preReqs[j];
-                let preReqPerk = skillTree.perks[preReqsNum]; //This is the required perk for current perk
-
-                let preXPos = preReqPerk.xPos / 100 * svgBoxRect.width;
-                let preYPos = preReqPerk.yPos / 100 * svgBoxRect.height;
-
-                let newLine = newPerkLine(skillsSvgBox, curXPos, curYPos, preXPos, preYPos, 2);
-                perk.lines.push(newLine);
-            }
-        }
-    }
-
-    for (let p = 0; p < skillTree.perks.length; p++) {
-
-        let perk  = skillTree.perks[p];
-        let curXPos = perk.xPos / 100 * svgBoxRect.width;
-        let curYPos = perk.yPos / 100 * svgBoxRect.height;
-        //Filter out previous ranks of perks, drawing circle for only final rank
-        //We'll later check if previous ranks have been added when clicking on perk
-        //and add the ranks one at a time.
-
-        if (perk.chain == 0 || perk.rank == 1) {      
-            let perkName = perk.name;
-            let id = perkName.replace(/\s+/g, '') + '-circle-skills';
-            id = id.replace("<br>",'');
-            let newCircle = newPerkCircle(skillsSvgBox, 3, curXPos, curYPos, p, id);
-            perk.iconCircle = newCircle;
-        }
-
-        if (skillTree.takenPerks.includes(perk)) {
-            if (perk.chain == 0 || perk.rank == 1){ 
-                takePerkCSS(perk);
-            }
-        }
-    }
-
-
-}
-
 function updateSkillLevels() {
     for (let i = 0; i < skillsList.length; i++) {
         let skillTree = skillsList[i];
@@ -998,12 +994,17 @@ function saveData() {
     if(perksString.length == 0) { perksString = 'no'};
     let customLevelsString = customLevels.toString();
     customLevelsString = customLevelsString.replace(/,/g,'s');
-    if (customLevelsString.length == 0) { customLevelsString = "no"}
+    if (customLevelsString.length == 0) { customLevelsString = "no"};
+    let versionIndex = document.getElementById("version-select").value;
+    let settingsString = "";
+    if (versionIndex == 2) {
+        settingsString = settings.costTo25 + "s" + settings.costTo50 + "s" + settings.costTo75 + "s" + settings.costTo100 + "s"
+                         + settings.cap + "s" + settings.base + "s" + settings.mult;
+    };
 
-    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex];
+    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, versionIndex, settingsString];
     let code = codeArray.toString();
     let codeEncoded = btoa(code);
-
     //remove padding '=' chars
     if(codeEncoded.indexOf("=") != -1){
         codeEncoded = codeEncoded.replace(/=/g,'');
@@ -1035,13 +1036,18 @@ function loadData() {
         let healthIncrease = values[5];
         let staminaIncrease = values[6];
         let ogmahIndex = values[9];   
+        let versionIndex = values[10];
+        //Backwards compatibility: (defaults version to current serenity build)
+        if (typeof versionIndex == "undefined") {
+            versionIndex = 1;
+        }
     
         document.getElementById("build-name").value = buildName;
         document.getElementById("races-selection").value = buildRace;
         document.getElementById("stone-select").value = buildStone;
         document.getElementById("blessing-select").value = buildBlessing;
         document.getElementById("ogmah-select").value = ogmahIndex;
-    
+        document.getElementById("version-select").value = versionIndex;
         attributeIncreases[0] = magickaIncrease;
         attributeIncreases[1] = healthIncrease;
         attributeIncreases[2] = staminaIncrease;
@@ -1065,7 +1071,7 @@ function loadData() {
                 }
             }
         }
-
+        //custom skill levels
         if (values[8] != 'no') {
             let skillsString = values[8].split('s'); //split the string into each skill tree
             for (s = 0; s < skillsString.length; s++) {
@@ -1075,9 +1081,23 @@ function loadData() {
                 skillsList[skillID].customLevel = skillLevel;
             };
         }
+        //custom settings
+        if (typeof values[11] != "undefined" && values[11].length > 0) {
+            let settingsArray = values[11].split('s');
+            settings.costTo25 = parseInt(settingsArray[0]);
+            settings.costTo50 = parseInt(settingsArray[1]);
+            settings.costTo75 = parseInt(settingsArray[2]);
+            settings.costTo100 = parseInt(settingsArray[3]);
+            settings.cap = parseInt(settingsArray[4]);
+            settings.base = parseInt(settingsArray[5]);
+            settings.mult = parseInt(settingsArray[6]);
+        }
+
     }
     updateRace();
     drawSkillTree();
+    setSettingsValues();
+    updateVersion();
 }
 
 function copyBuildCode() {
@@ -1242,32 +1262,34 @@ function closeAlert() {
     alertDiv.style.display = "none";
 }
 
-function updateVersion() {
-    //skill costs 0, 25, 50, 75 | cap | skillpoints per level base, multiplier;
+//SSL SETTINGS
 
-    let v1_6 = [3,5,8,13,5,15,3]; //0
-    let v1_7 = [3,7,13,25,5,12,3]; //1
+function updateVersion() {
     //2 custom
     let versionIndex = document.getElementById("version-select").value;
-    console.log(versionIndex);
-    let costs0 = document.getElementById("costs-0").value;
-    let costs25 = document.getElementById("costs-25").value;
-    let costs50 = document.getElementById("costs-50").value;
-    let costs75 = document.getElementById("costs-75").value;
-
-    let cap = document.getElementById("settings-cap").value;
-
-    let base = document.getElementById("settings-points-base").value;
-    let mult = document.getElementById("settings-points-mult").value;
 
     if(versionIndex == 0) {
-        settings = v1_6;
+        settings.costTo25 = 3;
+        settings.costTo50 = 5;
+        settings.costTo75 = 8;
+        settings.costTo100 = 13;
+        settings.cap = 5;
+        settings.base = 15;
+        settings.mult = 3;
+
         setSettingsValues();
         toggleSettingsInput(true);
     }
 
     if(versionIndex == 1) {
-        settings = v1_7;
+        settings.costTo25 = 3;
+        settings.costTo50 = 7;
+        settings.costTo75 = 13;
+        settings.costTo100 = 25;
+        settings.cap = 5;
+        settings.base = 12;
+        settings.mult = 3;
+
         setSettingsValues();
         toggleSettingsInput(true);
 
@@ -1276,6 +1298,8 @@ function updateVersion() {
     if(versionIndex == 2){
         toggleSettingsInput(false);
     }
+
+    updateLevel();
 }
 
 function toggleSettingsInput(bool) {
@@ -1289,23 +1313,34 @@ function toggleSettingsInput(bool) {
 }
 
 function setSettingsValues() {
-    document.getElementById("costs-0").value = settings[0];
-    document.getElementById("costs-25").value = settings[1];
-    document.getElementById("costs-50").value = settings[2];
-    document.getElementById("costs-75").value = settings[3];
-    document.getElementById("settings-cap").value = settings[4];
-    document.getElementById("settings-points-base").value = settings[5];
-    document.getElementById("settings-points-mult").value = settings[6];
+    document.getElementById("costs-0").value = settings.costTo25;
+    document.getElementById("costs-25").value = settings.costTo50;
+    document.getElementById("costs-50").value = settings.costTo75;
+    document.getElementById("costs-75").value = settings.costTo100;
+    document.getElementById("settings-cap").value = settings.cap;
+    document.getElementById("settings-points-base").value = settings.base;
+    document.getElementById("settings-points-mult").value = settings.mult;
 }
 
-
+function updateSettings() {
+    settings.costTo25 = parseInt(document.getElementById("costs-0").value);
+    settings.costTo50 = parseInt(document.getElementById("costs-25").value);
+    settings.costTo75 = parseInt(document.getElementById("costs-50").value);
+    settings.costTo100 = parseInt(document.getElementById("costs-75").value);
+    settings.cap = parseInt(document.getElementById("settings-cap").value);
+    settings.base = parseInt(document.getElementById("settings-points-base").value);
+    settings.mult = parseInt(document.getElementById("settings-points-mult").value);
+    updateLevel();
+}
 
 
 window.addEventListener('resize', drawSkillTree);
 
+updateVersion();
 addChainArrays();
 drawSkillTree();
 createSkillIcons();
 updateRace();
 loadData();
 updateSkillLevels();
+
