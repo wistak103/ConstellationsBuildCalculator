@@ -12,12 +12,12 @@
             <div class="main-left">
                 <div class="main-left-row">
                     <div class="row-content" id="build-info">
-                        <input type="text" id="build-name" placeholder="Name" onchange="saveData()">                     
+                        <input type="text" id="build-name" class="text-input" placeholder="Name" onchange="saveData()">                     
                     </div>
                     <div class="row-content" id="basic-choices">
                         <div class="basic-choice-group">                   
                             <h3>Race</h3>
-                            <select name="Races" id="races-selection" onchange="updateRace()">
+                            <select name="Races" id="races-selection" class="drop-down" onchange="updateRace()">
                                 <option value="0">Altmer</option>
                                 <option value="1">Bosmer</option>
                                 <option value="2">Breton</option>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="basic-choice-group">  
                             <h3>Standing&nbsp;Stone</h3>
-                            <select name="Stones" id="stone-select" onchange="updateStone()">
+                            <select name="Stones" id="stone-select" class="drop-down" onchange="updateStone()">
                                 <option value="0">Apprentice</option>
                                 <option value="1">Atronach</option>
                                 <option value="2">Lady</option>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="basic-choice-group">  
                             <h3>Blessing</h3>
-                            <select name="Blessing" id="blessing-select" onchange="updateBlessing()">
+                            <select name="Blessing" id="blessing-select" class="drop-down" onchange="updateBlessing()">
                                 <option value="0">None</option>
                                 <option value="1">Akatosh</option>
                                 <option value="2">Arkay</option>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="basic-choice-group">  
                             <h3>oghma&nbsp;infinium</h3>
-                            <select name="Ogmah" id="ogmah-select" onchange="updateOgmah()">
+                            <select name="Ogmah" id="ogmah-select" class="drop-down" onchange="updateOgmah()">
                                 <option value="0">None</option>
                                 <option value="1">Magicka</option>
                                 <option value="2">Health</option>
@@ -282,7 +282,58 @@
                 </div>
             </div>
         </div>
-        <div id="version">For Serenity 1.7.1(pre)</div>
+        <div id="settings-bar">
+            <div class="settings-group">                   
+                <h3>Version: </h3>
+                <select name="version" id="version-select" class="drop-down" onchange="updateVersion()">
+                    <option value="0">1.6.x</option>
+                    <option value="1">1.7.1</option>
+                    <option value="2">Custom</option>
+                </select>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="settings-group">                   
+                <h3>Skill level costs</h3>
+                <div class="costs-container">
+                    <input type="text" id="costs-0" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                    <label class="costs-label">0-25</label>
+                </div>
+                <div class="costs-container">
+                    <input type="text" id="costs-25" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                    <label class="costs-label">25-50</label>
+                </div>
+                <div class="costs-container">
+                    <input type="text" id="costs-50" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                    <label class="costs-label">50-75</label>
+                </div>
+                <div class="costs-container">
+                    <input type="text" id="costs-75" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                    <label class="costs-label">75+</label>
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="settings-group">
+                <div class="settings-title>">
+                    <h3>Skill cap per level</h3>
+                    <p class="subtitle">[ 0 disables cap ]</p>
+                </div>
+                <div class="costs-container">
+                    <input type="text" id="settings-cap" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="settings-group">
+                <h3>Skillpoints per level-up</h3>
+                <div class="costs-container">
+                    <input type="text" id="settings-points-base" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                    <label class="costs-label">Base</label>
+                </div>
+                <div class="costs-container">
+                    <input type="text" id="settings-points-mult" class="text-input costs" pattern="[0-9]+" onchange="" disabled="disabled">
+                    <label class="costs-label">Multiplier</label>
+                </div>
+            </div>
+        </div>
         <div id="perk-description-box">
             <h3 id="perk-description-title">Mace Focus (1/3)</h3>
             <p id="perk-description-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>

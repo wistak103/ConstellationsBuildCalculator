@@ -8,6 +8,7 @@ let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 
+let settings = [3,7,13,25,5,12,3] //skill costs 0, 25, 50, 75 | cap | skillpoints per level base, multiplier;
 let spentSP = 0;
 let unspentSP = 0;
 let spentPerks = 0;
@@ -1240,6 +1241,65 @@ function closeAlert() {
     let alertDiv = document.getElementById("alert");
     alertDiv.style.display = "none";
 }
+
+function updateVersion() {
+    //skill costs 0, 25, 50, 75 | cap | skillpoints per level base, multiplier;
+
+    let v1_6 = [3,5,8,13,5,15,3]; //0
+    let v1_7 = [3,7,13,25,5,12,3]; //1
+    //2 custom
+    let versionIndex = document.getElementById("version-select").value;
+    console.log(versionIndex);
+    let costs0 = document.getElementById("costs-0").value;
+    let costs25 = document.getElementById("costs-25").value;
+    let costs50 = document.getElementById("costs-50").value;
+    let costs75 = document.getElementById("costs-75").value;
+
+    let cap = document.getElementById("settings-cap").value;
+
+    let base = document.getElementById("settings-points-base").value;
+    let mult = document.getElementById("settings-points-mult").value;
+
+    if(versionIndex == 0) {
+        settings = v1_6;
+        setSettingsValues();
+        toggleSettingsInput(true);
+    }
+
+    if(versionIndex == 1) {
+        settings = v1_7;
+        setSettingsValues();
+        toggleSettingsInput(true);
+
+    }
+
+    if(versionIndex == 2){
+        toggleSettingsInput(false);
+    }
+}
+
+function toggleSettingsInput(bool) {
+    document.getElementById("costs-0").disabled = bool;
+    document.getElementById("costs-25").disabled = bool;
+    document.getElementById("costs-50").disabled = bool;
+    document.getElementById("costs-75").disabled = bool;
+    document.getElementById("settings-cap").disabled = bool;
+    document.getElementById("settings-points-base").disabled = bool;
+    document.getElementById("settings-points-mult").disabled = bool;
+}
+
+function setSettingsValues() {
+    document.getElementById("costs-0").value = settings[0];
+    document.getElementById("costs-25").value = settings[1];
+    document.getElementById("costs-50").value = settings[2];
+    document.getElementById("costs-75").value = settings[3];
+    document.getElementById("settings-cap").value = settings[4];
+    document.getElementById("settings-points-base").value = settings[5];
+    document.getElementById("settings-points-mult").value = settings[6];
+}
+
+
+
 
 window.addEventListener('resize', drawSkillTree);
 
