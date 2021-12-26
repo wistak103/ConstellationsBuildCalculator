@@ -1268,7 +1268,7 @@ function updateVersion() {
     //2 custom
     let versionIndex = document.getElementById("version-select").value;
 
-    if(versionIndex == 0) {
+    if(versionIndex == 1) { //v1.6
         settings.costTo25 = 3;
         settings.costTo50 = 5;
         settings.costTo75 = 8;
@@ -1281,7 +1281,7 @@ function updateVersion() {
         toggleSettingsInput(true);
     }
 
-    if(versionIndex == 1) {
+    if(versionIndex == 2) { //v1.7
         settings.costTo25 = 3;
         settings.costTo50 = 7;
         settings.costTo75 = 13;
@@ -1295,7 +1295,7 @@ function updateVersion() {
 
     }
 
-    if(versionIndex == 2){
+    if(versionIndex == 2){ //custom
         toggleSettingsInput(false);
     }
 
