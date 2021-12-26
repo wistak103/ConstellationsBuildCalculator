@@ -1295,7 +1295,7 @@ function updateVersion() {
 
     }
 
-    if(versionIndex == 2){ //custom
+    if(versionIndex == 0){ //custom
         toggleSettingsInput(false);
     }
 
