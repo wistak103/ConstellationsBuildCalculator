@@ -1265,7 +1265,7 @@ function closeAlert() {
 //SSL SETTINGS
 
 function updateVersion() {
-    //2 custom
+
     let versionIndex = document.getElementById("version-select").value;
 
     if(versionIndex == 1) { //v1.6

@@ -2063,23 +2063,23 @@ smithing.perks = [
     //5
     {
         name: "Masquerade", skill: speech, skillReq: 50,
-        xPos: 102 / 4, yPos: 93 / 4, preReqs: [3],chain: 0,
+        xPos: 102 / 4, yPos: 93 / 4, preReqs: [3],chain: 2, rank: 1,
         description: "You've become proficient at acting, and with the right equipment you can now disguise yourself, although sometimes people can still tell that you are not truly one of them.",
-        labels: [], lines: []
+        labels: [], lines: [], chainPerks: []
     },
     //6
     {
         name: "Masquerade", skill: speech, skillReq: 100,
-        xPos: 102 / 4, yPos: 93 / 4, preReqs: [5], chain: 0,
+        xPos: 102 / 4, yPos: 93 / 4, preReqs: [5], chain: 2, rank: 2,
         description: "There is no role you cannot play, and your acting is so believable that there is almost no way for others to see through your disguises.",
-        labels: [], lines: []
+        labels: [], lines: [], chainPerks: []
     },
     //7
     {
         name: "Lore of the Thu'um", skill: speech, skillReq: 0,
         xPos: 340 / 4, yPos: 338 / 4, preReqs: [], chain: 0,
         description: "You've been studying the lore and ancient script of dragons and the Thu'um. Thus, you can shout more often.",
-        labels: [], lines: []
+        labels: [], lines: [], chainPerks: []
     },
     //8
     {
