@@ -144,19 +144,16 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
 }
 
-#attributes-row {
-    justify-self: stretch;
-}
+
 
 #attributes {
     padding: 0;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    
-
 }
+
 .attribute-content {
     display: flex;
     justify-content: space-between;
@@ -203,7 +200,6 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: rgba(255, 255, 255, 0.25);
     box-shadow: rgba(93, 67, 50, 0.25) 0px 2px 8px 0px;
     margin-bottom: 5px;
-
 }
 
 .attribute-value-group > h3 {
@@ -215,25 +211,34 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 0.8em;
 }
 
-.derived-grid {
-    display: grid;
-    padding: 10px 20px 10px 20px;
-    grid-template-columns: 1fr 0.3fr;
+.derived-group {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+.derived-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px rgba(93, 67, 50, 0.25) solid;
+    margin-top: 1px;
+}
+
+.derived-wrap:last-of-type {
+    border: none;
+}
+
 .derived-value-label {
     grid-column: 1;
-    border-bottom: 1px solid gray;
     padding: 2px 20px 3px 0px;
 }
 .derived-value {
     text-align: right;
     grid-column: 2;
-    border-bottom: 1px solid gray;
 }
-
-.no-border {
-    border: none;
-}  
 
 .main-right {
     display: flex;
@@ -246,13 +251,26 @@ input[type=number]::-webkit-outer-spin-button {
     /*border: 5px double grey;*/
     background-color: rgba(255,255,255, 0.4);
     box-shadow: rgba(93, 67, 50, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 0px;
     width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.skill-group {
+    display: flex;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px rgba(93, 67, 50, 0.25) solid;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.skill-group:last-of-type {
+    border: none;
+    padding-bottom: 0;
 }
 
 .skill {
@@ -266,6 +284,10 @@ input[type=number]::-webkit-outer-spin-button {
     padding-top: 10px;
     cursor: pointer;
     position: relative;
+}
+
+.skill:nth-child(-n+3) {
+    margin-top: 0;
 }
 
 .skill:hover > .skill-text::after {

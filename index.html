@@ -122,40 +122,49 @@
                         </div>
                         <div class="derived-content">                            
                             <div class="derived-group" id = "derived-attributes">
-                                <div class="derived-grid">
-        
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Magicka Rate</span>
                                     <span class="derived-value">+0%</span>
-
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Stamina Rate</span>
                                     <span class="derived-value">+0%</span>
-
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Carry Weight</span>
                                     <span class="derived-value">+0</span>
-        
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Move Speed</span>
                                     <span class="derived-value">+0%</span>
-        
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Marksman Damage</span>
                                     <span class="derived-value">+0%</span>
-        
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">One-Handed Damage</span>
                                     <span class="derived-value">+0%</span>
-        
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Two-Handed Damage</span>
                                     <span class="derived-value">+0%</span>
-        
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Unarmed Damage</span>
                                     <span class="derived-value">+0%</span>
-
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Magic Resist</span>
                                     <span class="derived-value">+0%</span>
-
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label">Disease Resist</span>
                                     <span class="derived-value">+0%</span>
-        
+                                </div>
+                                <div class="derived-wrap">
                                     <span class = "derived-value-label no-border">Poison Resist</span>
-                                    <span class="derived-value no-border">+0%</span>
+                                    <span class="derived-value">+0%</span>
                                 </div>
                             </div>
                         </div>
@@ -189,95 +198,83 @@
             </div>
             <div class="main-right">
                 <div class="skills-container">
-                    <div class="skill" onclick="skillsClick(0)">
-                        <svg class="skill-icon" id="icon-alchemy" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Alchemy<span class="skill-level" id="skill-level-0">0</span></span>
-                       
+                    <div class="skill-group">
+                        <div class="skill" onclick="skillsClick(14)">
+                            <svg class="skill-icon" id="icon-smithing" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Smithing<span class="skill-level" id="skill-level-14">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(7)">
+                            <svg class="skill-icon" id="icon-heavyarmor" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Heavy&nbsp;Armor<span class="skill-level" id="skill-level-7">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(2)">
+                            <svg class="skill-icon" id="icon-block" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Block<span class="skill-level" id="skill-level-2">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(17)">
+                            <svg class="skill-icon" id="icon-twohanded" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Two&nbsp;Handed<span class="skill-level" id="skill-level-17">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(11)">
+                            <svg class="skill-icon" id="icon-onehanded" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">One&nbsp;Handed<span class="skill-level" id="skill-level-11">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(10)">
+                            <svg class="skill-icon" id="icon-marksman" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Marksman<span class="skill-level" id="skill-level-10">0</span></span>
+                        </div>
                     </div>
-                    <div class="skill" onclick="skillsClick(1)">
-                        <svg class="skill-icon" id="icon-alteration" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Alteration<span class="skill-level" id="skill-level-1">0</span></span>
-                        
+                    <div class="skill-group">
+                        <div class="skill" onclick="skillsClick(6)">
+                            <svg class="skill-icon" id="icon-evasion" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Evasion<span class="skill-level" id="skill-level-6">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(15)">
+                            <svg class="skill-icon" id="icon-sneak" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Sneak<span class="skill-level" id="skill-level-15">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(9)">
+                            <svg class="skill-icon" id="icon-lockpicking" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Lockpicking<span class="skill-level" id="skill-level-9">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(12)">
+                            <svg class="skill-icon" id="icon-pickpocket" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Pickpocket<span class="skill-level" id="skill-level-12">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(16)">
+                            <svg class="skill-icon" id="icon-speech" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Speech<span class="skill-level" id="skill-level-16">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(0)">
+                            <svg class="skill-icon" id="icon-alchemy" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Alchemy<span class="skill-level" id="skill-level-0">0</span></span>
+                        </div>
                     </div>
-                    <div class="skill" onclick="skillsClick(2)">
-                        <svg class="skill-icon" id="icon-block" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Block<span class="skill-level" id="skill-level-2">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(3)">
-                        <svg class="skill-icon" id="icon-conjuration" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Conjuration<span class="skill-level" id="skill-level-3">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(4)">
-                        <svg class="skill-icon" id="icon-destruction" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Destruction<span class="skill-level" id="skill-level-4">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(5)">
-                        <svg class="skill-icon" id="icon-enchanting" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Enchanting<span class="skill-level" id="skill-level-5" >0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(6)">
-                        <svg class="skill-icon" id="icon-evasion" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Evasion<span class="skill-level" id="skill-level-6">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(7)">
-                        <svg class="skill-icon" id="icon-heavyarmor" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Heavy&nbsp;Armor<span class="skill-level" id="skill-level-7">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(8)">
-                        <svg class="skill-icon" id="icon-illusion" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Illusion<span class="skill-level" id="skill-level-8">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(9)">
-                        <svg class="skill-icon" id="icon-lockpicking" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Lockpicking<span class="skill-level" id="skill-level-9">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(10)">
-                        <svg class="skill-icon" id="icon-marksman" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Marksman<span class="skill-level" id="skill-level-10">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(11)">
-                        <svg class="skill-icon" id="icon-onehanded" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">One&nbsp;Handed<span class="skill-level" id="skill-level-11">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(12)">
-                        <svg class="skill-icon" id="icon-pickpocket" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Pickpocket<span class="skill-level" id="skill-level-12">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(13)">
-                        <svg class="skill-icon" id="icon-restoration" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Restoration<span class="skill-level" id="skill-level-13">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(14)">
-                        <svg class="skill-icon" id="icon-smithing" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Smithing<span class="skill-level" id="skill-level-14">0</span></span>
-                       
-                    </div>
-                    <div class="skill" onclick="skillsClick(15)">
-                        <svg class="skill-icon" id="icon-sneak" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Sneak<span class="skill-level" id="skill-level-15">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(16)">
-                        <svg class="skill-icon" id="icon-speech" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Speech<span class="skill-level" id="skill-level-16">0</span></span>
-                        
-                    </div>
-                    <div class="skill" onclick="skillsClick(17)">
-                        <svg class="skill-icon" id="icon-twohanded" xmlns="http://www.w3.org/2000/svg"></svg>
-                        <span class="skill-text">Two&nbsp;Handed<span class="skill-level" id="skill-level-17">0</span></span>
-                        
+                    <div class="skill-group">
+                        <div class="skill" onclick="skillsClick(8)">
+                            <svg class="skill-icon" id="icon-illusion" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Illusion<span class="skill-level" id="skill-level-8">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(3)">
+                            <svg class="skill-icon" id="icon-conjuration" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Conjuration<span class="skill-level" id="skill-level-3">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(4)">
+                            <svg class="skill-icon" id="icon-destruction" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Destruction<span class="skill-level" id="skill-level-4">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(13)">
+                            <svg class="skill-icon" id="icon-restoration" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Restoration<span class="skill-level" id="skill-level-13">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(1)">
+                            <svg class="skill-icon" id="icon-alteration" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Alteration<span class="skill-level" id="skill-level-1">0</span></span>
+                        </div>
+                        <div class="skill" onclick="skillsClick(5)">
+                            <svg class="skill-icon" id="icon-enchanting" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="skill-text">Enchanting<span class="skill-level" id="skill-level-5" >0</span></span>
+                        </div>
                     </div>
                 </div>
             </div>
