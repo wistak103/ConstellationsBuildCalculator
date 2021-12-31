@@ -800,7 +800,7 @@ destruction.perks = [
     },
 ];
 
-let enchanting = new SkillTree("enchanting", 6);
+let enchanting = new SkillTree("enchanting", 5);
 enchanting.perks = [
     //0
     {
@@ -910,7 +910,7 @@ enchanting.perks = [
 ];
 
 
-   let evasion = new SkillTree('evasion', 0);
+   let evasion = new SkillTree('evasion', 6);
    evasion.perks = [
     //0
     {
@@ -1019,7 +1019,7 @@ enchanting.perks = [
     }
    ];
 
-   let heavyarmor = new SkillTree('heavyarmor', 0);
+   let heavyarmor = new SkillTree('heavyarmor', 7);
    heavyarmor.perks = [
     //0
     {
@@ -1093,7 +1093,7 @@ enchanting.perks = [
     },
    ];
 
-   let illusion = new SkillTree('illusion', 0);
+   let illusion = new SkillTree('illusion', 8);
    illusion.perks = [
     //0
     {
@@ -1202,7 +1202,7 @@ enchanting.perks = [
     },
    ];
 
-   let lockpicking = new SkillTree('lockpicking', 0);
+   let lockpicking = new SkillTree('lockpicking', 9);
    lockpicking.perks = [
     //0
     {
@@ -1248,7 +1248,7 @@ enchanting.perks = [
     },
    ];
 
-   let marksman = new SkillTree('marksman', 0);
+   let marksman = new SkillTree('marksman', 10);
    marksman.perks = [
     //0
     {
@@ -1371,7 +1371,7 @@ enchanting.perks = [
     },
    ];
 
-   let onehanded = new SkillTree('onehanded', 0);
+   let onehanded = new SkillTree('onehanded', 11);
    onehanded.perks = [
     //0
     {
@@ -1614,7 +1614,7 @@ enchanting.perks = [
     },
    ];
 
-   let pickpocket = new SkillTree('pickpocket', 0);
+   let pickpocket = new SkillTree('pickpocket', 12);
    pickpocket.perks = [
     //0
     {
@@ -1667,7 +1667,7 @@ enchanting.perks = [
     }
    ];
 
-   let restoration = new SkillTree('restoration', 0);
+   let restoration = new SkillTree('restoration', 13);
    restoration.perks = [
     //0
     {
@@ -1840,7 +1840,7 @@ enchanting.perks = [
    ];
 
    
-let smithing = new SkillTree("smithing", 5);
+let smithing = new SkillTree("smithing", 14);
 smithing.perks = [
 
     //0
@@ -1956,7 +1956,7 @@ smithing.perks = [
         labels: [], lines: [], choiceNeeded: true
     }];
 
-   let sneak = new SkillTree('sneak', 0);
+   let sneak = new SkillTree('sneak', 15);
    sneak.perks = [
     //0
     {
@@ -2023,7 +2023,7 @@ smithing.perks = [
     },
    ];
 
-   let speech = new SkillTree('speech', 0);
+   let speech = new SkillTree('speech', 16);
    speech.perks = [
     //0
     {
@@ -2160,7 +2160,7 @@ smithing.perks = [
     }
    ];
 
-   let twohanded = new SkillTree('twohanded', 0);
+   let twohanded = new SkillTree('twohanded', 17);
    twohanded.perks = [
     //0
     {
@@ -2308,4 +2308,4 @@ smithing.perks = [
 
 
 
-let skillsList = [alchemy, alteration, block, conjuration, destruction, enchanting, evasion, heavyarmor, illusion, lockpicking, marksman, onehanded, pickpocket, restoration, smithing, sneak, speech, twohanded];
+let skillsList = [smithing, heavyarmor, block, twohanded, onehanded, marksman, evasion, sneak, lockpicking, pickpocket, speech, alchemy, illusion, conjuration, destruction, restoration, alteration, enchanting];
