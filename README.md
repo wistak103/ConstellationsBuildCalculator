@@ -1,5 +1,5 @@
 # Constellations Build Calculator
-A build planning tool for Constellations collection
+A build planning tool for [Constellations](https://next.nexusmods.com/skyrimspecialedition/collections/9zfscf) collection
 
 
 
