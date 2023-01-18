@@ -15,7 +15,7 @@ let derivedAttributes = document.getElementsByClassName("derived-value");
 
 function updateMagickaRegen() {
     let baseMagicRegen = race.baseRegens[0];
-    let baseMagicka = race.baseAttributes[0] + (5* attributeIncreases[0]);
+    let baseMagicka = race.baseAttributes[0] + (10*attributeIncreases[0]);
 
     let bonusRegen = 8 * (Math.sqrt(baseMagicka-100));
     if(isNaN(bonusRegen)==true) {
@@ -41,7 +41,7 @@ function updateMagickaRegen() {
 
 function updateStaminaRegen() {
     let baseStaminaRegen = race.baseRegens[2];
-    let baseStamina = race.baseAttributes[2] + (5* attributeIncreases[2]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
 
     let bonusRegen = 8 * (Math.sqrt(baseStamina-100));
 
@@ -71,8 +71,8 @@ function updateCarryWeight() {
     //z = (4H + S) / 5
     //4x sqrt{Z - 110}
 
-    let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-    let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+    let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
 
     let z = ((4*baseHealth) + baseStamina)/5;
     let bonusCW = 4*(Math.sqrt(z-110));
@@ -100,8 +100,8 @@ function updateMovementSpeed(){
     //(3/4)x sqrt{Z - 125}
     //z = (H + 4S) / 5
 
-    let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-    let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+    let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
 
     let z = (baseHealth + (4*baseStamina))/5;
     let bonusSpeed = (3/4) * (Math.sqrt(z-125));
@@ -118,8 +118,8 @@ function updateMarksman() {
     //4x sqrt{Z - 150}	
     //z = (H + 4S) / 5
 
-    let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-    let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+    let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
 
     let z = (baseHealth + (4*baseStamina))/5;
     let bonusDmg = 4*(Math.sqrt(z-150));
@@ -137,8 +137,8 @@ function updateMarksman() {
 function updateOneHanded() {
     //	4x sqrt{Z - 150}	(H + S)/2
 
-    let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-    let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+    let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
 
     let z = (baseHealth + baseStamina)/2;
     let bonusDmg = 4*(Math.sqrt(z-150));
@@ -154,8 +154,8 @@ function updateOneHanded() {
 
 function updateTwoHanded() {
     //4x sqrt{Z - 150}	(4H + S) / 5	
-    let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-    let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+    let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
 
     let z = ((4*baseHealth) + baseStamina)/5;
     let bonusDmg = 4*(Math.sqrt(z-150));
@@ -171,8 +171,8 @@ function updateTwoHanded() {
 
 function updateUnarmed() {
         //4x sqrt{Z - 110}	(H + S) / 2	
-        let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-        let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+        let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+        let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
     
         let z = (baseHealth + baseStamina)/2;
         let bonusDmg = 4*(Math.sqrt(z-110));
@@ -187,7 +187,7 @@ function updateUnarmed() {
 }
 
 function updateMagicResist() {
-    let baseMagicka = race.baseAttributes[0] + (5* attributeIncreases[0]);
+    let baseMagicka = race.baseAttributes[0] + (10*attributeIncreases[0]);
     let baseResist = race.baseResists[0];
 
     magicResist = Math.sqrt(baseMagicka-150);
@@ -212,8 +212,8 @@ function updateMagicResist() {
 
 function updateDiseaseResist() {
     //	4x sqrt{Z - 100}	z = (2H + 3S) / 5
-    let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-    let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+    let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+    let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
     let baseResist = race.baseResists[1];
 
 
@@ -233,8 +233,8 @@ function updateDiseaseResist() {
 
 function updatePoisonResist() {
         //	4x sqrt{Z - 140}	z = (3H + 2S) / 5
-        let baseHealth = race.baseAttributes[1] + (5*attributeIncreases[1]);
-        let baseStamina = race.baseAttributes[2] + (5*attributeIncreases[2]);
+        let baseHealth = race.baseAttributes[1] + (10*attributeIncreases[1]);
+        let baseStamina = race.baseAttributes[2] + (10*attributeIncreases[2]);
         let baseResist = race.baseResists[2];
     
         let z = ((3*baseHealth) + (2*baseStamina))/5;

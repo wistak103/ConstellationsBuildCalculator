@@ -860,13 +860,13 @@ function updateAttributes() {
     let attributeBase = [magickaBase, healthBase, staminaBase];
 
     for (i = 0; i < 3; i++) {
-        attributeTotals[i] = race.baseAttributes[i] + (5 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i];
+        attributeTotals[i] = race.baseAttributes[i] + (10 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i];
         if(ogmah-1 == i) {
             attributeTotals[i] += 200;
         }
         attributeText[i].textContent = attributeTotals[i];
 
-        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(5 * attributeIncreases[i]));
+        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(10 * attributeIncreases[i]));
     }
     updateDerivedValues();
     saveData();
@@ -1151,13 +1151,15 @@ function perkMouseEnter(perkNum) {
     nextBody.style.display = "none";
     
     //set text
-    title.textContent = perk.name.replace('<br>', ' ');
-    body.textContent = perk.description;
+    //title.textContent = perk.levelReq.toString() + "  " + perk.name.replace('<br>', ' ') + "  " + perk.skillReq.toString();
+	title.textContent = perk.name.replace('<br>', ' ');
+    body.textContent = perk.description.replace('<br>', ' ');
 
     //if perk is a chain, we need to set next rank text if needed
 
     if(perk.chain != 0) {
-        title.textContent = perk.name.replace('<br>', ' ') + "(" + perk.rank + "/" + perk.chain + ")";
+        //title.textContent = perk.levelReq.toString() + "  " + perk.name.replace('<br>', ' ') + "(" + perk.rank + "/" + perk.chain + ")" + "  " + perk.skillReq.toString();
+		title.textContent =perk.name.replace('<br>', ' ') + "(" + perk.rank + "/" + perk.chain + ")";
 
         let showNext = false;
 
@@ -1167,7 +1169,7 @@ function perkMouseEnter(perkNum) {
 
         if(showNext==true) {
             let nextPerk = activeSkillTree.perks[perkNum+rankIndex+1];    
-            nextBody.textContent = nextPerk.description;
+            nextBody.textContent = nextPerk.description.replace('<br>', ' ');
             nextTitle.style.display = "block";
             nextBody.style.display = "block";
         }
