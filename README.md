@@ -1,4 +1,8 @@
-# SerenityBuildCalculator
-A build planning tool for the Skyrim modlist Serenity 2
+# Constellations Build Calculator
+A build planning tool for Constellations collection
 
-https://airgiraffe.github.io/SerenityBuildCalculator/
+
+
+
+based (i just modified perks) on Serenity Build Calculator by Airgiraffe https://github.com/airgiraffe/SerenityBuildCalculator
+
