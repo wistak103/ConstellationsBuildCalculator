@@ -16,113 +16,106 @@ alchemy.perks = [
     //0
     {
         name: "Alchemical Lore", skill: alchemy, skillReq: 0,
-        xPos: 19.3, yPos: 90, preReqs: [], chain: 2, rank: 1, 
+        xPos: 19.3, yPos: 90, preReqs: [], chain: 3, rank: 1, 
         description: "You've acquired basic alchemical insights and understand how to work with a laboratory. Thus, you can now craft your own potions and poisons.",
         labels: [], lines: [], chainPerks: []
     },
     //1
     {
-        name: "Alchemical Lore", skill: alchemy, skillReq: 0,
-        xPos: 19.3, yPos: 90, preReqs: [0], chain: 2, rank: 2,
-        description: "Through obscure knowledge, you now can enhance your mixtures and craft alchemistic powders at a smelter. Besides, your sensory organs have become very keen. Thus, you determine all the alchemical properties of consumed ingredients.",
+        name: "Alchemical Lore", skill: alchemy, skillReq: 20,
+        xPos: 19.3, yPos: 90, preReqs: [0], chain: 3, rank: 2,
+        description: "Through advanced alchemical knowledge, you can enhance your mixtures and craft alchemical powders. <br> You determine an additional property of consumed ingredients",
         labels: [], lines: [], chainPerks: [] 
     },
-    //2
+	//2
+    {
+        name: "Alchemical Lore", skill: alchemy, skillReq: 40,
+        xPos: 19.3, yPos: 90, preReqs: [0], chain: 3, rank: 3,
+        description: "Through obscure knowledge, your potions and poisons have an even higher potency.<br>You determine all properties of consumed ingredients.",
+        labels: [], lines: [], chainPerks: [] 
+    },
+    //3
     {
         name: "Improved Elixirs", skill: alchemy, skillReq: 25,
         xPos: 75.7, yPos: 80.75, preReqs: [0], chain: 0,
         description: "Having refinined the brewing process, you are now able to improve the effects of all your elixirs.",
         labels: [], lines: []
     },
-    //3
-    {
-        name: "Night Vision", skill: alchemy, skillReq: 25,
-        xPos: 87, yPos: 62.5, preReqs: [2], chain: 0,
-        description: "Having altered your body with extracts from a sabrecat eye, you can now make your eyes see in the dark at will.",
-        labels: [], lines: []
-    },
     //4
     {
-        name: "Concentrated<br>Poisons", skill: alchemy, skillReq: 25,
-        xPos: 30.7, yPos: 61.5, preReqs: [2, 0], chain: 0,
-        description: "Your experience in the obscure alchemical arts allows you to concentrate your poisons. Thus, you can make most of them last longer before they need to be reapplied.",
+        name: "Night Vision", skill: alchemy, skillReq: 25,
+        xPos: 87, yPos: 62.5, preReqs: [3], chain: 0,
+        description: "Having altered your body with extracts from a sabrecat eye, you can now make your eyes see in the dark at will.",
         labels: [], lines: []
     },
     //5
     {
-        name: "Regeneration", skill: alchemy, skillReq: 50,
-        xPos: 75.7, yPos: 40.5, preReqs: [2], chain: 0,
-        description: "Having altered your body with extracts from troll fat, slaughterfish eggs and spriggan sap, you're now able to regenerate your body, and do so even more rapidly when you are immersed in water.",
+        name: "Concentrated<br>Poisons", skill: alchemy, skillReq: 25,
+        xPos: 30.7, yPos: 61.5, preReqs: [3, 0], chain: 0,
+        description: "Your experience in the obscure alchemical arts allows you to concentrate your poisons. Thus, you can make most of them last longer before they need to be reapplied.",
         labels: [], lines: []
     },
     //6
     {
-        name: "Catalysis", skill: alchemy, skillReq: 50,
-        xPos: 181 / 3, yPos: 194 / 4, preReqs: [2], chain: 2, rank: 1,
-        description: "You've started experimenting with a catalyst that increases the yield of the brewing process.",
-        labels: [], lines: [], chainPerks: []
+        name: "Regeneration", skill: alchemy, skillReq: 50,
+        xPos: 75.7, yPos: 40.5, preReqs: [3], chain: 0,
+        description: "Having altered your body with extracts from troll fat, slaughterfish eggs and spriggan sap, you're now able to regenerate your body, and do so even more rapidly when you are immersed in water.",
+        labels: [], lines: []
     },
     //7
     {
-        name: "Catalysis", skill: alchemy, skillReq: 100,
-        xPos: 181 / 3, yPos: 194 / 4, preReqs: [6], chain: 2, rank: 2,
-        description: "You've perfected the catalyst. Thereby, you can craft double the amount of mixtures with the same amount of ingredients.",
+        name: "Catalysis", skill: alchemy, skillReq: 50,
+        xPos: 181 / 3, yPos: 194 / 4, preReqs: [3], chain: 2, rank: 1,
+        description: "You've started experimenting with a catalyst that increases the yield of the brewing process.",
         labels: [], lines: [], chainPerks: []
     },
     //8
     {
-        name: "Improved Poisons", skill: alchemy, skillReq: 50,
-        xPos: 104 / 3, yPos: 156 / 4, preReqs: [4], chain: 0,
-        description: "By adding small amounts of truly horrifying ingredients, you are able to make your poisons more potent.",
-        labels: [], lines: []
+        name: "Catalysis", skill: alchemy, skillReq: 100,
+        xPos: 181 / 3, yPos: 194 / 4, preReqs: [7], chain: 2, rank: 2,
+        description: "You've perfected the catalyst. Thereby, you can craft double the amount of mixtures with the same amount of ingredients.",
+        labels: [], lines: [], chainPerks: []
     },
     //9
     {
-        name: "Immunization", skill: alchemy, skillReq: 75,
-        xPos: 172 / 3, yPos: 98 / 4, preReqs: [6, 8], chain: 0,
-        description: "You've discovered a way to make your body more resilient to all kinds of diseases and poisons.",
+        name: "Improved Poisons", skill: alchemy, skillReq: 50,
+        xPos: 104 / 3, yPos: 156 / 4, preReqs: [5], chain: 0,
+        description: "By adding small amounts of truly horrifying ingredients, you are able to make your poisons more potent.",
         labels: [], lines: []
     },
     //10
     {
-        name: "Fortified Muscles", skill: alchemy, skillReq: 75,
-        xPos: 148 / 3, yPos: 225 / 4, preReqs: [9], chain: 0,
-        description: "Having altered your body with extracts from troll fat and a mammoth heart, you've become more resilient to harm.",
+        name: "Immunization", skill: alchemy, skillReq: 75,
+        xPos: 172 / 3, yPos: 98 / 4, preReqs: [7, 9], chain: 0,
+        description: "You've discovered a way to make your body more resilient to all kinds of diseases and poisons.",
         labels: [], lines: []
     },
     //11
     {
-        name: "Alchemical Intellect", skill: alchemy, skillReq: 100,
-        xPos: 219 / 3, yPos: 45 / 4, preReqs: [9], chain: 0,
-        description: "Having altered your body with extracts from a Dremora's Heart and Ectoplasm, your mind has transcended mortal limits, expanding your magicka and improving your spell casting.",
+        name: "Fortified Muscles", skill: alchemy, skillReq: 75,
+        xPos: 148 / 3, yPos: 225 / 4, preReqs: [10], chain: 0,
+        description: "Having altered your body with extracts from troll fat and a mammoth heart, you've become more resilient to harm.",
         labels: [], lines: []
     },
     //12
     {
-        name: "Purification<br>Process", skill: alchemy, skillReq: 100,
-        xPos: 140 / 3, yPos: 20 / 4, preReqs: [9], chain: 0,
-        description: "You've found a method to eliminate disadvantages from your mixtures and to make all of them even more potent.",
+        name: "Alchemical Intellect", skill: alchemy, skillReq: 100,
+        xPos: 219 / 3, yPos: 45 / 4, preReqs: [10], chain: 0,
+        description: "Having altered your body with extracts from a Dremora's Heart and Ectoplasm, your mind has transcended mortal limits, expanding your magicka and improving your spell casting.",
         labels: [], lines: []
     },
     //13
     {
-        name: "Drunken<br>Combat", skill: alchemy, skillReq: 0,
-        xPos: 15, yPos: 70, preReqs: [], levelReq: 0, chain: 3, rank: 1,
-        description: "Alchohol pumps you up, boosting your melee combat abilities. Also gain resistance to poison at all times. [while on alcohol, +1 stamina regeneration, +3% movement speed, melee damage x 1.03, +10% passive poison resist]",
-        labels: [], lines: [], chainPerks: []
+        name: "Purification<br>Process", skill: alchemy, skillReq: 100,
+        xPos: 140 / 3, yPos: 20 / 4, preReqs: [10], chain: 0,
+        description: "You've found a method to eliminate disadvantages from your mixtures and to make all of them even more potent.",
+        labels: [], lines: []
     },
     //14
     {
         name: "Drunken<br>Combat", skill: alchemy, skillReq: 0,
-        xPos: 15, yPos: 70, preReqs: [13], levelReq: 15, chain: 3, rank: 2,
-        description: "Alchohol pumps you up, boosting your melee combat abilities. Also gain resistance to poison at all times. [while on alcohol, +1.5 stamina regeneration, +6% movement speed, melee damage x 1.06, +20% passive poison resist]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //15
-    {
-        name: "Drunken<br>Combat", skill: alchemy, skillReq: 0,
-        xPos: 15, yPos: 70, preReqs: [14], levelReq: 30, chain: 3, rank: 3,
-        description: "Alchohol pumps you up, boosting your melee combat abilities. Also gain resistance to poison at all times. [while on alcohol, +2 stamina regeneration, +10% movement speed, melee damage x 1.1, +30% passive poison resist]",
+        xPos: 15, yPos: 70, preReqs: [], levelReq: 0, chain: 0,
+        description: "Alcohol pumps you up, boosting your combat abilities. You also gain resistance to poison and diseases.<br>[+10% resistances, while inebriated: +5% movement speed, +15% melee damage, +100 armor]",
         labels: [], lines: [], chainPerks: []
     },
 
@@ -134,7 +127,7 @@ alteration.perks = [
     {
         name: "Novice Alteration", skill: alteration, skillReq: 0,
         xPos: 144 / 3, yPos: 90, preReqs: [], chain: 0,
-        description: "You've taught yourself a few Novice level spells and learned how to cast them with decreased effort while your newfound knowledge also allows you to augment all Alteration spells.",
+        description: "You've learned how to cast Novice level spells decreased effort while your newfound knowledge also allows you to augment all Alteration spells.",
         labels: [], lines: []
 
     },
@@ -142,28 +135,28 @@ alteration.perks = [
     {
         name: "Apprentice Alteration", skill: alteration, skillReq: 25,
         xPos: 160 / 3, yPos: 75, preReqs: [0], chain: 0,
-        description: "By pursuing your apprenticeship in Alteration, you've gained knowledge of Apprentice level spells which you now augment while casting them with less effort.",
+        description: "By pursuing your apprenticeship in Alteration, you're now able to augment and cast them with less effort.",
         labels: [], lines: []
     },
     //2
     {
         name: "Adept<br>Alteration", skill: alteration, skillReq: 50,
         xPos: 162 / 3, yPos: 50, preReqs: [1], chain: 0,
-        description: "By advancing further into the school of Alteration, you've gained some Adept level spells and learned how to augment and cast spells of this rank more easily.",
+        description: "By advancing further into the school of Alteration, you've learned how to augment and cast spells of the Adept rank more easily.",
         labels: [], lines: []
     },
     //3
     {
         name: "Expert Alteration", skill: alteration, skillReq: 75,
-        xPos: 180 / 3, yPos: 111 / 4, preReqs: [2], chain: 0,
-        description: "You've unlocked almost every secret in the school of Alteration and you've acquired some Expert level spells. You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
+        xPos: 190 / 3, yPos: 100 / 4, preReqs: [2], chain: 0,
+        description: "You've unlocked almost every secret in the school of Alteration. You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
         labels: [], lines: []
     },
     //4
     {
-        name: "Master Alteration", skill: alteration, skillReq: 100,
+        name: "Master Alteration", skill: alteration, skillReq: 90,
         xPos: 185 / 3, yPos: 5, preReqs: [3], chain: 0,
-        description: "Your knowledge of Alteration has become all-encompassing. You taught yourself a Master level spell and you can cast the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
+        description: "Your knowledge of Alteration has become all-encompassing.You can cast the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
     },
     //5
@@ -191,21 +184,21 @@ alteration.perks = [
     {
         name: "Aeromantic<br>Mastery", skill: alteration, skillReq: 100,
         xPos: 10, yPos: 5, preReqs: [7], chain: 0,
-        description: "Your wind spells are now able to stagger or throw any target.",
+        description: "Your fascination for wind now grants you the ability to stagger or throw any target, while also increasing all your wind spells power even further",
         labels: [], lines: []
     },
     //9
     {
         name: "Empowered<br>Alterations", skill: alteration, skillReq: 25,
         xPos: 100 / 3, yPos: 250 / 4, preReqs: [0], chain: 0,
-        description: "You learned how to empower Alteration spells. Thus, you now can overcharge their effects into even more powerful, longer lasting versions.",
+        description: "You learned how to empower Alteration spells by dual casting them. Thus, you now can overcharge their effects into even more powerful, longer lasting versions.",
         labels: [], lines: []
     },
     //10
     {
         name: "Improved<br>Mage Armor", skill: alteration, skillReq: 25,
-        xPos: 35, yPos: 46, preReqs: [1], chain: 0,
-        description: "You've mastered the art of casting armor spells. Their effect is maximized when you don't wear any distracting armor.",
+        xPos: 30, yPos: 50, preReqs: [1], chain: 0,
+        description: "You've mastered the art of casting armor spells, their effect is increased by 80%. Additionally you take 15% less damage from ranged attacks while a mage armor spell is active. (less effective when wearing light/heavy armor)",
         labels: [], lines: []
     },
     //11
@@ -232,7 +225,7 @@ alteration.perks = [
     //14
     {
         name: "Stability", skill: alteration, skillReq: 50,
-        xPos: 130 / 3, yPos: 140 / 4, preReqs: [2], chain: 0,
+        xPos: 110 / 3, yPos: 160 / 4, preReqs: [2], chain: 0,
         description: "You've become exceptionally good at making your alteration spells more stable. Thus, they now last longer.",
         labels: [], lines: []
     },
@@ -247,7 +240,7 @@ alteration.perks = [
     {
         name: "Metamagical<br>Empowerment", skill: alteration, skillReq: 100,
         xPos: 90 / 3, yPos: 5, preReqs: [15], chain: 0,
-        description: "Having delved even deeper in metamagical lore, you can cast any spell more effectively and augment all other magical effects.",
+        description: "Having delved even deeper in metamagical lore, you can cast any spell more effectively and augment all magical effects.",
         labels: [], lines: []
     },
     //17
@@ -266,94 +259,59 @@ alteration.perks = [
     },
     //19
     {
-        name: "Hemomancer", skill: alteration, skillReq: 25,
+        name: "Metallurgy", skill: alteration, skillReq: 25,
         xPos: 75, yPos: 260 / 4, preReqs: [0], chain: 2, rank: 1, 
-        description: "You are now able to intesify the strength of your drain life spells.",
+        description: "You are now able to intesify the strength of your corrosion spells. Thus, they now deal increased damage.",
         labels: [], lines: [], chainPerks: []
     },
     //20
     {
-        name: "Hemomancer", skill: alteration, skillReq: 50,
+        name: "Metallurgy", skill: alteration, skillReq: 50,
         xPos: 75, yPos: 260 / 4, preReqs: [19], chain: 2, rank: 2, 
-        description: "You are now able to greatly intesify the strength of your drain life spells.",
+        description: "You are now able to greatly intesify the strength of your corrosion spells. Thus, they now deal increased damage.",
         labels: [], lines: [], chainPerks: []
     },
     //21
     {
-        name: "Drain<br>Strength", skill: alteration, skillReq: 75,
+        name: "Rust", skill: alteration, skillReq: 75,
         xPos: 90, yPos: 165 / 4, preReqs: [19], chain: 0,
-        description: "Your drain life spells now sap the strength from your foes, draining stamina as well.",
+        description: "Your corrosion spells now lower your foes armor for far longer.",
         labels: [], lines: []
     },
     //22
     {
-        name: "Drain<br>Willpower", skill: alteration, skillReq: 100,
+        name: "Corrosion Mastery", skill: alteration, skillReq: 100,
         xPos: 90, yPos: 5, preReqs: [21], chain: 0,
-        description: "Your drain life spells now sap the willpower from your foes, draining magicka as well.",
+        description: "Your fascination for corrosion now grantsyou a natural ability to penetrate armor, while also increasing all your corrosion spells power even further.",
         labels: [], lines: []
     },
     //23
     {
-        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 0,
-        xPos: 90, yPos: 70, preReqs: [], chain: 3, rank: 1,
-        description: "Having learned over the shoulders, you can cast some spells that you are not very skilled at. [spell cost x 0.5, spell magnitude and duration x (1 + 0.005 x skill level), for spells up to Novice tier]",
-        labels: [], lines: [], chainPerks: []
+        name: "Metamagical<br>Flexibility", skill: alteration, skillReq: 60,
+        xPos: 140 / 3, yPos: 125 / 4, preReqs: [14], chain: 0,
+        description: "By focusing on your Magicka, you can alter the effects of your spells in exchange of increased magicka cost of spells. [Overpowered (magnitude), Extended (duration), Distant (range)]",
+        labels: [], lines: []
     },
     //24
     {
-        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 15,
-        xPos: 90, yPos: 70, preReqs: [23], chain: 3, rank: 2, 
-        description: "Having learned over the shoulders, you can cast some spells that you are not very skilled at. [spell cost x 0.5, spell magnitude and duration x (1 + 0.005 x skill level), for spells up to Apprentice tier]",
+        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 0,
+        xPos: 10, yPos: 85, preReqs: [], chain: 3, rank: 1,
+        description: "Having learned over the shoulders, you can cast novice level spells but all spells cast have reduced effectivity. [Novice spells: -60% spell cost, -10% magnitude/duration for all spells]",
         labels: [], lines: [], chainPerks: []
     },
     //25
     {
-        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 30,
-        xPos: 90, yPos: 70, preReqs: [24], chain: 3, rank: 3,
-        description: "Having learned over the shoulders, you can cast some spells that you are not very skilled at. [spell cost x 0.5, spell magnitude and duration x (1 + 0.005 x skill level), for spells up to Adept tier]",
+        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 10,
+        xPos: 10, yPos: 85, preReqs: [24], chain: 3, rank: 2, 
+        description: "Having learned over the shoulders, you can now also cast apprentice level spells. [Apprentice spells: -55% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
     //26
     {
-        name: "Willpower", skill: alteration, skillReq: 0, levelReq: 0,
-        xPos: 80, yPos: 80, preReqs: [], chain: 3, rank: 1, thisOr: [11],
-        description: "Your strong willpower provides resistance to harmful magic. [+5% magic resist, when Magic Resistance perk is not taken]",
+        name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 20,
+        xPos: 10, yPos: 85, preReqs: [25], chain: 3, rank: 3,
+        description: "Having learned over the shoulders, you can cast adept level spell. [Adept spells: -50% spell cost]",
         labels: [], lines: [], chainPerks: []
-    },
-    //27
-    {
-        name: "Willpower", skill: alteration, skillReq: 0, levelReq: 15,
-        xPos: 80, yPos: 80, preReqs: [26], chain: 3, rank: 2,
-        description: "Your strong willpower provides resistance to harmful magic. [+10% magic resist, when Magic Resistance perk is not taken]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //28
-    {
-        name: "Willpower", skill: alteration, skillReq: 0, levelReq: 30,
-        xPos: 80, yPos: 80, preReqs: [27], chain: 3, rank: 3,
-        description: "Your strong willpower provides resistance to harmful magic. [+15% magic resist, when Magic Resistance perk is not taken]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //29
-    {
-        name: "Metamagic", skill: alteration, skillReq: 0, levelReq: 0,
-        xPos: 70, yPos: 90, preReqs: [], chain: 3, rank: 1,
-        description: "By focusing on your Magicka, you can alter the effects of your spells in cost of more Magicka used to cast them. [Overpowered (magnitude), Extended (duration), Distant (range), Silenced (noise)]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //30
-    {
-        name: "Metamagic", skill: alteration, skillReq: 0, levelReq: 15,
-        xPos: 70, yPos: 90, preReqs: [29], chain: 3, rank: 2,
-        description: "By focusing on your Magicka, you can alter the effects of your spells in cost of more Magicka used to cast them. [Overpowered (magnitude), Extended (duration), Distant (range), Silenced (noise)]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //31
-    {
-        name: "Metamagic", skill: alteration, skillReq: 0, levelReq: 30,
-        xPos: 70, yPos: 90, preReqs: [30], chain: 3, rank: 3,
-        description: "By focusing on your Magicka, you can alter the effects of your spells in cost of more Magicka used to cast them. [Overpowered (magnitude), Extended (duration), Distant (range), Silenced (noise)]",
-        labels: [], lines: [], chainPerks: [],
     },
 
 ];
