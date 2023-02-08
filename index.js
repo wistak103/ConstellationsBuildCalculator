@@ -900,31 +900,32 @@ function updateRace() {
 }
 
 function updateStone() {
-    //0 Apprentice
-    //1 Atronach
-    //2 Lady
-    //3 Lord
-    //4 Lover
-    //5 Mage
-    //6 Ritual
-    //7 Serpent
-    //8 Shadow
-    //9 Steed
-    //10 Thief
-    //11 Tower
-    //12 Warrior
+	//0 None
+    //1 Apprentice
+    //2 Atronach
+    //3 Lady
+    //4 Lord
+    //5 Lover
+    //6 Mage
+    //7 Ritual
+    //8 Serpent
+    //9 Shadow
+    //10 Steed
+    //11 Thief
+    //12 Tower
+    //13 Warrior
 
     stoneIndex = document.getElementById("stone-select").value;
     attributeModifiers[0] = 0;
-    if(stoneIndex == 1) {
+    if(stoneIndex == 2) {
         attributeModifiers[0] = 350;
     }
 
-    if(stoneIndex == 5) {
+    if(stoneIndex == 6) {
         attributeModifiers[0] = 100;
     }
 
-    if(stoneIndex == 9) {
+    if(stoneIndex == 10) {
         attributeModifiers[2] = 100;
     }
     updateDerivedValues();

@@ -28,10 +28,10 @@ function updateMagickaRegen() {
 
     totalRegen = baseMagicRegen * bonusRegen;
 
-    if (stoneIndex == 0) {
+    if (stoneIndex == 1) {
         totalRegen = totalRegen + (baseMagicRegen*2);
     }
-    if(stoneIndex == 1) {
+    if(stoneIndex == 2) {
         totalRegen = 0;
     }
 
@@ -56,7 +56,7 @@ function updateStaminaRegen() {
     
 
     totalRegen = baseStaminaRegen * bonusRegen;
-    if (stoneIndex == 2) {
+    if (stoneIndex == 3) {
         totalRegen = totalRegen + (baseStaminaRegen*0.5);
     }
 
@@ -77,7 +77,7 @@ function updateCarryWeight() {
     let z = ((4*baseHealth) + baseStamina)/5;
     let bonusCW = 4*(Math.sqrt(z-110));
 
-    if (stoneIndex == 11) {
+    if (stoneIndex == 12) {
         if(isNaN(bonusCW)==true || bonusCW < 0) {
             bonusCW = 20;
         } else {
@@ -201,10 +201,10 @@ function updateMagicResist() {
 
     let totalResist = baseResist + magicResist;
 
-    if(stoneIndex == 0) {
+    if(stoneIndex == 1) {
         totalResist -= 25;
     }
-    if(stoneIndex == 3) {
+    if(stoneIndex == 4) {
         totalResist += 15;
     }
     derivedAttributes[8].textContent = totalResist + "%";
