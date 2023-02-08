@@ -399,7 +399,7 @@ block.perks = [
     //11
     {
         name: "Torch<br>Combat", skill: block, skillReq: 0, levelReq: 0,
-        xPos: 330 / 4, yPos: 300 / 4, preReqs: [], chain: 0,
+        xPos: 80 / 4, yPos: 300 / 4, preReqs: [], chain: 0,
         description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage.<br>[+7 light bash damage, +14 power bash damage, power bash staggers, +10% frost resist with torch equipped]",
         labels: [], lines: [], chainPerks: []
     },
