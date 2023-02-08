@@ -7,6 +7,8 @@ body {
     background-position: center;
     color: rgb(38, 33, 49);
     height: 100vh;
+	max-width:1280px;
+	margin:auto;
 }
 
 h2, h3, p {
@@ -26,6 +28,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: stretch;
     position: relative;
     width: 100%;
+	
 }
 
 .main-left {
@@ -493,7 +496,10 @@ input[type=number]::-webkit-outer-spin-button {
     left:calc(50% - 10px);
     background: inherit;
 } 
-
+#perk-requirements {
+	text-transform: capitalize;
+	text-align:right;
+}
 #perk-description-rank-title {
     margin-bottom: 0;
     display: none;
@@ -501,6 +507,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 #perk-description-rank-body {
     display: none;
+}
+#perk-requirements-rank {
+	display: none;
+	text-transform: capitalize;
+	text-align:right;
 }
 
 #alert {

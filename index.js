@@ -1144,22 +1144,37 @@ function perkMouseEnter(perkNum) {
 
     let title = document.getElementById("perk-description-title");
     let body = document.getElementById("perk-description-body");
+	let requirements = document.getElementById("perk-requirements");
     let nextTitle = document.getElementById("perk-description-rank-title");
     let nextBody = document.getElementById("perk-description-rank-body");
+	let nextRequirements = document.getElementById("perk-requirements-rank");
     //to reset
     nextTitle.style.display = "none";
     nextBody.style.display = "none";
+	nextRequirements.style.display = "none";
     
     //set text
-    //title.textContent = perk.levelReq.toString() + "  " + perk.name.replace('<br>', ' ') + "  " + perk.skillReq.toString();
 	title.textContent = perk.name.replace('<br>', ' ');
+	
     body.textContent = perk.description.replace('<br>', ' ');
+	requirements.textContent = "";
+	if (perk.levelReq) {
+			requirements.textContent ="Level " + perk.levelReq.toString();	
+	}
+	if (perk.skillReq) {
+		requirements.textContent =requirements.textContent + perk.skill.name + " " + perk.skillReq.toString();
+	}
 
     //if perk is a chain, we need to set next rank text if needed
 
     if(perk.chain != 0) {
-        //title.textContent = perk.levelReq.toString() + "  " + perk.name.replace('<br>', ' ') + "(" + perk.rank + "/" + perk.chain + ")" + "  " + perk.skillReq.toString();
 		title.textContent =perk.name.replace('<br>', ' ') + "(" + perk.rank + "/" + perk.chain + ")";
+		if (perk.levelReq) {
+			title.textContent = perk.levelReq.toString() + "  " + title.textContent;
+		}
+		if (perk.skillReq) {
+			title.textContent = title.textContent + "  " + perk.skillReq.toString();
+		}
 
         let showNext = false;
 
@@ -1170,8 +1185,16 @@ function perkMouseEnter(perkNum) {
         if(showNext==true) {
             let nextPerk = activeSkillTree.perks[perkNum+rankIndex+1];    
             nextBody.textContent = nextPerk.description.replace('<br>', ' ');
-            nextTitle.style.display = "block";
+			nextRequirements.textContent = "";
+			if (nextPerk.levelReq) {
+				nextRequirements.textContent ="Level " + nextPerk.levelReq.toString();	
+			}
+			if (nextPerk.skillReq) {
+				nextRequirements.textContent =nextRequirements.textContent + nextPerk.skill.name + " " + nextPerk.skillReq.toString();
+			}
+			nextTitle.style.display = "block";
             nextBody.style.display = "block";
+			nextRequirements.style.display = "block";
         }
     }
 
@@ -1179,9 +1202,11 @@ function perkMouseEnter(perkNum) {
     if (activeSkillTree.takenPerks.includes(perk)){
         title.classList.add("taken-perk-tooltip");
         body.classList.add("taken-perk-tooltip");
+		requirements.classList.add("taken-perk-tooltip");
     } else {
         title.classList.remove("taken-perk-tooltip");
         body.classList.remove("taken-perk-tooltip");
+		requirements.classList.remove("taken-perk-tooltip");
     }
     
     //show tooltip box    
@@ -1203,9 +1228,11 @@ function perkMouseExit() {
     let tooltipBox = document.getElementById("perk-description-box");
     let nextTitle = document.getElementById("perk-description-rank-title");
     let nextBody = document.getElementById("perk-description-rank-body");
+	let nextRequirements = document.getElementById("perk-requirements-rank");
     tooltipBox.style.display = "none";
     nextTitle.style.display = "none";
     nextBody.style.display = "none";
+	nextRequirements.style.display = "none";
 }
 
 function clearSkill() {
