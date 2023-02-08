@@ -322,106 +322,85 @@ block.perks = [
     {
         name: "Improved Blocking", skill: block, skillReq: 0,
         xPos: 150 / 3, yPos: 323 / 4, preReqs: [], chain: 0, 
-        description: "You strengthened your shield arm and trained to parry blows a little. Thus you can block somewhat better.",
+        description: "You strengthened your shield arm and trained to parry blows a little. [Block 25% more damage]",
         labels: [], lines: []
     },
     //1
     {
         name: "Experienced<br>Blocking", skill: block, skillReq: 20,
         xPos: 100 / 3, yPos: 222 / 4, preReqs: [0], chain: 0,
-        description: "With weapon or shield you can block almost any blow with rock-solid confidence. Additionally, when blocking a hit you feel the adrenaline rushing through your veins, recovering a small amount of stamina.",
+        description: "With weapon or shield you can block almost any blow with rock-solid confidence.<br>[Block 50% more damage, recover some stamina when blocking a hit]",
         labels: [], lines: []
     },
     //2
     {
         name: "Strong Grip", skill: block, skillReq: 15,
         xPos: 30 / 3, yPos: 239 / 4, preReqs: [0], chain: 0,
-        description: "You have honed your defensive movements to perfection. Therefore, blocking will no longer slow you down, and your shield is more protective.",
+        description: "You hold on to your shield like you would hold on to your life.<br>[75% less shield weight, 10% more armor rating, block 40% more damage, arrows that hit the shield do no damage]",
         labels: [], lines: []
     },
     //3
     {
         name: "Elemental Protection", skill: block, skillReq: 50,
         xPos: 55 / 3, yPos: 115 / 4, preReqs: [2], chain: 0,
-        description: "You've learned how to block damaging spells so that you can now<br> increase your resistance against them when blocking with a shield.",
+        description: "You've learned how to block damaging spells.<br>[Take 50% less fire, frost, and shock damage when blocking with a shield]",
         labels: [], lines: []
     },
     //4
     {
         name: "Defensive Stance", skill: block, skillReq: 75,
         xPos: 103 / 3, yPos: 60 / 4, preReqs: [3], chain: 0,
-        description: "You have honed your defensive movements to perfection. Therefore, blocking incoming attacks will no longer slow you down.",
+        description: "You have honed your defensive movements to perfection.<br>[Blocking with a shield does not slow you down]",
         labels: [], lines: []
     },
     //5
     {
         name: "Powerful Bashes", skill: block, skillReq: 25,
         xPos: 250 / 3, yPos: 239 / 4, preReqs: [0], chain: 0,
-        description: "By gathering your strength for a short while, you can perform a much more powerful bash. Bashing an enemy like this with your shield or the pommel of your weapon will likely put him off balance.",
+        description: "By gathering your strength for a short while, you can perform a much more powerful bash.<br>[Able to do a power bash]",
         labels: [], lines: []
     },
     //6
     {
         name: "Overpowering Bashes", skill: block, skillReq: 50,
         xPos: 250 / 3, yPos: 175 / 4, preReqs: [5], chain: 0,
-        description: "When you put all of your power into your shield bashes, you will often overpower your foes. They will be staggered much more now and likely will even trip and fall.",
+        description: "When you put all of your power into your shield bashes, you will often overpower your foes.<br>[Power bashing with a shield can knock down]",
         labels: [], lines: []
     },
     //7
     {
         name: "Disarming Bash", skill: block, skillReq: 75,
         xPos: 225 / 3, yPos: 75 / 4, preReqs: [6], chain: 0,
-        description: "Sometimes, when you put all your strength into your bashes your foes drop their weapon because of the pain.",
+        description: "Sometimes, when you put all your strength into your bashes, your foes drop their weapon because of the pain.<br>[25% chance to disarm when power bashing with a shield, 5% chance to disarm when power bashing with a weapon]",
         labels: [], lines: []
     },
     //8
     {
         name: "Unstoppable Charge", skill: block, skillReq: 100,
         xPos: 150 / 3, yPos: 30 / 4, preReqs: [4, 7], chain: 0,
-        description: "When bull rushing with your shield raised, you are nearly invulnerable to physical and elemental damage. In addition to likely being knocked down, enemies will also suffer serious wounds from the impact itself.",
+        description: "When bull rushing with your shield raised, you are a tremendous force to deal with.<br>[Sprinting with a shield raised knocks down most targets]",
         labels: [], lines: []
     },
     //9
     {
         name: "Shield Strike", skill: block, skillReq: 25,
-        xPos: 170 / 3, yPos: 222 / 4, preReqs: [0], chain: 3, rank: 1,
-        description: "You can use your shield more offensively, using it as a dealy weapon. Shield bash damage x 1.5, fortify block increases shield bash damage, -3 shield bash stamina cost.",
+        xPos: 170 / 3, yPos: 222 / 4, preReqs: [0], chain: 2, rank: 1,
+        description: "You can use your shield more offensively, using it as a deadly weapon.<br>[+50% shield bash damage, fortify block increases shield bash damage, -3 shield bash stamina cost]",
         labels: [], lines: [], chainPerks: []
     },
     //10
     {
         name: "Shield Strike", skill: block, skillReq: 50,
-        xPos: 170 / 3, yPos: 222 / 4, preReqs: [9], chain: 3, rank: 2,
-        description: "You can use your shield more offensively, using it as a dealy weapon. Shield bash damage x 1.75, fortify block increases shield bash damage, -6 shield bash stamina cost.",
-        labels: [], lines: [], chainPerks: []
-    },
-    //11
-    {
-        name: "Shield Strike", skill: block, skillReq: 75,
-        xPos: 170 / 3, yPos: 222 / 4, preReqs: [10], chain: 3, rank: 3,
-        description: "You can use your shield more offensively, using it as a dealy weapon. Shield bash damage x 2, fortify block increases shield bash damage, -10 shield bash stamina cost.",
+        xPos: 170 / 3, yPos: 222 / 4, preReqs: [9], chain: 2, rank: 2,
+        description: "You can use your shield more offensively, using it as a deadly weapon.<br>[+100% shield bash damage, fortify block increases shield bash damage, -6 shield bash stamina cost]",
         labels: [], lines: [], chainPerks: []
     },
 
-    //12
+    //11
     {
         name: "Torch<br>Combat", skill: block, skillReq: 0, levelReq: 0,
-        xPos: 330 / 4, yPos: 300 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage. [+2 light fire damage, +7 power bash fire damage, power bash staggers, +5% frost resist with torch equipped]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //13
-    {
-        name: "Torch<br>Combat", skill: block, skillReq: 0, levelReq: 15,
-        xPos: 330 / 4, yPos: 300 / 4, preReqs: [12], chain: 3, rank: 2,
-        description: "You can use your torch more effectively in combat. Torch bashes do more damage and can put enemy off balance better.",
-        labels: [], lines: [], chainPerks: []
-    },
-    //14
-    {
-        name: "Torch<br>Combat", skill: block, skillReq: 0, levelReq: 30,
-        xPos: 330 / 4, yPos: 300 / 4, preReqs: [13], chain: 3, rank: 3,
-        description: "You can use your torch more effectively in combat. Torch bashes do more damage and can put enemy off balance better.",
+        xPos: 330 / 4, yPos: 300 / 4, preReqs: [], chain: 0,
+        description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage.<br>[+7 light bash damage, +14 power bash damage, power bash staggers, +10% frost resist with torch equipped]",
         labels: [], lines: [], chainPerks: []
     },
 
