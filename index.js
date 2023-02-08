@@ -1170,12 +1170,6 @@ function perkMouseEnter(perkNum) {
 
     if(perk.chain != 0) {
 		title.textContent =perk.name.replace('<br>', ' ') + "(" + perk.rank + "/" + perk.chain + ")";
-		if (perk.levelReq) {
-			title.textContent = perk.levelReq.toString() + "  " + title.textContent;
-		}
-		if (perk.skillReq) {
-			title.textContent = title.textContent + "  " + perk.skillReq.toString();
-		}
 
         let showNext = false;
 
