@@ -118,6 +118,15 @@ alchemy.perks = [
         description: "Alcohol pumps you up, boosting your combat abilities. You also gain resistance to poison and diseases.<br>[+10% resistances, while inebriated: +5% movement speed, +15% melee damage, +100 armor]",
         labels: [], lines: [], chainPerks: []
     },
+    //POSITION TESTER
+	/*
+    {
+        name: "Position<br>Tester", skill: alchemy, skillReq: 0,
+        xPos: 100, yPos: 100, preReqs: [], levelReq: 0, chain: 0,
+        description: "Alcohol pumps you up, boosting your combat abilities. You also gain resistance to poison and diseases.<br>[+10% resistances, while inebriated: +5% movement speed, +15% melee damage, +100 armor]",
+        labels: [], lines: [], chainPerks: []
+    },
+	*/
 
 ];
 
@@ -594,191 +603,319 @@ destruction.perks = [
     //0
     {
         name: "Novice Destruction", skill: destruction, skillReq: 0,
-        xPos: 176 / 4, yPos: 90, preReqs: [], chain: 0,
-        description: "You've taught yourself a few Novice level spells and learned how to cast them with decreased effort while your newfound knowledge also allows you to augment all Destruction spells.",
+        xPos: 50, yPos: 90, preReqs: [], chain: 0,
+        description: "You've learned how to cast Novice level spells with decreased effort <br> while your newfound knowledge also allows you to augment all Destruction spells.",
         labels: [], lines: []
     },
     //1
     {
         name: "Apprentice<br>Destruction", skill: destruction, skillReq: 25,
-        xPos: 255 / 4, yPos: 255 / 4, preReqs: [0], chain: 0,
-        description: "By pursuing your apprenticeship in Destruction, you've gained knowledge of Apprentice level spells which you now augment while casting them with less effort.",
+        xPos: 80, yPos: 70, preReqs: [0], chain: 0,
+        description: "By pursuing your apprenticeship in Destruction, you're now<br>able to augment and cast them with less effort.",
         labels: [], lines: []
     },
     //2
     {
         name: "Adept<br>Destruction", skill: destruction, skillReq: 50,
-        xPos: 280 / 4, yPos: 40, preReqs: [1], chain: 0,
-        description: "By advancing further into the school of Destruction, you've gained some Adept level spells and learned how to augment and cast spells of this rank more easily.",
+        xPos: 80, yPos: 50, preReqs: [1], chain: 0,
+        description: "By advancing further into the school of Destruction, you've learned how<br>to augment and cast spells of the Adept rank more easily.",
         labels: [], lines: []
     },
     //3
     {
         name: "Expert<br>Destruction", skill: destruction, skillReq: 75,
-        xPos: 290 / 4, yPos: 20, preReqs: [2], chain: 0,
-        description: "You've unlocked almost every secret in the school of Destruction and you've acquired some Expert level spells. You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
+        xPos: 80, yPos: 30, preReqs: [2], chain: 0,
+        description: "You've unlocked almost every secret in the school of Destruction.<br>You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
         labels: [], lines: []
     },
     //4
     {
         name: "Master<br>Destruction", skill: destruction, skillReq: 100,
-        xPos: 300 / 4, yPos: 15 / 4, preReqs: [3], chain: 0,
-        description: "Your knowledge of Destruction has become all-encompassing. You taught yourself a Master level spell and you can cast the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
+        xPos: 80, yPos: 5, preReqs: [3], chain: 0,
+        description: "YYour knowledge of Destruction has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
     },
-    //5
+	//5
     {
-        name: "Arcane<br>Assassin", skill: destruction, skillReq: 25,
-        xPos: 40 / 4, yPos: 80, preReqs: [0], chain: 3, rank : 1,
-        description: "You can control your Destruction spells better, dealing more damage to unwary targets. Destruction spell magnitude x 1.15 on sneak attack, destruction spells are silent when out of combat.",
+        name: "Geomancy", skill: destruction, skillReq: 25,
+        xPos: 10, yPos: 70, preReqs: [0],  chain: 2, rank : 1,
+        description: "You now are able to intensify the strength of your earth spells. Thus, <br> they now deal increased damage.",
         labels: [], lines: [], chainPerks: []
     },
     //6
     {
-        name: "Arcane<br>Assassin", skill: destruction, skillReq: 50,
-        xPos: 40 / 4, yPos: 80, preReqs: [5], chain: 3, rank : 2,
-        description: "You can control your Destruction spells better, dealing more damage to unwary targets. Destruction spell magnitude x 1.3 on sneak attack, destruction spells are silent when out of combat.",
+        name: "Geomancy", skill: destruction, skillReq: 50,
+        xPos: 10, yPos: 70, preReqs: [5],  chain: 2, rank : 2,
+        description: "You now are able to greatly intensify the strength of your earth spells. Thus, <br> they now deal increased damage.",
         labels: [], lines: [], chainPerks: []
     },
     //7
     {
-        name: "Arcane<br>Assassin", skill: destruction, skillReq: 75,
-        xPos: 40 / 4, yPos: 80, preReqs: [6], chain: 3, rank : 3,
-        description: "You can control your Destruction spells better, dealing more damage to unwary targets. Destruction spell magnitude x 1.5 on sneak attack, destruction spells are silent when out of combat.",
-        labels: [], lines: [], chainPerks: []
+        name: "Knockout", skill: destruction, skillReq: 75,
+        xPos: 10, yPos: 30+2, preReqs: [5], chain: 0,
+        description: "Your higher level earth spells are so strong that foes are set sometimes knocked out.",
+        labels: [], lines: []
     },
     //8
     {
-        name: "Geomancy", skill: destruction, skillReq: 25,
-        xPos: 45 / 4, yPos: 260 / 4, preReqs: [0],  chain: 2, rank : 1,
-        description: "You now are able to intensify the strength of your earth spells. Thus, they now deal increased damage.",
-        labels: [], lines: [], chainPerks: []
+        name: "Earth<br>Mastery", skill: destruction, skillReq: 100,
+        xPos: 10, yPos: 5+2, preReqs: [7], chain: 0,
+        description: "Your fascination for geomancy now grants you a natural resistance to physical damage, <br> while also increasing all your earth spells' power even further.",
+        labels: [], lines: []
     },
     //9
     {
-        name: "Geomancy", skill: destruction, skillReq: 50,
-        xPos: 45 / 4, yPos: 260 / 4, preReqs: [8],  chain: 2, rank : 2,
-        description: "You now are able to greatly intensify the strength of your earth spells. Thus, they now deal increased damage.",
+        name: "Annihilation", skill: destruction, skillReq: 25,
+        xPos: 20, yPos: 65, preReqs: [0], chain: 2, rank : 1,
+        description: "You now are able to intensify the strength of your Annihilation spells.",
         labels: [], lines: [], chainPerks: []
     },
     //10
     {
-        name: "Knockout", skill: destruction, skillReq: 75,
-        xPos: 45 / 4, yPos: 200 / 4, preReqs: [8], chain: 0,
-        description: "Your higher level earth spells are so strong that foes are sometimes knocked out.",
-        labels: [], lines: []
+        name: "Annihilation", skill: destruction, skillReq: 50,
+        xPos: 20, yPos: 65, preReqs: [9], chain: 2, rank : 2,
+        description: "You now are able to greatly intensify the strength of your Annihilation spells.",
+        labels: [], lines: [], chainPerks: []
     },
     //11
     {
-        name: "Earth Mastery", skill: destruction, skillReq: 100,
-        xPos: 45 / 4, yPos: 100 / 4, preReqs: [10], chain: 0,
-        description: "Your fascination for geomancy now grants you a natural resistance to physical damage, while also increasing all your earth spells' power even further.",
-        labels: [], lines: []
+        name: "Obliteration", skill: destruction, skillReq: 75,
+        xPos: 20, yPos: 40+2, preReqs: [9], chain: 0,
+        description: "Your Annihilation spells now disintergrate all but the most powerful of foes.",
+        labels: [], lines: [], chainPerks: []
     },
+	
     //12
     {
-        name: "Pyromancy", skill: destruction, skillReq: 25,
-        xPos: 89 / 4, yPos: 219 / 4, preReqs: [0],  chain: 2, rank : 1,
-        description: "You now are able to intensify the heat of your fire spells. Thus, they now deal increased damage.",
+        name: "Annihilation<br>Mastery", skill: destruction, skillReq: 100,
+        xPos: 20, yPos: 15, preReqs: [11], chain: 0,
+        description: "Your fascination for Annihilaion spells now grants you a natural resistance to magical damage, <br> while also increasing all your Annihilation spells' power even further.",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
-        name: "Pyromancy", skill: destruction, skillReq: 50,
-        xPos: 89 / 4, yPos: 219 / 4, preReqs: [12], chain: 2, rank : 2,
-        description: "Your fire spells burn with almost otherworldly heat and consume earth and flesh with terrifying ease.",
+        name: "Hemomancer", skill: destruction, skillReq: 25,
+        xPos: 30, yPos: 70, preReqs: [0],  chain: 2, rank : 1,
+        description: "You now are able to intensify the strength of your drain life spells. <br> (Unrelated to Perk: Drain life spells deal up to 60% less damage depending on the targets current health)",
         labels: [], lines: [], chainPerks: []
     },
     //14
     {
-        name: "Cremation", skill: destruction, skillReq: 75,
-        xPos: 82 / 4, yPos: 143 / 4, preReqs: [12], chain: 0,
-        description: "Your higher level fire spells burn so ferociously that foes are set ablaze, often causing them to run away in gruesome agony as their very skin becomes molten.",
-        labels: [], lines: []
+        name: "Hemomancer", skill: destruction, skillReq: 50,
+        xPos: 30, yPos: 70, preReqs: [13],  chain: 2, rank : 2,
+        description: "You now are able to intensify the strength of your drain life spells. <br> (Unrelated to Perk: Drain life spells deal up to 60% less damage depending on the targets current health)",
+        labels: [], lines: [], chainPerks: []
     },
     //15
     {
-        name: "Fire<br>Mastery", skill: destruction, skillReq: 100,
-        xPos: 80 / 4, yPos: 52 / 4, preReqs: [14], chain: 0,
-        description: "Your fascination for fire now grants you a natural resistance to it, while also increasing all your fire spells' power even further.",
+        name: "Drain<br>Strength", skill: destruction, skillReq: 75,
+        xPos: 30, yPos: 30+2, preReqs: [13], chain: 0,
+        description: "Your drain life spells now sap the strength from your foes, draining stamina as well.",
         labels: [], lines: []
     },
     //16
     {
-        name: "Cyromancy", skill: destruction, skillReq: 25,
-        xPos: 145 / 4, yPos: 196 / 4, preReqs: [0], chain: 2, rank : 1,
-        description: "You now are able to improve your ice spells and thereby increase their effectiveness.",
-        labels: [], lines: [], chainPerks: []
+        name: "Drain<br>Willpower", skill: destruction, skillReq: 100,
+        xPos: 30, yPos: 5+2, preReqs: [15], chain: 0,
+        description: "Your drain life spells now sap the willpower from your foes, draining magicka as well.",
+        labels: [], lines: []
     },
     //17
     {
-        name: "Cyromancy", skill: destruction, skillReq: 50,
-        xPos: 145 / 4, yPos: 196 / 4, preReqs: [16], chain: 2, rank : 2,
-        description: "Your ice spells freeze even air in a trice and make the harsh winters of Skyrim look like a refreshing breeze.",
+        name: "Pyromancy", skill: destruction, skillReq: 25,
+        xPos: 40, yPos: 65, preReqs: [0],  chain: 2, rank : 1,
+        description: "You now are able to intensify the heat of your fire spells. Thus, <br> they now deal increased damage.",
         labels: [], lines: [], chainPerks: []
     },
     //18
     {
-        name: "Deep Freeze", skill: destruction, skillReq: 75,
-        xPos: 145 / 4, yPos: 109 / 4, preReqs: [16], chain: 0,
-        description: "Your higher level ice spells are colder than Skyrim's most ferocious blizzards, causing them to freeze foes with low resistance to frost.",
-        labels: [], lines: []
+        name: "Pyromancy", skill: destruction, skillReq: 50,
+        xPos: 40, yPos: 65, preReqs: [17], chain: 2, rank : 2,
+        description: "Your fire spells burn with almost otherworldly heat <br> and consume earth and flesh with terrifying ease.",
+        labels: [], lines: [], chainPerks: []
     },
     //19
     {
-        name: "Frost<br>Mastery", skill: destruction, skillReq: 100,
-        xPos: 153 / 4, yPos: 41 / 4, preReqs: [18], chain: 0,
-        description: "Your understanding of all that is cold grants you a natural resistance to it, while  increasing all your frost spells' power even further.",
+        name: "Cremation", skill: destruction, skillReq: 75,
+        xPos: 40, yPos: 40+2, preReqs: [17], chain: 0,
+        description: "Your higher level fire spells burn so ferociously that foes are set ablaze,<br>often causing them to run away in gruesome agony as their very skin becomes molten.",
         labels: [], lines: []
     },
     //20
     {
-        name: "Electromancy", skill: destruction, skillReq: 25,
-        xPos: 210 / 4, yPos: 170 / 4, preReqs: [0], chain: 2, rank : 1,
-        description: "You can now energize your lightning spells more effectively, causing them to deal more damage.",
-        labels: [], lines: [], chainPerks: []
+        name: "Fire<br>Mastery", skill: destruction, skillReq: 100,
+        xPos: 40, yPos: 15, preReqs: [19], chain: 0,
+        description: "Your fascination for fire now grants you a natural resistance to it, <br> while also increasing all your fire spells' power even further.",
+        labels: [], lines: []
     },
     //21
     {
-        name: "Electromancy", skill: destruction, skillReq: 50,
-        xPos: 210 / 4, yPos: 170 / 4, preReqs: [20], chain: 2, rank : 2,
-        description: "Compared to your lightning spells, the worst tempests would look like a mild summer breeze.",
+        name: "Cryomancy", skill: destruction, skillReq: 25,
+        xPos: 50, yPos: 70, preReqs: [0], chain: 2, rank : 1,
+        description: "You now are able to improve your ice spells <br> and thereby increase their effectiveness.",
         labels: [], lines: [], chainPerks: []
     },
     //22
     {
-        name: "Electrostatic<br>Discharge", skill: destruction, skillReq: 75,
-        xPos: 213 / 4, yPos: 93 / 4, preReqs: [20], chain: 0,
-        description: "Your lightning strikes pass through body and mind with thundering intensity. Thus, they now vaporize vast amounts of Magicka off your targets.",
-        labels: [], lines: []
+        name: "Cryomancy", skill: destruction, skillReq: 50,
+        xPos: 50, yPos: 70, preReqs: [21], chain: 2, rank : 2,
+        description: "Your ice spells freeze even air in a trice <br> and make the harsh winters of Skyrim look like a refreshing breeze.",
+        labels: [], lines: [], chainPerks: []
     },
     //23
     {
-        name: "Lightning<br>Mastery", skill: destruction, skillReq: 100,
-        xPos: 220 / 4, yPos: 25 / 4, preReqs: [22], chain: 0,
-        description: "Your aptitude with lightning grants you a natural resistance to it, while also increasing all your shock spells' power even further.",
+        name: "Deep Freeze", skill: destruction, skillReq: 75,
+        xPos: 50, yPos: 30+2, preReqs: [21], chain: 0,
+        description: "Your higher level ice spells are colder than Skyrim's most ferocious blizzards,<br>causing them to freeze foes with low resistance to frost.",
         labels: [], lines: []
     },
     //24
     {
-        name: "Rune Mastery", skill: destruction, skillReq: 50,
-        xPos: 80, yPos: 55, preReqs: [1], chain: 0,
-        description: "By studying the arcane symbols of all three elements, you have developed more powerful rune spells and have unlocked the secret of maintaining three active runes instead of just one.",
+        name: "Frost<br>Mastery", skill: destruction, skillReq: 100,
+        xPos: 50, yPos: 5+2, preReqs: [23], chain: 0,
+        description: "Your understanding of all that is cold grants you a natural resistance to it, <br> while increasing all your frost spells' power even further.",
         labels: [], lines: []
     },
     //25
     {
-        name: "Empowered<br>Elements", skill: destruction, skillReq: 25,
-        xPos: 294 / 4, yPos: 316 / 4, preReqs: [0], chain: 0,
-        description: "You learned how to empower Destruction spells. Thus, you're able to overcharge their effects.",
-        labels: [], lines: []
+        name: "Electromancy", skill: destruction, skillReq: 25,
+        xPos: 60, yPos: 65, preReqs: [0], chain: 2, rank : 1,
+        description: "You can now energize your lightning spells more effectively, causing them to deal more damage.",
+        labels: [], lines: [], chainPerks: []
     },
     //26
     {
-        name: "Impact", skill: destruction, skillReq: 50,
-        xPos: 360 / 4, yPos: 255 / 4, preReqs: [25], chain: 0,
-        description: "By intensifying the force of most of your overcharged Destruction spells, you're now capable of staggering your foes.",
+        name: "Electromancy", skill: destruction, skillReq: 50,
+        xPos: 60, yPos: 65, preReqs: [25], chain: 2, rank : 2,
+        description: "Compared to your lightning spells, <br> the worst tempests would look like a mild summer breeze.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //27
+    {
+        name: "Electrostatic<br>Discharge", skill: destruction, skillReq: 75,
+        xPos: 60, yPos: 40+2, preReqs: [25], chain: 0,
+        description: "Your lightning strikes pass through body and mind with thundering intensity.<br>Thus, they now vaporize vast amounts of Magicka off your targets.",
         labels: [], lines: []
+    },
+    //28
+    {
+        name: "Lightning<br>Mastery", skill: destruction, skillReq: 100,
+        xPos: 60, yPos: 15, preReqs: [27], chain: 0,
+        description: "Your aptitude with lightning grants you a natural resistance to it,<br> while also increasing all your shock spells' power even further.",
+        labels: [], lines: []
+    },
+    //29
+    {
+        name: "Magical Fist", skill: destruction, skillReq: 50,
+        xPos: 65, yPos: 75, preReqs: [1], chain: 2, rank : 1,
+        description: "Your touch spells have a chance of staggering your foes.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //30
+    {
+        name: "Magical Fist", skill: destruction, skillReq: 75,
+        xPos: 65, yPos: 75, preReqs: [29], chain: 2, rank : 2,
+        description: "Your touch spells have a greater chance of staggering your foes.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //31
+    {
+        name: "Enhanced<br>Infusions", skill: destruction, skillReq: 50,
+        xPos: 70, yPos: 60-2, preReqs: [1], chain: 2, rank : 1,
+        description: "You now are able to intensify the power of your infusion spells by 15%.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //32
+    {
+        name: "Enhanced<br>Infusions", skill: destruction, skillReq: 75,
+        xPos: 70, yPos: 60-2, preReqs: [31], chain: 2, rank : 2,
+        description: "You now are able to intensify the power of your infusion spells by 30%.",
+        labels: [], lines: [], chainPerks: []
+    },
+	
+    //33
+    {
+        name: "Intense<br>Bolts", skill: destruction, skillReq: 75,
+        xPos: 90, yPos: 50, preReqs: [1], chain: 2, rank : 1,
+        description: "Your bolt spells now have a small chance to knockdown your foes.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //34
+    {
+        name: "Intense<br>Bolts", skill: destruction, skillReq: 100,
+        xPos: 90, yPos: 50, preReqs: [33], chain: 2, rank : 2,
+        description: "Your bolt spells now have a higher chance to knockdown your foes.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //35
+    {
+        name: "Rune Mastery", skill: destruction, skillReq: 50,
+        xPos: 90, yPos: 65, preReqs: [1], chain: 2, rank: 1,
+        description: "You have unlocked the secret of maintaining two active runes instead of just one. You can also cast runes at triple the distance.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //36
+    {
+        name: "Rune Mastery", skill: destruction, skillReq: 75,
+        xPos: 90, yPos: 65, preReqs: [35], chain: 2, rank: 2,
+        description: "You have unlocked the secret of maintaining three active runes instead of just one. You can also cast runes at six times the distance.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //37
+    {
+        name: "Powerful Waves", skill: destruction, skillReq: 50,
+        xPos: 90, yPos: 80-3, preReqs: [1], chain: 2, rank: 1,
+        description: "Your Wave spells now are 15% more powerful.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //38
+    {
+        name: "Powerful Waves", skill: destruction, skillReq: 75,
+        xPos: 90, yPos: 80-3, preReqs: [37], chain: 2, rank: 2,
+        description: "Your Wave spells now are 30% more powerful.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //39
+    {
+        name: "Efficient<br>Beams", skill: destruction, skillReq: 75,
+        xPos: 70, yPos: 35, preReqs: [2], chain: 2, rank: 1,
+        description: "Your beam spells now cost 15% less magicka.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //40
+    {
+        name: "Efficient<br>Beams", skill: destruction, skillReq: 100,
+        xPos: 70, yPos: 35, preReqs: [39], chain: 2, rank: 2,
+        description: "Your beam spells now cost 30% less magicka.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //41
+    {
+        name: "Extended Cloaks", skill: destruction, skillReq: 75,
+        xPos: 90, yPos: 40-2, preReqs: [2], chain: 2, rank: 1,
+        description: "Your cloak spells now cover a 50% greater distance.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //42
+    {
+        name: "Extended Cloaks", skill: destruction, skillReq: 100,
+        xPos: 90, yPos: 40-2, preReqs: [41], chain: 2, rank: 2,
+        description: "Your cloak spells now cover double the distance.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //43
+    {
+        name: "Empowered<br>Elements", skill: destruction, skillReq: 25,
+        xPos: 65+2, yPos: 85+2, preReqs: [0], chain: 0,
+        description: "You learned how to empower Destruction spells. Thus, you're able to overcharge their effects.",
+        labels: [], lines: []
+    },
+    //44
+    {
+        name: "Impact", skill: destruction, skillReq: 50,
+        xPos: 80, yPos: 85, preReqs: [43], chain: 2, rank : 1,
+        description: "By intensifying the force of most of your overcharged Destruction spells, you're now capable of staggering your foes.",
+        labels: [], lines: [],chainPerks: []
     },
 ];
 
