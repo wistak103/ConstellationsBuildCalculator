@@ -933,10 +933,6 @@ function updateStone() {
     saveData();
 }
 
-function updateBlessing() {
-    saveData();
-}
-
 function updateOgmah() {
     ogmah = document.getElementById("ogmah-select").value;
     updateLevel();
@@ -988,7 +984,6 @@ function saveData() {
     let name = document.getElementById("build-name").value;
     let raceIndex = document.getElementById("races-selection").value;
     let stoneIndex = document.getElementById("stone-select").value;
-    let blessingIndex = document.getElementById("blessing-select").value;
     let ogmahIndex = document.getElementById("ogmah-select").value;
     let perksString = takenPerks.toString();
     perksString = perksString.replace(/,/g,'s'); //replace commas so we can split seperately
@@ -1003,7 +998,7 @@ function saveData() {
                          + settings.cap + "s" + settings.base + "s" + settings.mult;
     };
 
-    let codeArray = [name, raceIndex, stoneIndex, blessingIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, versionIndex, settingsString];
+    let codeArray = [name, raceIndex, stoneIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, versionIndex, settingsString];
     let code = codeArray.toString();
     let codeEncoded = btoa(code);
     //remove padding '=' chars
@@ -1032,12 +1027,11 @@ function loadData() {
         let buildName = values[0];
         let buildRace = values[1];
         let buildStone = values[2];
-        let buildBlessing = values[3];
-        let magickaIncrease = values[4];
-        let healthIncrease = values[5];
-        let staminaIncrease = values[6];
-        let ogmahIndex = values[9];   
-        let versionIndex = values[10];
+        let magickaIncrease = values[3];
+        let healthIncrease = values[4];
+        let staminaIncrease = values[5];
+        let ogmahIndex = values[8];   
+        let versionIndex = values[9];
         //Backwards compatibility: (defaults version to current serenity build)
         if (typeof versionIndex == "undefined") {
             versionIndex = 1;
@@ -1046,7 +1040,6 @@ function loadData() {
         document.getElementById("build-name").value = buildName;
         document.getElementById("races-selection").value = buildRace;
         document.getElementById("stone-select").value = buildStone;
-        document.getElementById("blessing-select").value = buildBlessing;
         document.getElementById("ogmah-select").value = ogmahIndex;
         document.getElementById("version-select").value = versionIndex;
         attributeIncreases[0] = magickaIncrease;
@@ -1058,8 +1051,8 @@ function loadData() {
         ogmah = ogmahIndex;
     
         //perks
-        if(values[7] != 'no') {
-            let buildPerks = values[7].split('s');
+        if(values[6] != 'no') {
+            let buildPerks = values[6].split('s');
             for (i = 0; i < buildPerks.length; i++) {
                 let perkArray = buildPerks[i].split('p');
                 let skillID = perkArray[0];
@@ -1073,8 +1066,8 @@ function loadData() {
             }
         }
         //custom skill levels
-        if (values[8] != 'no') {
-            let skillsString = values[8].split('s'); //split the string into each skill tree
+        if (values[7] != 'no') {
+            let skillsString = values[7].split('s'); //split the string into each skill tree
             for (s = 0; s < skillsString.length; s++) {
                 let levelsArray = skillsString[s].split('l');
                 let skillID = levelsArray[0];
@@ -1083,8 +1076,8 @@ function loadData() {
             };
         }
         //custom settings
-        if (typeof values[11] != "undefined" && values[11].length > 0) {
-            let settingsArray = values[11].split('s');
+        if (typeof values[10] != "undefined" && values[10].length > 0) {
+            let settingsArray = values[10].split('s');
             settings.costTo25 = parseInt(settingsArray[0]);
             settings.costTo50 = parseInt(settingsArray[1]);
             settings.costTo75 = parseInt(settingsArray[2]);
