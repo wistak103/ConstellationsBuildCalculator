@@ -412,135 +412,180 @@ conjuration.perks = [
     {
         name: "Novice<br>Conjuration", skill: conjuration, skillReq: 0,
         xPos: 216 / 4, yPos: 354 / 4, preReqs: [], chain: 0,
-        description: "You've taught yourself a few Novice level spells and learned how to cast them with decreased effort while your newfound knowledge also allows you to augment all Conjuration spells.",
+        description: "You've learned how to cast Novice level spells with decreased effort <br> while your newfound knowledge also allows you to augment all Conjuration spells.",
         labels: [], lines: []
     },
     //1
     {
         name: "Apprentice<br>Conjuration", skill: conjuration, skillReq: 25,
-        xPos: 354 / 4, yPos: 231 / 4, preReqs: [0], chain: 0,
-        description: "By pursuing your apprenticeship in Conjuration, you've gained knowledge of Apprentice level spells which you now augment while casting them with less effort.",
+        xPos: 308 / 4, yPos: 250 / 4, preReqs: [0], chain: 0,
+        description: "By pursuing your apprenticeship in Conjuration, you're now<br>able to augment and cast them with less effort.",
         labels: [], lines: []
     },
     //2
     {
         name: "Adept<br>Conjuration", skill: conjuration, skillReq: 50,
-        xPos: 365 / 4, yPos: 176 / 4, preReqs: [1], chain: 0,
-        description: "By advancing further into the school of Conjuration, you've gained some Adept level spells and learned how to augment and cast spells of this rank more easily.",
+        xPos: 318 / 4, yPos: 192 / 4, preReqs: [1], chain: 0,
+        description: "By advancing further into the school of Conjuration, you've learned how<br>to augment and cast spells of the Adept rank more easily.",
         labels: [], lines: []
     },
     //3
     {
         name: "Expert<br>Conjuration", skill: conjuration, skillReq: 75,
-        xPos: 357 / 4, yPos: 122 / 4, preReqs: [2], chain: 0,
-        description: "You've unlocked almost every secret in the school of Conjuration and you've acquired some Expert level spells. You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
+        xPos: 328 / 4, yPos: 122 / 4, preReqs: [2], chain: 0,
+        description: "You've unlocked almost every secret in the school of Conjuration.<br>You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
         labels: [], lines: []
     },
     //4
     {
-        name: "Master<br>Conjuration", skill: conjuration, skillReq: 100,
+        name: "Master<br>Conjuration", skill: conjuration, skillReq: 90,
         xPos: 342 / 4, yPos: 50 / 4, preReqs: [3], chain: 0,
-        description: "Your knowledge of Conjuration has become all-encompassing. You taught yourself a Master level spell and you can cast the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
+        description: "Your knowledge of Conjuration has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
     },
     //5
     {
         name: "Mystic<br>Binding", skill: conjuration, skillReq: 25,
-        xPos: 272 / 4, yPos: 249 / 4, preReqs: [0], chain: 0,
-        description: "You've become very skilled in binding weapon-shaped daedra from Oblivion. Thereby, bound weapons are stronger and longer-lasting.",
+        xPos: 250 / 4, yPos: 249 / 4, preReqs: [0], chain: 0,
+        description: "You've become skilled in binding weapon-shaped daedra from Oblivion. <br> Thereby, bound weapons are stronger and longer-lasting.",
         labels: [], lines: []
     },
     //6
     {
         name: "Mystic<br>Maelstrom", skill: conjuration, skillReq: 50,
-        xPos: 292 / 4, yPos: 164 / 4, preReqs: [5], chain: 0,
-        description: "You've improved your ability to bind weapon-shaped daedra from Oblivion. Thereby, bound weapons are stronger and longer-lasting.",
+        xPos: 264 / 4, yPos: 180 / 4, preReqs: [5], chain: 0,
+        description: "The weapon-shaped Daedra you conjure are now even more powerful,<br> and trap the souls of your victims and bypass a small amount of their armor.",
         labels: [], lines: []
     },
     //7
     {
         name: "Mystic<br>Banishment", skill: conjuration, skillReq: 75,
         xPos: 275 / 4, yPos: 112 / 4, preReqs: [6], chain: 0,
-        description: "You've greatly improved your ability to bind weapon-shaped daedra from Oblivion. Thereby, bound weapons are stronger and longer-lasting.",
+        description: "Your bound weapons are now able to send summoned creatures back into the waters of Oblivion <br> and are more powerful.",
         labels: [], lines: []
     },
     //8
     {
         name: "Mystic<br>Disruption", skill: conjuration, skillReq: 100,
         xPos: 261 / 4, yPos: 60 / 4, preReqs: [7], chain: 0,
-        description: "You've perfected your ability to bind weapon-shaped daedra from Oblivion. Thereby, bound weapons are stronger and longer-lasting.",
+        description: "You've perfected your invocations of summoning weapon-shaped daedra by making them<br>even more powerful and able to turn the undead.",
         labels: [], lines: []
     },
     //9
     {
         name: "Necromancy", skill: conjuration, skillReq: 25,
-        xPos: 220 / 4, yPos: 218 / 4, preReqs: [0], chain: 0,
-        description: "You've developed a knack for making the dead serve your commands. Therefore, all spells that summon or raise the dead and ghosts last longer and can raise more powerful entities.",
-        labels: [], lines: []
+        xPos: 220 / 4, yPos: 218 / 4, preReqs: [0], chain: 2, rank : 1,
+        description: "You've developed a knack for making the dead serve your commands.<br> Therefore, all spells that summon or raise the dead and ghosts last longer and can raise more powerful entities.",
+        labels: [], lines: [], chainPerks: []
     },
-    //10
+	//10
     {
-        name: "Ritualism", skill: conjuration, skillReq: 50,
-        xPos: 212 / 4, yPos: 153 / 4, preReqs: [9], chain: 0,
-        description: "Your knowledge of the realms of the dead surpasses that of many and decreases the effort needed to raise or summon the dead and ghosts.",
-        labels: [], lines: []
+        name: "Necromancy", skill: conjuration, skillReq: 50,
+        xPos: 220 / 4, yPos: 218 / 4, preReqs: [9], chain: 2, rank : 2,
+        description: "You've further improved your ability making the dead serve your commands.<br> Therefore, all spells that summon or raise the dead and ghosts last even longer and can raise even more powerful entities.",
+        labels: [], lines: [], chainPerks: []
     },
     //11
     {
-        name: "Dark<br>Infusion", skill: conjuration, skillReq: 75,
-        xPos: 181 / 4, yPos: 76 / 4, preReqs: [10], chain: 0,
-        description: "By infusing your undead creations with dark energies, you are able to make them stronger and more resilient. You can even prevent your creations from decaying to dust.",
+        name: "Ritualism", skill: conjuration, skillReq: 50,
+        xPos: 212 / 4, yPos: 153 / 4, preReqs: [9], chain: 0,
+        description: "Your knowledge of the realms of the dead surpasses that of many and decreases <br> the effort needed to raise or summon the dead and ghosts.",
         labels: [], lines: []
     },
     //12
     {
-        name: "Summoner's<br>Insight", skill: conjuration, skillReq: 25,
-        xPos: 172 / 4, yPos: 247 / 4, preReqs: [0], chain: 0,
-        description: "You've learned how to empower Conjuration spells. Thus, you can now make them last longer in this realm.",
+        name: "Dark<br>Infusion", skill: conjuration, skillReq: 75,
+        xPos: 181 / 4, yPos: 76 / 4, preReqs: [11], chain: 0,
+        description: "By infusing your undead creations with dark energies, you are able to make them <br> stronger and more resilient. You can even prevent your creations from decaying to dust.",
         labels: [], lines: []
     },
     //13
     {
-        name: "Cognitive<br>Flexibility", skill: conjuration, skillReq: 50,
-        xPos: 150 / 4, yPos: 117 / 4, preReqs: [12], chain: 2, rank: 1,
-        description: "You have practiced the mental ability of maintaining two summons at the same time. This power extends to controlling any type of conjured or conceived entity, even outside the school of Conjuration.",
-        labels: [], lines: [], chainPerks: []
+        name: "Summoner's<br>Insight", skill: conjuration, skillReq: 25,
+        xPos: 172 / 4, yPos: 247 / 4, preReqs: [0], chain: 0,
+        description: "You've learned how to empower Conjuration spells by dual casting them.<br>Thus, you can now make them last longer in this realm.",
+        labels: [], lines: []
     },
     //14
     {
-        name: "Cognitive<br>Flexibility", skill: conjuration, skillReq: 100,
-        xPos: 150 / 4, yPos: 117 / 4, preReqs: [13], chain: 2, rank: 2,
-        description: "You have mastered the art of Cognitive Flexibility, a trait of only the most accomplished Summoners throughout history. You can now control three summons, of any type, simultaneously.",
+        name: "Cognitive<br>Flexibility", skill: conjuration, skillReq: 50,
+        xPos: 150 / 4, yPos: 117 / 4, preReqs: [13], chain: 2, rank : 1,
+        description: "You have practiced the mental ability of maintaining two summons at the same time. This power requires great amounts of magical power. <br> [+15% manacost for summoning spells]",
         labels: [], lines: [], chainPerks: []
     },
     //15
     {
-        name: "Stabilized<br>Binding", skill: conjuration, skillReq: 25,
-        xPos: 85 / 4, yPos: 221 / 4, preReqs: [0], chain: 0,
-        description: "Having studied the barriers that divide the planes of existence, you can make your summoned daedra and spirits last longer in this realm.",
-        labels: [], lines: []
+        name: "Cognitive<br>Flexibility", skill: conjuration, skillReq: 100,
+        xPos: 150 / 4, yPos: 117 / 4, preReqs: [14], chain: 2, rank : 2,
+        description: "You've mastered the art of Cognitive Flexibility, allowing you to summon three summons at the cost of vast amounts of magical power. <br> [+30% manacost for summoning spells]",
+        labels: [], lines: [], chainPerks: []
     },
     //16
     {
-        name: "Spiritual<br>Binding", skill: conjuration, skillReq: 35,
-        xPos: 98 / 4, yPos: 161 / 4, preReqs: [15], chain: 0,
-        description: "Your knowledge of Oblivion's spiritual aspects increases the strength of all your summoned spirits.",
-        labels: [], lines: []
+        name: "Stabilized<br>Binding", skill: conjuration, skillReq: 25,
+        xPos: 85 / 4, yPos: 221 / 4, preReqs: [0], chain: 2, rank : 1,
+        description: "Having studied the barriers that divide the planes of existence,<br> you can make your summoned daedra and spirits last longer in this realm.",
+        labels: [], lines: [], chainPerks: []
     },
     //17
     {
-        name: "Extended<br>Binding", skill: conjuration, skillReq: 50,
-        xPos: 53 / 4, yPos: 131 / 4, preReqs: [16], chain: 0,
-        description: "You've perfected your spells' formulae to summon daedra and spirits, and are now able to cast them more easily and further away.",
-        labels: [], lines: []
+        name: "Stabilized<br>Binding", skill: conjuration, skillReq: 50,
+        xPos: 85 / 4, yPos: 221 / 4, preReqs: [16], chain: 2, rank : 2,
+        description: "Furthering your studies about the barriers that divide the planes of existence,<br> you can make your summoned daedra and spirits last even longer in this realm.",
+        labels: [], lines: [], chainPerks: []
     },
     //18
     {
-        name: "Elemental<br>Binding", skill: conjuration, skillReq: 75,
-        xPos: 76 / 4, yPos: 70 / 4, preReqs: [17], chain: 0,
-        description: "Your knowledge of Oblivion's elemental aspects increases the strength of all your summoned Atronachs while the highest level rituals will conjure Thralls that are immune to Banishment and Control spells.",
+        name: "Spiritual<br>Binding", skill: conjuration, skillReq: 35,
+        xPos: 98 / 4, yPos: 161 / 4, preReqs: [16], chain: 0,
+        description: "Your knowledge of Oblivion's spiritual aspects increases the strength of all your summoned spirits.",
         labels: [], lines: []
     },
+    //19
+    {
+        name: "Extended<br>Binding", skill: conjuration, skillReq: 50,
+        xPos: 53 / 4, yPos: 131 / 4, preReqs: [16], chain: 0,
+        description: "You've perfected your spells' formulae to summon daedra and spirits,<br>and are now able to cast them more easily and further away.",
+        labels: [], lines: []
+    },
+    //20
+    {
+        name: "Elemental<br>Binding", skill: conjuration, skillReq: 75,
+        xPos: 76 / 4, yPos: 70 / 4, preReqs: [19], chain: 0,
+        description: "Your knowledge of Oblivion's elemental aspects increases the strength of all your summoned Atronachs<br>while the highest level rituals will conjure Thralls that are immune to Banishment and Control spells.",
+        labels: [], lines: []
+    },
+    //21
+    {
+        name: "Soulmancer", skill: conjuration, skillReq: 25,
+        xPos: 360 / 4, yPos: 231 / 4, preReqs: [0], chain: 2, rank : 1,
+        description: "You now are able to intensify the potency of your soul spells. <br> (Unrelated to Perk: Soul spells deal up to 60% less damage depending on the targets current magicka)",
+        labels: [], lines: [], chainPerks: []
+    },
+    //22
+    {
+        name: "Soulmancer", skill: conjuration, skillReq: 50,
+        xPos: 360 / 4, yPos: 231 / 4, preReqs: [21], chain: 2, rank : 2,
+        description: "You now are able to intensify the potency of your soul spells. <br> (Unrelated to Perk: Soul spells deal up to 60% less damage depending on the targets current magicka)",
+        labels: [], lines: [], chainPerks: []
+    },
+	
+    //23
+    {
+        name: "Enslavement", skill: conjuration, skillReq: 75,
+        xPos: 362 / 4, yPos: 164 / 4, preReqs: [21], chain: 0,
+        description: "You are able to raise foes up to level 30 that are slain with your adept or higher soul spells.",
+        labels: [], lines: [], chainPerks: []
+    },
+	
+    //24
+    {
+        name: "Enthrallment", skill: conjuration, skillReq: 100,
+        xPos: 365 / 4, yPos: 92 / 4, preReqs: [23], chain: 0,
+        description: "You are able to raise most foes that are slain with your adept or higher soul spells.",
+        labels: [], lines: [], chainPerks: []
+    },
+	
 
 ];
 
