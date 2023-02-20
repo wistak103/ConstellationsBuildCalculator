@@ -20,6 +20,7 @@ let spentAttributes = 0;
 let usedSkills = [];
 let race = altmer;
 let stoneIndex = document.getElementById("stone-select").value;
+//let profession = custom;
 let ogmah = document.getElementById("ogmah-select").value;
 
 function addChainArrays() {
@@ -858,15 +859,16 @@ function updateAttributes() {
 
     let attributeText = [magickaTotal, healthTotal, staminaTotal];
     let attributeBase = [magickaBase, healthBase, staminaBase];
-
+	
+	profession = professionList[document.getElementById("profession-select").selectedIndex];
     for (i = 0; i < 3; i++) {
-        attributeTotals[i] = race.baseAttributes[i] + (10 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i];
+        attributeTotals[i] = race.baseAttributes[i] + (10 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i] + profession.additionalAttributes[i];
         if(ogmah-1 == i) {
             attributeTotals[i] += 200;
         }
         attributeText[i].textContent = attributeTotals[i];
 
-        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(10 * attributeIncreases[i]));
+        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(10 * attributeIncreases[i]) + profession.additionalAttributes[i]);
     }
     updateDerivedValues();
     saveData();
@@ -891,8 +893,15 @@ function attributesErrorCheck() {
 function updateRace() {
     race = raceList[document.getElementById("races-selection").selectedIndex];
 
+    
+	updateProfession();
+}
+
+function updateProfession() {
+    profession = professionList[document.getElementById("profession-select").selectedIndex];
+
     for(i = 0; i < skillsList.length; i++) {
-        skillsList[i].levelBase = race.baseSkills[i];
+        skillsList[i].levelBase = race.baseSkills[i] + profession.additionalSkills[i];
     }    
 
     drawSkillTree();
@@ -915,17 +924,31 @@ function updateStone() {
     //12 Tower
     //13 Warrior
 
+	//0 None
+    //1 Apprentice
+    //2 Atronach
+    //3 Mage
+    //4 Ritual
+    //5 Lover
+    //6 Shadow
+    //7 Thief
+    //8 Tower
+    //9 Lady
+    //10 Lord
+    //11 Steed
+    //12 Warrior
+    //13 Serpent
     stoneIndex = document.getElementById("stone-select").value;
     attributeModifiers[0] = 0;
     if(stoneIndex == 2) {
         attributeModifiers[0] = 350;
     }
 
-    if(stoneIndex == 6) {
+    if(stoneIndex == 3) {
         attributeModifiers[0] = 100;
     }
 
-    if(stoneIndex == 10) {
+    if(stoneIndex == 11) {
         attributeModifiers[2] = 100;
     }
     updateDerivedValues();

@@ -15,7 +15,7 @@
                         <input type="text" id="build-name" class="text-input" placeholder="Name" onchange="saveData()">
                     </div>
                     <div class="row-content" id="basic-choices">
-                        <div class="basic-choice-group">
+                        <div class="basic-choice-group" id="race-div">
                             <h3>Race</h3>
                             <select name="Races" id="races-selection" class="drop-down" onchange="updateRace()">
                                 <option value="0">Altmer</option>
@@ -30,26 +30,67 @@
                                 <option value="9">Redguard</option>
                             </select>
                         </div>
-                        <div class="basic-choice-group">
+                        <div class="basic-choice-group" id="stone-div">
                             <h3>Standing&nbsp;Stone</h3>
                             <select name="Stones" id="stone-select" class="drop-down" onchange="updateStone()">
 								<option value="0">None</option>
-                                <option value="1">Apprentice</option>
-                                <option value="2">Atronach</option>
-                                <option value="3">Lady</option>
-                                <option value="4">Lord</option>
-                                <option value="5">Lover</option>
-                                <option value="6">Mage</option>
-                                <option value="7">Ritual</option>
-                                <option value="8">Serpent</option>
-                                <option value="9">Shadow</option>
-                                <option value="10">Steed</option>
-                                <option value="11">Thief</option>
-                                <option value="12">Tower</option>
-                                <option value="13">Warrior</option>
+								<optgroup label="Mage">
+									<option value="1">Apprentice</option>
+									<option value="2">Atronach</option>
+									<option value="3">Mage</option>
+									<option value="4">Ritual</option>
+								</optgroup>
+								<optgroup label="Thief">
+									<option value="5">Lover</option>
+									<option value="6">Shadow</option>
+									<option value="7">Thief</option>
+									<option value="8">Tower</option>
+								</optgroup>
+								<optgroup label="Warrior">
+									<option value="9">Lady</option>
+									<option value="10">Lord</option>
+									<option value="11">Steed</option>
+									<option value="12">Warrior</option>
+								</optgroup>
+								<optgroup label="Serpent">
+									<option value="13">Serpent</option>
+								</optgroup>
+                            </select>
+                        </div>	
+						<div class="basic-choice-group" id="profession-div">
+                            <h3>Class</h3>
+                            <select name="Classes" id="profession-select" class="drop-down" onchange="updateProfession()">
+								<option value="0">Custom</option>
+								<optgroup label="Combat Classes">
+									<option value="1">Archer</option>
+									<option value="2">Barbarian</option>
+									<option value="3">Crusader</option>
+									<option value="4">Knight</option>
+									<option value="5">Rogue</option>
+									<option value="6">Scout</option>
+									<option value="7">Warrior</option>
+								</optgroup>
+								<optgroup label="Magic Classes">
+									<option value="8">Battlemage</option>
+									<option value="9">Healer</option>
+									<option value="10">Mage</option>
+									<option value="11">Nightblade</option>
+									<option value="12">Sorcerer</option>
+									<option value="13">Spellsword</option>
+									<option value="14">Witchhunter</option>
+								</optgroup>
+								<optgroup label="Magic Classes">
+									<option value="15">Acrobat</option>
+									<option value="16">Agent</option>
+									<option value="17">Assassin</option>
+									<option value="18">Bard</option>
+									<option value="19">Monk</option>
+									<option value="20">Pilgrim</option>
+									<option value="21">Thief</option>
+								</optgroup>
                             </select>
                         </div>
-                        <div class="basic-choice-group">
+                        <div class="basic-choice-group" id="ogmax-div">
                             <h3>oghma&nbsp;infinium</h3>
                             <select name="Ogmah" id="ogmah-select" class="drop-down" onchange="updateOgmah()">
                                 <option value="0">None</option>
@@ -331,6 +372,7 @@
             </div>
             <script type="text/javascript" src="./perksData.js"></script>
             <script type="text/javascript" src="./raceData.js"></script>
+			<script type="text/javascript" src="./ClassData.js"></script>
             <script type="text/javascript" src="./derived.js"></script>
             <script type="text/javascript" src="./index.js"></script>
         </body>
