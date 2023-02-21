@@ -1860,112 +1860,119 @@ smithing.perks = [
     {
         name: "Craftsmanship", skill: smithing, skillReq: 0,
         xPos: 230 / 5, yPos: 310 / 3.5, preReqs: [], chain: 0,
-        description: "You've acquired the basics of craftsmanship and know how to properly use all kinds of tools. Thus, you are able to craft and improve a wide variety of common goods.",
+        description: "You've acquired the basics of craftsmanship and know how to properly use all kinds of tools. <br> Thus, you are able to craft and improve a wide variety of common goods.",
         labels: [], lines: []
     },
     //1
     {
         name: "Advanced<br>Blacksmithing", skill: smithing, skillReq: 50,
-        xPos: 280 / 5, yPos: 203 / 3.5, preReqs: [0], chain: 0,
-        description: "You've gained quite some finesse, allowing you to craft plate armor and fine jewelry. You have also found a way to melt and crush certain gems into alchemically usable dust.",
+        xPos: 180 / 5, yPos: 180 / 3.5, preReqs: [0], chain: 0,
+        description: "You've gained quite some finesse, allowing you to craft plate armor and fine jewelry.<br>You have also found a way to melt and crush certain gems into alchemically usable dust.",
         labels: [], lines: []
     },
     //2
     {
         name: "Arcane<br>Craftsmanship", skill: smithing, skillReq: 50,
         xPos: 180 / 5, yPos: 100 / 3.5, preReqs: [1], chain: 0,
-        description: "After reading a tome about the ancient secrets of explosive dwemer bolts, you've learned the necessary techniques to craft bolts and arrows that will explode with elemental fury upon impact.",
+        description: "After reading a tome about the ancient secrets of explosive dwemer bolts, you've learned the<br>techniques to craft magical armor and bolts/arrows infused with elemental power.",
         labels: [], lines: []
     },
     //3
     {
         name: "Legendary<br>Blacksmithing", skill: smithing, skillReq: 100,
         xPos: 300 / 5, yPos: 100 / 3.5, preReqs: [1], chain: 0,
-        description: "You make steel sing songs on the anvil. Your hammer is no longer a mere tool, but a loom that weaves the fabric of myths. You can even improve the divine artifacts of Aedra and Daedra.",
+        description: "You make steel sing songs on the anvil. Your hammer is no longer a mere tool, but a loom that weaves the fabric of myths.<br>You can even improve the divine artifacts of Aedra and Daedra.",
         labels: [], lines: []
     },
     //4
     {
         name: "Morrowind<br>Smithing", skill: smithing, skillReq: 25,
-        xPos: 180 / 5, yPos: 180 / 3.5, preReqs: [0], chain: 2, rank: 1, 
-        description: "As a rule, Dunmer are masters of the processing of bone of the fauna of Morrowind, but you have mastered their knowledge with the help of this compendium written by the famous blacksmith of Morrowind.",
+        xPos: 280 / 5, yPos: 203 / 3.5, preReqs: [0], chain: 2, rank: 1, 
+        description: "As a rule, Dunmer are masters of the processing of bone of the fauna of Morrowind, <br>but you have mastered their knowledge with the help of this compendium written by the famous blacksmith of Morrowind.",
         labels: [], lines: [], chainPerks: []
     },
     //5
     {
         name: "Morrowind<br>Smithing", skill: smithing, skillReq: 50,
-        xPos: 180 / 5, yPos: 180 / 3.5, preReqs: [4], chain: 2, rank: 2, 
-        description: "You have honed your bone processins skills and are now able to work with such complex material as chitin. Having read the compendium to the holes, you have become a amster of this technology.",
+        xPos: 280 / 5, yPos: 203 / 3.5, preReqs: [4], chain: 2, rank: 2, 
+        description: "You have honed your bone processing skills and are now able to work with such complex material as chitin. <br> Having read the compendium to the holes, you have become a master of this technology.",
         labels: [], lines: [], chainPerks: []
     },
     //6
     {
         name: "Advanced<br>Light Armors", skill: smithing, skillReq: 25,
         xPos: 115 / 5, yPos: 220 / 3.5, preReqs: [0], chain: 0, 
-        description: "You've been able to learn more advanced techniques, allowing you to craft and efficiently improve scale armor.",
+        description: "You've been able to learn more intricate techniques, <br> allowing you to craft and efficiently improve advanced light armors.",
         labels: [], lines: []
     },
     //7
     {
         name: "Elven Smithing", skill: smithing, skillReq: 50,
         xPos: 48 / 5, yPos: 150 / 3.5, preReqs: [6], chain: 0,
-        description: "You've gained enough finesse to create and improve Elven armor and weapons by studying the Elven craftmanship carefully.",
+        description: "You've gained enough finesse to create and improve Elven armor and weapons <br> by studying the Elven craftmanship carefully.",
         labels: [], lines: []
     },
     //8
     {
         name: "Glass Smithing", skill: smithing, skillReq: 75,
-        xPos: 70 / 5, yPos: 66 / 3.5, preReqs: [7], chain: 0,
-        description: "Crafting and improving Glass equipment is not for the unskilled, but having studied intensely, you aren't one of them any more.",
+        xPos: 70 / 5, yPos: 90 / 3.5, preReqs: [7], chain: 0,
+        description: "Crafting and improving Glass equipment is not for the unskilled, <br>but having studied intensely, you aren't one of them any more.",
         labels: [], lines: []
     },
     //9
     {
         name: "Dwarven<br>Smithing", skill: smithing, skillReq: 25,
         xPos: 355 / 5, yPos: 240 / 3.5, preReqs: [0], chain: 0,
-        description: "You've studied some long-lost schematics of dwarven equipment and acquired the secret knowledge of how to create and improve them efficiently.",
+        description: "You've studied some long-lost schematics of dwarven equipment and <br> acquired the secret knowledge of how to create and improve them efficiently.",
         labels: [], lines: []
     },
     //10
     {
-        name: "Orcish & Nordic<br>Smithing", skill: smithing, skillReq: 50,
-        xPos: 400 / 5, yPos: 172 / 3.5, preReqs: [9], chain: 2, rank: 1, 
-        description: "Orcish equipment is hard to craft, but you've got what it takes. Especially the schematics! You can craft and improve it easily and most efficiently.",
-        labels: [], lines: [], chainPerks: []
+        name: "Orcish<br>Smithing", skill: smithing, skillReq: 50,
+        xPos: 380 / 5, yPos: 162 / 3.5, preReqs: [4, 9], chain: 0,
+        description: "Orcish equipment is hard to craft, but you've got what it takes. <br>Especially the schematics! You can craft and improve it easily and most efficiently.",
+        labels: [], lines: [], chainPerks: [], choiceNeeded: true
     },
     //11
     {
-        name: "Orcish & Nordic<br>Smithing", skill: smithing, skillReq: 55,
-        xPos: 400 / 5, yPos: 172 / 3.5, preReqs: [10], chain: 2, rank: 2, 
-        description: "The key mixture found in Nordic equipment is the blend of Quicksilver and Ebony ore. The combination creates some of the hardest alloys on Nirn. In addition to working with Oricsh you can now work with Nordic materials.",
+        name: "Nordic<br>Smithing", skill: smithing, skillReq: 55,
+        xPos: 430 / 5, yPos: 182 / 3.5, preReqs: [9], chain: 0,
+        description: "The key mixture found in Nordic equipment is the blend of Quicksilver and Ebony ore. <br> The combination creates some of the hardest alloys on Nirn.",
         labels: [], lines: [], chainPerks: []
     },
     //12
     {
-        name: "Ebony & Stahlrim<br>Smithing", skill: smithing, skillReq: 75,
-        xPos: 390 / 5, yPos: 68 / 3.5, preReqs: [11], chain: 2, rank: 1, 
-        description: "Ebony weapons and armor - some even fail at heating the metal. But not you. Now that you've studied the related schematics, you can craft and improve ebony equipment with ease.",
-        labels: [], lines: [], chainPerks: []
+        name: "Ebony<br>Smithing", skill: smithing, skillReq: 75,
+        xPos: 390 / 5, yPos: 90 / 3.5, preReqs: [10, 11], chain: 0, 
+        description: "Ebony weapons and armor - some even fail at heating the metal. But not you. <br>Now that you've studied the related schematics, you can craft and improve ebony equipment with ease.",
+        labels: [], lines: [], chainPerks: [], choiceNeeded: true
     },
     //13
     {
-        name: "Ebony & Stahlrim<br>Smithing", skill: smithing, skillReq: 85,
-        xPos: 390 / 5, yPos: 68 / 3.5, preReqs: [12], chain: 2, rank: 2, 
-        description: "Around the world, only a few know the secret of properly processing enchanted ice, but you were lucky, for the help you provided to Skaals, they agreed to share their secrets. You can now work with Stalhrim in addition to working with Ebony.",
-        labels: [], lines: [], chainPerks: []
+        name: "Daedric Smithing", skill: smithing, skillReq: 100,
+        xPos: 440 / 5, yPos: 35 / 3.5, preReqs: [12], chain: 0,
+        description: "The creation of daedric weapons and armor is a secret few mortals know - still, <br> somehow you managed to acquire this knowledge...",
+        labels: [], lines: []
     },
     //14
     {
-        name: "Daedric Smithing", skill: smithing, skillReq: 100,
-        xPos: 440 / 5, yPos: 35 / 3.5, preReqs: [13], chain: 0,
-        description: "The creation of daedric weapons and armor is a secret few mortals know - still, somehow you managed to acquire this knowledge...",
-        labels: [], lines: []
+        name: "Stahlrim Smithing", skill: smithing, skillReq: 85,
+        xPos: 251 / 5, yPos: 70 / 3.5, preReqs: [8, 12], chain: 0, 
+        description: "Around the world, only a few know the secret of properly processing enchanted ice, <br>but you were lucky, for the help you provided to Skaals, they agreed to share their secrets.",
+        labels: [], lines: [],choiceNeeded: true
     },
     //15
     {
-        name: "Draconic<br>Blacksmithing", skill: smithing, skillReq: 100,
-        xPos: 251 / 5, yPos: 15 / 3.5, preReqs: [8, 12], chain: 0,
-        description: "The scales and bones of dragons are probably the hardest material to work with, but you've mastered even this art since you studied that old compendium.",
+        name: "Draconic Blacksmithing", skill: smithing, skillReq: 100,
+        xPos: 251 / 5, yPos: 40 / 3.5, preReqs: [8, 12], chain: 0,
+        description: "The scales and bones of dragons are probably the hardest material to work with, <br> but you've mastered even this art since you studied that old compendium.",
+        labels: [], lines: [], choiceNeeded: true
+    },
+    //16
+    {
+        name: "Shivering Isles Smithing", skill: smithing, skillReq: 100,
+        xPos: 251 / 5, yPos: 10 / 3.5, preReqs: [8, 12], chain: 0,
+        description: "On your travels you have discovered the secrets to unleash the power of the <br>mystical amber and madness ore of the Shivering Isles. Few could hope to achieve such a feat without losing their mind...",
         labels: [], lines: [], choiceNeeded: true
     }];
 
