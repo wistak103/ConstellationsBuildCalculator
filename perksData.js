@@ -1190,105 +1190,119 @@ enchanting.perks = [
     {
         name: "Novice Illusion", skill: illusion, skillReq: 0,
         xPos: 180 / 3.5, yPos: 303 / 3.5, preReqs: [], chain: 0,
-        description: "You've taught yourself a few Novice level spells and learned how to cast them with decreased effort while your newfound knowledge also allows you to augment the strength and duration of all Illusion spells.",
+        description: "You've learned how to cast Novice level spells with decreased effort <br> while your newfound knowledge also allows you to augment all Illusion spells.",
         labels: [], lines: []
     },
     //1
     {
-        name: "Apprentice<br>Illusion", skill: illusion, skillReq: 20,
+        name: "Apprentice<br>Illusion", skill: illusion, skillReq: 25,
         xPos: 183 / 3.5, yPos: 198 / 3.5, preReqs: [0], chain: 0,
-        description: "By pursuing your apprenticeship in Illusion, you've gained knowledge of Apprentice level spells which you now augment while casting them with less effort.",
+        description: "By pursuing your apprenticeship in Illusion, you're now<br>able to augment and cast them with less effort.",
         labels: [], lines: []
     },
     //2
     {
-        name: "Adept Illusion", skill: illusion, skillReq: 40,
+        name: "Adept Illusion", skill: illusion, skillReq: 50,
         xPos: 185 / 3.5, yPos: 142 / 3.5, preReqs: [1], chain: 0,
-        description: "By advancing further into the school of Illusion, you've gained some Adept level spells and learned how to augment and cast spells of this rank more easily.",
+        description: "By advancing further into the school of Illusion, you've learned how<br>to augment and cast spells of the Adept rank more easily.",
         labels: [], lines: []
     },
     //3
     {
-        name: "Expert Illusion", skill: illusion, skillReq: 60,
+        name: "Expert Illusion", skill: illusion, skillReq: 75,
         xPos: 185 / 3.5, yPos: 80 / 3.5, preReqs: [2], chain: 0,
-        description: "You've unlocked almost every secret in the school of Illusion and you've acquired some Expert level spells. You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
+        description: "You've unlocked almost every secret in the school of Illusion.<br>You can now cast spells of this level easier and augment them to an almost otherworldly extent.",
         labels: [], lines: []
     },
     //4
     {
-        name: "Master Illusion", skill: illusion, skillReq: 80,
+        name: "Master Illusion", skill: illusion, skillReq: 90,
         xPos: 186 / 3.5, yPos: 40 / 3.5, preReqs: [3], chain: 0,
-        description: "Your knowledge of Illusion has become all-encompassing. You taught yourself a Master level spell and you can cast the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
+        description: "Your knowledge of Illusion has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
     },
     //5
     {
-        name: "Acoustic<br>Manipulation", skill: illusion, skillReq: 25,
+        name: "Quiet Casting", skill: illusion, skillReq: 25,
         xPos: 55 / 3.5, yPos: 226 / 3.5, preReqs: [0], chain: 0,
-        description: "After studying spells like Muffle, Arcane Resonance or Rune of Dampening, you are now familiar with manipulating sounds. Thus, you can empower these spells and their strength and duration are increased.",
+        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle also lasts longer.",
         labels: [], lines: []
     },
     //6
     {
-        name: "Visual<br>Manipulation", skill: illusion, skillReq: 35,
-        xPos: 110 / 3.5, yPos: 181 / 3.5, preReqs: [0], chain: 0,
-        description: "You've experimented with spells like Dark Vision, Invisibility and Blur to manipulate your surroundings. After a lot of training you can now empower such spells, and their strength and duration are increased.",
+        name: "Silent Casting", skill: illusion, skillReq: 50,
+        xPos: 45 / 3.5, yPos: 142 / 3.5, preReqs: [5], chain: 0,
+        description: "Empowering Muffle spells lets you cast spells from all schools silently. Invisibility now works while you are running. Invisibility and Muffle last longer.",
         labels: [], lines: []
     },
     //7
     {
-        name: "Environmental<br>Manipulation", skill: illusion, skillReq: 65,
-        xPos: 65 / 3.5, yPos: 25, preReqs: [5, 6], chain: 0,
-        description: "After long training with spells like Shadow Stride, Veil of Silence, Fade Other, Invisibility Sphere and Muffling Sphere, you gained a deep insight into the connections between light and sound. You can now empower these spells and their strength and duration are increased.",
+        name: "Unbreakable Invisibility", skill: illusion, skillReq: 75,
+        xPos: 50 / 3.5, yPos: 80 / 3.5, preReqs: [6], chain: 0,
+        description: "Your invisibility spells now reapply themselves when you crouch while the effect is active. Invisibility and Muffle last longer.",
         labels: [], lines: []
     },
     //8
     {
-        name: "Shadow Shaping", skill: illusion, skillReq: 70,
-        xPos: 125 / 3.5, yPos: 60 / 3.5, preReqs: [3], chain: 0,
-        description: "By studying spells like Shadow Shield, Shadow Wolf and Shadow Simulacrum, you gained even deeper insights into the weave of shadows. Thus, you can empower these spells, and their strength and duration are increased.",
+        name: "Visual<br>Manipulation", skill: illusion, skillReq: 25,
+        xPos: 110 / 3.5, yPos: 220 / 3.5, preReqs: [0], chain: 0,
+        description: "Your knowledge of Shadow Magic grants the power to summon night vision at will. Blur is more effective.",
         labels: [], lines: []
     },
     //9
     {
-        name: "Phantasmagoria", skill: illusion, skillReq: 90,
-        xPos: 102 / 3.5, yPos: 10 / 3.5, preReqs: [8, 7, 4], chain: 0,
-        description: "You've mastered the most powerful forms of Shadow Magic. Therefore, spells like Veil of Shadows, Shadow Sanctuary and Mistress of the Dark can now be empowered and their strength and duration are increased.",
+        name: "Shadow Shaping", skill: illusion, skillReq: 50,
+        xPos: 100 / 3.5, yPos: 130 / 3.5, preReqs: [8], chain: 0,
+        description: "You have gained even deeper insights into the weave of shadows. Blur is more powerful and long lasting. Empowering Shadow Dance grants immunity to most impact effects and increases attack speed.",
         labels: [], lines: []
     },
     //10
     {
-        name: "Delusive<br>Phantasms", skill: illusion, skillReq: 15,
-        xPos: 300 / 3.5, yPos: 210 / 3.5, preReqs: [0], chain: 0,
-        description: "You have studied the most common spell formulae that affect basic emotions like fear, calmness and courage. Thus, you can empower related spells and increase their overall effectiveness.",
+        name: "Shadow Mastery", skill: illusion, skillReq: 75,
+        xPos: 100 / 3.5, yPos: 60 / 3.5, preReqs: [9], chain: 0,
+        description: "You have gained even deeper insights into the weave of shadows. Empowering Shadow Simulacrum or Mistress of the Dark improves your illusions. Blur is more effective. Shadow Dance and Blur now laster even longer.",
         labels: [], lines: []
     },
     //11
     {
-        name: "Otherworldly<br>Phantasms", skill: illusion, skillReq: 45,
-        xPos: 285 / 3.5, yPos: 40, preReqs: [10], chain: 0,
-        description: "You have extended your knowledge of affecting emotions, being able to turn your foes into berserking maniacs or cause them to fall asleep with ease. You also learned how to empower related spells.",
+        name: "Delusive<br>Phantasms", skill: illusion, skillReq: 15,
+        xPos: 300 / 3.5, yPos: 240 / 3.5, preReqs: [0], chain: 0,
+        description: "You can effect basic emotions like fear, calmness and courage more easily. Empowered spells now grant secondary effects. Fear lowers armor, Charm drains magicka and stamina and Courage restores them.",
         labels: [], lines: []
     },
     //12
     {
-        name: "Pain and Agony", skill: illusion, skillReq: 50,
-        xPos: 240 / 3.5, yPos: 31, preReqs: [2], chain: 0,
-        description: "Having studied spells like Phantasmal Pain and Nightmare, you can now invoke terrible agony in your foes with ease. In addition, you also learned how to empower related spells.",
+        name: "Otherworldly<br>Phantasms", skill: illusion, skillReq: 25,
+        xPos: 235 / 3.5, yPos: 60, preReqs: [0], chain: 0,
+        description: "You have improved your ability to turn your foes into berserking maniacs or cause them to fall asleep. Empowered Fury spells increase damage and stamina regeneration. Empowered Sleep spells reduce magicka and stamina regeneration.",
         labels: [], lines: []
     },
     //13
     {
-        name: "Obliterate the Mind", skill: illusion, skillReq: 70,
-        xPos: 270 / 3.5, yPos: 72 / 3.5, preReqs: [12, 11], chain: 0,
-        description: "You have studied spells like Blackout, Command and Phantasmal Killer. Thus, you can now empower them and shatter your foes' minds with ease.",
+        name: "Pain and Agony", skill: illusion, skillReq: 50,
+        xPos: 260 / 3.5, yPos: 40, preReqs: [1], chain: 0,
+        description: "You can now invoke terrible agony in your foes with ease. Empowering Nightmare can kill sleeping targets instantly. Empowered Phantom Pain reduces movement speed.",
         labels: [], lines: []
     },
     //14
     {
-        name: "Domination", skill: illusion, skillReq: 90,
-        xPos: 267 / 3.5, yPos: 10 / 3.5, preReqs: [13, 4], chain: 0,
-        description: "Having studied spells like Phantasmal Miasma and Mind Maelstrom, there is no thinking being that can escape your influence. These spells can now be empowered and sustaining the Miasma is less demanding.",
+        name: "Obliterate the Mind", skill: illusion, skillReq: 75,
+        xPos: 270 / 3.5, yPos: 72 / 3.5, preReqs: [2], chain: 0,
+        description: "Empowered Phantasmal Killer causes an instant heart attack. Empowered Blackout causes unconsciousness. Empowered Fog of Shadows cripples their magicka regeneration.",
+        labels: [], lines: []
+    },
+    //15
+    {
+        name: "Domination", skill: illusion, skillReq: 100,
+        xPos: 267 / 3.5, yPos: 10 / 3.5, preReqs: [3], chain: 0,
+        description: "There is no thinking being that can escape your influence. Empowered Phantasmal Miasma reduces movement speed and Empowered Mind Maelstrom can inflict victims with frenzy or sleep.",
+        labels: [], lines: []
+    },
+	//16
+    {
+        name: "Empowered Illusions", skill: illusion, skillReq: 20,
+        xPos: 85 / 3.5, yPos: 275 / 3.5, preReqs: [0], chain: 0,
+        description: "You learned how to empower Illusion spells by dual casting them. Thus, <br> you're able to overcharge their effects.",
         labels: [], lines: []
     },
    ];
