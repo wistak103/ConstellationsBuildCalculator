@@ -647,8 +647,7 @@ option {
 
 .profession-details-group:last-of-type {
     border: none;
-    margin-right: 0px;
-	width:380px;
+    margin-right: -5px;
 }
 .profession-details-group:first-of-type {
     margin-left: 10px;

@@ -757,7 +757,7 @@ function updateLevel() {
     buildLevel = level;
     levelText.textContent = " "+level;
     totalAttributePoints = level - 1;
-    unspentPerks = (level + 2) + bonusPerks - spentPerks;
+    unspentPerks = (level + 5) + bonusPerks - spentPerks;
     unspentSP = levelToSkillPoints(level) - spentSP;
     
     let unspentPerksText = document.getElementById("unspent-perks-number");
