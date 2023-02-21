@@ -5,7 +5,9 @@
         <link rel="shortcut icon" href="Images/favicon.ico">
         <link rel="stylesheet" href="style.css">
         <title>Constellations Character Builder</title>
-
+		
+		<!-- Needed for nor reapeting skills for custom class code -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <body>
         <div class="main">
@@ -68,7 +70,7 @@
 									<option value="4">Knight</option>
 									<option value="5">Rogue</option>
 									<option value="6">Scout</option>
-									<option value="7">Warrior</option>
+									<option value="7" selected="selected">Warrior</option>
 								</optgroup>
 								<optgroup label="Magic Classes">
 									<option value="8">Battlemage</option>
@@ -356,7 +358,220 @@
                     </div>
                 </div>
             </div>
-            <div id="perk-description-box">
+			<div id="profession-details">
+				<div class="profession-details-group">
+					<h3> Custom Class </h3>
+				</div>
+				
+				<div class="profession-details-divider"></div>
+				
+				<div class="profession-details-group">
+					<div class="profession-details-title>">
+                        <h3>Attribute</h3>
+                        <p class="subtitle">[ +10 to base ]</p>
+                    </div>
+					<div class="profession-details-select">
+						<select name="Class Attribute" id="profession-attribute" class="drop-down" onchange="updateAttributes()" disabled="disabled">
+							<option value="0">Magicka</option>
+							<option value="1">Health</option>
+							<option value="2">Stamina</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="settings-divider"></div>
+				
+				<div class="profession-details-group">
+					<div class="profession-details-title>">
+                        <h3>Skill Group</h3>
+                        <p class="subtitle">[ +5 to all skills ]</p>
+                    </div>
+					<div class="profession-details-select">
+						<select name="Class Skill Group" id="profession-skill-group" class="drop-down" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<option value="0">Mage</option>
+							<option value="1">Warrior</option>
+							<option value="2">Thief</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="settings-divider"></div>
+				
+				<div class="profession-details-group">
+					<div class="profession-details-title>">
+                        <h3>Class Skills</h3>
+                        <p class="subtitle">[ +5 to selected skills ]</p>
+                    </div>
+					<div class="profession-details-select">
+						<div>
+						<select name="Class Attribute" id="skill-choice-1" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<optgroup label="Warrior Skills">
+								<option value="0">Smithing</option>
+								<option value="1">Heavyarmor</option>
+								<option value="2">Block</option>
+								<option value="3">Two Handed</option>
+								<option value="4">One Handed</option>
+								<option value="5">Marksman</option>
+							</optgroup>
+							<optgroup label="Thief Skills">
+								<option value="6">Evasion</option>
+								<option value="7">Sneak</option>
+								<option value="8">Lockpicking</option>
+								<option value="9">Pickpocket</option>
+								<option value="10">Speech</option>
+								<option value="11">Alchemy</option>
+							</optgroup>
+							<optgroup label="Mage Skills">
+								<option value="12">Illusion</option>
+								<option value="13">Conjuration</option>
+								<option value="14">Destruction</option>
+								<option value="15">Restoration</option>
+								<option value="16">Alteration</option>
+								<option value="17">Enchanting</option>
+							</optgroup>
+						</select>
+						
+						<select name="Class Attribute" id="skill-choice-2" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<optgroup label="Warrior Skills">
+								<option value="0">Smithing</option>
+								<option value="1">Heavyarmor</option>
+								<option value="2">Block</option>
+								<option value="3">Two Handed</option>
+								<option value="4">One Handed</option>
+								<option value="5">Marksman</option>
+							</optgroup>
+							<optgroup label="Thief Skills">
+								<option value="6">Evasion</option>
+								<option value="7">Sneak</option>
+								<option value="8">Lockpicking</option>
+								<option value="9">Pickpocket</option>
+								<option value="10">Speech</option>
+								<option value="11">Alchemy</option>
+							</optgroup>
+							<optgroup label="Mage Skills">
+								<option value="12">Illusion</option>
+								<option value="13">Conjuration</option>
+								<option value="14">Destruction</option>
+								<option value="15">Restoration</option>
+								<option value="16">Alteration</option>
+								<option value="17">Enchanting</option>
+							</optgroup>
+						</select>
+
+						<select name="Class Attribute" id="skill-choice-3" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<optgroup label="Warrior Skills">
+								<option value="0">Smithing</option>
+								<option value="1">Heavyarmor</option>
+								<option value="2">Block</option>
+								<option value="3">Two Handed</option>
+								<option value="4">One Handed</option>
+								<option value="5">Marksman</option>
+							</optgroup>
+							<optgroup label="Thief Skills">
+								<option value="6">Evasion</option>
+								<option value="7">Sneak</option>
+								<option value="8">Lockpicking</option>
+								<option value="9">Pickpocket</option>
+								<option value="10">Speech</option>
+								<option value="11">Alchemy</option>
+							</optgroup>
+							<optgroup label="Mage Skills">
+								<option value="12">Illusion</option>
+								<option value="13">Conjuration</option>
+								<option value="14">Destruction</option>
+								<option value="15">Restoration</option>
+								<option value="16">Alteration</option>
+								<option value="17">Enchanting</option>
+							</optgroup>
+						</select>
+						</div>
+						<div>
+						<select name="Class Attribute" id="skill-choice-4" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<optgroup label="Warrior Skills">
+								<option value="0">Smithing</option>
+								<option value="1">Heavyarmor</option>
+								<option value="2">Block</option>
+								<option value="3">Two Handed</option>
+								<option value="4">One Handed</option>
+								<option value="5">Marksman</option>
+							</optgroup>
+							<optgroup label="Thief Skills">
+								<option value="6">Evasion</option>
+								<option value="7">Sneak</option>
+								<option value="8">Lockpicking</option>
+								<option value="9">Pickpocket</option>
+								<option value="10">Speech</option>
+								<option value="11">Alchemy</option>
+							</optgroup>
+							<optgroup label="Mage Skills">
+								<option value="12">Illusion</option>
+								<option value="13">Conjuration</option>
+								<option value="14">Destruction</option>
+								<option value="15">Restoration</option>
+								<option value="16">Alteration</option>
+								<option value="17">Enchanting</option>
+							</optgroup>
+						</select>
+
+						<select name="Class Attribute" id="skill-choice-5" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<optgroup label="Warrior Skills">
+								<option value="0">Smithing</option>
+								<option value="1">Heavyarmor</option>
+								<option value="2">Block</option>
+								<option value="3">Two Handed</option>
+								<option value="4">One Handed</option>
+								<option value="5">Marksman</option>
+							</optgroup>
+							<optgroup label="Thief Skills">
+								<option value="6">Evasion</option>
+								<option value="7">Sneak</option>
+								<option value="8">Lockpicking</option>
+								<option value="9">Pickpocket</option>
+								<option value="10">Speech</option>
+								<option value="11">Alchemy</option>
+							</optgroup>
+							<optgroup label="Mage Skills">
+								<option value="12">Illusion</option>
+								<option value="13">Conjuration</option>
+								<option value="14">Destruction</option>
+								<option value="15">Restoration</option>
+								<option value="16">Alteration</option>
+								<option value="17">Enchanting</option>
+							</optgroup>
+						</select>
+
+						<select name="Class Attribute" id="skill-choice-6" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
+							<optgroup label="Warrior Skills">
+								<option value="0">Smithing</option>
+								<option value="1">Heavyarmor</option>
+								<option value="2">Block</option>
+								<option value="3">Two Handed</option>
+								<option value="4">One Handed</option>
+								<option value="5">Marksman</option>
+							</optgroup>
+							<optgroup label="Thief Skills">
+								<option value="6">Evasion</option>
+								<option value="7">Sneak</option>
+								<option value="8">Lockpicking</option>
+								<option value="9">Pickpocket</option>
+								<option value="10">Speech</option>
+								<option value="11">Alchemy</option>
+							</optgroup>
+							<optgroup label="Mage Skills">
+								<option value="12">Illusion</option>
+								<option value="13">Conjuration</option>
+								<option value="14">Destruction</option>
+								<option value="15">Restoration</option>
+								<option value="16">Alteration</option>
+								<option value="17">Enchanting</option>
+							</optgroup>
+						</select>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		    <div id="perk-description-box">
                 <h3 id="perk-description-title">Mace Focus (1/3)</h3>
                 <p id="perk-description-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
 				<p id="perk-requirements">Onehanded 25</p>
@@ -370,7 +585,22 @@
                     <button id="alert-box-close" onclick="closeAlert()">Okay</button>
                 </div>
             </div>
-            <script type="text/javascript" src="./perksData.js"></script>
+            
+			
+			<!--
+				Code limiting skill choices to not reapeat
+				https://stackoverflow.com/questions/26137309/remove-selected-option-from-another-select-box
+			-->
+			<script type="text/javascript">
+				$(".skill-choice").change(function(e){
+					$(".skill-choice option").removeAttr('disabled');
+					$(".skill-choice").each(function(i,s){
+						$(".skill-choice").not(s).find("option[value="+$(s).val()+"]").attr('disabled','disabled');
+					});
+				});
+			</script>
+			
+			<script type="text/javascript" src="./perksData.js"></script>
             <script type="text/javascript" src="./raceData.js"></script>
 			<script type="text/javascript" src="./ClassData.js"></script>
             <script type="text/javascript" src="./derived.js"></script>

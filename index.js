@@ -20,7 +20,8 @@ let spentAttributes = 0;
 let usedSkills = [];
 let race = altmer;
 let stoneIndex = document.getElementById("stone-select").value;
-//let profession = custom;
+let professionIndex = document.getElementById("profession-select").value;
+let professionSkills = [];
 let ogmah = document.getElementById("ogmah-select").value;
 
 function addChainArrays() {
@@ -860,15 +861,17 @@ function updateAttributes() {
     let attributeText = [magickaTotal, healthTotal, staminaTotal];
     let attributeBase = [magickaBase, healthBase, staminaBase];
 	
-	profession = professionList[document.getElementById("profession-select").selectedIndex];
+	let professionAttributes = [0, 0, 0];
+	professionAttributes[document.getElementById("profession-attribute").value]=10;
+	
     for (i = 0; i < 3; i++) {
-        attributeTotals[i] = race.baseAttributes[i] + (10 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i] + profession.additionalAttributes[i];
+        attributeTotals[i] = race.baseAttributes[i] + (10 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i] + professionAttributes[i];
         if(ogmah-1 == i) {
             attributeTotals[i] += 200;
         }
         attributeText[i].textContent = attributeTotals[i];
 
-        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(10 * attributeIncreases[i]) + profession.additionalAttributes[i]);
+        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(10 * attributeIncreases[i]) + professionAttributes[i]);
     }
     updateDerivedValues();
     saveData();
@@ -898,32 +901,45 @@ function updateRace() {
 }
 
 function updateProfession() {
-    profession = professionList[document.getElementById("profession-select").selectedIndex];
-
-    for(i = 0; i < skillsList.length; i++) {
-        skillsList[i].levelBase = race.baseSkills[i] + profession.additionalSkills[i];
-    }    
-
-    drawSkillTree();
+	professionIndex = document.getElementById("profession-select").value;
+    profession = professionList[professionIndex];
+	
+	if (professionIndex > 0)
+	{
+		toggleClassInput(true);
+		document.getElementById("profession-attribute").value = profession.additionalAttributes;
+		document.getElementById("profession-skill-group").value = profession.skillgroup;
+		let y=0;
+		for(i = 0; i < skillsList.length; i++) {
+			if (profession.additionalSkills[i] > 0)
+			{
+				professionSkills[y]=i;
+				y++;
+			}
+		}
+		document.getElementById("skill-choice-1").value = professionSkills[0];
+		document.getElementById("skill-choice-2").value = professionSkills[1];
+		document.getElementById("skill-choice-3").value = professionSkills[2];
+		document.getElementById("skill-choice-4").value = professionSkills[3];
+		document.getElementById("skill-choice-5").value = professionSkills[4];
+		document.getElementById("skill-choice-6").value = professionSkills[5];
+	}
+	else
+	{
+		toggleClassInput(false);
+		$(".skill-choice option").each(function(){
+			$( this ).removeAttr('disabled');
+		});
+		$(".skill-choice").each(function(i,s){
+			$(".skill-choice").not(s).find("option[value="+$(s).val()+"]").attr('disabled','disabled');
+		});
+	}
+	   
+	updateBaseSkillLevels();
     updateAttributes();
 }
 
 function updateStone() {
-	//0 None
-    //1 Apprentice
-    //2 Atronach
-    //3 Lady
-    //4 Lord
-    //5 Lover
-    //6 Mage
-    //7 Ritual
-    //8 Serpent
-    //9 Shadow
-    //10 Steed
-    //11 Thief
-    //12 Tower
-    //13 Warrior
-
 	//0 None
     //1 Apprentice
     //2 Atronach
@@ -938,6 +954,7 @@ function updateStone() {
     //11 Steed
     //12 Warrior
     //13 Serpent
+	
     stoneIndex = document.getElementById("stone-select").value;
     attributeModifiers[0] = 0;
     if(stoneIndex == 2) {
@@ -959,6 +976,32 @@ function updateStone() {
 function updateOgmah() {
     ogmah = document.getElementById("ogmah-select").value;
     updateLevel();
+}
+
+function updateBaseSkillLevels() {
+	professionSkillGroup = document.getElementById("profession-skill-group").value;
+	professionSkills[0] = document.getElementById("skill-choice-1").value;
+	professionSkills[1] = document.getElementById("skill-choice-2").value;
+	professionSkills[2] = document.getElementById("skill-choice-3").value;
+	professionSkills[3] = document.getElementById("skill-choice-4").value;
+	professionSkills[4] = document.getElementById("skill-choice-5").value;
+	professionSkills[5] = document.getElementById("skill-choice-6").value;
+	let y=0;
+	if (professionSkillGroup==0)
+		y=12;
+	else if (professionSkillGroup==1)
+		y=0;
+	else if (professionSkillGroup==2)
+		y=6;
+	let additionalSkills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	for(i = 0; i < 6; i++) {
+		additionalSkills[professionSkills[i]] +=5;
+		additionalSkills[i+y]+=5;
+	}
+	for(i = 0; i < skillsList.length; i++) {
+		skillsList[i].levelBase = race.baseSkills[i] + additionalSkills[i];
+    }
+	drawSkillTree();
 }
 
 function updateSkillLevels() {
@@ -1301,6 +1344,23 @@ function closeAlert() {
     let alertDiv = document.getElementById("alert");
     alertDiv.style.display = "none";
 }
+
+//Custom Class 
+
+function toggleClassInput(bool) {
+    document.getElementById("profession-attribute").disabled = bool;
+    document.getElementById("profession-skill-group").disabled = bool;
+    document.getElementById("skill-choice-1").disabled = bool;
+	document.getElementById("skill-choice-2").disabled = bool;
+	document.getElementById("skill-choice-3").disabled = bool;
+	document.getElementById("skill-choice-4").disabled = bool;
+	document.getElementById("skill-choice-5").disabled = bool;
+	document.getElementById("skill-choice-6").disabled = bool;
+}
+
+
+
+
 
 //SSL SETTINGS
 
