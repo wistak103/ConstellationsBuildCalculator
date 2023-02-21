@@ -1313,42 +1313,35 @@ enchanting.perks = [
     {
         name: "Cheap Tricks", skill: lockpicking, skillReq: 0,
         xPos: 150 / 4, yPos: 357 / 4, preReqs: [], chain: 0,
-        description: "You have learned the basics of the art of picking locks. You can now pick novice locks without difficulty, but apprentice locks remain a challenge. If you apply some basic smithing techniques, you can even forge steel ingots into lockpicks.",
+        description: "You have learned the basics of the art of picking locks and gain 20 expertise. You can now pick novice and apprentice locks without difficulty,<br>but adept locks remain a challenge. If you apply some basic smithing techniques, you can even forge steel ingots into lockpicks.",
         labels: [], lines: []
     },
     //1
     {
-        name: "Improved Lockpicking", skill: lockpicking, skillReq: 25,
-        xPos: 210 / 4, yPos: 280 / 4, preReqs: [0], chain: 0,
-        description: "You have mastered the basics of the art of picking locks. You can now pick apprentice locks without difficulty, but adept locks remain a challenge.",
+        name: "Locksmithing Lore", skill: lockpicking, skillReq: 45,
+        xPos: 250 / 4, yPos: 195 / 4, preReqs: [0], chain: 0,
+        description: "You have extended your repertoire of lockpicking tricks, which increases your expertise by an additional 25 points.<br>Adept locks can be picked without effort and you can attempt to open expert locks.",
         labels: [], lines: []
     },
     //2
     {
-        name: "Locksmithing Lore", skill: lockpicking, skillReq: 50,
-        xPos: 250 / 4, yPos: 195 / 4, preReqs: [1], chain: 0,
-        description: "You have extended your repertoire of lockpicking tricks. Adept locks can be picked without effort and you can attempt to open expert locks.",
+        name: "Masterly Lockpicking", skill: lockpicking, skillReq: 90,
+        xPos: 280 / 4, yPos: 50 / 4, preReqs: [1], chain: 0,
+        description: "You learned everything there is to know about the art of lockpicking. Your expertise increases by 35 points,<br>you can now pick expert locks without difficulty and even master locks are no longer safe from you.",
         labels: [], lines: []
     },
     //3
     {
         name: "Treasure Hunter", skill: lockpicking, skillReq: 50,
-        xPos: 150 / 4, yPos: 130 / 4, preReqs: [2], chain: 0,
-        description: "You are able to locate secret spaces in containers when you search them and can thereby find more loot.",
+        xPos: 150 / 4, yPos: 130 / 4, preReqs: [1], chain: 0,
+        description: "You are able to locate secret spaces in containers when you search them <br> and can thereby find more loot.",
         labels: [], lines: []
     },
     //4
     {
-        name: "Expert Lockpicking", skill: lockpicking, skillReq: 75,
-        xPos: 270 / 4, yPos: 130 / 4, preReqs: [2], chain: 0,
-        description: "You have nearly mastered the art of lockpicking. You can now pick expert locks without difficulty and even master locks are no longer safe from you.",
-        labels: [], lines: []
-    },
-    //5
-    {
-        name: "Masterly Lockpicking", skill: lockpicking, skillReq: 100,
-        xPos: 280 / 4, yPos: 50 / 4, preReqs: [4], chain: 0,
-        description: "You learned everything there is to know about the art of lockpicking. You can now pick master locks without difficulty.",
+        name: "Locksmith's Memory", skill: lockpicking, skillReq: 30,
+        xPos: 123 / 4, yPos: 280 / 4, preReqs: [0], chain: 0,
+        description: "You are able to remember your lockpick's angle after they break. Also increases your expertise by 10 points.",
         labels: [], lines: []
     },
    ];
