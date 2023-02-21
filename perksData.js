@@ -1352,119 +1352,105 @@ enchanting.perks = [
     {
         name: "Ranged Combat Training", skill: marksman, skillReq: 0,
         xPos: 314 / 4, yPos: 360 / 4, preReqs: [], chain: 0,
-        description: "After some training at the shooting range you can deal more damage with bows and crossbows. [damage x 1.2, -50% weapon weight penalties, ammunition grants armor penetration]",
+        description: "After some training at the shooting range you can deal more damage with bows and crossbows.<br>[20% more damage, -50% weapon weight penalties, ammunition grants armor penetration]",
         labels: [], lines: []
     },
     //1
     {
         name: "Ranger", skill: marksman, skillReq: 15,
         xPos: 177 / 4, yPos: 322 / 4, preReqs: [0], chain: 0,
-        description: "You improved your footwork when engaging in ranged combat with light weapons. [allows running while attacking with light bows and crossbows]",
+        description: "You improved your footwork when engaging in ranged combat with light weapons.<br>[Able to run with a drawn light bow or crossbow]",
         labels: [], lines: []
     },
     //2
     {
         name: "Eagle Eye", skill: marksman, skillReq: 25,
         xPos: 170 / 4, yPos: 250 / 4, preReqs: [0], chain: 0,
-        description: "By concentrating only on your target and holding your breath, you can now aim much more precisely. [zoom in by holding right mouse button]",
+        description: "By concentrating only on your target and holding your breath, you can now aim much more precisely.<br>[Zoom in by holding right mouse button]",
         labels: [], lines: []
     },
     //3
     {
         name: "Marksman's<br>Focus", skill: marksman, skillReq: 50,
         xPos: 83 / 4, yPos: 161 / 4, preReqs: [2], chain: 0,
-        description: "When fully focusing on your target, everything around you seems to slow down remarkably. [time slows down while zooming, -25% weapon weight penalties]",
+        description: "When fully focusing on your target, everything around you seems to slow down remarkably.<br>[Time slows down while zooming, -25% weapon weight penalties]",
         labels: [], lines: []
     },
     //4
     {
         name: "Rapid Reload", skill: marksman, skillReq: 60,
         xPos: 90 / 4, yPos: 119 / 4, preReqs: [2], chain: 0,
-        description: "Your have familiarized yourself with the mechanics of your crossbow and can use this knowledge to reload it significantly faster. [+50% reload speed with crossbows]",
+        description: "Your have familiarized yourself with the mechanics of your crossbow and can use this knowledge to reload it significantly faster.<br>[+10 expertise, +50% reload speed with crossbows]",
         labels: [], lines: []
     },
     //5
     {
         name: "Power Shot", skill: marksman, skillReq: 75,
         xPos: 100 / 4, yPos: 78 / 4, preReqs: [2], chain: 0,
-        description: "You have discovered the art of aiming at tendons and joints. Your shots will now have a chance to stagger enemies [chance to stagger targets]",
+        description: "You have discovered the art of aiming at tendons and joints.<br>[Chance to stagger targets]",
         labels: [], lines: []
     },
     //6
     {
         name: "Quick Shot", skill: marksman, skillReq: 60,
         xPos: 175 / 4, yPos: 124 / 4, preReqs: [2], chain: 0,
-        description: "You have learned to draw and fire in one single movement, increasing your rate of fire with bows greatly. [+50% draw speed with bows]",
+        description: "You have learned to draw and fire in one single movement.<br>[+50% draw speed with bows]",
         labels: [], lines: []
     },
     //7
     {
         name: "Precise Aim", skill: marksman, skillReq: 20,
         xPos: 302 / 4, yPos: 288 / 4, preReqs: [0], chain: 0,
-        description: "Your aim is now precise enough to target weak spots in the enemy's defenses. [damage x 1.2 with bow and crossbow attacks]",
+        description: "Your aim is now precise enough to target weak spots in the enemy's defenses.<br>[20% more damage]",
         labels: [], lines: []
     },
     //8
     {
         name: "Piercing Shot", skill: marksman, skillReq: 45,
         xPos: 284 / 4, yPos: 200 / 4, preReqs: [7], chain: 0,
-        description: "You've learned how to hit the weakest parts of armor, making armored foes more vulnerable to ranged weapons. [+50% armor penetration from ammunition]",
+        description: "You've learned how to hit the weakest parts of armor.<br>[+50% armor penetration from ammunition]",
         labels: [], lines: []
     },
     //9
     {
         name: "Penetrating Shot", skill: marksman, skillReq: 80,
         xPos: 224 / 4, yPos: 67 / 4, preReqs: [8], chain: 0,
-        description: "You've mastered the technique of hitting weak armor parts, making armored foes even more vulnerable to ranged weapons. [+50% armor penetration from ammunition]",
+        description: "You've mastered the technique of hitting weak armor parts.<br>[+50% armor penetration from ammunition]",
         labels: [], lines: []
     },
     //10
     {
         name: "Stunning Precision", skill: marksman, skillReq: 100,
         xPos: 174 / 4, yPos: 27 / 4, preReqs: [9, 5], chain: 0,
-        description: "Any successful staggering shot will almost always stun the target momentarily. [staggering hits will also stun the target]",
+        description: "Any successful staggering shot will almost always stun the target momentarily.<br>[Staggering hits will also stun the target]",
         labels: [], lines: []
     },
     //11
     {
-        name: "Hunter", skill: marksman, skillReq: 0, levelReq: 0,
-        xPos: 70 / 4, yPos: 340 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "You are more adapted to wildlife, and better understand it's inhabitants. [against animals, physical damage dealt x 1.1, physical damage taken x 0.9, +10% passive poison and disease resist]",
+        name: "Hunter", skill: marksman, skillReq: 15, levelReq: 0,
+        xPos: 250 / 4, yPos: 270 / 4, preReqs: [0], chain: 2, rank: 1,
+        description: "You are more adapted to wildlife, and better understand its inhabitants.<br>[against animals: +15% physical damage, -10% physical damage taken, +10% poison and disease resist]",
         labels: [], lines: [], chainPerks: []
     },
     //12
     {
-        name: "Hunter", skill: marksman, skillReq: 0, levelReq: 0,
-        xPos: 70 / 4, yPos: 340 / 4, preReqs: [11], chain: 3, rank: 2,
-        description: "You are more adapted to wildlife, and better understand it's inhabitants. [against animals, physical damage dealt x 1.2, physical damage taken x 0.8, +20% passive poison and disease resist]",
+        name: "Hunter", skill: marksman, skillReq: 30, levelReq: 0,
+        xPos: 250 / 4, yPos: 270 / 4, preReqs: [11], chain: 2, rank: 2,
+        description: "You are more adapted to wildlife, and better understand its inhabitants.<br>[against animals: +30% physical damage, -20% physical damage taken, +20% poison and disease resist]",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
-        name: "Hunter", skill: marksman, skillReq: 0, levelReq: 0,
-        xPos: 70 / 4, yPos: 340 / 4, preReqs: [12],  chain: 3, rank: 3,
-        description: "You are more adapted to wildlife, and better understand it's inhabitants. [against animals, physical damage dealt x 1.3, physical damage taken x 0.7, +30% passive poison and disease resist]",
+        name: "Bow Strike", skill: marksman, skillReq: 25, levelReq: 0,
+        xPos: 90 / 4, yPos: 280 / 4, preReqs: [1], chain: 2, rank: 1,
+        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+15 bash damage, bash causes stagger, -3 bash stamina cost]",
         labels: [], lines: [], chainPerks: []
     },
     //14
     {
-        name: "Bow Strike", skill: marksman, skillReq: 0, levelReq: 0,
-        xPos: 70 / 4, yPos: 280 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "You can use your bow or crossbow as a melee weapon in close combat. [+15 bash damage, bash causes stagger, -3 bash stamina cost]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //15
-    {
-        name: "Bow Strike", skill: marksman, skillReq: 0, levelReq: 15,
-        xPos: 70 / 4, yPos: 280 / 4, preReqs: [14], chain: 3, rank: 2,
-        description: "You can use your bow or crossbow as a melee weapon in close combat. [+30 bash damage, bash causes stagger, -6 bash stamina cost]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //16
-    {
-        name: "Bow Strike", skill: marksman, skillReq: 0, levelReq: 30,
-        xPos: 70 / 4, yPos: 280 / 4, preReqs: [15],  chain: 3, rank: 3,
-        description: "You can use your bow or crossbow as a melee weapon in close combat. [+45 bash damage, bash causes stagger, -10 bash stamina cost]",
+        name: "Bow Strike", skill: marksman, skillReq: 50, levelReq: 0,
+        xPos: 90 / 4, yPos: 280 / 4, preReqs: [13], chain: 2, rank: 2,
+        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+30 bash damage, bash causes stagger, -6 bash stamina cost]",
         labels: [], lines: [], chainPerks: []
     },
    ];
