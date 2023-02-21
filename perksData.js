@@ -1459,243 +1459,186 @@ enchanting.perks = [
    onehanded.perks = [
     //0
     {
-        name: "Brawler", skill: onehanded, skillReq: 0,
-        xPos: 100 / 4, yPos: 320 / 4, preReqs: [], chain: 0,
-        description: "You've trained on the basics of hand-to-hand combat, and can throw harder punches. [base unarmed damage +10, extra +3 when under 255 base Health+Stamina]",
-        labels: [], lines: []
+        name: "Weapon Mastery", skill: onehanded, skillReq: 0,
+        xPos: 191 / 4, yPos: 90, preReqs: [], chain: 2, rank: 1,
+        description: "Your improved fighting techniques allow you to swing one-handed weapons with less effort and deal more damage with one-handed weapons and unarmed attacks.<br>[20% more damage]",
+        labels: [], lines: [], chainPerks: []
     },
     //1
     {
-        name: "Boxing Focus", skill: onehanded, skillReq: 25,
-        xPos: 10, yPos: 90, preReqs: [0], chain: 3, rank: 1, thisOr: [4],
-        description: "You've learned the basics of combat boxing, allowing you to increase your attack rate with cestuses slightly. [+3% attack speed, +1% movement speed, +7 armor penetration]",
+        name: "Weapon Mastery", skill: onehanded, skillReq: 0,
+        xPos: 191 / 4, yPos: 90, preReqs: [1], chain: 2, rank: 2,
+        description: "Your improved fighting techniques increase your damage dealt with one-handed weapons and unarmed attacks greatly.<br>[40% more damage]",
         labels: [], lines: [], chainPerks: []
     },
     //2
     {
-        name: "Boxing Focus", skill: onehanded, skillReq: 50,
-        xPos: 10, yPos: 90, preReqs: [1], chain: 3, rank: 2,
-        description: "You've aquired the advanced techniques of combat boxing, further increasing your attack rate with them. [+6% attack speed, +2% movement speed, +14 armor penetration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Penetrating<br>Strikes", skill: onehanded, skillReq: 20,
+        xPos: 195 / 4, yPos: 274 / 4, preReqs: [0], chain: 0,
+        description: "Your power attacks with one-handed weapons are now devastating enough to penetrate enemy armor and less exhausting.<br>[-50% power attack stamina cost, +5% armor penetration]",
+        labels: [], lines: []
     },
     //3
     {
-        name: "Boxing Focus", skill: onehanded, skillReq: 75,
-        xPos: 10, yPos: 90, preReqs: [2], chain: 3, rank: 3,
-        description: "You've become a master of combat boxing, allowing you to swing your fists so fast that it's almost undectecable to the mortal eye. [+10% attack speed, +3% movement speed, +21 armor penetration]",
+        name: "Dagger<br>Focus", skill: onehanded, skillReq: 25,
+        xPos: 85 / 4, yPos: 240 / 4, preReqs: [2], chain: 3, rank: 1,
+        description: "You learned some dirty tricks for your dagger.<br>[20% irresistible sneak attack damage, +10% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //4
     {
-        name: "Grappling<br>Focus", skill: onehanded, skillReq: 25,
-        xPos: 40 / 4, yPos: 280 / 4, preReqs: [0],chain: 3, rank: 1, thisOr: [1],
-        description: "You've learned the basics of grappling, allowing you to disarm your opponents and make them trip and fall. [+3% disarm chance, +3% knockdown chance with power attacks, +5 armor penetration]",
+        name: "Dagger<br>Focus", skill: onehanded, skillReq: 50,
+        xPos: 85 / 4, yPos: 240 / 4, preReqs: [3], chain: 3, rank: 2,
+        description: "A dagger in your hand turns into a deadly weapon.<br>[55% irresistible sneak attack damage, +20% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //5
     {
-        name: "Grappling<br>Focus", skill: onehanded, skillReq: 50,
-        xPos: 40 / 4, yPos: 280 / 4, preReqs: [4],chain: 3, rank: 2,
-        description: "You've aquired the advanced techniques of grappling, further increasing your chance of disarming and knockdown. [+6% disarm chance, +6% knockdown chance with power attacks, +10 armor penetration]",
+        name: "Dagger<br>Focus", skill: onehanded, skillReq: 75,
+        xPos: 85 / 4, yPos: 240 / 4, preReqs: [4], chain: 3, rank: 3,
+        description: "You have mastered the deadly art of the dagger.<br>[100% irresistible sneak attack damage, +30% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //6
     {
-        name: "Grappling<br>Focus", skill: onehanded, skillReq: 50,
-        xPos: 40 / 4, yPos: 280 / 4, preReqs: [5], chain: 3, rank: 3,
-        description: "You've become a master of grappling, allowing you to deny enemies of thier ability to fight back. [+10% disarm chance, +10% knockdown chance with power attacks, +15 armor penetration]",
+        name: "Axe<br>Focus", skill: onehanded, skillReq: 25,
+        xPos: 140 / 4, yPos: 200 / 4, preReqs: [2], chain: 3, rank: 1,
+        description: "You've become familiar with one-handed axes.<br>[10% more damage, +10% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //7
     {
-        name: "Weapon Mastery", skill: onehanded, skillReq: 0,
-        xPos: 191 / 4, yPos: 90, preReqs: [], chain: 2, rank: 1,
-        description: "Your improved fighting techniques allow you to swing one-handed weapons and fists with less effort and deal more damage. [damage x 1.2, -50% weapon weight penalties]",
+        name: "Axe<br>Focus", skill: onehanded, skillReq: 50,
+        xPos: 140 / 4, yPos: 200 / 4, preReqs: [6], chain: 3, rank: 2,
+        description: "You've become an advanced one-handed axe fighter.<br>[20% more damage, +20% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //8
     {
-        name: "Weapon Mastery", skill: onehanded, skillReq: 0,
-        xPos: 191 / 4, yPos: 90, preReqs: [7], chain: 2, rank: 2,
-        description: "Your improved fighting techniques increase your damage dealt with one-handed weapons and fists greatly. [damage x 1.4, -50% weapon weight penalties]",
+        name: "Axe<br>Focus", skill: onehanded, skillReq: 75,
+        xPos: 140 / 4, yPos: 200 / 4, preReqs: [7], chain: 3, rank: 3,
+        description: "You've become a master of one-handed axe combat.<br>[30% more damage, +30% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //9
     {
-        name: "Penetrating<br>Strikes", skill: onehanded, skillReq: 20,
-        xPos: 195 / 4, yPos: 274 / 4, preReqs: [7], chain: 0,
-        description: "Your power attacks with one-handed weapons are now devastating enough to penetrate enemy armor and less exhausting. [-50% power attack stamina cost, +5 armor penetration]",
-        labels: [], lines: []
+        name: "Blunt Weapon<br>Focus", skill: onehanded, skillReq: 25,
+        xPos: 260 / 4, yPos: 200 / 4, preReqs: [2], chain: 3, rank: 1,
+        description: "You've learned some techniques to crush armor with maces, clubs, and mauls.<br>[5% more power attack damage, +15% armor penetration]",
+        labels: [], lines: [], chainPerks: []
     },
     //10
     {
-        name: "Dagger<br>Focus", skill: onehanded, skillReq: 25,
-        xPos: 85 / 4, yPos: 240 / 4, preReqs: [9], chain: 3, rank: 1,
-        description: "You learned some dirty tricks for your dagger and are more likely to find weak spots in enemy armor. [irresistable sneak attack damage x 1.25, +10 armor penetration]",
+        name: "Blunt Weapon<br>Focus", skill: onehanded, skillReq: 50,
+        xPos: 260 / 4, yPos: 200 / 4, preReqs: [9], chain: 3, rank: 2,
+        description: "You've become an advanced blunt weapon fighter and know how to find weak spots in enemy armor.<br>[10% more power attack damage, +30% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //11
     {
-        name: "Dagger<br>Focus", skill: onehanded, skillReq: 50,
-        xPos: 85 / 4, yPos: 240 / 4, preReqs: [10], chain: 3, rank: 2,
-        description: "A dagger in your hand turns into a deadly weapon that will find a weakness in every armor. [irresistable sneak attack damage x 1.55, +20 armor penetration]",
+        name: "Blunt Weapon<br>Focus", skill: onehanded, skillReq: 75,
+        xPos: 260 / 4, yPos: 200 / 4, preReqs: [10], chain: 3, rank: 3,
+        description: "You've become a masterly blunt weapon fighter, rendering armor almost useless.<br>[15% more power attack damage, +45% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //12
     {
-        name: "Dagger<br>Focus", skill: onehanded, skillReq: 75,
-        xPos: 85 / 4, yPos: 240 / 4, preReqs: [11], chain: 3, rank: 3,
-        description: "You have mastered the deadly art of the dagger and enemy armor stands no chance against your precision. [irresistable sneak attack damage x 2, +30 armor penetration]",
+        name: "Sword/Spear<br>Focus", skill: onehanded, skillReq: 25,
+        xPos: 285 / 4, yPos: 246 / 4, preReqs: [2],chain: 3, rank: 1,
+        description: "You've learned the basics of one-handed sword and spear combat.<br>[+8% attack speed, +7% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
-        name: "War Axe<br>Focus", skill: onehanded, skillReq: 25,
-        xPos: 140 / 4, yPos: 200 / 4, preReqs: [9], chain: 3, rank: 1,
-        description: "You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]",
+        name: "Sword/Spear<br>Focus", skill: onehanded, skillReq: 50,
+        xPos: 285 / 4, yPos: 246 / 4, preReqs: [12],chain: 3, rank: 2,
+        description: "You've acquired the advanced techniques of fighting with one-handed swords and spears.<br>[+16% attack speed, +14% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //14
     {
-        name: "War Axe<br>Focus", skill: onehanded, skillReq: 50,
-        xPos: 140 / 4, yPos: 200 / 4, preReqs: [13], chain: 3, rank: 2,
-        description: "You've become an advanced axe fighter, further increasing their damage and armor penetration. [damage x 1.15, +20 armor penetration]",
+        name: "Sword/Spear<br>Focus", skill: onehanded, skillReq: 75,
+        xPos: 285 / 4, yPos: 246 / 4, preReqs: [13], chain: 3, rank: 3,
+        description: "You've become a master of one-handed swords and spears.<br>[+24% attack speed, +21% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //15
     {
-        name: "War Axe<br>Focus", skill: onehanded, skillReq: 75,
-        xPos: 140 / 4, yPos: 200 / 4, preReqs: [14], chain: 3, rank: 3,
-        description: "Having mastered war axe combat, they start to feel like an almost natural extension of your arm. [damage x 1.3, +30 armor penetration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Powerful Strike", skill: onehanded, skillReq: 50,
+        xPos: 150 / 4, yPos: 150 / 4, preReqs: [2], chain: 0,
+        description: "You know how to put the maximum force into your power attacks.<br>[20% more power attack damage]",
+        labels: [], lines: []
     },
     //16
     {
-        name: "Mace<br>Focus", skill: onehanded, skillReq: 25,
-        xPos: 260 / 4, yPos: 200 / 4, preReqs: [9], chain: 3, rank: 1,
-        description: "You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Powerful Charge", skill: onehanded, skillReq: 50,
+        xPos: 250 / 4, yPos: 150 / 4, preReqs: [2], chain: 0,
+        description: "You have learned to perform a leaping power attack while sprinting.<br>[Able to do sprinting power attack]",
+        labels: [], lines: []
     },
     //17
     {
-        name: "Mace<br>Focus", skill: onehanded, skillReq: 50,
-        xPos: 260 / 4, yPos: 200 / 4, preReqs: [16], chain: 3, rank: 2,
-        description: "You've become an advanced mace fighter and know how to find weak spots in enemy armor. [power attack damage x 1.1, +30 armor penetration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Stunning Charge", skill: onehanded, skillReq: 100,
+        xPos: 200 / 4, yPos: 25 / 4, preReqs: [15, 16], chain: 0,
+        description: "Putting your whole weight behind your charge, your forward power attacks now have enough momentum to knock down opponent.<br>[Forward power attacks can knock down]",
+        labels: [], lines: []
     },
     //18
     {
-        name: "Mace<br>Focus", skill: onehanded, skillReq: 75,
-        xPos: 260 / 4, yPos: 200 / 4, preReqs: [17], chain: 3, rank: 3,
-        description: "You've become a masterly mace fighter, rendering armor almost useless. [power attack damage x 1.15, +45 armor penetration]",
+        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 25,
+        xPos: 230 / 4, yPos: 310 / 4, preReqs: [0],chain: 2, rank: 1,
+        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger.<br>[while having off hand free: +15% damage, +10% attack speed]",
         labels: [], lines: [], chainPerks: []
     },
     //19
     {
-        name: "Sword<br>Focus", skill: onehanded, skillReq: 25,
-        xPos: 285 / 4, yPos: 246 / 4, preReqs: [9],chain: 3, rank: 1,
-        description: "You've learned the basics of sword combat, allowing you to increase your attack rate with them slightly. [+8% attack speed, +7 armor penetration]",
+        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 50,
+        xPos: 230 / 4, yPos: 310 / 4, preReqs: [18], chain: 2, rank: 2,
+        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger.<br>[while having off hand free: +30% damage, +20% attack speed]",
         labels: [], lines: [], chainPerks: []
     },
-    //20
+	//20
     {
-        name: "Sword<br>Focus", skill: onehanded, skillReq: 50,
-        xPos: 285 / 4, yPos: 246 / 4, preReqs: [19],chain: 3, rank: 2,
-        description: "You've acquired the advanced techniques of sword combat, further increasing your attack rate with them. [+16% attack speed, +14 armor penetration]",
+        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 25,
+        xPos: 72, yPos: 80, preReqs: [0], chain: 2, rank: 1,
+        description: "You're more adapted to wielding both weapon & magic, and can use your weapon to aid your spellcasting.<br>[with one-handed weapon on right hand and magic on left hand: +5% attack speed, -13% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
     //21
     {
-        name: "Sword<br>Focus", skill: onehanded, skillReq: 75,
-        xPos: 285 / 4, yPos: 246 / 4, preReqs: [20], chain: 3, rank: 3,
-        description: "You've become a master of sword combat, allowing you to swing swords so fast that it's almost undetectable to the mortal eye. [+24% attack speed, +21 armor penetration]",
+        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 50,
+        xPos: 72, yPos: 80, preReqs: [20],chain: 2, rank: 2,
+        description: "You're more adapted to wielding both weapon & magic, and can use your weapon to aid your spellcasting.<br>[with one-handed weapon on right hand and magic on left hand: +10% attack speed, -25% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
     //22
     {
-        name: "Powerful Strike", skill: onehanded, skillReq: 50,
-        xPos: 150 / 4, yPos: 150 / 4, preReqs: [9], chain: 0,
-        description: "You know how to put the maximum force into your power attacks which are now even more devastating. [power attack damage x 1.2]",
-        labels: [], lines: []
+        name: "Flurry", skill: onehanded, skillReq: 25,
+        xPos: 88, yPos: 90, preReqs: [0],chain: 2, rank: 1,
+        description: "When fighting with one-handed weapons or fists, you are able to attack faster than normal.<br>[+10% attack speed]",
+        labels: [], lines: [], chainPerks: []
     },
     //23
     {
-        name: "Powerful Charge", skill: onehanded, skillReq: 50,
-        xPos: 250 / 4, yPos: 150 / 4, preReqs: [9], chain: 0,
-        description: "You have learned to perform a leaping power attack while sprinting, inflicting terrible wounds. [unlocks sprinting power attack, -25% weapon weight penalties]",
-        labels: [], lines: []
+        name: "Flurry", skill: onehanded, skillReq: 50,
+        xPos: 88, yPos: 90, preReqs: [23], chain: 2, rank: 2,
+        description: "When fighting with one-handed weapons or fists, you're able to attack even faster.<br>[+25% attack speed]",
+        labels: [], lines: [], chainPerks: []
     },
     //24
     {
-        name: "Stunning Charge", skill: onehanded, skillReq: 100,
-        xPos: 200 / 4, yPos: 25 / 4, preReqs: [22, 23], chain: 0,
-        description: "Putting your whole weight behind your charge, your forward power attacks now have enough momentum to knock down opponent. [forward power attacks can knock down]",
-        labels: [], lines: []
-    },
-    //25
-    {
-        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 25,
-        xPos: 230 / 4, yPos: 310 / 4, preReqs: [7],chain: 3, rank: 1,
-        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger. [while having off hand free, damage x 1.06, 6% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //26
-    {
-        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 50,
-        xPos: 230 / 4, yPos: 310 / 4, preReqs: [25], chain: 3, rank: 2,
-        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger. [while having off hand free, damage x 1.12, 12% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //27
-    {
-        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 75,
-        xPos: 230 / 4, yPos: 310 / 4, preReqs: [26], chain: 3, rank: 3,
-        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger. [while having off hand free, damage x 1.2, 20% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //28
-    {
-        name: "Flurry", skill: onehanded, skillReq: 25,
-        xPos: 88, yPos: 90, preReqs: [7],chain: 2, rank: 1,
-        description: "When fighting with one-handed weapons, you are able to attack faster than normal. [+10% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //29
-    {
-        name: "Flurry", skill: onehanded, skillReq: 50,
-        xPos: 88, yPos: 90, preReqs: [28], chain: 2, rank: 2,
-        description: "When fighting with one-handed weapons, you're able to attack even faster. [+25% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //30
-    {
         name: "Storm of Steel", skill: onehanded, skillReq: 75,
-        xPos: 88, yPos: 100 / 4, preReqs: [28], chain: 0,
-        description: "You've become very skilled in wielding two weapons at once. [dual-wield power attack damage x 1.25]",
+        xPos: 88, yPos: 100 / 4, preReqs: [23], chain: 0,
+        description: "You've become very skilled in wielding two weapons at once.<br>[20% more dual-wield power attack damage]",
         labels: [], lines: []
     },
-
-    //31
+	//25
     {
-        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 25,
-        xPos: 72, yPos: 80, preReqs: [7], chain: 3, rank: 1,
-        description: "While having your left hand empty or equipped with magic, 1H weapons are 5/10/15% faster. While having a 1H weapon on right hand, spell costs are reduced by 10/20/30%.",
-        labels: [], lines: [], chainPerks: []
-    },
-    //32
-    {
-        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 50,
-        xPos: 72, yPos: 80, preReqs: [31],chain: 3, rank: 2,
-        description: "While having your left hand empty or equipped with magic, 1H weapons are 5/10/15% faster. While having a 1H weapon on right hand, spell costs are reduced by 10/20/30%.",
-        labels: [], lines: [], chainPerks: []
-    },
-    //33
-    {
-        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 75,
-        xPos: 72, yPos: 80, preReqs: [32],chain: 3, rank: 3,
-        description: "While having your left hand empty or equipped with magic, 1H weapons are 5/10/15% faster. While having a 1H weapon on right hand, spell costs are reduced by 10/20/30%.",
-        labels: [], lines: [], chainPerks: []
-    },
+        name: "Martial Arts", skill: onehanded, skillReq: 0,
+        xPos: 100 / 4, yPos: 320 / 4, preReqs: [], chain: 0,
+        description: "You are a passionate fist fighter, and train regularly to toughen your muscles to their very limits.<br>[+30 unarmed damage, 67% less unarmed power attack cost]",
+        labels: [], lines: []
+    }
    ];
 
    let pickpocket = new SkillTree('pickpocket', 12);
