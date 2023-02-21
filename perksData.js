@@ -1982,7 +1982,7 @@ smithing.perks = [
     {
         name: "Stealth", skill: sneak, skillReq: 0,
         xPos: 189 / 4, yPos: 349 / 4, preReqs: [], chain: 2, rank: 1,
-        description: "You know the basics of moving silently and are harder to detect when sneaking while not wearing any heavy armor.",
+        description: "You know the basics of moving silently and are harder to detect when sneaking <br> while not wearing any heavy armor.",
         labels: [], lines: [], chainPerks: []
     },
     //1
@@ -1996,14 +1996,14 @@ smithing.perks = [
     {
         name: "Deft Strike", skill: sneak, skillReq: 25,
         xPos: 300 / 4, yPos: 252 / 4, preReqs: [0],  chain: 0,
-        description: "You've learned to exploit weaknesses in your foes' armor when sneak attacking with daggers, bows or swords.",
+        description: "You've learned to exploit weaknesses in your foes' armor <br> when sneak attacking with daggers, bows or swords.",
         labels: [], lines: []
     },
     //3
     {
         name: "Anatomical Lore", skill: sneak, skillReq: 50,
         xPos: 308 / 4, yPos: 174 / 4, preReqs: [2],  chain: 0,
-        description: "Newfound knowledge of humanoid anatomy allows you to slay almost any human-like creature outright with sneak attacks.",
+        description: "Newfound knowledge of humanoid anatomy allows you to slay almost any <br> human-like creature outright with sneak attacks.",
         labels: [], lines: []
     },
     //4
@@ -2024,21 +2024,21 @@ smithing.perks = [
     {
         name: "Light Steps", skill: sneak, skillReq: 50,
         xPos: 129 / 4, yPos: 147 / 4, preReqs: [5],  chain: 0,
-        description: "By distributing your weight more consciously, you're able to avoid triggering pressure plates or similar mechanisms.",
+        description: "By distributing your weight more consciously,<br>you're able to avoid triggering pressure plates or similar mechanisms.",
         labels: [], lines: []
     },
     //7
     {
         name: "Acrobatics", skill: sneak, skillReq: 75,
         xPos: 227 / 4, yPos: 79 / 4, preReqs: [6],  chain: 0,
-        description: "Your improved balance allows you to silently roll forward, avoid getting knocked down except through magic and move even more quietly.",
+        description: "Your improved balance allows you to silently roll forward,<br>avoid getting knocked down except through magic and move even more quietly.",
         labels: [], lines: []
     },
     //8
     {
         name: "Shadowrunner", skill: sneak, skillReq: 100,
         xPos: 324 / 4, yPos: 45 / 4, preReqs: [7],  chain: 0,
-        description: "There's almost nothing you cannot evade. You are even harder to detect, more silent and all falling damage is decreased.",
+        description: "There's almost nothing you cannot evade.<br>You are even harder to detect, more silent and all falling damage is decreased.",
         labels: [], lines: []
     },
    ];
