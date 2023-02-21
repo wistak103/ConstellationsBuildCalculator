@@ -924,106 +924,99 @@ enchanting.perks = [
     //0
     {
         name: "Enchanter's Insight", skill: enchanting, skillReq: 0,
-        xPos: 183 / 4, yPos: 342 / 4, preReqs: [], chain: 2, rank: 1,
-        description: "You've acquired fundamental insights into how matter and magic intertwine. Thus, you can now infuse items with arcane energy at an enchanter and use soul gems to recharge enchanted items of all kinds.",
+        xPos: 183 / 4, yPos: 342 / 4, preReqs: [], chain: 3, rank: 1,
+        description: "You've acquired fundamental insights into how matter and magic intertwine. Thus, you can now infuse<br> items with arcane energy at an enchanter and use soul gems to recharge enchanted items of all kinds.",
         labels: [], lines: [], chainPerks: []
     },
     //1
     {
-        name: "Enchanter's Insight", skill: enchanting, skillReq: 20,
-        xPos: 183 / 4, yPos: 342 / 4, preReqs: [0], chain: 2, rank: 2,
+        name: "Enchanter's Insight", skill: enchanting, skillReq: 30,
+        xPos: 183 / 4, yPos: 342 / 4, preReqs: [0], chain: 3, rank: 2,
         description: "Your advanced knowledge of arcane energy allows you to improve all your enchantments even more.",
         labels: [], lines: [], chainPerks: []
     },
-    //2
+	//2
     {
-        name: "Soul Gem Mastery", skill: enchanting, skillReq: 25,
-        xPos: 246 / 4, yPos: 218 / 4, preReqs: [0], chain: 0,
-        description: "You've learned how to draw more energy from soul gems and are now able to craft them at a smelter by transmuting and melting certain minerals.",
-        labels: [], lines: []
+        name: "Enchanter's Insight", skill: enchanting, skillReq: 60,
+        xPos: 183 / 4, yPos: 342 / 4, preReqs: [0], chain: 3, rank: 3,
+        description: "Through obscure knowledge of arcane energy you are able to improve all your enchantments even more.",
+        labels: [], lines: [], chainPerks: []
     },
     //3
     {
-        name: "Arcane Experimentation", skill: enchanting, skillReq: 50,
-        xPos: 259 / 4, yPos: 160 / 4, preReqs: [2], chain: 0,
-        description: "Your studies have enabled you to research unique enchantments of your own and to craft better staves at the forge.",
+        name: "Soul Gem Mastery", skill: enchanting, skillReq: 25,
+        xPos: 246 / 4, yPos: 218 / 4, preReqs: [0], chain: 0,
+        description: "You've learned how to draw more energy from soul gems and are now able to <br> craft them at a smelter by transmuting and melting certain minerals.",
         labels: [], lines: []
     },
     //4
     {
-        name: "Artificer's Insight", skill: enchanting, skillReq: 75,
-        xPos: 264 / 4, yPos: 80 / 4, preReqs: [3], chain: 0,
-        description: "You could fill grimoires with your newfound knowledge that allows you to create even better enchantments and staves.",
+        name: "Arcane Experimentation", skill: enchanting, skillReq: 50,
+        xPos: 259 / 4, yPos: 160 / 4, preReqs: [3], chain: 0,
+        description: "Your studies have enabled you to research unique enchantments of your own<br>and to craft better staves at the forge.",
         labels: [], lines: []
     },
     //5
+    {
+        name: "Artificer's Insight", skill: enchanting, skillReq: 75,
+        xPos: 264 / 4, yPos: 80 / 4, preReqs: [4], chain: 0,
+        description: "You could fill grimoires with your newfound knowledge that allows you to create<br>even better enchantments and staves.",
+        labels: [], lines: []
+    },
+    //6
     {
         name: "Elemental Lore", skill: enchanting, skillReq: 25,
         xPos: 138 / 4, yPos: 219 / 4, preReqs: [0], chain: 0,
         description: "You've learned how to tame the elements most efficiently.<br> Thus, all elemental enchantments are stronger.",
         labels: [], lines: []
     },
-    //6
-    {
-        name: "Corpus Lore", skill: enchanting, skillReq: 50,
-        xPos: 150 / 4, yPos: 150 / 4, preReqs: [5], chain: 0, 
-        description: "You've become skilled in using enchantments to strengthen mind and body. Thus, all such enchantments are stronger.",
-        labels: [], lines: []
-    },
     //7
     {
-        name: "Skill Lore", skill: enchanting, skillReq: 75,
-        xPos: 191 / 4, yPos: 93 / 4, preReqs: [6], chain: 0, 
-        description: "You've become a master of infusing enchantments that transfer knowledge and skill to the user, making all such ones stronger.",
+        name: "Corpus Lore", skill: enchanting, skillReq: 50,
+        xPos: 150 / 4, yPos: 150 / 4, preReqs: [6], chain: 0, 
+        description: "You've become skilled in using enchantments to strengthen mind and body. Thus, <br> all such enchantments are stronger.",
         labels: [], lines: []
     },
     //8
     {
-        name: "Enchantment Mastery", skill: enchanting, skillReq: 100,
-        xPos: 258 / 4, yPos: 35 / 4, preReqs: [4, 7], chain: 0, 
-        description: "You've found a way to bind even more energy into inanimate matter. Thus, you can bend the Law of Firsts to an extent and even create Daedric staves. Additionally, all enchanted items also consume less energy.",
+        name: "Skill Lore", skill: enchanting, skillReq: 75,
+        xPos: 191 / 4, yPos: 93 / 4, preReqs: [7], chain: 0, 
+        description: "You've become a master of infusing enchantments that transfer knowledge and skill to the user,<br> making all such ones stronger.",
         labels: [], lines: []
     },
     //9
     {
-        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 25,
-        xPos: 280 / 4, yPos: 280 / 4, preReqs: [0], chain: 3, rank: 1,
-        description: "Your understanding of enchantments allows you to use them more effectively and efficiently. Enchantment charge cost x 0.9, recharge amount x 1.1, scroll magnitude and duration x 1.1.",
-        labels: [], lines: [], chainPerks: []
+        name: "Enchantment Mastery", skill: enchanting, skillReq: 100,
+        xPos: 258 / 4, yPos: 35 / 4, preReqs: [5, 8], chain: 0, 
+        description: "You've found a way to bind even more energy into inanimate matter. Thus, you can bend the Law of Firsts to an extent<br> and even create Daedric staves. Additionally, all enchanted items also consume less energy.",
+        labels: [], lines: []
     },
     //10
     {
-        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 50,
-        xPos: 280 / 4, yPos: 280 / 4, preReqs: [9], chain: 3, rank: 2,
-        description: "Your understanding of enchantments allows you to use them more effectively and efficiently. Enchantment charge cost x 0.8, recharge amount x 1.2, scroll magnitude and duration x 1.2.",
+        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 25,
+        xPos: 280 / 4, yPos: 280 / 4, preReqs: [0], chain: 2, rank: 1,
+        description: "Your understanding of enchantments allow you to use them more effectively and efficiently.<br>[+15% staff & scroll magnitude and duration]",
         labels: [], lines: [], chainPerks: []
     },
     //11
     {
-        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 75,
-        xPos: 280 / 4, yPos: 280 / 4, preReqs: [10], chain: 3, rank: 3,
-        description: "Your understanding of enchantments allows you to use them more effectively and efficiently. Enchantment charge cost x 0.7, recharge amount x 1.3, scroll magnitude and duration x 1.3.",
+        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 50,
+        xPos: 280 / 4, yPos: 280 / 4, preReqs: [10], chain: 2, rank: 2,
+        description: "Your understanding of enchantments allow you to use them more effectively and efficiently.<br>[+30% staff & scroll magnitude and duration]",
         labels: [], lines: [], chainPerks: []
     },
     //12
     {
         name: "Staff<br>Channeling", skill: enchanting, skillReq: 25,
-        xPos: 320 / 4, yPos: 340 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient. [while having staff equipped, spell magnitude and duration x 1.05, spell cost x 0.9, for spells casted by yourself]",
+        xPos: 120 / 4, yPos: 300 / 4, preReqs: [0], chain: 2, rank: 1,
+        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient.<br>[while having staff equipped: +5% spell magnitude and duration, -10% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
-        name: "Staff<br>Channeling", skill: enchanting, skillReq: 50,
-        xPos: 320 / 4, yPos: 340 / 4, preReqs: [12], chain: 3, rank: 2,
-        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient. [while having staff equipped, spell magnitude and duration x 1.1, spell cost x 0.8, for spells casted by yourself]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //14
-    {
-        name: "Staff<br>Channeling", skill: enchanting, skillReq: 75,
-        xPos: 320 / 4, yPos: 340 / 4, preReqs: [13], chain: 3, rank: 3,
-        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient. [while having staff equipped, spell magnitude and duration x 1.15, spell cost x 0.7, for spells casted by yourself]",
+        name: "Staff<br>Channeling", skill: enchanting, skillReq: 40,
+        xPos: 120 / 4, yPos: 300 / 4, preReqs: [12], chain: 2, rank: 2,
+        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient.<br>[while having staff equipped: +10% spell magnitude and duration, -20% spell cost]",
         labels: [], lines: [], chainPerks: []
     }
 ];
