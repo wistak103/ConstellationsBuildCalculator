@@ -1116,70 +1116,70 @@ enchanting.perks = [
     {
         name: "Conditioning", skill: heavyarmor, skillReq: 0,
         xPos: 249 / 4.5, yPos: 406 / 4.5, preReqs: [], chain: 0,
-        description: "You've accustomed yourself to using heavy armor. You no longer get tired just by wearing it and can cast Novice level spells without severe penalties.",
+        description: "You've accustomed yourself to using heavy armor.<br>[No stamina drain for wearing heavy armor, unique bonus when wearing high-quality materials, -35% armor weight penalty]",
         labels: [], lines: []
     },
     //1
     {
         name: "Relentless Onslaught", skill: heavyarmor, skillReq: 20,
         xPos: 249 / 4.5, yPos: 280 / 4.5, preReqs: [0], chain: 0,
-        description: "After extensive training you now can sprint in heavy armor without problems. Your familiarity with your armor also allows you to deflect most melee attacks while bull rushing.",
+        description: "After extensive training you now can sprint and dodge in heavy armor without problems.<br>[no sprinting stamina cost penalty, enables you to dodge while wearing heavy armor, -10% armor weight penalty]",
         labels: [], lines: []
     },
     //2
     {
         name: "Combat Casting", skill: heavyarmor, skillReq: 25,
         xPos: 130 / 4.5, yPos: 301 / 4.5, preReqs: [0], chain: 0,
-        description: "You're able to keep concentrated enough in heavy armor to cast Apprentice level spells without severe penalties.",
+        description: "You are able to keep concentrated enough in heavy armor.<br>[No spell cost penalty for casting Novice and Apprentice spells in heavy armor]",
         labels: [], lines: []
     },
     //3
     {
         name: "Combat Trance", skill: heavyarmor, skillReq: 50,
         xPos: 73 / 4.5, yPos: 200 / 4.5, preReqs: [2], chain: 0,
-        description: "Your heavy armor distracts you even less, allowing you to cast Adept level spells with almost no penalty.",
+        description: "Your heavy armor distracts you even less.<br>[No spell cost penalty for casting Adept spells in heavy armor]",
         labels: [], lines: []
     },
     //4
     {
         name: "Combat Meditation", skill: heavyarmor, skillReq: 75,
         xPos: 84 / 4.5, yPos: 110 / 4.5, preReqs: [3], chain: 0,
-        description: "You're accustomed to your heavy armor so much that you can now cast even Expert level spells with relative ease.",
+        description: "You're accustomed to your heavy armor so much that you can now cast even sophisticated spells with relative ease.<br>[No spell cost penalty for casting Expert spells in heavy armor]",
         labels: [], lines: []
     },
     //5
     {
         name: "Battle Mage", skill: heavyarmor, skillReq: 100,
         xPos: 103 / 4.5, yPos: 36 / 4.5, preReqs: [4], chain: 0,
-        description: "You have mastered spellcasting while wearing heavy armor and now can even cast Master level spells with ease. Bolstered by wearing your full heavy armor, you can concentrate even more and cast all spells easier.",
+        description: "You have mastered spellcasting while wearing heavy armor.<br>[No spell cost penalty for casting Master spells in heavy armor, 15% less spell cost when wearing all heavy armor: head, chest, hands, feet]",
         labels: [], lines: []
     },
     //6
     {
         name: "Combat Training", skill: heavyarmor, skillReq: 25,
         xPos: 355 / 4.5, yPos: 307 / 4.5, preReqs: [0], chain: 0,
-        description: "You require no extra stamina for power attacks when wearing heavy armor and are less hindered by your armor. Also, your gauntlets improve your unarmed damage.",
+        description: "You are less hindered by your armor and can attack with ease.<br>[No power attack stamina cost penalty, increased unarmed damage with heavy gauntlets, -10% armor weight penalty]",
         labels: [], lines: []
     },
     //7
     {
         name: "Fortitude", skill: heavyarmor, skillReq: 50,
         xPos: 387 / 4.5, yPos: 216 / 4.5, preReqs: [6], chain: 0,
-        description: "Your training made you stronger and you are now less burdened by the rigidity of your armor. You also receive some additional stamina and carry weight. Getting hit does not disrupt your focus.",
+        description: "Your training made you stronger and you are now less burdened by the rigidity of your armor.<br>[+40 stamina, +20 carry weight, -10% armor weight penalty]",
         labels: [], lines: []
     },
     //8
     {
         name: "Power of<br>the Combatant", skill: heavyarmor, skillReq: 75,
         xPos: 400 / 4.5, yPos: 140 / 4.5, preReqs: [7], chain: 0,
-        description: "Once a day, you can now push yourself to continue fighting,  allowing you to regenerate stamina very fast. Furthermore, you learned some new tricks to overcome the mobility limitations of your armor.",
+        description: "Once a day, you can now push yourself to continue fighting.<br>[Daily power: Restore 25 stamina per second for 30 seconds, -10% armor weight penalty]",
         labels: [], lines: []
     },
     //9
     {
         name: "Juggernaut", skill: heavyarmor, skillReq: 100,
         xPos: 366 / 4.5, yPos: 36 / 4.5, preReqs: [8], chain: 0,
-        description: "You've reached perfection in the skill of wearing heavy armor. Your armor can now be worn with less effort and protects you even more.",
+        description: "You've reached perfection in the skill of wearing heavy armor and are now significantly more maneuverable in it.<br>[15% less armor weight, 10% more armor rating, 90% less stagger when wearing all heavy armor: head, chest, hands, feet]",
         labels: [], lines: []
     },
    ];
