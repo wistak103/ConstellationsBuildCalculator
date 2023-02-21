@@ -360,7 +360,7 @@
             </div>
 			<div id="profession-details">
 				<div class="profession-details-group">
-					<h3> Custom Class </h3>
+					<input type="text" id="profession-name" class="text-input" placeholder="Custom Class" onchange="saveData()" disabled="disabled">
 				</div>
 				
 				<div class="profession-details-divider"></div>
@@ -402,7 +402,9 @@
                         <h3>Class Skills</h3>
                         <p class="subtitle">[ +5 to selected skills ]</p>
                     </div>
-					<div class="profession-details-select">
+				</div>
+				<div class="profession-details-group">
+					<div class="profession-details-select" id="skill-choices">
 						<div>
 						<select name="Class Attribute" id="skill-choice-1" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
 							<optgroup label="Warrior Skills">

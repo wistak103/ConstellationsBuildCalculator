@@ -595,6 +595,16 @@ option {
     justify-content: space-around;
 }
 
+#profession-name {
+    min-width: 0px;
+    max-width: none;
+    width: 12em;
+    flex-grow: 1;
+    font-size:  1.5em;
+    font-weight: 800;
+	text-transform:capitalize;
+}
+
 .settings-divider {
     height: 100%;
     border-right: 1px rgba(93, 67, 50, 0.25) solid;
@@ -627,14 +637,18 @@ option {
 .profession-details-group > div {
 	margin:5px;
 }
-
+#skill-choices {
+	width:380px;
+	margin:0px;
+}
 .skill-choice {
 	margin:3px;
 }
 
 .profession-details-group:last-of-type {
     border: none;
-    margin-right: 10px;
+    margin-right: 0px;
+	width:380px;
 }
 .profession-details-group:first-of-type {
     margin-left: 10px;

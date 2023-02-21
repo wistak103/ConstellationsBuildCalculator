@@ -907,6 +907,7 @@ function updateProfession() {
 	if (professionIndex > 0)
 	{
 		toggleClassInput(true);
+		document.getElementById("profession-name").value = profession.name;
 		document.getElementById("profession-attribute").value = profession.additionalAttributes;
 		document.getElementById("profession-skill-group").value = profession.skillgroup;
 		let y=0;
@@ -970,7 +971,6 @@ function updateStone() {
     }
     updateDerivedValues();
     updateAttributes();
-    saveData();
 }
 
 function updateOgmah() {
@@ -1002,6 +1002,7 @@ function updateBaseSkillLevels() {
 		skillsList[i].levelBase = race.baseSkills[i] + additionalSkills[i];
     }
 	drawSkillTree();
+	saveData();
 }
 
 function updateSkillLevels() {
@@ -1063,8 +1064,21 @@ function saveData() {
         settingsString = settings.costTo25 + "s" + settings.costTo50 + "s" + settings.costTo75 + "s" + settings.costTo100 + "s"
                          + settings.cap + "s" + settings.base + "s" + settings.mult;
     };
+	//class data
+	let professionIndex = document.getElementById("profession-select").value;
+	let professionName = document.getElementById("profession-name").value;
+    let professionAttributeIndex = document.getElementById("profession-attribute").value;
+    let professionSkillGroupIndex = document.getElementById("profession-skill-group").value;
+    professionSkills[0] = document.getElementById("skill-choice-1").value;
+	professionSkills[1] = document.getElementById("skill-choice-2").value;
+	professionSkills[2] = document.getElementById("skill-choice-3").value;
+	professionSkills[3] = document.getElementById("skill-choice-4").value;
+	professionSkills[4] = document.getElementById("skill-choice-5").value;
+	professionSkills[5] = document.getElementById("skill-choice-6").value;
+	
+	
 
-    let codeArray = [name, raceIndex, stoneIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, versionIndex, settingsString];
+    let codeArray = [name, raceIndex, stoneIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, versionIndex, settingsString, professionIndex, professionName, professionAttributeIndex, professionSkillGroupIndex, professionSkills[0], professionSkills[1], professionSkills[2], professionSkills[3], professionSkills[4], professionSkills[5] ];
     let code = codeArray.toString();
     let codeEncoded = btoa(code);
     //remove padding '=' chars
@@ -1098,6 +1112,19 @@ function loadData() {
         let staminaIncrease = values[5];
         let ogmahIndex = values[8];   
         let versionIndex = values[9];
+		
+		//class data
+		let professionIndex = values[11];
+		let professionName = values[12];
+		let professionAttributeIndex = values[13];
+		let professionSkillGroupIndex = values[14];
+		professionSkills[0] = values[15];
+		professionSkills[1] = values[16];
+		professionSkills[2] = values[17];
+		professionSkills[3] = values[18];
+		professionSkills[4] = values[19];
+		professionSkills[5] = values[20];
+		
         //Backwards compatibility: (defaults version to current serenity build)
         if (typeof versionIndex == "undefined") {
             versionIndex = 1;
@@ -1115,7 +1142,21 @@ function loadData() {
         spentAttributes = parseInt(attributeIncreases[0]) + parseInt(attributeIncreases[1]) + parseInt(attributeIncreases[2]);
         
         ogmah = ogmahIndex;
-    
+		
+		
+		//class data
+		document.getElementById("profession-select").value = professionIndex;
+		document.getElementById("profession-name").value = professionName;
+		document.getElementById("profession-attribute").value = professionAttributeIndex;
+		document.getElementById("profession-skill-group").value = professionSkillGroupIndex;
+		document.getElementById("skill-choice-1").value = professionSkills[0];
+		document.getElementById("skill-choice-2").value = professionSkills[1];
+		document.getElementById("skill-choice-3").value = professionSkills[2];
+		document.getElementById("skill-choice-4").value = professionSkills[3];
+		document.getElementById("skill-choice-5").value = professionSkills[4];
+		document.getElementById("skill-choice-6").value = professionSkills[5];
+		
+		
         //perks
         if(values[6] != 'no') {
             let buildPerks = values[6].split('s');
@@ -1348,6 +1389,7 @@ function closeAlert() {
 //Custom Class 
 
 function toggleClassInput(bool) {
+	document.getElementById("profession-name").disabled = bool;
     document.getElementById("profession-attribute").disabled = bool;
     document.getElementById("profession-skill-group").disabled = bool;
     document.getElementById("skill-choice-1").disabled = bool;
