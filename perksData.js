@@ -1028,105 +1028,84 @@ enchanting.perks = [
     {
         name: "Agility", skill: evasion, skillReq: 0,
         xPos: 219 / 4, yPos: 345 / 4, preReqs: [], chain: 0,
-        description: "After some training you are now much more confident in your evasive movements. Your light armor and clothes will now hinder your movements less and you take less damage from falling.",
+        description: "After some training you are now much more confident in your evasive movements.<br>[25% less falling damage when wearing no heavy armor, unique bonus when wearing high-quality materials, -50% armor weight penalty]",
         labels: [], lines: []
     },
     //1
     {
         name: "Athletics", skill: evasion, skillReq: 25,
-        xPos: 115 / 4, yPos: 345 / 4, preReqs: [0], chain: 3, rank: 1,
-        description: "You are more agile and can recover from exhaustion faster. +3% movement speed, +5% movement speed when sprinting or swimming, +15% stamina regeneration.",
+        xPos: 277 / 4, yPos: 254 / 4, preReqs: [0], chain: 2, rank: 1,
+        description: "You are more agile and can recover from exhaustion faster.<br>[+10% movement speed when sprinting or swimming, +15% stamina regeneration]",
         labels: [], lines: [], chainPerks: []
     },
     //2
     {
         name: "Athletics", skill: evasion, skillReq: 50,
-        xPos: 115 / 4, yPos: 345 / 4, preReqs: [1], chain: 3, rank: 2,
-        description: "You are more agile and can recover from exhaustion faster. +6% movement speed, +10% movement speed when sprinting or swimming, +30% stamina regeneration.",
+        xPos: 277 / 4, yPos: 254 / 4, preReqs: [1], chain: 2, rank: 2,
+        description: "You are more agile and can recover from exhaustion faster.<br>[+20% movement speed when sprinting or swimming, +30% stamina regeneration]",
         labels: [], lines: [], chainPerks: []
     },
     //3
     {
-        name: "Athletics", skill: evasion, skillReq: 75,
-        xPos: 115 / 4, yPos: 345 / 4, preReqs: [2], chain: 3, rank: 3,
-        description: "You are more agile and can recover from exhaustion faster. +10% movement speed, +15% movement speed when sprinting or swimming, +50% stamina regeneration.",
+        name: "Unarmored", skill: evasion, skillReq: 15,
+        xPos: 115 / 4, yPos: 70, preReqs: [0], chain: 2, rank: 1,
+        description: "Having no weight on your body allows you to control your moves better in combat.<br>[while unarmored: +100 armor rating, +3% movement speed, +10% stamina regen]",
         labels: [], lines: [], chainPerks: []
     },
     //4
     {
-        name: "Unarmored", skill: evasion, skillReq: 25,
-        xPos: 115 / 4, yPos: 70, preReqs: [0], chain: 3, rank: 1,
-        description: "Having no weight on your body allows you to control your moves better in combat. While unarmored, +50 armor rating, -2% incoming physical damage, +2% movement speed, damage x 1.05",
+        name: "Unarmored", skill: evasion, skillReq: 30,
+        xPos: 115 / 4, yPos: 70, preReqs: [3], chain: 2, rank: 2,
+        description: "Having no weight on your body allows you to control your moves better in combat.<br>[while unarmored: +200 armor rating, +6% movement speed, +20% stamina regen]",
         labels: [], lines: [], chainPerks: []
     },
     //5
     {
-        name: "Unarmored", skill: evasion, skillReq: 50,
-        xPos: 115 / 4, yPos: 70, preReqs: [4], chain: 3, rank: 2,
-        description: "Having no weight on your body allows you to control your moves better in combat. While unarmored, +100 armor rating, -4% incoming physical damage, +4% movement speed, damage x 1.1",
-        labels: [], lines: [], chainPerks: []
+        name: "Agile Spellcasting", skill: evasion, skillReq: 30,
+        xPos: 115 / 4, yPos: 193 / 4, preReqs: [0], chain: 0,
+        description: "You learned how to avoid the limitations light armors bestow upon somatic spell components.<br>[No spell cost penalty for casting spells in light armor]",
+        labels: [], lines: []
     },
     //6
     {
-        name: "Unarmored", skill: evasion, skillReq: 50,
-        xPos: 115 / 4, yPos: 70, preReqs: [5], chain: 3, rank: 3,
-        description: "Having no weight on your body allows you to control your moves better in combat. While unarmored, +150 armor rating, -6% incoming physical damage, +6% movement speed, damage x 1.15",
-        labels: [], lines: [], chainPerks: []
+        name: "Finesse", skill: evasion, skillReq: 25,
+        xPos: 192 / 4, yPos: 240 / 4, preReqs: [0], chain: 0,
+        description: "You are able to hit more precisely.<br>[Up to 12% more power attack damage when wearing no heavy armor: head, chest, hands, feet]",
+        labels: [], lines: []
     },
     //7
     {
-        name: "Agile Spellcasting", skill: evasion, skillReq: 25,
-        xPos: 115 / 4, yPos: 193 / 4, preReqs: [0], chain: 0,
-        description: "You learned how to avoid the limitations light armors bestow upon somatic spell components. Thus, you can cast spells in them unhindered.",
+        name: "Dexterity", skill: evasion, skillReq: 50,
+        xPos: 128 / 4, yPos: 148 / 4, preReqs: [6], chain: 0,
+        description: "You are able to balance your weapon better.<br>[Up to 24% less power attack stamina cost when wearing no heavy armor: head, chest, hands, feet]",
         labels: [], lines: []
     },
     //8
     {
-        name: "Finesse", skill: evasion, skillReq: 25,
-        xPos: 192 / 4, yPos: 240 / 4, preReqs: [0], chain: 0,
-        description: "You inflict increased damage with all your power attacks, for you're able to hit more precisely.",
+        name: "Wind Walker", skill: evasion, skillReq: 75,
+        xPos: 142 / 4, yPos: 92 / 4, preReqs: [7], chain: 0,
+        description: "Your light armor and clothes have become your second skin.<br>[Up to +10% movement speed when wearing no heavy armor: head, chest, hands, feet, -25% armor weight penalty]",
         labels: [], lines: []
     },
     //9
     {
-        name: "Dexterity", skill: evasion, skillReq: 50,
-        xPos: 128 / 4, yPos: 148 / 4, preReqs: [8], chain: 0,
-        description: "You are able to balance your weapon better. Thus, you can decrease the effort to execute power attacks.",
+        name: "Vexing Flanker", skill: evasion, skillReq: 50,
+        xPos: 267 / 4, yPos: 159 / 4, preReqs: [6], chain: 0,
+        description: "You have learned to flank your enemies with ease.<br>[Up to 16% more melee attack damage when running and wearing no heavy armor: head, chest, hands, feet, immune to finishers]",
         labels: [], lines: []
     },
     //10
     {
-        name: "Windrunner", skill: evasion, skillReq: 75,
-        xPos: 142 / 4, yPos: 92 / 4, preReqs: [9], chain: 0,
-        description: "Your light armor and clothes have become your second skin. You can move faster in them and running no longer exhausts you. Furthermore, your light armor hinders you even less than before.",
-        labels: [], lines: []
-    },
-    //11
-    {
-        name: "Vexing Flanker", skill: evasion, skillReq: 50,
-        xPos: 267 / 4, yPos: 159 / 4, preReqs: [8], chain: 0,
-        description: "You deal more damage with melee weapons while you are running, for you have learned to flank your enemies with ease. Furthermore, your reflexes will never betray you when an enemy attempts a lethal strike.",
-        labels: [], lines: []
-    },
-    //12
-    {
         name: "Combat Reflexes", skill: evasion, skillReq: 75,
-        xPos: 237 / 4, yPos: 80 / 4, preReqs: [11], chain: 0,
-        description: "You've gained the ability to act faster in combat, though doing so will quickly exhaust you.",
+        xPos: 237 / 4, yPos: 80 / 4, preReqs: [9], chain: 0,
+        description: "You've gained the ability to act faster in combat, though doing so will quickly exhaust you.<br>[Lesser power: Slow time by 50% for 30 seconds, drains 5 stamina per second]",
         labels: [], lines: []
     },
     //13
     {
         name: "Meteoric Reflexes", skill: evasion, skillReq: 100,
-        xPos: 195 / 4, yPos: 35 / 4, preReqs: [12, 10], chain: 0,
-        description: "Your reflexes are lightning fast and grant you a chance to decrease the damage of incoming melee attacks while not wearing any Heavy Armor.",
-        labels: [], lines: []
-    },
-    //14
-    {
-        name: "Dodge", skill: evasion, skillReq: 20,
-        xPos: 277 / 4, yPos: 254 / 4, preReqs: [0], chain: 0,
-        description: "Your trained reflexes allow you to dodge incoming blows when wearing no heavy armor. By sprinting a step or two away, you can attempt to dodge hostile attacks.",
+        xPos: 195 / 4, yPos: 35 / 4, preReqs: [8, 10], chain: 0,
+        description: "Your reflexes are lightning fast.<br>[50% chance to take 95% less melee damage when wearing no heavy armor: head, chest, hands, feet]",
         labels: [], lines: []
     }
    ];
