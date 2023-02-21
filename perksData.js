@@ -1646,50 +1646,57 @@ enchanting.perks = [
     //0
     {
         name: "Nimble Fingers", skill: pickpocket, skillReq: 0,
-        xPos: 112 / 4, yPos: 337 / 4, preReqs: [], chain: 2, rank: 1,
-        description: "You've spent some time improving your sleight of hand, which gives you substantial chances when pickpocketing.",
+        xPos: 112 / 4, yPos: 337 / 4, preReqs: [], chain: 3, rank: 1,
+        description: "You've spent some time improving your sleight of hand,<br>which gives you substantial chances when pickpocketing.",
         labels: [], lines: [], chainPerks: []
     },
     //1
     {
-        name: "Nimble Fingers", skill: pickpocket, skillReq: 0,
-        xPos: 112 / 4, yPos: 337 / 4, preReqs: [0], chain: 2, rank: 2,
-        description: "People shouldn't burden themselves with purses and keys. Luckily, you now can free them from these burdens more easily.",
+        name: "Nimble Fingers", skill: pickpocket, skillReq: 15,
+        xPos: 112 / 4, yPos: 337 / 4, preReqs: [0], chain: 3, rank: 2,
+        description: "Your fingers have become very nimble, and besides other advantages, they allow you to <br> pickpocket even better and to apply poisons on your victims. Why fight if a vial of deadly venom can also do the trick?",
         labels: [], lines: [], chainPerks: []
     },
     //2
     {
-        name: "Cutpurse", skill: pickpocket, skillReq: 25,
-        xPos: 161 / 4, yPos: 242 / 4, preReqs: [0], chain: 0,
-        description: "As you practice with your pickpocketing, you get better at avoiding discovery.",
-        labels: [], lines: []
+        name: "Nimble Fingers", skill: pickpocket, skillReq: 30,
+        xPos: 112 / 4, yPos: 337 / 4, preReqs: [1], chain: 3, rank: 3,
+        description: "Your mastery of the art of pickpocketing has made you quicker and more discreet, further increasing your chances of successful thievery.",
+        labels: [], lines: [], chainPerks: []
     },
     //3
     {
-        name: "Deadly Gift", skill: pickpocket, skillReq: 25,
-        xPos: 257 / 4, yPos: 275 / 4, preReqs: [2], chain: 0,
-        description: "Your fingers have become very nimble, and they allow you to apply poisons on your victims. Why fight if a vial of deadly venom can also do the trick?",
+        name: "Cutpurse", skill: pickpocket, skillReq: 25,
+        xPos: 161 / 4, yPos: 242 / 4, preReqs: [0], chain: 0,
+        description: "People shouldn't burden themselves with purses and keys.<br>Luckily, you now can free them of these burdens more easily.",
         labels: [], lines: []
     },
     //4
     {
         name: "Nightly Thief", skill: pickpocket, skillReq: 50,
-        xPos: 202 / 4, yPos: 146 / 4, preReqs: [2], chain: 0,
-        description: "You have learned how to avoid waking up targets during your \"nightly visits\", so you can free them from their worldly burdens with ease.",
+        xPos: 202 / 4, yPos: 146 / 4, preReqs: [3], chain: 0,
+        description: "You have learned how to avoid waking up targets during your \"nightly visits\", <br> so you can free them from their worldly burdens with ease.",
         labels: [], lines: []
     },
     //5
     {
         name: "Misdirection", skill: pickpocket, skillReq: 75,
         xPos: 221 / 4, yPos: 60 / 4, preReqs: [4], chain: 0,
-        description: "Why should someone own a nice weapon or piece of jewelry when it could be yours? Now you can sometimes adjust this inequity.",
+        description: "Why should someone own a nice weapon or piece of jewelry when it could be yours? <br> Now you can sometimes adjust this inequity.",
         labels: [], lines: []
     },
     //6
     {
         name: "Perfected Art", skill: pickpocket, skillReq: 100,
         xPos: 254 / 4, yPos: 20 / 4, preReqs: [5], chain: 0,
-        description: "After having learned everything there is to know about thievery, your legendary skill means you almost never get caught.",
+        description: "After having learned everything there is to know about thievery,<br>your legendary skill means you almost never get caught.",
+        labels: [], lines: []
+    },
+    //7
+    {
+        name: "Mighty Greed", skill: pickpocket, skillReq: 25,
+        xPos: 257 / 4, yPos: 275 / 4, preReqs: [3], chain: 0,
+        description: "You are either very strong or very greedy... You now can carry more items <br> without becoming overencumbered.",
         labels: [], lines: []
     }
    ];
