@@ -209,7 +209,7 @@
                 </div>
                 <div class="skill-extra">
                     <div id="unspent-perks">Unspent perks: <span class="unspent-number" id="unspent-perks-number">0</span></div>
-                    <div id="unspent-skillpoints">Unspent skillpoints: <span class="unspent-number" id="unspent-skillpoints-number">0</span></div>
+                    <div id="missing-XP">Missing XP: <span class="unspent-number" id="missing-XP-number">0</span></div>
                 </div>
                 <div class="tree-viewer">
                     <svg xmlns="http://www.w3.org/2000/svg" id="tree-viewer-svg">
@@ -598,6 +598,15 @@
 						$(".skill-choice").not(s).find("option[value="+$(s).val()+"]").attr('disabled','disabled');
 					});
 				});
+			</script>
+			
+			<script>
+				if (window.innerWidth < 1275) {
+					var scale = 'scale(0.9)';
+					//document.body.style.webkitTransform = // Chrome, Opera, Safari
+					//document.body.style.msTransform = // IE 9
+					document.body.style.transform = scale; // General
+				}
 			</script>
 			
 			<script type="text/javascript" src="./perksData.js"></script>

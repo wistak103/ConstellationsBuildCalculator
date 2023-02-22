@@ -7,7 +7,7 @@ body {
     background-position: center;
     color: rgb(38, 33, 49);
     height: 100vh;
-	max-width:1280px;
+	width:1270px;
 	margin:auto;
 }
 
@@ -404,6 +404,9 @@ option {
 
 .unspent-number {
     font-weight: 800;
+}
+#missing-XP {
+	color:red;
 }
 
 

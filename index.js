@@ -8,10 +8,10 @@ let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 
-let settings = [{costTo25: 3, costTo50: 7, costTo75: 13, costTo100: 25,
-    cap: 5, base: 12, mult: 3}];
-let spentSP = 0;
-let unspentSP = 0;
+//let settings = [{costTo25: 3, costTo50: 7, costTo75: 13, costTo100: 25,
+//   cap: 5, base: 12, mult: 3}];
+let XPLevelUpBase = 125;
+let XPLevelUpMult = 15;
 let spentPerks = 0;
 let unspentPerks = 0;
 let totalAttributePoints = 0;
@@ -697,7 +697,6 @@ function updateLevel() {
 
     let levelForPerks = 1;
     let levelForFeats = 0;
-    let levelForSkillUps = 0; //skill increases are capped at 5 per level up by default
     let spentPerks = 0;
 
     let bonusPerks = 0;
@@ -710,22 +709,6 @@ function updateLevel() {
 
         spentPerks = spentPerks + skill.takenPerks.length;
 
-        //check if levelups are enough for 5 skill-ups per level
-        let skillLevel = skill.levelTotal; 
-        if (skill.customLevel > skillLevel) {
-            skillLevel = skill.customLevel;
-        }
-
-        if (settings.cap > 0) {
-            let skillUps = skillLevel - skill.levelBase; 
-            let levelForSkill = (skillUps / settings.cap) + 1;
-            levelForSkill = Math.ceil(levelForSkill);
-    
-            if (levelForSkill > levelForSkillUps) {
-                levelForSkillUps = levelForSkill;
-            }
-        }
-
         for (j = 0; j < skill.takenPerks.length; j++) {
             let thisPerk = skill.takenPerks[j]; 
             if (thisPerk.levelReq != null && thisPerk.levelReq > levelForFeats) {
@@ -733,44 +716,53 @@ function updateLevel() {
             }
         }
     }
-
+	//level needed for perkpoints
     if (spentPerks > 6) {
         levelForPerks = spentPerks - 5 - bonusPerks;
     }
-
-    let levelForSP = calculateLevelFromSkillPoints();
+	
+	//level from XP
+	let XPFromSkills = skillsToXP();
+    let levelFromXP = calculateLevelFromXP(XPFromSkills);
 
     let level = 1;
 
-    if (levelForPerks > levelForSP) {
+    if (levelForPerks > levelFromXP) {
         level = levelForPerks;
     } else {
-        level = levelForSP;
+        level = levelFromXP;
     }
     if (levelForFeats > level) {
         level = levelForFeats;
     }
-    if (levelForSkillUps > level) {
-        level = levelForSkillUps;
-    }
-
+	
     buildLevel = level;
     levelText.textContent = " "+level;
     totalAttributePoints = level - 1;
     unspentPerks = (level + 5) + bonusPerks - spentPerks;
-    unspentSP = levelToSkillPoints(level) - spentSP;
+	
+    
     
     let unspentPerksText = document.getElementById("unspent-perks-number");
-    let unspentSPtext = document.getElementById("unspent-skillpoints-number");
+    let missingXPtext = document.getElementById("missing-XP-number");
     unspentPerksText.textContent = unspentPerks;
-    unspentSPtext.textContent = unspentSP;
-
+	
+	let missingXP = levelToXP(level) - XPFromSkills;
+	console.log(missingXP);
+	console.log(XPFromSkills);
+	if (missingXP>0) {
+		document.getElementById("missing-XP").style.display = "block";
+		missingXPtext.textContent = missingXP;
+	}
+	else {
+		document.getElementById("missing-XP").style.display = "none";
+	}
 
     updateAttributes();
 }
 
-function calculateSkillPointsNeeded() {
-    let skillPoints = 0;
+function skillsToXP() {
+    let XP = 0;
 
     for (j = 0; j < skillsList.length; j++) {
         let skillLevel = skillsList[j].levelTotal;
@@ -782,52 +774,31 @@ function calculateSkillPointsNeeded() {
         let skillLevelBase = skillsList[j].levelBase;
     
         if (skillLevel != skillLevelBase) {
-            for (i = skillLevelBase; i < skillLevel; i++) {
-                if (i >= 75) { 
-                    skillPoints += settings.costTo100;
-                }
-                else if (i >= 50) { 
-                    skillPoints += settings.costTo75;
-                }
-                else if (i >= 25) { 
-                    skillPoints += settings.costTo50;
-                }
-                else { 
-                    skillPoints += settings.costTo25;
-                };
+            for (i = skillLevelBase+1; i <= skillLevel; i++) {
+                XP += i;
             }
         }    
     }
-    spentSP = skillPoints;
-    return skillPoints;
+    return XP;
 }
 
-function calculateLevelFromSkillPoints() {
-    let skillPointsRequired = calculateSkillPointsNeeded(); 
+function calculateLevelFromXP(XP) { 
     let level = 1;
 
-    if (skillPointsRequired > 0) {
-        level = 2;
-        let skillPoints = 0;
-    
-        for (i = 0; skillPoints <= skillPointsRequired; i++) {
-            skillPoints += 12 + (level*3);
-
-            level++;
-        }
-
-        level--; //fix level being 1 more than needed
+    while (XP >= 0) {
+		level++;
+		XP -= XPLevelUpBase + (XPLevelUpMult*level);
     }
-    
+	level--;
     return level; 
 }
 
-function levelToSkillPoints(level) {
-    let skillPoints = 0
+function levelToXP(level) {
+    let XP = 0
     for (i = 2; i <= level; i++) {
-        skillPoints += 12 + (i*3);
+        XP += XPLevelUpBase + (i*XPLevelUpMult);
     };
-    return skillPoints;
+    return XP;
 }
 
 function increaseAttribute(i) {
@@ -1058,12 +1029,6 @@ function saveData() {
     let customLevelsString = customLevels.toString();
     customLevelsString = customLevelsString.replace(/,/g,'s');
     if (customLevelsString.length == 0) { customLevelsString = "no"};
-    let versionIndex = document.getElementById("version-select").value;
-    let settingsString = "";
-    if (versionIndex == 2) {
-        settingsString = settings.costTo25 + "s" + settings.costTo50 + "s" + settings.costTo75 + "s" + settings.costTo100 + "s"
-                         + settings.cap + "s" + settings.base + "s" + settings.mult;
-    };
 	//class data
 	let professionIndex = document.getElementById("profession-select").value;
 	let professionName = document.getElementById("profession-name").value;
@@ -1078,7 +1043,7 @@ function saveData() {
 	
 	
 
-    let codeArray = [name, raceIndex, stoneIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, versionIndex, settingsString, professionIndex, professionName, professionAttributeIndex, professionSkillGroupIndex, professionSkills[0], professionSkills[1], professionSkills[2], professionSkills[3], professionSkills[4], professionSkills[5] ];
+    let codeArray = [name, raceIndex, stoneIndex, attributeIncreases[0], attributeIncreases[1], attributeIncreases[2], perksString, customLevelsString, ogmahIndex, professionIndex, professionName, professionAttributeIndex, professionSkillGroupIndex, professionSkills[0], professionSkills[1], professionSkills[2], professionSkills[3], professionSkills[4], professionSkills[5] ];
     let code = codeArray.toString();
     let codeEncoded = btoa(code);
     //remove padding '=' chars
@@ -1110,20 +1075,19 @@ function loadData() {
         let magickaIncrease = values[3];
         let healthIncrease = values[4];
         let staminaIncrease = values[5];
-        let ogmahIndex = values[8];   
-        let versionIndex = values[9];
+        let ogmahIndex = values[8];
 		
 		//class data
-		let professionIndex = values[11];
-		let professionName = values[12];
-		let professionAttributeIndex = values[13];
-		let professionSkillGroupIndex = values[14];
-		professionSkills[0] = values[15];
-		professionSkills[1] = values[16];
-		professionSkills[2] = values[17];
-		professionSkills[3] = values[18];
-		professionSkills[4] = values[19];
-		professionSkills[5] = values[20];
+		let professionIndex = values[9];
+		let professionName = values[10];
+		let professionAttributeIndex = values[11];
+		let professionSkillGroupIndex = values[12];
+		professionSkills[0] = values[13];
+		professionSkills[1] = values[14];
+		professionSkills[2] = values[15];
+		professionSkills[3] = values[16];
+		professionSkills[4] = values[17];
+		professionSkills[5] = values[18];
 		
         //Backwards compatibility: (defaults version to current serenity build)
         if (typeof versionIndex == "undefined") {
@@ -1182,23 +1146,10 @@ function loadData() {
                 skillsList[skillID].customLevel = skillLevel;
             };
         }
-        //custom settings
-        if (typeof values[10] != "undefined" && values[10].length > 0) {
-            let settingsArray = values[10].split('s');
-            settings.costTo25 = parseInt(settingsArray[0]);
-            settings.costTo50 = parseInt(settingsArray[1]);
-            settings.costTo75 = parseInt(settingsArray[2]);
-            settings.costTo100 = parseInt(settingsArray[3]);
-            settings.cap = parseInt(settingsArray[4]);
-            settings.base = parseInt(settingsArray[5]);
-            settings.mult = parseInt(settingsArray[6]);
-        }
 
     }
     updateRace();
     drawSkillTree();
-    setSettingsValues();
-    updateVersion();
 }
 
 function copyBuildCode() {
@@ -1403,82 +1354,9 @@ function toggleClassInput(bool) {
 
 
 
-
-//SSL SETTINGS
-
-function updateVersion() {
-
-    let versionIndex = document.getElementById("version-select").value;
-
-    if(versionIndex == 1) { //v1.6
-        settings.costTo25 = 3;
-        settings.costTo50 = 5;
-        settings.costTo75 = 8;
-        settings.costTo100 = 13;
-        settings.cap = 5;
-        settings.base = 15;
-        settings.mult = 3;
-
-        setSettingsValues();
-        toggleSettingsInput(true);
-    }
-
-    if(versionIndex == 2) { //v1.7
-        settings.costTo25 = 3;
-        settings.costTo50 = 7;
-        settings.costTo75 = 13;
-        settings.costTo100 = 25;
-        settings.cap = 5;
-        settings.base = 12;
-        settings.mult = 3;
-
-        setSettingsValues();
-        toggleSettingsInput(true);
-
-    }
-
-    if(versionIndex == 0){ //custom
-        toggleSettingsInput(false);
-    }
-
-    updateLevel();
-}
-
-function toggleSettingsInput(bool) {
-    document.getElementById("costs-0").disabled = bool;
-    document.getElementById("costs-25").disabled = bool;
-    document.getElementById("costs-50").disabled = bool;
-    document.getElementById("costs-75").disabled = bool;
-    document.getElementById("settings-cap").disabled = bool;
-    document.getElementById("settings-points-base").disabled = bool;
-    document.getElementById("settings-points-mult").disabled = bool;
-}
-
-function setSettingsValues() {
-    document.getElementById("costs-0").value = settings.costTo25;
-    document.getElementById("costs-25").value = settings.costTo50;
-    document.getElementById("costs-50").value = settings.costTo75;
-    document.getElementById("costs-75").value = settings.costTo100;
-    document.getElementById("settings-cap").value = settings.cap;
-    document.getElementById("settings-points-base").value = settings.base;
-    document.getElementById("settings-points-mult").value = settings.mult;
-}
-
-function updateSettings() {
-    settings.costTo25 = parseInt(document.getElementById("costs-0").value);
-    settings.costTo50 = parseInt(document.getElementById("costs-25").value);
-    settings.costTo75 = parseInt(document.getElementById("costs-50").value);
-    settings.costTo100 = parseInt(document.getElementById("costs-75").value);
-    settings.cap = parseInt(document.getElementById("settings-cap").value);
-    settings.base = parseInt(document.getElementById("settings-points-base").value);
-    settings.mult = parseInt(document.getElementById("settings-points-mult").value);
-    updateLevel();
-}
-
-
 window.addEventListener('resize', drawSkillTree);
 
-updateVersion();
+//updateVersion();
 addChainArrays();
 drawSkillTree();
 createSkillIcons();
