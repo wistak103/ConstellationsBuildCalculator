@@ -22,14 +22,14 @@ alchemy.perks = [
     },
     //1
     {
-        name: "Alchemical Lore", skill: alchemy, skillReq: 20,
+        name: "Alchemical Lore", skill: alchemy, skillReq: 30,
         xPos: 19.3, yPos: 90, preReqs: [0], chain: 3, rank: 2,
         description: "Through advanced alchemical knowledge, you can enhance your mixtures and craft alchemical powders. <br> You determine an additional property of consumed ingredients",
         labels: [], lines: [], chainPerks: [] 
     },
 	//2
     {
-        name: "Alchemical Lore", skill: alchemy, skillReq: 40,
+        name: "Alchemical Lore", skill: alchemy, skillReq: 60,
         xPos: 19.3, yPos: 90, preReqs: [0], chain: 3, rank: 3,
         description: "Through obscure knowledge, your potions and poisons have an even higher potency.<br>You determine all properties of consumed ingredients.",
         labels: [], lines: [], chainPerks: [] 
