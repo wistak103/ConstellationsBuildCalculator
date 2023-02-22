@@ -2048,134 +2048,113 @@ smithing.perks = [
     //0
     {
         name: "Haggling", skill: speech, skillReq: 0,
-        xPos: 118 / 4, yPos: 335 / 4, preReqs: [], chain: 0,
-        description: "You've learned how to deal with Skyrim's greedy merchants and how to haggle for better prices.",
-        labels: [], lines: []
+        xPos: 118 / 4, yPos: 335 / 4, preReqs: [], chain: 3, rank: 1,
+        description: "You've further advanced your knowledge on how to handle merchants <br> and are able to haggle for even better prices.",
+        labels: [], lines: [], chainPerks: []
     },
-    //1
+	//1
     {
-        name: "Merchant", skill: speech, skillReq: 50,
-        xPos: 98 / 4, yPos: 271 / 4, preReqs: [0], chain: 0,
-        description: "Your trading skills are good enough to sell almost anything to any merchant willing to trade with you, and you can invest some of your gold with a shopkeeper to increase his available gold permanently.",
-        labels: [], lines: []
+        name: "Haggling", skill: speech, skillReq: 30,
+        xPos: 118 / 4, yPos: 335 / 4, preReqs: [0], chain: 3, rank: 3,
+        description: "You've learned how to deal with Skyrim's greedy merchants <br> and how to haggle for better prices.",
+        labels: [], lines: [], chainPerks: []
     },
-    //2
+	//2
     {
-        name: "Fencing", skill: speech, skillReq: 100,
-        xPos: 141 / 4, yPos: 246 / 4, preReqs: [1], chain: 0,
-        description: "You've become so persuasive that you could make almost anyone believe that your goods are of a legal origin.",
-        labels: [], lines: []
+        name: "Haggling", skill: speech, skillReq: 60,
+        xPos: 118 / 4, yPos: 335 / 4, preReqs: [1], chain: 3, rank: 3,
+        description: "You've perfected haggling with greedy merchants <br> and are able to get the best prices.",
+        labels: [], lines: [], chainPerks: []
     },
     //3
     {
-        name: "Silver Tongue", skill: speech, skillReq: 25,
-        xPos: 48 / 4, yPos: 333 / 4, preReqs: [0], chain: 0,
-        description: "You've spent quite some time improving your rhetorical skills and are now able to greatly influence any conversation and to fascinate the opposite gender. You also get better offers at respective vendors.",
+        name: "Merchant", skill: speech, skillReq: 50,
+        xPos: 98 / 4, yPos: 271 / 4, preReqs: [0], chain: 0,
+        description: "Your trading skills are good enough to sell almost anything to any merchant willing to trade with you, <br> and you can invest some of your gold with a shopkeeper to increase his available gold permanently.",
         labels: [], lines: []
     },
     //4
     {
-        name: "Leadership", skill: speech, skillReq: 75,
-        xPos: 118 / 4, yPos: 174 / 4, preReqs: [3], chain: 0,
-        description: "Your rhetorical skill makes you the perfect leader. By inspiring all those who fight by your side, you encourage your followers to always push their abilities to their very limits.",
+        name: "Fencing", skill: speech, skillReq: 100,
+        xPos: 141 / 4, yPos: 246 / 4, preReqs: [3], chain: 0,
+        description: "You've become so persuasive that you could make almost anyone believe that <br> your goods are of a legal origin.",
         labels: [], lines: []
     },
     //5
     {
-        name: "Masquerade", skill: speech, skillReq: 50,
-        xPos: 102 / 4, yPos: 93 / 4, preReqs: [3],chain: 2, rank: 1,
-        description: "You've become proficient at acting, and with the right equipment you can now disguise yourself, although sometimes people can still tell that you are not truly one of them.",
-        labels: [], lines: [], chainPerks: []
+        name: "Silver Tongue", skill: speech, skillReq: 25,
+        xPos: 48 / 4, yPos: 333 / 4, preReqs: [0], chain: 0,
+        description: "You've spent quite some time improving your rhetorical skills and are now able to greatly influence<br>any conversation and to fascinate the opposite gender. You also get better offers at respective vendors.",
+        labels: [], lines: []
     },
     //6
     {
-        name: "Masquerade", skill: speech, skillReq: 100,
-        xPos: 102 / 4, yPos: 93 / 4, preReqs: [5], chain: 2, rank: 2,
-        description: "There is no role you cannot play, and your acting is so believable that there is almost no way for others to see through your disguises.",
-        labels: [], lines: [], chainPerks: []
+        name: "Leadership", skill: speech, skillReq: 75,
+        xPos: 118 / 4, yPos: 174 / 4, preReqs: [5], chain: 0,
+        description: "Your rhetorical skill makes you the perfect leader. By inspiring all those who fight by your side,<br>you encourage your followers to always push their abilities to their very limits.",
+        labels: [], lines: []
     },
     //7
     {
-        name: "Lore of the Thu'um", skill: speech, skillReq: 0,
-        xPos: 340 / 4, yPos: 338 / 4, preReqs: [], chain: 0,
-        description: "You've been studying the lore and ancient script of dragons and the Thu'um. Thus, you can shout more often.",
+        name: "Masquerade", skill: speech, skillReq: 50,
+        xPos: 102 / 4, yPos: 93 / 4, preReqs: [5],chain: 2, rank: 1,
+        description: "You've become proficient at acting, and with the right equipment you can now disguise yourself,<br>although sometimes people can still tell that you are not truly one of them.",
         labels: [], lines: [], chainPerks: []
     },
     //8
     {
-        name: "Destructive Urge", skill: speech, skillReq: 0,
-        xPos: 250 / 4, yPos: 320 / 4, preReqs: [7], chain: 0,
-        description: "The horrors that the Thu'um can inflict are etched into your mind just as you have seen them etched into stone. Your Thu'um will wreak even greater havoc among your unfortunate foes.",
-        labels: [], lines: []
+        name: "Masquerade", skill: speech, skillReq: 100,
+        xPos: 102 / 4, yPos: 93 / 4, preReqs: [7], chain: 2, rank: 2,
+        description: "There is no role you cannot play, and your acting is so believable that there is almost no way <br> for others to see through your disguises.",
+        labels: [], lines: [], chainPerks: []
     },
     //9
     {
-        name: "Indomitable<br>Force", skill: speech, skillReq: 0,
-        xPos: 265 / 4, yPos: 251 / 4, preReqs: [7], chain: 0,
-        description: "You know what it means to be called Ysmir, Dragon of the North. As you have withstood the test of Thu'um, so you will withstand the Thu'um of others.",
-        labels: [], lines: []
+        name: "Lore of the Thu'um", skill: speech, skillReq: 0,
+        xPos: 340 / 4, yPos: 338 / 4, preReqs: [], chain: 0,
+        description: "You've been studying the lore and ancient script of dragons and the Thu'um.<br>Thus, you can shout more often.",
+        labels: [], lines: [], chainPerks: []
     },
     //10
     {
-        name: "Spiritual<br>Equilibrium", skill: speech, skillReq: 0,
-        xPos: 273 / 4, yPos: 160 / 4, preReqs: [7], chain: 0,
-        description: "You have been guided in meditating on the Thu'um. Now your shouts linger, lasting longer than they did before.",
+        name: "Destructive Urge", skill: speech, skillReq: 0, levelReq: 30,
+        xPos: 250 / 4, yPos: 320 / 4, preReqs: [9], chain: 0,
+        description: "[Requires Level 30] The horrors that the Thu'um can inflict are etched into your mind.<br>Your Thu'um will wreak even greater havoc among your unfortunate foes. ",
         labels: [], lines: []
     },
     //11
     {
-        name: "The Way of<br>the Voice", skill: speech, skillReq: 0,
-        xPos: 296 / 4, yPos: 96 / 4, preReqs: [7], chain: 0,
-        description: "You've meditated thoroughly, and acquired vast insights into the Way of the Voice. Thus, you can call upon the power of your Thu'um rapidly once each day.",
+        name: "Indomitable<br>Force", skill: speech, skillReq: 0, levelReq: 25,
+        xPos: 265 / 4, yPos: 251 / 4, preReqs: [9], chain: 0,
+        description: "[Requires Level 25] You know what it means to be called Ysmir, Dragon of the North.<br> As you have withstood the test of Thu'um, so you will withstand the Thu'um of others.",
         labels: [], lines: []
     },
     //12
     {
-        name: "Tongue's<br>Insight", skill: speech, skillReq: 0,
-        xPos: 349 / 4, yPos: 71 / 4, preReqs: [7], chain: 0,
-        description: "You've spent time meditating on the Way of the Voice, unearthing more knowledge and gaining valuable insights. Thus, you can harness the might of yet another word of power.",
+        name: "Spiritual<br>Equilibrium", skill: speech, skillReq: 0, levelReq: 20,
+        xPos: 273 / 4, yPos: 160 / 4, preReqs: [9], chain: 0,
+        description: "[Requires Level 20] You have been guided in meditating on the Thu'um.<br>Now your shouts linger, lasting longer than they did before.",
         labels: [], lines: []
     },
     //13
     {
-        name: "Commander", skill: speech, skillReq: 0, levelReq: 0,
-        xPos: 160 / 4, yPos: 60 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "Your knowledge in combat tactics allow you to effectively lead your allies in combat. [nearby allies get +10% fortify skill, +3 unarmed damage, +50 magicka & stamina, +25% magicka & stamina regeneration]",
-        labels: [], lines: [], chainPerks: []
+        name: "The Way of<br>the Voice", skill: speech, skillReq: 0, levelReq: 15,
+        xPos: 296 / 4, yPos: 96 / 4, preReqs: [9], chain: 0,
+        description: "[Requires Level 15] You've meditated thoroughly, and acquired vast insights into the Way of the Voice.<br>Every aspect of your Thu'um will be improved.",
+        labels: [], lines: []
     },
     //14
     {
-        name: "Commander", skill: speech, skillReq: 0, levelReq: 15,
-        xPos: 160 / 4, yPos: 60 / 4, preReqs: [13], chain: 3, rank: 2,
-        description: "Your knowledge in combat tactics allow you to effectively lead your allies in combat. [nearby allies get +20 % fortify skill, +6 unarmed damage, +100 magicka & stamina, +50% magicka & stamina regeneration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Tongue's<br>Insight", skill: speech, skillReq: 0, levelReq: 10,
+        xPos: 349 / 4, yPos: 71 / 4, preReqs: [9], chain: 0,
+        description: "[Requires Level 10] You've spent time meditating on the Way of the Voice, unearthing more knowledge and gaining <br> valuable insights. Thus, you can harness the might of yet another word of power.",
+        labels: [], lines: []
     },
     //15
     {
-        name: "Commander", skill: speech, skillReq: 0, levelReq: 30,
-        xPos: 160 / 4, yPos: 60 / 4, preReqs: [14], chain: 3, rank: 3,
-        description: "Your knowledge in combat tactics allow you to effectively lead your allies in combat. [nearby allies get +30 % fortify skill, +10 unarmed damage, +150 magicka & stamina, +75% magicka & stamina regeneration]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //16
-    {
-        name: "Shout Focus", skill: speech, skillReq: 0, levelReq: 0,
-        xPos: 260 / 4, yPos: 60 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "You meditate on the Thu'um for deeper understanding of the Words of Power, making them more powerful. [shout magnitude and duration x 1.05, -10% shout cooldown]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //17
-    {
-        name: "Shout Focus", skill: speech, skillReq: 0, levelReq: 15,
-        xPos: 260 / 4, yPos: 60 / 4, preReqs: [16], chain: 3, rank: 2,
-        description: "You meditate on the Thu'um for deeper understanding of the Words of Power, making them more powerful. [shout magnitude and duration x 1.1, -20% shout cooldown]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //18
-    {
-        name: "Shout Focus", skill: speech, skillReq: 0, levelReq: 30,
-        xPos: 260 / 4, yPos: 60 / 4, preReqs: [17], chain: 3, rank: 3,
-        description: "You meditate on the Thu'um for deeper understanding of the Words of Power, making them more powerful. [shout magnitude and duration x 1.15, -30% shout cooldown]",
+        name: "Commander", skill: speech, skillReq: 50, levelReq: 0,
+        xPos: 40 / 4, yPos: 200 / 4, preReqs: [5], chain: 0,
+        description: "Your knowledge in combat tactics allow you to effectively lead your allies in combat.<br>All nearby allies are motivated by you which improves their ability to fight",
         labels: [], lines: [], chainPerks: []
     }
    ];
