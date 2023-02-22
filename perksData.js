@@ -1225,21 +1225,21 @@ enchanting.perks = [
     {
         name: "Quiet Casting", skill: illusion, skillReq: 25,
         xPos: 55 / 3.5, yPos: 226 / 3.5, preReqs: [0], chain: 0,
-        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle also lasts longer.",
+        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle spells last 25% longer.",
         labels: [], lines: []
     },
     //6
     {
         name: "Silent Casting", skill: illusion, skillReq: 50,
         xPos: 45 / 3.5, yPos: 142 / 3.5, preReqs: [5], chain: 0,
-        description: "Empowering Muffle spells lets you cast spells from all schools silently. Invisibility now works while you are running. Invisibility and Muffle last longer.",
+        description: "Empowering Muffle spells lets you cast spells from all schools silently. Invisibility now works while you are running.",
         labels: [], lines: []
     },
     //7
     {
         name: "Unbreakable Invisibility", skill: illusion, skillReq: 75,
         xPos: 50 / 3.5, yPos: 80 / 3.5, preReqs: [6], chain: 0,
-        description: "Your invisibility spells now reapply themselves when you crouch while the effect is active. Invisibility and Muffle last longer.",
+        description: "Your invisibility spells now reapply themselves when you crouch while the effect is active. Invisibility and Muffle spells last 75% longer.",
         labels: [], lines: []
     },
     //8
@@ -1667,32 +1667,39 @@ enchanting.perks = [
     //3
     {
         name: "Cutpurse", skill: pickpocket, skillReq: 25,
-        xPos: 161 / 4, yPos: 242 / 4, preReqs: [0], chain: 0,
+        xPos: 161 / 4, yPos: 242 / 4, preReqs: [0], chain: 2, rank: 1,
         description: "People shouldn't burden themselves with purses and keys.<br>Luckily, you now can free them of these burdens more easily.",
-        labels: [], lines: []
+        labels: [], lines: [], chainPerks: []
     },
-    //4
+	//4
+    {
+        name: "Cutpurse", skill: pickpocket, skillReq: 40,
+        xPos: 161 / 4, yPos: 242 / 4, preReqs: [3], chain: 2, rank: 2,
+        description: "Your quick fingers serve you well, enabling you to deftly liberate unsuspecting citizens of their most valuable jewelry.",
+        labels: [], lines: [], chainPerks: []
+    },
+    //5
     {
         name: "Nightly Thief", skill: pickpocket, skillReq: 50,
         xPos: 202 / 4, yPos: 146 / 4, preReqs: [3], chain: 0,
         description: "You have learned how to avoid waking up targets during your \"nightly visits\", <br> so you can free them from their worldly burdens with ease.",
         labels: [], lines: []
     },
-    //5
+    //6
     {
         name: "Misdirection", skill: pickpocket, skillReq: 75,
         xPos: 221 / 4, yPos: 60 / 4, preReqs: [4], chain: 0,
         description: "Why should someone own a nice weapon or piece of jewelry when it could be yours? <br> Now you can sometimes adjust this inequity.",
         labels: [], lines: []
     },
-    //6
+    //7
     {
         name: "Perfected Art", skill: pickpocket, skillReq: 100,
         xPos: 254 / 4, yPos: 20 / 4, preReqs: [5], chain: 0,
         description: "After having learned everything there is to know about thievery,<br>your legendary skill means you almost never get caught.",
         labels: [], lines: []
     },
-    //7
+    //8
     {
         name: "Mighty Greed", skill: pickpocket, skillReq: 25,
         xPos: 257 / 4, yPos: 275 / 4, preReqs: [3], chain: 0,
