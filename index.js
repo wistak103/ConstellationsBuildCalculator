@@ -7,6 +7,7 @@ let buildLevel = 1;
 let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
+let baseAttributes = [0, 0, 0];
 
 //let settings = [{costTo25: 3, costTo50: 7, costTo75: 13, costTo100: 25,
 //   cap: 5, base: 12, mult: 3}];
@@ -782,10 +783,10 @@ function skillsToXP() {
 
 function calculateLevelFromXP(XP) { 
     let level = 1;
-
     while (XP >= 0) {
+		console.log(level, XP);
 		level++;
-		XP -= XPLevelUpBase + (XPLevelUpMult*level);
+		XP -= XPLevelUpBase + (XPLevelUpMult*(level-1));
     }
 	level--;
     return level; 
@@ -794,7 +795,7 @@ function calculateLevelFromXP(XP) {
 function levelToXP(level) {
     let XP = 0
     for (i = 2; i <= level; i++) {
-        XP += XPLevelUpBase + (i*XPLevelUpMult);
+        XP += XPLevelUpBase + ((i-1)*XPLevelUpMult);
     };
     return XP;
 }
@@ -839,8 +840,8 @@ function updateAttributes() {
             attributeTotals[i] += 200;
         }
         attributeText[i].textContent = attributeTotals[i];
-
-        attributeBase[i].textContent = "BASE: " + (race.baseAttributes[i] +(10 * attributeIncreases[i]) + professionAttributes[i]);
+		baseAttributes[i] = (race.baseAttributes[i] +(10 * attributeIncreases[i]) + professionAttributes[i]);
+        attributeBase[i].textContent = "BASE: " + (baseAttributes[i]);
     }
     updateDerivedValues();
     saveData();
