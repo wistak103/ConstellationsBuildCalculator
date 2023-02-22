@@ -2055,7 +2055,7 @@ smithing.perks = [
 	//1
     {
         name: "Haggling", skill: speech, skillReq: 30,
-        xPos: 118 / 4, yPos: 335 / 4, preReqs: [0], chain: 3, rank: 3,
+        xPos: 118 / 4, yPos: 335 / 4, preReqs: [0], chain: 3, rank: 2,
         description: "You've learned how to deal with Skyrim's greedy merchants <br> and how to haggle for better prices.",
         labels: [], lines: [], chainPerks: []
     },
