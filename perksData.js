@@ -2165,140 +2165,119 @@ smithing.perks = [
     {
         name: "Great Weapon Mastery", skill: twohanded, skillReq: 0,
         xPos: 50, yPos: 362 / 4, preReqs: [], chain: 2, rank: 1,
-        description: "Your improved fighting techniques increase your damage dealt with two-handed weapons. [damage x 1.2, -50% weapon weight penalties]",
+        description: "Your improved fighting techniques increase your damage dealt with two-handed weapons.<br>[20% more damage]",
         labels: [], lines: [], chainPerks: []
     },
     //1
     {
         name: "Great Weapon Mastery", skill: twohanded, skillReq: 0,
         xPos: 50, yPos: 362 / 4, preReqs: [0], chain: 2, rank: 2,
-        description: "Your improved fighting techniques increase your damage dealt with two-handed weapons even more. [damage x 1.4, -50% weapon weight penalties]",
+        description: "Your improved fighting techniques increase your damage dealt with two-handed weapons even more.<br>[30% more damage]",
         labels: [], lines: [], chainPerks: []
     },
     //2
     {
         name: "Barbaric Might", skill: twohanded, skillReq: 20,
         xPos: 50, yPos: 75, preReqs: [0], chain: 0,
-        description: "Your power attacks become mighty blows that will penetrate armor and are less tiring. [-50% power attack stamina cost, +5 armor penetration]",
+        description: "Your power attacks become mighty blows that will penetrate armor and are less tiring.<br>[-50% power attack stamina cost, +5% armor penetration]",
         labels: [], lines: [],
     },
     //3
     {
-        name: "Battle Axe Focus", skill: twohanded, skillReq: 25,
+        name: "Axe/Halberd Focus", skill: twohanded, skillReq: 25,
         xPos: 20, yPos: 70, preReqs: [2],chain: 3, rank: 1,
-        description: "You've become familiar with battle axes, thereby increasing their damage and armor penetration. [damage x 1.1, +10 armor penetration]",
+        description: "You've become familiar with two-handed axes and halberds.<br>[10% more damage, +10% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //4
     {
-        name: "Battle Axe Focus", skill: twohanded, skillReq: 50,
+        name: "Axe/Halberd Focus", skill: twohanded, skillReq: 50,
         xPos: 20, yPos: 70, preReqs: [3],chain: 3, rank: 2,
-        description: "You've become an advanced battle axe fighter, further increasing their damage and armor penetration. [damage x 1.2, +20 armor penetration]",
+        description: "You've become an advanced fighter with two-handed axes and halberds.<br>[20% more damage, +20% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //5
     {
-        name: "Battle Axe Focus", skill: twohanded, skillReq: 75,
+        name: "Axe/Halberd Focus", skill: twohanded, skillReq: 75,
         xPos: 20, yPos: 70, preReqs: [4], chain: 3, rank: 3,
-        description: "You've become a master of battle axe combat, allowing you to perform devastating attacks with them. [damage x 1.3, +30 armor penetration]",
+        description: "You've become a master of two-handed axes and halberds.<br>[30% more damage, +30% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //6
     {
-        name: "Battlestaff Focus", skill: twohanded, skillReq: 25,
-        xPos: 120 / 4, yPos: 230 / 4, preReqs: [2],chain: 3, rank: 1,
-        description: "You've learned the basics of battlestaff combat, allowing you to increase your attack rate with them slightly. [+8% attack speed with battlestaves, +7 armor penetration]",
+        name: "Sword/Spear Focus", skill: twohanded, skillReq: 25,
+        xPos: 280 / 4, yPos: 230 / 4, preReqs: [2],chain: 3, rank: 1,
+        description: "You've learned the basics of two-handed sword and spear combat.<br>[+8% attack speed, +7% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //7
     {
-        name: "Battlestaff Focus", skill: twohanded, skillReq: 50,
-        xPos: 120 / 4, yPos: 230 / 4, preReqs: [6],chain: 3, rank: 2,
-        description: "You've acquired the advanced techniques of battlestaff combat, further increasing your attack rate with them. [+16% attack speed with battlestaves, +14 armor penetration]",
+        name: "Sword/Spear Focus", skill: twohanded, skillReq: 50,
+        xPos: 280 / 4, yPos: 230 / 4, preReqs: [6],chain: 3, rank: 2,
+        description: "You've acquired the advanced techniques of two-handed sword and spear combat.<br>[+16% attack speed, +14% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //8
     {
-        name: "Battlestaff Focus", skill: twohanded, skillReq: 75,
-        xPos: 120 / 4, yPos: 230 / 4, preReqs: [7], chain: 3, rank: 3,
-        description: "You're a master of battlestaff combat, making your swings even faster. [+24% attack speed with battlestaves, +21 armor penetration]",
+        name: "Sword/Spear Focus", skill: twohanded, skillReq: 75,
+        xPos: 280 / 4, yPos: 230 / 4, preReqs: [7], chain: 3, rank: 3,
+        description: "You've become a master of two-handed sword and spear combat.<br>[+24% attack speed, +21% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //9
     {
-        name: "Greatsword Focus", skill: twohanded, skillReq: 25,
-        xPos: 280 / 4, yPos: 230 / 4, preReqs: [2],chain: 3, rank: 1,
-        description: "You've learned the basics of greatsword combat, allowing you to increase your attack rate with them slightly. [+8% attack speed with greatswords, +7 armor penetration]",
+        name: "Blunt Weapon Focus", skill: twohanded, skillReq: 25,
+        xPos: 80, yPos: 70, preReqs: [2],chain: 3, rank: 1,
+        description: "You've learned some techniques to crush armor with warhammers, long maces, and battlestaffs.<br>[5% more power attack damage, +15% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //10
     {
-        name: "Greatsword Focus", skill: twohanded, skillReq: 50,
-        xPos: 280 / 4, yPos: 230 / 4, preReqs: [9],chain: 3, rank: 2,
-        description: "You've acquired the advanced techniques of greatsword combat, further increasing your attack rate with them. [+16% attack speed with greatswords, +14 armor penetration]",
+        name: "Blunt Weapon Focus", skill: twohanded, skillReq: 50,
+        xPos: 80, yPos: 70, preReqs: [9],chain: 3, rank: 2,
+        description: "You've become an advanced blunt weapon fighter and know how to find weak spots in enemy armor.<br>[10% more power attack damage, +30% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //11
     {
-        name: "Greatsword Focus", skill: twohanded, skillReq: 75,
-        xPos: 280 / 4, yPos: 230 / 4, preReqs: [10], chain: 3, rank: 3,
-        description: "You're a master of greatsword combat, making your swings even faster. [+24% attack speed with greatswords, +21 armor penetration]",
+        name: "Blunt Weapon Focus", skill: twohanded, skillReq: 75,
+        xPos: 80, yPos: 70, preReqs: [10], chain: 3, rank: 3,
+        description: "You've become a masterly blunt weapon fighter, rendering armor almost useless.<br>[15% more power attack damage, +45% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //12
     {
-        name: "Warhammer Focus", skill: twohanded, skillReq: 25,
-        xPos: 80, yPos: 70, preReqs: [2],chain: 3, rank: 1,
-        description: "You've become familiar with warhammers, enabling you to partly use their ability to penetrate your foes' armor. [power attack damage x 1.05, +15 armor penetration]",
+        name: "Devastating<br>Charge", skill: twohanded, skillReq: 50,
+        xPos: 150 / 4, yPos: 183 / 4, preReqs: [2], chain: 0,
+        description: "You've learned to perform a leaping power attack while sprinting, reducing your enemies to smithereens.<br>[Able to do sprinting power attack]",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
-        name: "Warhammer Focus", skill: twohanded, skillReq: 50,
-        xPos: 80, yPos: 70, preReqs: [12],chain: 3, rank: 2,
-        description: "You've become an advanced warhammer fighter, further increasing your ability to penetrate armor with them. [power attack damage x 1.1, +30 armor penetration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Devastating<br>Strike", skill: twohanded, skillReq: 50,
+        xPos: 250 / 4, yPos: 183 / 4, preReqs: [2], chain: 0,
+        description: "Your two-handed combat style has improved so much that all power attacks have become devastating.<br>[20% more power attack damage]",
+        labels: [], lines: []
     },
     //14
     {
-        name: "Warhammer Focus", skill: twohanded, skillReq: 75,
-        xPos: 80, yPos: 70, preReqs: [13], chain: 3, rank: 3,
-        description: "You've become a masterly warhammer fighter, rendering armor almost useless. [power attack damage x 1.15, +45 armor penetration]",
-        labels: [], lines: [], chainPerks: []
+        name: "Cleave", skill: twohanded, skillReq: 75,
+        xPos: 200 / 4, yPos: 91 / 4, preReqs: [12, 13], chain: 0,
+        description: "Your power attacks are truly devastating and can cut down multiple foes with a single sweeping blow.<br>[Able to do sideways power attack that hits multiple targets]",
+        labels: [], lines: []
     },
     //15
     {
-        name: "Devastating<br>Charge", skill: twohanded, skillReq: 50,
-        xPos: 150 / 4, yPos: 183 / 4, preReqs: [2], chain: 0,
-        description: "You've learned to perform a leaping power attack while sprinting, reducing your enemies to smithereens. [unlocks sprinting power attack, -25% weapon weight penalties]",
-        labels: [], lines: [], chainPerks: []
+        name: "Devastating Cleave", skill: twohanded, skillReq: 100,
+        xPos: 200 / 4, yPos: 50 / 4, preReqs: [14], chain: 0,
+        description: "Putting your whole weight behind your swing, your sidewards power attacks are now powerful enough to knock down foes.<br>[Sideways power attacks can knock down]",
+        labels: [], lines: []
     },
     //16
     {
-        name: "Devastating<br>Strike", skill: twohanded, skillReq: 50,
-        xPos: 250 / 4, yPos: 183 / 4, preReqs: [2], chain: 0,
-        description: "Your two-handed combat style has improved so much that all power attacks have become devastating. [power attack damage x 1.25]",
-        labels: [], lines: []
-    },
-    //17
-    {
-        name: "Cleave", skill: twohanded, skillReq: 75,
-        xPos: 200 / 4, yPos: 91 / 4, preReqs: [15, 16], chain: 0,
-        description: "Your power attacks are truly devastating and you can cut down multiple foes with a single sweeping blow. [sideways power attack can hit multiple targets]",
-        labels: [], lines: []
-    },
-    //18
-    {
-        name: "Devastating Cleave", skill: twohanded, skillReq: 100,
-        xPos: 200 / 4, yPos: 50 / 4, preReqs: [17], chain: 0,
-        description: "Putting your whole weight behind your swing, your sidewards power attacks are now powerful enough to knock down foes. [sideways power attacks can knock down]",
-        labels: [], lines: []
-    },
-    //19
-    {
         name: "Mighty Strike", skill: twohanded, skillReq: 100,
-        xPos: 200 / 4, yPos: 10 / 4, preReqs: [18], chain: 0,
-        description: "You can kill almost any foe with a single strike of your two-hander, as your blows even fell giants with ease. [damage x 1.25]",
+        xPos: 200 / 4, yPos: 10 / 4, preReqs: [15], chain: 0,
+        description: "You can kill almost any foe with a single strike of your two-hander, as your blows even fell giants with ease.<br>[25% more damage]",
         labels: [], lines: []
     },
    ];
