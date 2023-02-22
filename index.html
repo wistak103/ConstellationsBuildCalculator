@@ -303,61 +303,7 @@
                 </div>
             </div>
         </div>
-            <div id="settings-bar" >
-                <div class="settings-group">
-                    <h3>Version: </h3>
-                    <select name="version" id="version-select" class="drop-down" onchange="updateVersion()">
-                        <option value="0">Custom</option>
-                        <option value="1">1.6.x</option>
-                        <option value="2" selected="selected">1.7.1</option>
-                    </select>
-                </div>
-                <div class="settings-divider"></div>
-                <div class="settings-group">
-                    <h3>Skill level costs</h3>
-                    <div class="costs-container">
-                        <input type="text" id="costs-0" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                        <label class="costs-label">0-25</label>
-                    </div>
-                    <div class="costs-container">
-                        <input type="text" id="costs-25" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                        <label class="costs-label">25-50</label>
-                    </div>
-                    <div class="costs-container">
-                        <input type="text" id="costs-50" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                        <label class="costs-label">50-75</label>
-                    </div>
-                    <div class="costs-container">
-                        <input type="text" id="costs-75" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                        <label class="costs-label">75+</label>
-                    </div>
-                </div>
-                <div class="settings-divider"></div>
-                <div class="settings-group">
-                    <div class="settings-title>">
-                        <h3>Skill cap per level</h3>
-                        <p class="subtitle">[ 0 disables cap ]</p>
-                    </div>
-                    <div class="costs-container">
-                        <input type="text" id="settings-cap" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                    </div>
-                </div>
-                <div class="settings-divider"></div>
-                <div class="settings-group">
-                    <div class="settings-title">
-                        <h3>Skillpoints per level-up</h3>
-                        <p class="subtitle">[ base + (multiplier x level) ]</p>
-                    </div>
-                    <div class="costs-container">
-                        <input type="text" id="settings-points-base" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                        <label class="costs-label">Base</label>
-                    </div>
-                    <div class="costs-container">
-                        <input type="text" id="settings-points-mult" class="text-input costs" pattern="[0-9]+" onchange="updateSettings()" disabled="disabled">
-                        <label class="costs-label">Multiplier</label>
-                    </div>
-                </div>
-            </div>
+
 			<div id="profession-details">
 				<div class="profession-details-group">
 					<input type="text" id="profession-name" class="text-input" placeholder="Custom Class" onchange="saveData()" disabled="disabled">
@@ -379,7 +325,7 @@
 					</div>
 				</div>
 				
-				<div class="settings-divider"></div>
+				<div class="profession-details-divider"></div>
 				
 				<div class="profession-details-group">
 					<div class="profession-details-title>">
@@ -395,7 +341,7 @@
 					</div>
 				</div>
 				
-				<div class="settings-divider"></div>
+				<div class="profession-details-divider"></div>
 				
 				<div class="profession-details-group">
 					<div class="profession-details-title>">

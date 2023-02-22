@@ -9,8 +9,6 @@ let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 let baseAttributes = [0, 0, 0];
 
-//let settings = [{costTo25: 3, costTo50: 7, costTo75: 13, costTo100: 25,
-//   cap: 5, base: 12, mult: 3}];
 let XPLevelUpBase = 125;
 let XPLevelUpMult = 15;
 let spentPerks = 0;
@@ -784,7 +782,7 @@ function skillsToXP() {
 function calculateLevelFromXP(XP) { 
     let level = 1;
     while (XP >= 0) {
-		console.log(level, XP);
+		//console.log(level, XP);
 		level++;
 		XP -= XPLevelUpBase + (XPLevelUpMult*(level-1));
     }
@@ -1087,17 +1085,12 @@ function loadData() {
 		professionSkills[3] = values[16];
 		professionSkills[4] = values[17];
 		professionSkills[5] = values[18];
-		
-        //Backwards compatibility: (defaults version to current serenity build)
-        if (typeof versionIndex == "undefined") {
-            versionIndex = 1;
-        }
+
     
         document.getElementById("build-name").value = buildName;
         document.getElementById("races-selection").value = buildRace;
         document.getElementById("stone-select").value = buildStone;
         document.getElementById("ogmah-select").value = ogmahIndex;
-        document.getElementById("version-select").value = versionIndex;
         attributeIncreases[0] = magickaIncrease;
         attributeIncreases[1] = healthIncrease;
         attributeIncreases[2] = staminaIncrease;
