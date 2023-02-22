@@ -748,8 +748,6 @@ function updateLevel() {
     unspentPerksText.textContent = unspentPerks;
 	
 	let missingXP = levelToXP(level) - XPFromSkills;
-	console.log(missingXP);
-	console.log(XPFromSkills);
 	if (missingXP>0) {
 		document.getElementById("missing-XP").style.display = "block";
 		missingXPtext.textContent = missingXP;
@@ -1266,7 +1264,6 @@ function perkMouseEnter(perkNum) {
 
     tooltipBox.style.left = (rect.left-(boxWidth/2)+15).toString() +"px";
 
-
     tooltipBox.style.top = (rect.top+50).toString() +"px";
 }
 
@@ -1353,14 +1350,11 @@ function toggleClassInput(bool) {
 
 
 
-
 window.addEventListener('resize', drawSkillTree);
 
-//updateVersion();
 addChainArrays();
 drawSkillTree();
 createSkillIcons();
 updateRace();
 loadData();
 updateSkillLevels();
-
