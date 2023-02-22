@@ -239,7 +239,15 @@ function updatePoisonResist() {
     
         let z = ((3*baseHealth) + (2*baseStamina))/5;
         let bonusResist = 4*(Math.sqrt(z-140));
-    
+		
+		if (stoneIndex == 13) {
+			if(isNaN(bonusResist)==true || bonusResist < 0) {
+				bonusResist = 50;
+			}
+			else {
+				bonusResist += 50;
+			}
+		}
         if(isNaN(bonusResist)==true || bonusResist < 0) {
             bonusResist = 0;
         }   

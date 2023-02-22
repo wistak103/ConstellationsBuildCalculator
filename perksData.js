@@ -1688,14 +1688,14 @@ enchanting.perks = [
     //6
     {
         name: "Misdirection", skill: pickpocket, skillReq: 75,
-        xPos: 221 / 4, yPos: 60 / 4, preReqs: [4], chain: 0,
+        xPos: 221 / 4, yPos: 60 / 4, preReqs: [5], chain: 0,
         description: "Why should someone own a nice weapon or piece of jewelry when it could be yours? <br> Now you can sometimes adjust this inequity.",
         labels: [], lines: []
     },
     //7
     {
         name: "Perfected Art", skill: pickpocket, skillReq: 100,
-        xPos: 254 / 4, yPos: 20 / 4, preReqs: [5], chain: 0,
+        xPos: 254 / 4, yPos: 20 / 4, preReqs: [6], chain: 0,
         description: "After having learned everything there is to know about thievery,<br>your legendary skill means you almost never get caught.",
         labels: [], lines: []
     },

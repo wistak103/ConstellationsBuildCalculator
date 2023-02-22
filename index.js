@@ -928,15 +928,15 @@ function updateStone() {
     stoneIndex = document.getElementById("stone-select").value;
     attributeModifiers[0] = 0;
     if(stoneIndex == 2) {
-        attributeModifiers[0] = 350;
+        attributeModifiers[0] = 150;
     }
 
     if(stoneIndex == 3) {
-        attributeModifiers[0] = 100;
+        attributeModifiers[0] = 75;
     }
 
     if(stoneIndex == 11) {
-        attributeModifiers[2] = 100;
+        attributeModifiers[2] = 125;
     }
     updateDerivedValues();
     updateAttributes();
