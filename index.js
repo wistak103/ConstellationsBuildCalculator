@@ -734,8 +734,8 @@ function updateLevel() {
         }
     }
 
-    if (spentPerks > 3) {
-        levelForPerks = spentPerks - 2 - bonusPerks;
+    if (spentPerks > 6) {
+        levelForPerks = spentPerks - 5 - bonusPerks;
     }
 
     let levelForSP = calculateLevelFromSkillPoints();
