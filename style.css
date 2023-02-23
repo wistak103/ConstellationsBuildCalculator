@@ -479,7 +479,7 @@ option {
     padding: 10px;
 }
 #build-code {
-    overflow: clip;
+    overflow: hidden;
     white-space: nowrap;
     margin-bottom: 10px;
 }
