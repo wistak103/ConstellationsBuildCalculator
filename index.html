@@ -208,7 +208,7 @@
                     </div>
                 </div>
                 <div class="skill-extra">
-                    <div id="unspent-perks">Unspent perks: <span class="unspent-number" id="unspent-perks-number">0</span></div>
+                    <div id="unspent-perks">Unspent perk points: <span class="unspent-number" id="unspent-perks-number">0</span></div>
                     <div id="missing-XP">Missing XP: <span class="unspent-number" id="missing-XP-number">0</span></div>
                 </div>
                 <div class="tree-viewer">
@@ -304,52 +304,53 @@
             </div>
         </div>
 
-			<div id="profession-details">
-				<div class="profession-details-group">
-					<input type="text" id="profession-name" class="text-input" placeholder="Custom Class" onchange="saveData()" disabled="disabled">
+		<div id="profession-details">
+			
+			<div class="profession-details-group">
+				<input type="text" id="profession-name" class="text-input" placeholder="Custom Class" onchange="saveData()" disabled="disabled">
+			</div>
+			
+			<div class="profession-details-divider"></div>
+				
+			<div class="profession-details-group">
+				<div class="profession-details-title>">
+                    <h3>Attribute</h3>
+                    <p class="subtitle">[ +10 to base ]</p>
+                </div>
+				<div class="profession-details-select">
+					<select name="Class Attribute" id="profession-attribute" class="drop-down" onchange="updateAttributes()" disabled="disabled">
+						<option value="0">Magicka</option>
+						<option value="1">Health</option>
+						<option value="2">Stamina</option>
+					</select>
 				</div>
+			</div>
 				
-				<div class="profession-details-divider"></div>
+			<div class="profession-details-divider"></div>
 				
-				<div class="profession-details-group">
-					<div class="profession-details-title>">
-                        <h3>Attribute</h3>
-                        <p class="subtitle">[ +10 to base ]</p>
-                    </div>
-					<div class="profession-details-select">
-						<select name="Class Attribute" id="profession-attribute" class="drop-down" onchange="updateAttributes()" disabled="disabled">
-							<option value="0">Magicka</option>
-							<option value="1">Health</option>
-							<option value="2">Stamina</option>
-						</select>
-					</div>
+			<div class="profession-details-group">
+				<div class="profession-details-title>">
+					<h3>Skill Group</h3>
+					<p class="subtitle">[ +5 to all skills ]</p>
 				</div>
-				
-				<div class="profession-details-divider"></div>
-				
-				<div class="profession-details-group">
-					<div class="profession-details-title>">
-                        <h3>Skill Group</h3>
-                        <p class="subtitle">[ +5 to all skills ]</p>
-                    </div>
-					<div class="profession-details-select">
-						<select name="Class Skill Group" id="profession-skill-group" class="drop-down" onchange="updateBaseSkillLevels()" disabled="disabled">
-							<option value="0">Mage</option>
-							<option value="1">Warrior</option>
-							<option value="2">Thief</option>
-						</select>
-					</div>
+				<div class="profession-details-select">
+					<select name="Class Skill Group" id="profession-skill-group" class="drop-down" onchange="updateBaseSkillLevels()" disabled="disabled">
+						<option value="0">Mage</option>
+						<option value="1">Warrior</option>
+						<option value="2">Thief</option>
+					</select>
 				</div>
+			</div>
 				
-				<div class="profession-details-divider"></div>
+			<div class="profession-details-divider"></div>
 				
-				<div class="profession-details-group">
-					<div class="profession-details-title>">
-                        <h3>Class Skills</h3>
-                        <p class="subtitle">[ +5 to selected skills ]</p>
-                    </div>
-					<div class="profession-details-select" id="skill-choices">
-						<div>
+			<div class="profession-details-group">
+				<div class="profession-details-title>">
+					<h3>Class Skills</h3>
+					<p class="subtitle">[ +5 to selected skills ]</p>
+				</div>
+				<div class="profession-details-select" id="skill-choices">
+					<div>
 						<select name="Class Attribute" id="skill-choice-1" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
 							<optgroup label="Warrior Skills">
 								<option value="0">Smithing</option>
@@ -403,7 +404,7 @@
 								<option value="17">Enchanting</option>
 							</optgroup>
 						</select>
-
+	
 						<select name="Class Attribute" id="skill-choice-3" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
 							<optgroup label="Warrior Skills">
 								<option value="0">Smithing</option>
@@ -430,8 +431,8 @@
 								<option value="17">Enchanting</option>
 							</optgroup>
 						</select>
-						</div>
-						<div>
+					</div>
+					<div>
 						<select name="Class Attribute" id="skill-choice-4" class="drop-down skill-choice" onchange="updateBaseSkillLevels()" disabled="disabled">
 							<optgroup label="Warrior Skills">
 								<option value="0">Smithing</option>
@@ -512,25 +513,45 @@
 								<option value="17">Enchanting</option>
 							</optgroup>
 						</select>
-						</div>
 					</div>
 				</div>
-				
 			</div>
-		    <div id="perk-description-box">
-                <h3 id="perk-description-title">Mace Focus (1/3)</h3>
-                <p id="perk-description-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
-				<p id="perk-requirements">Onehanded 25</p>
-                <h3 id="perk-description-rank-title">Next Rank</h3>
-                <p id="perk-description-rank-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
-				<p id="perk-requirements-rank">Onehanded 50</p>
-            </div>
-            <div id="alert">
-                <div id="alert-box">
-                    <p id="alert-box-text"></p>
-                    <button id="alert-box-close" onclick="closeAlert()">Okay</button>
-                </div>
-            </div>
+				
+		</div>
+		
+		<div id="instructions">
+			<div class="instructions">
+				<h2>Ussage Instructions</h2>
+				<p> I think it's mostly straighforward but here are some tips:</p>
+				<ul>
+					<li><p>Perks don't have effect on stat calculation happening on left side, so if you will take Magic Resistance perk in alteration you won't see your MR raising in calculator. Those stats are influenced by your Race, Birthsign and base attributes.</p></li>
+					<li><p><span style="color:red; font-weight:bold;">MISSING XP: X</span> means that you spent more perk points than you had or that you selected a feat requiring higher level. Each skillup earns you XP equal to new skill level, so for example getting one handed to 29 from 28 will grant you 29 XP.</p></li>
+					
+				</ul>
+			</div>
+			
+			<div class="instructions">
+				<h2>Additional Info</h2>
+				<p>You can find many informations on Ixion's <a href="https://discord.com/invite/UF6aV3S">discord</a>, most relevant to your build probably <a href="https://discord.com/channels/607247167588925450/1015147847374602270">Races</a>, <a href="https://discord.com/channels/607247167588925450/1016435208377077780">Birthsigns</a> and <a href="https://discord.com/channels/607247167588925450/1020904358466031777">Religion</a>.</p>
+				<p> If you find some errors or mistakes feel free to report them to me on <a href="https://github.com/wistak103/ConstellationsBuildCalculator">github</a> or mention me in discord (wistak#0438)
+			</div>
+		</div>
+		
+		<div id="perk-description-box">
+			<h3 id="perk-description-title">Mace Focus (1/3)</h3>
+			<p id="perk-description-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
+			<p id="perk-requirements">Onehanded 25</p>
+			<h3 id="perk-description-rank-title">Next Rank</h3>
+			<p id="perk-description-rank-body">You've become familiar with war axes, thereby increasing their damage and armor penetration. [damage x 1.05, +10 armor penetration]</p>
+			<p id="perk-requirements-rank">Onehanded 50</p>
+		</div>
+		
+		<div id="alert">
+			<div id="alert-box">
+				<p id="alert-box-text"></p>
+				<button id="alert-box-close" onclick="closeAlert()">Okay</button>
+			</div>
+		</div>
             
 			
 			<!--
