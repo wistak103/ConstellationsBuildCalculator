@@ -663,3 +663,6 @@ option {
 .instructions:last-of-type {
     margin-right: 0px;
 }
+.instructions p {
+	margin-top:7px;
+}
