@@ -630,7 +630,7 @@ destruction.perks = [
     },
     //4
     {
-        name: "Master<br>Destruction", skill: destruction, skillReq: 100,
+        name: "Master<br>Destruction", skill: destruction, skillReq: 90,
         xPos: 80, yPos: 5, preReqs: [3], chain: 0,
         description: "YYour knowledge of Destruction has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
@@ -1313,7 +1313,7 @@ enchanting.perks = [
     {
         name: "Cheap Tricks", skill: lockpicking, skillReq: 0,
         xPos: 150 / 4, yPos: 357 / 4, preReqs: [], chain: 0,
-        description: "You have learned the basics of the art of picking locks and gain 20 expertise. You can now pick novice and apprentice locks without difficulty,<br>but adept locks remain a challenge. If you apply some basic smithing techniques, you can even forge steel ingots into lockpicks.",
+        description: "You have learned the basics of the art of picking locks and gain 25 expertise. You can now pick novice and apprentice locks without difficulty,<br>but adept locks remain a challenge. If you apply some basic smithing techniques, you can even forge steel ingots into lockpicks.",
         labels: [], lines: []
     },
     //1
@@ -1989,7 +1989,7 @@ smithing.perks = [
     {
         name: "Stealth", skill: sneak, skillReq: 0,
         xPos: 189 / 4, yPos: 349 / 4, preReqs: [], chain: 2, rank: 1,
-        description: "You know the basics of moving silently and are harder to detect when sneaking <br> while not wearing any heavy armor.",
+        description: "You know the basics of sneaking and are harder to detect <br> while not wearing any heavy armor. ",
         labels: [], lines: [], chainPerks: []
     },
     //1
@@ -2022,16 +2022,16 @@ smithing.perks = [
     },
     //5
     {
-        name: "Muffled Movement", skill: sneak, skillReq: 25,
+        name: "Stealthy Movement", skill: sneak, skillReq: 25,
         xPos: 86 / 4, yPos: 245 / 4, preReqs: [0],  chain: 0,
-        description: "Your newfound finesse allows you to move more quietly while not wearing any heavy armor.",
+        description: "Your newfound finesse further enhances your sneaking ability while not wearing any heavy armor.",
         labels: [], lines: []
     },
     //6
     {
         name: "Light Steps", skill: sneak, skillReq: 50,
         xPos: 129 / 4, yPos: 147 / 4, preReqs: [5],  chain: 0,
-        description: "By distributing your weight more consciously,<br>you're able to avoid triggering pressure plates or similar mechanisms.",
+        description: "By distributing your weight more consciously,<br>you're able to avoid triggering pressure plates or similar mechanisms, and move even more stealthily.",
         labels: [], lines: []
     },
     //7
