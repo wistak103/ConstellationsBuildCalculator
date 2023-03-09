@@ -1675,7 +1675,7 @@ enchanting.perks = [
     {
         name: "Cutpurse", skill: pickpocket, skillReq: 40,
         xPos: 161 / 4, yPos: 242 / 4, preReqs: [3], chain: 2, rank: 2,
-        description: "Your quick fingers serve you well, enabling you to deftly liberate unsuspecting citizens of their most valuable jewelry.",
+        description: "Your quick fingers serve you well, enabling you to deftly liberate unsuspecting citizens of their most valuable gems and jewelry.",
         labels: [], lines: [], chainPerks: []
     },
     //5
