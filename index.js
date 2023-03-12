@@ -926,6 +926,8 @@ function updateStone() {
 	
     stoneIndex = document.getElementById("stone-select").value;
     attributeModifiers[0] = 0;
+	attributeModifiers[1] = 0;
+	attributeModifiers[2] = 0;
     if(stoneIndex == 2) {
         attributeModifiers[0] = 150;
     }
