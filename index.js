@@ -1351,6 +1351,7 @@ window.addEventListener('resize', drawSkillTree);
 addChainArrays();
 drawSkillTree();
 createSkillIcons();
-updateRace();
 loadData();
+updateStone();
+updateRace();
 updateSkillLevels();
