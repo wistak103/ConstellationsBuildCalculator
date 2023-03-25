@@ -305,21 +305,21 @@ alteration.perks = [
     {
         name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 0,
         xPos: 10, yPos: 85, preReqs: [], chain: 3, rank: 1,
-        description: "Having learned over the shoulders, you can cast novice level spells but all spells cast have reduced effectivity. [Novice spells: -60% spell cost, -10% magnitude/duration for all spells]",
+        description: "Having learned over the shoulders, you can cast novice level spells but all spells cast have reduced effectivity.<br>[Novice spells: -60% spell cost, -10% magnitude for all spells]",
         labels: [], lines: [], chainPerks: []
     },
     //25
     {
         name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 10,
         xPos: 10, yPos: 85, preReqs: [24], chain: 3, rank: 2, 
-        description: "Having learned over the shoulders, you can now also cast apprentice level spells. [Apprentice spells: -55% spell cost]",
+        description: "Having learned over the shoulders, you can now also cast apprentice level spells.<br>[Apprentice spells: -55% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
     //26
     {
         name: "Unskilled<br>Spellcasting", skill: alteration, skillReq: 0, levelReq: 20,
         xPos: 10, yPos: 85, preReqs: [25], chain: 3, rank: 3,
-        description: "Having learned over the shoulders, you can cast adept level spell. [Adept spells: -50% spell cost]",
+        description: "Having learned over the shoulders, you can cast adept level spells.<br>[Adept spells: -50% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
 
@@ -1225,7 +1225,7 @@ enchanting.perks = [
     {
         name: "Quiet Casting", skill: illusion, skillReq: 25,
         xPos: 55 / 3.5, yPos: 226 / 3.5, preReqs: [0], chain: 0,
-        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle spells last 25% longer.",
+        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle spells last 50% longer.",
         labels: [], lines: []
     },
     //6
@@ -1406,7 +1406,7 @@ enchanting.perks = [
     },
     //8
     {
-        name: "Piercing Shot", skill: marksman, skillReq: 45,
+        name: "Piercing Shot", skill: marksman, skillReq: 40,
         xPos: 284 / 4, yPos: 200 / 4, preReqs: [7], chain: 0,
         description: "You've learned how to hit the weakest parts of armor.<br>[+50% armor penetration from ammunition]",
         labels: [], lines: []
@@ -1436,21 +1436,21 @@ enchanting.perks = [
     {
         name: "Hunter", skill: marksman, skillReq: 30, levelReq: 0,
         xPos: 250 / 4, yPos: 270 / 4, preReqs: [11], chain: 2, rank: 2,
-        description: "You are more adapted to wildlife, and better understand its inhabitants.<br>[against animals: +30% physical damage, -20% physical damage taken, +20% poison and disease resist]",
+        description: "You are more adapted to wildlife, and better understand its inhabitants.<br>[+15% physical damage against animals, +10% poison and disease resist, increased stealth in the wilderness]",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
         name: "Bow Strike", skill: marksman, skillReq: 25, levelReq: 0,
         xPos: 90 / 4, yPos: 280 / 4, preReqs: [1], chain: 2, rank: 1,
-        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+15 bash damage, bash causes stagger, -3 bash stamina cost]",
+        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+20 bash damage, bash causes stagger, -3 bash stamina cost]",
         labels: [], lines: [], chainPerks: []
     },
     //14
     {
         name: "Bow Strike", skill: marksman, skillReq: 50, levelReq: 0,
         xPos: 90 / 4, yPos: 280 / 4, preReqs: [13], chain: 2, rank: 2,
-        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+30 bash damage, bash causes stagger, -6 bash stamina cost]",
+        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+40 bash damage, bash causes stagger, -6 bash stamina cost]",
         labels: [], lines: [], chainPerks: []
     },
    ];
@@ -1622,14 +1622,14 @@ enchanting.perks = [
     {
         name: "Flurry", skill: onehanded, skillReq: 50,
         xPos: 88, yPos: 90, preReqs: [23], chain: 2, rank: 2,
-        description: "When fighting with one-handed weapons or fists, you're able to attack even faster.<br>[+25% attack speed]",
+        description: "When fighting with one-handed weapons or fists, you're able to attack even faster.<br>[+20% attack speed]",
         labels: [], lines: [], chainPerks: []
     },
     //24
     {
         name: "Storm of Steel", skill: onehanded, skillReq: 75,
         xPos: 88, yPos: 100 / 4, preReqs: [23], chain: 0,
-        description: "You've become very skilled in wielding two weapons at once.<br>[20% more dual-wield power attack damage]",
+        description: "You've become very skilled in wielding two weapons at once.<br>[25% more dual-wield power attack damage]",
         labels: [], lines: []
     },
 	//25
@@ -2022,9 +2022,9 @@ smithing.perks = [
     },
     //5
     {
-        name: "Stealthy Movement", skill: sneak, skillReq: 25,
+        name: "Muffled Movement", skill: sneak, skillReq: 25,
         xPos: 86 / 4, yPos: 245 / 4, preReqs: [0],  chain: 0,
-        description: "Your newfound finesse further enhances your sneaking ability while not wearing any heavy armor.",
+        description: "Your newfound finesse allows you to move more quietly while not wearing any heavy armor.",
         labels: [], lines: []
     },
     //6
