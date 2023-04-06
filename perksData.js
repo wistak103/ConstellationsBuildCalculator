@@ -533,14 +533,14 @@ conjuration.perks = [
     {
         name: "Stabilized<br>Binding", skill: conjuration, skillReq: 25,
         xPos: 85 / 4, yPos: 221 / 4, preReqs: [0], chain: 2, rank : 1,
-        description: "Having studied the barriers that divide the planes of existence,<br> you can make your summoned daedra and spirits last longer in this realm.",
+        description: "Having studied the barriers that divide the planes of existence,<br> your non-undead summoned creatures last longer in this realm.",
         labels: [], lines: [], chainPerks: []
     },
     //17
     {
         name: "Stabilized<br>Binding", skill: conjuration, skillReq: 50,
         xPos: 85 / 4, yPos: 221 / 4, preReqs: [16], chain: 2, rank : 2,
-        description: "Furthering your studies about the barriers that divide the planes of existence,<br> you can make your summoned daedra and spirits last even longer in this realm.",
+        description: "Furthering your studies about the barriers that divide the planes of existence,<br> your non-undead summoned creatures last even longer in this realm.",
         labels: [], lines: [], chainPerks: []
     },
     //18
@@ -554,7 +554,7 @@ conjuration.perks = [
     {
         name: "Extended<br>Binding", skill: conjuration, skillReq: 50,
         xPos: 53 / 4, yPos: 131 / 4, preReqs: [16], chain: 0,
-        description: "You've perfected your spells' formulae to summon daedra and spirits,<br>and are now able to cast them more easily and further away.",
+        description: "Furthering your studies about the barriers that divide the planes of existence,<br> your non-undead summoned creatures last even longer in this realm.",
         labels: [], lines: []
     },
     //20
@@ -1246,21 +1246,21 @@ enchanting.perks = [
     {
         name: "Visual<br>Manipulation", skill: illusion, skillReq: 25,
         xPos: 110 / 3.5, yPos: 220 / 3.5, preReqs: [0], chain: 0,
-        description: "Your knowledge of Shadow Magic grants the power to summon night vision at will. Blur is more effective.",
+        description: "Your knowledge of Shadow Magic grants the power to summon night vision at will. Blur and Shadow Shield are more effective.",
         labels: [], lines: []
     },
     //9
     {
         name: "Shadow Shaping", skill: illusion, skillReq: 50,
         xPos: 100 / 3.5, yPos: 130 / 3.5, preReqs: [8], chain: 0,
-        description: "You have gained even deeper insights into the weave of shadows. Blur is more powerful and long lasting. Empowering Shadow Dance grants immunity to most impact effects and increases attack speed.",
+        description: "You have gained even deeper insights into the weave of shadows. Blur and Shadow Shield are more powerful and long lasting. Empowering Shadow Shield grants immunity to most impact effects and increases attack speed.",
         labels: [], lines: []
     },
     //10
     {
         name: "Shadow Mastery", skill: illusion, skillReq: 75,
         xPos: 100 / 3.5, yPos: 60 / 3.5, preReqs: [9], chain: 0,
-        description: "You have gained even deeper insights into the weave of shadows. Empowering Shadow Simulacrum or Mistress of the Dark improves your illusions. Blur is more effective. Shadow Dance and Blur now laster even longer.",
+        description: "You have gained even deeper insights into the weave of shadows. Empowering Shadow Simulacrum or Mistress of the Dark improves your illusions. Blur and Shadow Shield are more effective and last even longer.",
         labels: [], lines: []
     },
     //11
@@ -1442,16 +1442,9 @@ enchanting.perks = [
     //13
     {
         name: "Bow Strike", skill: marksman, skillReq: 25, levelReq: 0,
-        xPos: 90 / 4, yPos: 280 / 4, preReqs: [1], chain: 2, rank: 1,
-        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+20 bash damage, bash causes stagger, -3 bash stamina cost]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //14
-    {
-        name: "Bow Strike", skill: marksman, skillReq: 50, levelReq: 0,
-        xPos: 90 / 4, yPos: 280 / 4, preReqs: [13], chain: 2, rank: 2,
-        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+40 bash damage, bash causes stagger, -6 bash stamina cost]",
-        labels: [], lines: [], chainPerks: []
+        xPos: 90 / 4, yPos: 280 / 4, preReqs: [1], chain: 0,
+        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+25 bash damage, bash causes stagger, -5 bash stamina cost]",
+        labels: [], lines: []
     },
    ];
 
@@ -2056,21 +2049,21 @@ smithing.perks = [
     {
         name: "Haggling", skill: speech, skillReq: 0,
         xPos: 118 / 4, yPos: 335 / 4, preReqs: [], chain: 3, rank: 1,
-        description: "You've further advanced your knowledge on how to handle merchants <br> and are able to haggle for even better prices.",
+        description: "You've learned how to haggle with Skyrim's greedy merchants <br> and your speech skill now gains proficiency faster.",
         labels: [], lines: [], chainPerks: []
     },
 	//1
     {
         name: "Haggling", skill: speech, skillReq: 30,
         xPos: 118 / 4, yPos: 335 / 4, preReqs: [0], chain: 3, rank: 2,
-        description: "You've learned how to deal with Skyrim's greedy merchants <br> and how to haggle for better prices.",
+        description: "You've further advanced your knowledge on how to handle merchants <br> and your speech skill now gains proficiency even faster.",
         labels: [], lines: [], chainPerks: []
     },
 	//2
     {
         name: "Haggling", skill: speech, skillReq: 60,
         xPos: 118 / 4, yPos: 335 / 4, preReqs: [1], chain: 3, rank: 3,
-        description: "You've perfected haggling with greedy merchants <br> and are able to get the best prices.",
+        description: "You've perfected haggling with greedy merchants <br> and your speech skill now gains proficiency even faster.",
         labels: [], lines: [], chainPerks: []
     },
     //3
