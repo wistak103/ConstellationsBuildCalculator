@@ -1123,7 +1123,7 @@ enchanting.perks = [
     {
         name: "Relentless Onslaught", skill: heavyarmor, skillReq: 20,
         xPos: 249 / 4.5, yPos: 280 / 4.5, preReqs: [0], chain: 0,
-        description: "After extensive training you now can sprint and dodge in heavy armor without problems.<br>[no sprinting stamina cost penalty, enables you to dodge while wearing heavy armor, -10% armor weight penalty]",
+        description: "After extensive training you now can sprint in heavy armor without problems.<br>[reduced sprinting stamina cost penalty, take 80% less melee damage when bullrushing, -10% armor weight penalty]",
         labels: [], lines: []
     },
     //2
