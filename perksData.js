@@ -1826,7 +1826,7 @@ enchanting.perks = [
     {
         name: "Venomancer", skill: restoration, skillReq: 25,
         xPos: 180 / 4, yPos: 230 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "Your higher level sun spells are so bright that all but the most powerful foes are stunned, living and dead.",
+        description: "You now are able to intensify the potency of your poison spells. <br>Thus, they now deal increased damage.",
         labels: [], lines: [], chainPerks: []
     },
     //18
