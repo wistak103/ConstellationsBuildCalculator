@@ -1225,7 +1225,7 @@ enchanting.perks = [
     {
         name: "Quiet Casting", skill: illusion, skillReq: 25,
         xPos: 55 / 3.5, yPos: 226 / 3.5, preReqs: [0], chain: 0,
-        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle spells last 50% longer.",
+        description: "Empowering Muffle spells and Veil of Silence lets you cast spells from the illusion school silently. Muffle spells last 100% longer.",
         labels: [], lines: []
     },
     //6
@@ -1253,14 +1253,14 @@ enchanting.perks = [
     {
         name: "Shadow Shaping", skill: illusion, skillReq: 50,
         xPos: 100 / 3.5, yPos: 130 / 3.5, preReqs: [8], chain: 0,
-        description: "You have gained even deeper insights into the weave of shadows. Blur and Shadow Shield are more powerful and long lasting. Empowering Shadow Shield grants immunity to most impact effects and increases attack speed.",
+        description: "You have gained even deeper insights into the weave of shadows. Blur and Shadow Shield are more powerful and last 30% longer. Empowering Shadow Shield grants immunity to most impact effects and increases attack speed by 10%.",
         labels: [], lines: []
     },
     //10
     {
         name: "Shadow Mastery", skill: illusion, skillReq: 75,
         xPos: 100 / 3.5, yPos: 60 / 3.5, preReqs: [9], chain: 0,
-        description: "You have gained even deeper insights into the weave of shadows. Empowering Shadow Simulacrum or Mistress of the Dark improves your illusions. Blur and Shadow Shield are more effective and last even longer.",
+        description: "You have gained even deeper insights into the weave of shadows. Empowering Shadow Simulacrum or Mistress of the Dark improves your illusions. Blur and Shadow Shield are more effective and last 30% longer.",
         labels: [], lines: []
     },
     //11
@@ -2017,7 +2017,7 @@ smithing.perks = [
     {
         name: "Muffled Movement", skill: sneak, skillReq: 25,
         xPos: 86 / 4, yPos: 245 / 4, preReqs: [0],  chain: 0,
-        description: "Your newfound finesse allows you to move more quietly while not wearing any heavy armor.",
+        description: "Your newfound finesse allows you to move more quietly, reducing the generated noise by 50%, while not wearing any heavy armor.",
         labels: [], lines: []
     },
     //6
