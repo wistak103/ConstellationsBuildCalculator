@@ -1035,14 +1035,14 @@ enchanting.perks = [
     {
         name: "Athletics", skill: evasion, skillReq: 25,
         xPos: 277 / 4, yPos: 254 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "You are more agile and can recover from exhaustion faster.<br>[+10% movement speed when sprinting or swimming, +15% stamina regeneration]",
+        description: "You are more agile and can recover from exhaustion faster when wearing no heavy armor.<br>[+10% movement speed when sprinting or swimming, +15% stamina regeneration]",
         labels: [], lines: [], chainPerks: []
     },
     //2
     {
         name: "Athletics", skill: evasion, skillReq: 50,
         xPos: 277 / 4, yPos: 254 / 4, preReqs: [1], chain: 2, rank: 2,
-        description: "You are more agile and can recover from exhaustion faster.<br>[+20% movement speed when sprinting or swimming, +30% stamina regeneration]",
+        description: "You are more agile and can recover from exhaustion faster when wearing no heavy armor.<br>[+20% movement speed when sprinting or swimming, +30% stamina regeneration]",
         labels: [], lines: [], chainPerks: []
     },
     //3
@@ -1075,33 +1075,33 @@ enchanting.perks = [
     },
     //7
     {
-        name: "Dexterity", skill: evasion, skillReq: 50,
+        name: "Wind Walker", skill: evasion, skillReq: 50,
         xPos: 128 / 4, yPos: 148 / 4, preReqs: [6], chain: 0,
-        description: "You are able to balance your weapon better.<br>[Up to 24% less power attack stamina cost when wearing no heavy armor: head, chest, hands, feet]",
+        description: "Your light armor and clothes have become your second skin.<br>[Up to +10% movement speed when wearing no heavy armor: head, chest, hands, feet, -25% armor weight penalty]",
         labels: [], lines: []
     },
     //8
     {
-        name: "Wind Walker", skill: evasion, skillReq: 75,
+        name: "Combat Reflexes", skill: evasion, skillReq: 75,
         xPos: 142 / 4, yPos: 92 / 4, preReqs: [7], chain: 0,
-        description: "Your light armor and clothes have become your second skin.<br>[Up to +10% movement speed when wearing no heavy armor: head, chest, hands, feet, -25% armor weight penalty]",
+        description: "You've gained the ability to act faster in combat, though doing so will quickly exhaust you.<br>[Lesser power: Slow time by 50% for 30 seconds, drains 5 stamina per second]",
         labels: [], lines: []
     },
     //9
     {
-        name: "Vexing Flanker", skill: evasion, skillReq: 50,
+        name: "Dexterity", skill: evasion, skillReq: 50,
         xPos: 267 / 4, yPos: 159 / 4, preReqs: [6], chain: 0,
-        description: "You have learned to flank your enemies with ease.<br>[Up to 16% more melee attack damage when running and wearing no heavy armor: head, chest, hands, feet, immune to finishers]",
+        description: "You are able to balance your weapon better.<br>[Up to 24% less power attack stamina cost when wearing no heavy armor: head, chest, hands, feet]",
         labels: [], lines: []
     },
     //10
     {
-        name: "Combat Reflexes", skill: evasion, skillReq: 75,
+        name: "Vexing Flanker", skill: evasion, skillReq: 75,
         xPos: 237 / 4, yPos: 80 / 4, preReqs: [9], chain: 0,
-        description: "You've gained the ability to act faster in combat, though doing so will quickly exhaust you.<br>[Lesser power: Slow time by 50% for 30 seconds, drains 5 stamina per second]",
+        description: "You have learned to flank your enemies with ease.<br>[Up to 18% more melee attack damage when running and wearing no heavy armor: head, chest, hands, feet, immune to finishers]",
         labels: [], lines: []
     },
-    //13
+    //11
     {
         name: "Meteoric Reflexes", skill: evasion, skillReq: 100,
         xPos: 195 / 4, yPos: 35 / 4, preReqs: [8, 10], chain: 0,
