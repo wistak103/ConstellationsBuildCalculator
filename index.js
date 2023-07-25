@@ -717,7 +717,7 @@ function updateLevel() {
     }
 	//level needed for perkpoints
     if (spentPerks > 6) {
-        levelForPerks = spentPerks - 5 - bonusPerks;
+        levelForPerks = Math.ceil((spentPerks - 5 - bonusPerks)/1.1);
     }
 	
 	//level from XP
