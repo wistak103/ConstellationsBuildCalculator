@@ -913,7 +913,7 @@ destruction.perks = [
     //44
     {
         name: "Impact", skill: destruction, skillReq: 50,
-        xPos: 80, yPos: 85, preReqs: [43], chain: 2, rank : 1,
+        xPos: 80, yPos: 85, preReqs: [43], chain: 0,
         description: "By intensifying the force of most of your overcharged Destruction spells, you're now capable of staggering your foes.",
         labels: [], lines: [],chainPerks: []
     },
