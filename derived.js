@@ -29,7 +29,7 @@ function updateMagickaRegen() {
     totalRegen = baseMagicRegen * bonusRegen;
 
     if (stoneIndex == 1) {
-        totalRegen = totalRegen + (baseMagicRegen*2);
+        totalRegen = totalRegen + (baseMagicRegen*0.5);
     }
     if(stoneIndex == 2) {
         totalRegen = 0;
@@ -77,7 +77,7 @@ function updateCarryWeight() {
     let z = ((4*baseAttributes[1]) + baseAttributes[2])/5;
     let bonusCW = 4*(Math.sqrt(z-110));
 
-    if (stoneIndex == 8) {
+    if (stoneIndex == 8 || stoneIndex == 11) {
         if(isNaN(bonusCW)==true || bonusCW < 0) {
             bonusCW = 20;
         } else {
@@ -110,7 +110,10 @@ function updateMovementSpeed(){
     }   
 
     bonusSpeed = Math.round(bonusSpeed*100)/100;
-
+	if (stoneIndex == 11)
+	{
+		bonusSpeed += 10;
+	}
     derivedAttributes[3].textContent = "+" + bonusSpeed + "%";
 }
 
@@ -202,7 +205,7 @@ function updateMagicResist() {
     let totalResist = baseResist + magicResist;
 
     if(stoneIndex == 1) {
-        totalResist -= 25;
+        totalResist -= 15;
     }
     if(stoneIndex == 10) {
         totalResist += 15;
@@ -226,8 +229,10 @@ function updateDiseaseResist() {
     else {
         bonusResist = Math.round(bonusResist * 100)/100;
     }
-    
-    let totalResist = baseResist + bonusResist;
+	
+    let diseaseResistOffset = 15; //Introduced to combat higher base stats
+    let totalResist = baseResist + bonusResist - diseaseResistOffset;
+
     derivedAttributes[9].textContent = totalResist + "%";
 }
 
@@ -254,8 +259,7 @@ function updatePoisonResist() {
         else {
             bonusResist = Math.round(bonusResist * 100)/100;
         }
-
-        let totalResist = baseResist + bonusResist;
+		let totalResist = baseResist + bonusResist;
         derivedAttributes[10].textContent = totalResist + "%";
 }
 

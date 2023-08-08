@@ -32,7 +32,7 @@ altmer.baseSkills = [
     10,      //alteration
     15];     //enchanting
 
-altmer.baseAttributes = [140, 115, 90];
+altmer.baseAttributes = [165, 140, 115];
 altmer.bonusAttributes = [70, 0, 0];
 altmer.baseRegens = [1.35, 0, 1.55];
 altmer.baseCarryWeight = 95;
@@ -59,7 +59,7 @@ argonian.baseSkills = [
     10,      //alteration
     5];     //enchanting
     
-argonian.baseAttributes = [100, 130, 130];	
+argonian.baseAttributes = [125, 155, 155];	
 argonian.bonusAttributes = [0, 0, 0];
 argonian.baseRegens = [1.1, 0, 1.6];
 argonian.baseCarryWeight = 105;
@@ -86,7 +86,7 @@ bosmer.baseSkills = [
     5,      //alteration
     5];     //enchanting
 
-bosmer.baseAttributes = [120, 115, 130];
+bosmer.baseAttributes = [145, 140, 155];
 bosmer.bonusAttributes = [0, 0, 0];
 bosmer.baseRegens = [1.05, 0, 1.65];
 bosmer.baseCarryWeight = 85;
@@ -112,7 +112,7 @@ breton.baseSkills = [
     10,      //restoration
     15,      //alteration
     5];     //enchanting
-breton.baseAttributes = [130, 115, 100];
+breton.baseAttributes = [155, 140, 125];
 breton.bonusAttributes = [0, 0, 0];
 breton.baseRegens = [1.2, 0, 1.55];
 breton.baseCarryWeight = 90;
@@ -138,7 +138,7 @@ dunmer.baseSkills = [
     5,      //restoration
     10,      //alteration
     5];     //enchanting
-dunmer.baseAttributes = [110, 125, 110];
+dunmer.baseAttributes = [135, 150, 135];
 dunmer.bonusAttributes = [0, 0, 0];
 dunmer.baseRegens = [1.1, 0, 1.6];
 dunmer.baseCarryWeight = 100;
@@ -165,7 +165,7 @@ imperial.baseSkills = [
     5,      //alteration
     5];     //enchanting
 
-imperial.baseAttributes = [110, 135, 120];
+imperial.baseAttributes = [135, 160, 145];
 imperial.bonusAttributes = [0, 0, 40];
 imperial.baseRegens = [1.1, 0, 1.9];
 imperial.baseCarryWeight = 110;
@@ -193,7 +193,7 @@ khajiit.baseSkills = [
     5,      //alteration
     5];     //enchanting
 
-khajiit.baseAttributes = [100, 115, 130];
+khajiit.baseAttributes = [125, 140, 155];
 khajiit.bonusAttributes = [0, 0, 0];
 khajiit.baseRegens = [1, 0, 1.65];
 khajiit.baseCarryWeight = 100;
@@ -220,9 +220,9 @@ nord.baseSkills = [
     5,      //alteration
     5];     //enchanting
 
-nord.baseAttributes = [90, 145, 130];
+nord.baseAttributes = [100, 175, 160];
 nord.bonusAttributes = [0, 0, 0];
-nord.baseRegens = [1.05, 0, 1.65];
+nord.baseRegens = [1.00, 0, 1.65];
 nord.baseCarryWeight = 115;
 nord.baseResists = [0, 0, 0];
 
@@ -247,7 +247,7 @@ orismer.baseSkills = [
     5,      //alteration
     5];     //enchanting
     
-orismer.baseAttributes = [70, 155, 125];
+orismer.baseAttributes = [95, 180, 150];
 orismer.bonusAttributes = [0, 0, 0];
 orismer.baseRegens = [1, 0, 1.7];
 orismer.baseCarryWeight = 125;
@@ -274,7 +274,7 @@ redguard.baseSkills = [
     10,      //alteration
     5];     //enchanting
 
-redguard.baseAttributes = [80, 135, 135];
+redguard.baseAttributes = [105, 160, 160];
 redguard.bonusAttributes = [0, 0, 0];
 redguard.baseRegens = [1, 0, 2.3];
 redguard.baseCarryWeight = 105;

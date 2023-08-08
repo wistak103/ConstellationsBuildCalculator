@@ -6,6 +6,7 @@ let skillsIconLabels = document.getElementsByClassName("skill-text");
 let buildLevel = 1;
 let attributeTotals = [100, 100, 100]; //Magicka, Health, Stamina
 let attributeIncreases = [0, 0, 0]; //Magicka, Health, Stamina
+let attributePerLevel = 5;
 let attributeModifiers = [0, 0, 0]; //Magicka, Health, Stamina
 let baseAttributes = [0, 0, 0];
 
@@ -833,12 +834,12 @@ function updateAttributes() {
 	professionAttributes[document.getElementById("profession-attribute").value]=10;
 	
     for (i = 0; i < 3; i++) {
-        attributeTotals[i] = race.baseAttributes[i] + (10 * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i] + professionAttributes[i];
+        attributeTotals[i] = race.baseAttributes[i] + (attributePerLevel * attributeIncreases[i]) + race.bonusAttributes[i] + attributeModifiers[i] + professionAttributes[i];
         if(ogmah-1 == i) {
             attributeTotals[i] += 200;
         }
         attributeText[i].textContent = attributeTotals[i];
-		baseAttributes[i] = (race.baseAttributes[i] +(10 * attributeIncreases[i]) + professionAttributes[i]);
+		baseAttributes[i] = (race.baseAttributes[i] +(attributePerLevel * attributeIncreases[i]) + professionAttributes[i]);
         attributeBase[i].textContent = "BASE: " + (baseAttributes[i]);
     }
     updateDerivedValues();
@@ -937,7 +938,7 @@ function updateStone() {
     }
 
     if(stoneIndex == 11) {
-        attributeModifiers[2] = 125;
+        attributeModifiers[2] = 75;
     }
     updateDerivedValues();
     updateAttributes();
