@@ -409,7 +409,7 @@ block.perks = [
     {
         name: "Torch<br>Combat", skill: block, skillReq: 0, levelReq: 0,
         xPos: 80 / 4, yPos: 300 / 4, preReqs: [], chain: 0,
-        description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage.<br>[+10 light bash damage, +20 power bash damage, power bash staggers, +10% frost resist with torch equipped]",
+        description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage.<br>[+15 light bash damage, +25 power bash damage, power bash staggers, +10% frost resist with torch equipped]",
         labels: [], lines: [], chainPerks: []
     },
 
@@ -1049,14 +1049,14 @@ enchanting.perks = [
     {
         name: "Unarmored", skill: evasion, skillReq: 15,
         xPos: 115 / 4, yPos: 70, preReqs: [0], chain: 2, rank: 1,
-        description: "Having no weight on your body allows you to control your moves better in combat.<br>[while unarmored: +100 armor rating, +3% movement speed, +10% stamina regen]",
+        description: "Having no weight on your body allows you to control your moves better in combat.<br>[while unarmored: +50 armor rating, +5% movement speed, +10% stamina regen]",
         labels: [], lines: [], chainPerks: []
     },
     //4
     {
         name: "Unarmored", skill: evasion, skillReq: 30,
         xPos: 115 / 4, yPos: 70, preReqs: [3], chain: 2, rank: 2,
-        description: "Having no weight on your body allows you to control your moves better in combat.<br>[while unarmored: +200 armor rating, +6% movement speed, +20% stamina regen]",
+        description: "Having no weight on your body allows you to control your moves better in combat.<br>[while unarmored: +100 armor rating, +10% movement speed, +20% stamina regen]",
         labels: [], lines: [], chainPerks: []
     },
     //5
