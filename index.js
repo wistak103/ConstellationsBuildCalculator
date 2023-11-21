@@ -381,13 +381,22 @@ function perkClick(pCircle, perkNum) {
                 if (requirementMet == true) {
                     takePerk(targetPerk);
                 } else {
-                    let perk1Name = activeSkillTree.perks[targetPerk.preReqs[0]].name;
-                    let perk2Name = activeSkillTree.perks[targetPerk.preReqs[1]].name;
-                    perk1Name = perk1Name.replace("<br>",' '); perk2Name = perk2Name.replace("<br>",' ');
+					let perknames=""
+					for (p = 0; p < targetPerk.preReqs.length; p++) {
+						perknames=perknames + activeSkillTree.perks[targetPerk.preReqs[p]].name;
+						perknames = perknames.replace("<br>",' ');
+						if (p+1<targetPerk.preReqs.length) {
+							perknames=perknames + " or ";
+						}
+					}
+					//
+                    //let perk1Name = activeSkillTree.perks[targetPerk.preReqs[0]].name;
+                    //let perk2Name = activeSkillTree.perks[targetPerk.preReqs[1]].name;
+                    //perk1Name = perk1Name.replace("<br>",' '); perk2Name = perk2Name.replace("<br>",' ');
 
                     let alertContainer = document.getElementById("alert");
                     let alertText = document.getElementById("alert-box-text");
-                    alertText.textContent= "This perk requires " + perk1Name + " or " + perk2Name + ". Please select one before taking this perk.";
+                    alertText.textContent= "This perk requires " + perknames + ". Please select one before taking this perk.";
 
                     alertContainer.style.display = "flex";
                 }               
