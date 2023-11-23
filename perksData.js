@@ -1359,7 +1359,7 @@ enchanting.perks = [
     {
         name: "Ranger", skill: marksman, skillReq: 15,
         xPos: 177 / 4, yPos: 322 / 4, preReqs: [0], chain: 0,
-        description: "You improved your footwork when engaging in ranged combat with light weapons.<br>[Able to run with a drawn light bow or crossbow]",
+        description: "You refined your footwork in combat, allowing for improved movement and more effective strikes with light ranged weapons.<br>[15% increased damage, able to run with light ranged weapons]",
         labels: [], lines: []
     },
     //2
@@ -1378,9 +1378,9 @@ enchanting.perks = [
     },
     //4
     {
-        name: "Rapid Reload", skill: marksman, skillReq: 60,
+        name: "Rapid Reload", skill: marksman, skillReq: 40,
         xPos: 90 / 4, yPos: 119 / 4, preReqs: [2], chain: 0,
-        description: "Your have familiarized yourself with the mechanics of your crossbow and can use this knowledge to reload it significantly faster.<br>[+10 expertise, +50% reload speed with crossbows]",
+        description: "Your have familiarized yourself with the mechanics of your crossbow and can use this knowledge to reload it significantly faster.<br>[+50% reload speed with crossbows]",
         labels: [], lines: []
     },
     //5
@@ -1392,7 +1392,7 @@ enchanting.perks = [
     },
     //6
     {
-        name: "Quick Shot", skill: marksman, skillReq: 60,
+        name: "Quick Shot", skill: marksman, skillReq: 40,
         xPos: 175 / 4, yPos: 124 / 4, preReqs: [2], chain: 0,
         description: "You have learned to draw and fire in one single movement.<br>[+50% draw speed with bows]",
         labels: [], lines: []
@@ -1443,7 +1443,7 @@ enchanting.perks = [
     {
         name: "Bow Strike", skill: marksman, skillReq: 25, levelReq: 0,
         xPos: 90 / 4, yPos: 280 / 4, preReqs: [1], chain: 0,
-        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+25 bash damage, bash causes stagger, -5 bash stamina cost]",
+        description: "You can use your bow or crossbow as melee weapon in close combat.<br>[+60 bash damage, improved stagger]",
         labels: [], lines: []
     },
    ];
