@@ -337,28 +337,28 @@ block.perks = [
     //1
     {
         name: "Experienced<br>Blocking", skill: block, skillReq: 20,
-        xPos: 100 / 3, yPos: 222 / 4, preReqs: [0], chain: 0,
+        xPos: 150 / 3, yPos: 222 / 4, preReqs: [0], chain: 0,
         description: "With weapon or shield you can block almost any blow with rock-solid confidence.<br>[Block 50% more damage, recover some stamina when blocking a hit]",
         labels: [], lines: []
     },
     //2
     {
         name: "Strong Grip", skill: block, skillReq: 15,
-        xPos: 30 / 3, yPos: 239 / 4, preReqs: [0], chain: 0,
+        xPos: 50 / 3, yPos: 239 / 4, preReqs: [0], chain: 0,
         description: "You hold on to your shield like you would hold on to your life.<br>[75% less shield weight, 10% more armor rating, block 40% more damage, arrows that hit the shield do no damage]",
         labels: [], lines: []
     },
     //3
     {
         name: "Elemental Protection", skill: block, skillReq: 50,
-        xPos: 55 / 3, yPos: 115 / 4, preReqs: [2], chain: 0,
+        xPos: 50 / 3, yPos: 155 / 4, preReqs: [2], chain: 0,
         description: "You've learned how to block damaging spells.<br>[Take 50% less fire, frost, and shock damage when blocking with a shield]",
         labels: [], lines: []
     },
     //4
     {
         name: "Defensive Stance", skill: block, skillReq: 75,
-        xPos: 103 / 3, yPos: 60 / 4, preReqs: [3], chain: 0,
+        xPos: 80 / 3, yPos: 75 / 4, preReqs: [3], chain: 0,
         description: "You have honed your defensive movements to perfection.<br>[Blocking with a shield does not slow you down]",
         labels: [], lines: []
     },
@@ -366,20 +366,20 @@ block.perks = [
     {
         name: "Powerful Bashes", skill: block, skillReq: 25,
         xPos: 250 / 3, yPos: 239 / 4, preReqs: [0], chain: 0,
-        description: "By gathering your strength for a short while, you can perform a much more powerful bash.<br>[Able to do a power bash]",
+        description: "By gathering your strength, you can perform a much more powerful bash.<br>[Able to do a power bash, +50% shield bash damage]",
         labels: [], lines: []
     },
     //6
     {
         name: "Overpowering Bashes", skill: block, skillReq: 50,
-        xPos: 250 / 3, yPos: 175 / 4, preReqs: [5], chain: 0,
-        description: "When you put all of your power into your shield bashes, you will often overpower your foes.<br>[Power bashing with a shield can knock down]",
+        xPos: 250 / 3, yPos: 155 / 4, preReqs: [5], chain: 0,
+        description: "When you put all of your power into your shield bashes, you will often overpower your foes.<br>[Power bashing with a shield can knock down, fortify block effects increase shield bash damage]",
         labels: [], lines: []
     },
     //7
     {
         name: "Disarming Bash", skill: block, skillReq: 75,
-        xPos: 225 / 3, yPos: 75 / 4, preReqs: [6], chain: 0,
+        xPos: 220 / 3, yPos: 75 / 4, preReqs: [6], chain: 0,
         description: "Sometimes, when you put all your strength into your bashes, your foes drop their weapon because of the pain.<br>[25% chance to disarm when power bashing with a shield, 5% chance to disarm when power bashing with a weapon]",
         labels: [], lines: []
     },
@@ -390,26 +390,11 @@ block.perks = [
         description: "When bull rushing with your shield raised, you are a tremendous force to deal with.<br>[Sprinting with a shield raised knocks down most targets]",
         labels: [], lines: []
     },
-    //9
-    {
-        name: "Shield Strike", skill: block, skillReq: 25,
-        xPos: 170 / 3, yPos: 222 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "You can use your shield more offensively, using it as a deadly weapon.<br>[+50% shield bash damage, fortify block increases shield bash damage, -3 shield bash stamina cost]",
-        labels: [], lines: [], chainPerks: []
-    },
     //10
-    {
-        name: "Shield Strike", skill: block, skillReq: 50,
-        xPos: 170 / 3, yPos: 222 / 4, preReqs: [9], chain: 2, rank: 2,
-        description: "You can use your shield more offensively, using it as a deadly weapon.<br>[+100% shield bash damage, fortify block increases shield bash damage, -6 shield bash stamina cost]",
-        labels: [], lines: [], chainPerks: []
-    },
-
-    //11
     {
         name: "Torch<br>Combat", skill: block, skillReq: 0, levelReq: 0,
         xPos: 80 / 4, yPos: 300 / 4, preReqs: [], chain: 0,
-        description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage.<br>[+15 light bash damage, +25 power bash damage, power bash staggers, +10% frost resist with torch equipped]",
+        description: "You can use your torch more effectively in combat, causing stronger burns and blocking frost damage.<br>[+25 light bash damage, +35 power bash damage, power bash staggers, +15% frost resist with torch equipped]",
         labels: [], lines: [], chainPerks: []
     },
 
@@ -993,30 +978,44 @@ enchanting.perks = [
     },
     //10
     {
-        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 25,
-        xPos: 280 / 4, yPos: 280 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "Your understanding of enchantments allow you to use them more effectively and efficiently.<br>[+15% staff & scroll magnitude and duration]",
+        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 15,
+        xPos: 110 / 4, yPos: 342 / 4, preReqs: [], chain: 2, rank: 1,
+        description: "Your understanding of enchantments allow you to use them more effectively and efficiently.<br>[+20% staff & scroll magnitude and duration]",
         labels: [], lines: [], chainPerks: []
     },
     //11
     {
-        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 50,
-        xPos: 280 / 4, yPos: 280 / 4, preReqs: [10], chain: 2, rank: 2,
-        description: "Your understanding of enchantments allow you to use them more effectively and efficiently.<br>[+30% staff & scroll magnitude and duration]",
+        name: "Arcane<br>Artificery", skill: enchanting, skillReq: 30,
+        xPos: 110 / 4, yPos: 342 / 4, preReqs: [10], chain: 2, rank: 2,
+        description: "Your understanding of enchantments allow you to use them more effectively and efficiently.<br>[+40% staff & scroll magnitude and duration]",
         labels: [], lines: [], chainPerks: []
     },
     //12
     {
-        name: "Staff<br>Channeling", skill: enchanting, skillReq: 25,
-        xPos: 120 / 4, yPos: 300 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient.<br>[while having staff equipped: +5% spell magnitude and duration, -10% spell cost]",
+        name: "Staff<br>Channeling", skill: enchanting, skillReq: 20,
+        xPos: 140 / 4, yPos: 270 / 4, preReqs: [10], chain: 2, rank: 1,
+        description: "You can use your magic staff to channel arcane power, making spells, scrolls, and staffs stronger.<br>[while having staff equipped: +10% magnitude and duration, -20% staff charge cost]",
         labels: [], lines: [], chainPerks: []
     },
     //13
     {
         name: "Staff<br>Channeling", skill: enchanting, skillReq: 40,
-        xPos: 120 / 4, yPos: 300 / 4, preReqs: [12], chain: 2, rank: 2,
-        description: "You can use your magic staff to channel your own spells, making them more powerful and more efficient.<br>[while having staff equipped: +10% spell magnitude and duration, -20% spell cost]",
+        xPos: 140 / 4, yPos: 270 / 4, preReqs: [12], chain: 2, rank: 2,
+        description: "You can use your magic staff to channel arcane power, making spells, scrolls, and staffs stronger.<br>[while having staff equipped: +20% magnitude and duration, -40% staff charge cost]",
+        labels: [], lines: [], chainPerks: []
+    },
+	//14
+	{
+        name: "Arcane<br>Scholar", skill: enchanting, skillReq: 25,
+        xPos: 80 / 4, yPos: 240 / 4, preReqs: [10], chain: 2, rank: 1,
+        description: "Through meticulous study, you unlock hidden potentials in scrolls and staffs, boosting their spell magnitude and duration.<br>[+0.75% magnitude/duration for each point in your Enchantment skill]",
+        labels: [], lines: [], chainPerks: []
+    },
+	//15
+	{
+        name: "Arcane<br>Scholar", skill: enchanting, skillReq: 50,
+        xPos: 80 / 4, yPos: 240 / 4, preReqs: [14], chain: 2, rank: 2,
+        description: "Through meticulous study, you unlock hidden potentials in scrolls and staffs, boosting their spell magnitude and duration.<br>[+1.5% magnitude/duration for each point in your Enchantment skill]",
         labels: [], lines: [], chainPerks: []
     }
 ];
@@ -1028,7 +1027,7 @@ enchanting.perks = [
     {
         name: "Agility", skill: evasion, skillReq: 0,
         xPos: 219 / 4, yPos: 345 / 4, preReqs: [], chain: 0,
-        description: "After some training you are now much more confident in your evasive movements.<br>[25% less falling damage when wearing no heavy armor, unique bonus when wearing high-quality materials, -50% armor weight penalty]",
+        description: "After some training you are now much more confident in your evasive movements.<br>[25% less falling damage when wearing no heavy armor, unique bonus when wearing high-quality materials, -40% armor weight penalty]",
         labels: [], lines: []
     },
     //1
@@ -1116,14 +1115,14 @@ enchanting.perks = [
     {
         name: "Conditioning", skill: heavyarmor, skillReq: 0,
         xPos: 249 / 4.5, yPos: 406 / 4.5, preReqs: [], chain: 0,
-        description: "You've accustomed yourself to using heavy armor.<br>[No stamina drain for wearing heavy armor, unique bonus when wearing high-quality materials, -35% armor weight penalty]",
+        description: "You've accustomed yourself to using heavy armor.<br>[No stamina drain for wearing heavy armor, unique bonus when wearing high-quality materials, -20% armor weight penalty]",
         labels: [], lines: []
     },
     //1
     {
         name: "Relentless Onslaught", skill: heavyarmor, skillReq: 20,
         xPos: 249 / 4.5, yPos: 280 / 4.5, preReqs: [0], chain: 0,
-        description: "After extensive training you now can sprint in heavy armor without problems.<br>[reduced sprinting stamina cost penalty, take 80% less melee damage when bullrushing, -10% armor weight penalty]",
+        description: "After extensive training you now can sprint in heavy armor without problems.<br>[reduced sprinting stamina cost penalty, take 80% less melee damage when bullrushing, -15% armor weight penalty]",
         labels: [], lines: []
     },
     //2
@@ -1461,7 +1460,7 @@ enchanting.perks = [
     {
         name: "Weapon Mastery", skill: onehanded, skillReq: 0,
         xPos: 191 / 4, yPos: 90, preReqs: [1], chain: 2, rank: 2,
-        description: "Your improved fighting techniques increase your damage dealt with one-handed weapons and unarmed attacks greatly.<br>[40% more damage]",
+        description: "Your improved fighting techniques increase your damage dealt with one-handed weapons and unarmed attacks greatly.<br>[35% more damage]",
         labels: [], lines: [], chainPerks: []
     },
     //2
@@ -1475,14 +1474,14 @@ enchanting.perks = [
     {
         name: "Dagger<br>Focus", skill: onehanded, skillReq: 25,
         xPos: 85 / 4, yPos: 240 / 4, preReqs: [2], chain: 3, rank: 1,
-        description: "You learned some dirty tricks for your dagger.<br>[20% irresistible sneak attack damage, +10% armor penetration]",
+        description: "You learned some dirty tricks for your dagger.<br>[30% irresistible sneak attack damage, +10% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //4
     {
         name: "Dagger<br>Focus", skill: onehanded, skillReq: 50,
         xPos: 85 / 4, yPos: 240 / 4, preReqs: [3], chain: 3, rank: 2,
-        description: "A dagger in your hand turns into a deadly weapon.<br>[55% irresistible sneak attack damage, +20% armor penetration]",
+        description: "A dagger in your hand turns into a deadly weapon.<br>[60% irresistible sneak attack damage, +20% armor penetration]",
         labels: [], lines: [], chainPerks: []
     },
     //5
@@ -1578,54 +1577,40 @@ enchanting.perks = [
     },
     //18
     {
-        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 25,
+        name: "Spellblade Mastery", skill: onehanded, skillReq: 25,
         xPos: 230 / 4, yPos: 310 / 4, preReqs: [0],chain: 2, rank: 1,
-        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger.<br>[while having off hand free: +15% damage, +10% attack speed]",
+        description: "You unlock deeper magical potentials by blending the art of war with arcane power.<br>[with an equipped one-handed weapon: attacks reduce magic resistance by 15% for 10 seconds, -10% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
     //19
     {
-        name: "Balanced<br>Wielding", skill: onehanded, skillReq: 50,
+        name: "Spellblade Mastery", skill: onehanded, skillReq: 50,
         xPos: 230 / 4, yPos: 310 / 4, preReqs: [18], chain: 2, rank: 2,
-        description: "With your off hand free you can balance your weapon better, swinging it even faster and stronger.<br>[while having off hand free: +30% damage, +20% attack speed]",
+        description: "You unlock deeper magical potentials by blending the art of war with arcane power.<br>[with an equipped one-handed weapon: attacks reduce magic resistance by 30% for 10 seconds, -20% spell cost]",
         labels: [], lines: [], chainPerks: []
     },
 	//20
     {
-        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 25,
+        name: "Flurry", skill: onehanded, skillReq: 25,
         xPos: 72, yPos: 80, preReqs: [0], chain: 2, rank: 1,
-        description: "You're more adapted to wielding both weapon & magic, and can use your weapon to aid your spellcasting.<br>[with one-handed weapon on right hand and magic on left hand: +5% attack speed, -13% spell cost]",
+        description: "When fighting with one-handed weapons or fists, you are able to attack faster than normal.<br>[+10% attack speed]",
         labels: [], lines: [], chainPerks: []
     },
     //21
     {
-        name: "Armed<br>Spellcasting", skill: onehanded, skillReq: 50,
+        name: "Flurry", skill: onehanded, skillReq: 50,
         xPos: 72, yPos: 80, preReqs: [20],chain: 2, rank: 2,
-        description: "You're more adapted to wielding both weapon & magic, and can use your weapon to aid your spellcasting.<br>[with one-handed weapon on right hand and magic on left hand: +10% attack speed, -25% spell cost]",
+        description: "When fighting with one-handed weapons or fists, you're able to attack even faster.<br>[+20% attack speed]",
         labels: [], lines: [], chainPerks: []
     },
     //22
     {
-        name: "Flurry", skill: onehanded, skillReq: 25,
-        xPos: 88, yPos: 90, preReqs: [0],chain: 2, rank: 1,
-        description: "When fighting with one-handed weapons or fists, you are able to attack faster than normal.<br>[+10% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //23
-    {
-        name: "Flurry", skill: onehanded, skillReq: 50,
-        xPos: 88, yPos: 90, preReqs: [23], chain: 2, rank: 2,
-        description: "When fighting with one-handed weapons or fists, you're able to attack even faster.<br>[+20% attack speed]",
-        labels: [], lines: [], chainPerks: []
-    },
-    //24
-    {
-        name: "Storm of Steel", skill: onehanded, skillReq: 75,
-        xPos: 88, yPos: 100 / 4, preReqs: [23], chain: 0,
+        name: "Storm of Steel", skill: onehanded, skillReq: 30,
+        xPos: 88, yPos: 90, preReqs: [0],chain: 0,
         description: "You've become very skilled in wielding two weapons at once.<br>[25% more dual-wield power attack damage]",
-        labels: [], lines: []
+        labels: [], lines: [], chainPerks: []
     },
-	//25
+	//23
     {
         name: "Martial Arts", skill: onehanded, skillReq: 0,
         xPos: 100 / 4, yPos: 320 / 4, preReqs: [], chain: 0,
