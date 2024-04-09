@@ -632,7 +632,7 @@ destruction.perks = [
     {
         name: "Master<br>Destruction", skill: destruction, skillReq: 90,
         xPos: 80, yPos: 5, preReqs: [3], chain: 0,
-        description: "YYour knowledge of Destruction has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
+        description: "Your knowledge of Destruction has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
     },
 	//5
