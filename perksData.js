@@ -1718,7 +1718,7 @@ enchanting.perks = [
     },
     //4
     {
-        name: "Master<br>Restoration", skill: restoration, skillReq: 90,
+        name: "Master<br>Restoration", skill: restoration, skillReq: 100,
         xPos: 178 / 4, yPos: 30 / 4, preReqs: [3], chain: 0,
         description: "Your knowledge of Restoration has become all-encompassing. You can cast<br>the most complex spells from this school with less effort while augmenting them beyond mortal limits.",
         labels: [], lines: []
@@ -1734,105 +1734,105 @@ enchanting.perks = [
     {
         name: "Focused Mind", skill: restoration, skillReq: 25,
         xPos: 336 / 4, yPos: 253 / 4, preReqs: [1], chain: 0,
-        description: "You've learned to focus your mind. Thus, you can keep your concentration even<br>in stressful situations and regenerate your magicka faster.",
+        description: "You've learned to focus your mind. Thus, you can keep your concentration even in stressful situations and regenerate your magicka faster.<br>[+50% magicka regeneration, no magicka penalty when hit]",
         labels: [], lines: []
     },
     //7
     {
         name: "Power of Life", skill: restoration, skillReq: 50,
         xPos: 282 / 4, yPos: 160 / 4, preReqs: [6], chain: 0,
-        description: "Your studies of healing magic now grant you <br> the power of making yourself almost invulnerable for a short duration once a day.",
+        description: "Your studies of healing magic allow you to regenerate health over time and increase the effectiveness of healing spells in stressful situations.<br>[health regeneration and +20% magnitude in combat]",
         labels: [], lines: []
     },
     //8
     {
         name: "Essence of Life", skill: restoration, skillReq: 75,
         xPos: 350 / 4, yPos: 201 / 4, preReqs: [7], chain: 0,
-        description: "Your understanding of healing and how magic and life are intertwined <br>allows you to call upon your newfound power more often.",
+        description: "Your understanding of healing and how magic and life are intertwined grant you the power of making yourself almost invulnerable for a short duration twice a day.",
         labels: [], lines: []
     },
     //9
     {
         name: "Improved Wards", skill: restoration, skillReq: 30,
         xPos: 100 / 4, yPos: 300 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "Your arcane wards now cost less magicka and are more powerful.",
+        description: "Your arcane wards now cost less magicka and are more powerful.<br>[-30% spell cost, +25% magnitude]",
         labels: [], lines: [], chainPerks: []
     },
     //10
     {
         name: "Improved Wards", skill: restoration, skillReq: 60,
         xPos: 100 / 4, yPos: 300 / 4, preReqs: [9], chain: 2, rank: 2,
-        description: "Your improved knowledge about arcane wards allows you to absorb magicka from incoming spells and they are even more powerful.",
+        description: "Your improved knowledge about arcane wards allows you to absorb magicka from incoming spells and they are even more powerful.<br>[30% absorb, +50% magnitude]",
         labels: [], lines: [], chainPerks: []
     },
     //11
     {
         name: "Improved Healing", skill: restoration, skillReq: 50,
         xPos: 120 / 4, yPos: 264 / 4, preReqs: [0], chain: 0,
-        description: "Your healing spells are now more effective, and also restore the affected subject's stamina if they are out of combat.",
+        description: "Your healing spells are now more effective, and also restore the affected subject's stamina if they are out of combat.<br>[+15% magnitude]",
         labels: [], lines: []
     },
     //12
     {
         name: "Respite", skill: restoration, skillReq: 75,
         xPos: 35 / 4, yPos: 238 / 4, preReqs: [11], chain: 0,
-        description: "Your healing spells now restore the affected subject's stamina in combat at well.",
+        description: "You've mastered the art of healing spells which makes them even more effective and they are now able to restore stamina in combat.<br>[+15% magnitude]",
         labels: [], lines: []
     },
     //13
     {
-        name: "Divine Light", skill: restoration, skillReq: 25,
+        name: "Divine Light", skill: restoration, skillReq: 20,
         xPos: 100 / 4, yPos: 200 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "You now are able to intensify the heat of your sun spells. Thus, <br> they now deal increased damage.",
+        description: "You now are able to intensify the power of your sun and turn undead spells.<br>[+15% magnitude]",
         labels: [], lines: [], chainPerks: []
     },
     //14
     {
-        name: "Divine Light", skill: restoration, skillReq: 50,
+        name: "Divine Light", skill: restoration, skillReq: 40,
         xPos: 100 / 4, yPos: 200 / 4, preReqs: [13], chain: 2, rank: 2,
-        description: "Your sun spells burn with almost otherworldly heat <br> and smite the undead with terrifying ease.",
+        description: "You now are able to greatly intensify the power of your sun and turn undead spells.<br>[+30% magnitude]",
         labels: [], lines: [], chainPerks: []
     },
     //15
     {
-        name: "Blinding Light", skill: restoration, skillReq: 75,
+        name: "Blinding Light", skill: restoration, skillReq: 65,
         xPos: 60 / 4, yPos: 130 / 4, preReqs: [13], chain: 0,
-        description: "Your higher level sun spells are so bright that all but the most powerful foes are stunned, living and dead.",
+        description: "Your apprentice or higher sun spells are so bright that all but the most powerful undead and Daedra are stunned.",
         labels: [], lines: []
     },
     //16
     {
-        name: "Mysticism", skill: restoration, skillReq: 100,
+        name: "Mysticism", skill: restoration, skillReq: 90,
         xPos: 60 / 4, yPos: 30 / 4, preReqs: [15], chain: 0,
-        description: "You've learned the art of weaving mystical energies into your spells, <br> making all of them more effective against the undead and Daedra.",
+        description: "You've learned the art of weaving mystical energies into your spells, <br> making all of them more effective against the undead and Daedra.<br>[+20% magnitude, +40% duration]",
         labels: [], lines: []
     },
     //17
     {
-        name: "Venomancer", skill: restoration, skillReq: 25,
+        name: "Venomancer", skill: restoration, skillReq: 20,
         xPos: 180 / 4, yPos: 230 / 4, preReqs: [0], chain: 2, rank: 1,
-        description: "You now are able to intensify the potency of your poison spells. <br>Thus, they now deal increased damage.",
+        description: "You now are able to intensify the potency of your poison spells. Thus, they now have increased duration.<br>[+25% duration]",
         labels: [], lines: [], chainPerks: []
     },
     //18
     {
-        name: "Venomancer", skill: restoration, skillReq: 50,
+        name: "Venomancer", skill: restoration, skillReq: 40,
         xPos: 180 / 4, yPos: 230 / 4, preReqs: [17], chain: 2, rank: 2,
-        description: "You now are able to greatly intensify the potency of your poison spells. <br>Thus, they now deal far more damage.",
+        description: "You now are able to greatly intensify the potency of your poison spells. Thus, they now have even more duration.<br>[+50% duration]",
         labels: [], lines: [], chainPerks: []
     },
     //19
     {
-        name: "Immobilization", skill: restoration, skillReq: 75,
+        name: "Immobilization", skill: restoration, skillReq: 65,
         xPos: 150 / 4, yPos: 170 / 4, preReqs: [17], chain: 0,
         description: "Your poison spells are now more effective at paralyzing your victims, working on stronger enemies, and effecting them faster.",
         labels: [], lines: []
     },
     //20
     {
-        name: "Poison<br>Master", skill: restoration, skillReq: 100,
+        name: "Poison<br>Master", skill: restoration, skillReq: 90,
         xPos: 120 / 4, yPos: 30 / 4, preReqs: [19], chain: 0,
-        description: "Your fascination for poison now grants you a natural resistance to it, <br> while also increasing all your poison spells' power even further.",
+        description: "Your mastery over poison grants you resistance to it, while also empowering your poison spells even further.<br>[25% resistance, 5% magnitude, 10% spell cost reduction]",
         labels: [], lines: []
     },
    ];
