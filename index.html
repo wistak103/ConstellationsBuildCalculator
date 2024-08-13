@@ -14,15 +14,25 @@
 				let values = decoded.split(',');
 				console.log(values[0]);
 				
+				let url = window.location.href.split('?')[0]
+				if (url.substring(url.length -11).localeCompare("/index.html") == 0) {
+					url = url.slice(0,-11)
+				}
+				if (url.substring(url.length -1).localeCompare("/") == 0) {
+					url = url.slice(0,-1)
+				}
+				
 				if (values[0].substring(0,7).localeCompare("CONST-R") != 0) {
-					v = window.location.href.split('?')[0].slice(0,-11)+"/R72/index.html";
+					
+					v = url+"/R72/index.html";
 					console.log("1");
 				}
 				else if (values[0].localeCompare("CONST-R00") === 0) {	
 					console.log("2");
 				}
 				else {
-					v = window.location.href.split('?')[0].slice(0,-11)+"/"+values[0].substring(6)+"/index.html";
+					
+					v = url+"/"+values[0].substring(6)+"/index.html";
 					console.log("3");
 				}
 				if (v.localeCompare("") != 0){
