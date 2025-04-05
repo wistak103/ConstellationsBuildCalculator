@@ -234,7 +234,7 @@ Twohanded.perks = [
 	//6
 	{
 		name: "Mighty Strike", skill: Twohanded, skillReq: 100,
-		 xPos: 42, yPos: 1, preReqs: [5], chain: 0,
+		 xPos: 42, yPos: 1, preReqs: [4, 5], chain: 0,
 		 description: "You can kill almost any foe with a single strike of your two-hander, as your blows even fell giants with ease.<br>[25% more damage]",
 		 labels: [], lines: [], chainPerks: []
 	},
@@ -1149,7 +1149,7 @@ Alteration.perks = [
 	//0
 	{
 		name: "Novice Alteration", skill: Alteration, skillReq: 0,
-		 xPos: 40, yPos: 84, preReqs: [22], chain: 0,
+		 xPos: 40, yPos: 84, preReqs: [], chain: 0,
 		 description: "You've learned how to cast Novice level spells with decreased effort while your newfound knowledge also allows you to augment all Alteration spells.",
 		 labels: [], lines: [], chainPerks: []
 	},
@@ -1303,7 +1303,7 @@ Alteration.perks = [
 	//22
 	{
 		name: "Innate Sorcery", skill: Alteration, skillReq: 0,
-		 xPos: 27, yPos: 79, preReqs: [0], chain: 4,  rank: 1,
+		 xPos: 27, yPos: 79, preReqs: [], chain: 4,  rank: 1,
 		 description: "[Only available with no magic school perks and locks them]<br>Your exposure to latent magical energies has unlocked the ability to cast novice-level spells.<br>[-75% spell cost]",
 		 labels: [], lines: [], chainPerks: []
 	},
@@ -1327,7 +1327,7 @@ Alteration.perks = [
 		 xPos: 27, yPos: 79, preReqs: [24], chain: 4,  rank: 4,
 		 description: "[Requires Level 30]<br>Your mastery of magical energies grants you the ability to cast expert-level spells.<br>[-60% spell cost]",
 		 labels: [], lines: [], chainPerks: []
-	},
+	}
 ];
 let Conjuration = new SkillTree("Conjuration", 13);
 Conjuration.perks = [
