@@ -32,7 +32,19 @@ function addChainArrays() {
         //run through every perk in skill tree
         for (j = 0; j < skillsList[i].perks.length; j++) {
             let perk = skillsList[i].perks[j];
-            //chains are always 2 or 3 ranks
+			
+			
+			
+			//handling chains of any lenght
+			for (k=1;k<=perk.chain;k++) {
+				perk.chainPerks.push(skillsList[i].perks[j+(k-perk.rank)]);
+			}
+			
+			
+			
+			/*
+			
+            //chains are always 2 or 3 ranks 	- "fixed" above
             if (perk.chain == 2) {
                 let chainPerks = [];
                 //add perk ranks in correct order to each perk in chain. There's probably a better way of doing this...
@@ -65,6 +77,8 @@ function addChainArrays() {
                     perk.chainPerks.push(perk);
                 }
             }
+			
+			*/
         }
     }
 }
@@ -322,6 +336,39 @@ function perkClick(pCircle, perkNum) {
             removePerk(clickedPerk);
         }
         else { //perk is in chain
+		
+			//remove all ranks if they are taken
+			if (activeSkillTree.takenPerks.includes(activeSkillTree.perks[perkNum+(clickedPerk.chain-1)])) {
+				//console.log ("Remove Perk" + clickedPerk.chain);
+				for (i=clickedPerk.chain; i>1; i--) {
+					removePerkRank(activeSkillTree.perks[perkNum + i - 1])
+				}
+				removePerk(clickedPerk);
+				let j = clickedPerk.labels.length - 1;
+                clickedPerk.labels[j].textContent = "0/" + clickedPerk.chain;
+			}
+			//add next rank
+			else {
+				//console.log ("Add perk");
+				for (i=2;i <= clickedPerk.chain; i++) {
+					if (activeSkillTree.takenPerks.includes(activeSkillTree.perks[perkNum + i - 1])) {
+						
+					}
+					else {
+						let j = clickedPerk.labels.length - 1;
+						clickedPerk.labels[j].textContent = activeSkillTree.perks[perkNum + i - 1].rank + "/" + clickedPerk.chain;
+						activeSkillTree.takenPerks.push(activeSkillTree.perks[perkNum + i - 1]);
+						break;
+					}
+				}
+			}
+				
+		
+		
+		
+		
+		
+			/*
             //check if rank 2 is taken
             let perkRank2 = activeSkillTree.perks[perkNum+1];
             if (clickedPerk.chain == 2) {
@@ -363,7 +410,7 @@ function perkClick(pCircle, perkNum) {
                     activeSkillTree.takenPerks.push(perkRank2);
                 }
             };
-            
+            */
 
         }
         //then, remove any perks dependent on this perk
@@ -1198,6 +1245,7 @@ function perkMouseEnter(perkNum) {
             }
         }
         perk = perk.chainPerks[rankIndex];
+		
     }
 
     let title = document.getElementById("perk-description-title");
@@ -1212,9 +1260,11 @@ function perkMouseEnter(perkNum) {
 	nextRequirements.style.display = "none";
     
     //set text
-	title.textContent = perk.name.replace('<br>', ' ');
+	title.textContent = perk.name.replace(/<br>/g, ' ');
 	
-    body.textContent = perk.description.replace('<br>', ' ');
+    body.textContent = perk.description.replace(/<br>/g, ' ');
+	
+	
 	requirements.textContent = "";
 	if (perk.levelReq) {
 			requirements.textContent ="Level " + perk.levelReq.toString();	
@@ -1231,12 +1281,12 @@ function perkMouseEnter(perkNum) {
         let showNext = false;
 
         if (perk.rank == 1 && activeSkillTree.takenPerks.includes(perk)) { showNext = true}
-        else if (perk.rank == 2 && perk.chain == 3) { showNext = true}
+        else if (perk.rank < perk.chain && perk.rank > 1) { showNext = true}
 
 
         if(showNext==true) {
             let nextPerk = activeSkillTree.perks[perkNum+rankIndex+1];    
-            nextBody.textContent = nextPerk.description.replace('<br>', ' ');
+            nextBody.textContent = nextPerk.description.replace(/<br>/g, ' ');
 			nextRequirements.textContent = "";
 			if (nextPerk.levelReq) {
 				nextRequirements.textContent ="Level " + nextPerk.levelReq.toString();	
